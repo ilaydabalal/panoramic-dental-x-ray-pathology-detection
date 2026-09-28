@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ```python
 !pip install ultralytics roboflow
 
@@ -3798,3 +3799,3805 @@ print("\n🚀 İŞLEM TAMAMLANDI! 'Dental_AI_Proje_Arsivi.zip' dosyası bilgisay
     
     🚀 İŞLEM TAMAMLANDI! 'Dental_AI_Proje_Arsivi.zip' dosyası bilgisayarına iniyor.
     
+=======
+```python
+!pip install ultralytics roboflow
+
+from roboflow import Roboflow
+from ultralytics import YOLO
+import os
+
+!pip install roboflow
+
+from roboflow import Roboflow
+rf = Roboflow(api_key="oNJTj1KmqLrb8ZqL7vPl")
+project = rf.workspace("ilayda-x231x").project("dental-x-ray-panoramic-dataset-bbwmt")
+version = project.version(1)
+dataset = version.download("yolov8")
+
+```
+
+    Collecting ultralytics
+      Downloading ultralytics-8.3.246-py3-none-any.whl.metadata (37 kB)
+    Collecting roboflow
+      Downloading roboflow-1.2.11-py3-none-any.whl.metadata (9.7 kB)
+    Requirement already satisfied: numpy>=1.23.0 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (2.0.2)
+    Requirement already satisfied: matplotlib>=3.3.0 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (3.10.0)
+    Requirement already satisfied: opencv-python>=4.6.0 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (4.12.0.88)
+    Requirement already satisfied: pillow>=7.1.2 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (11.3.0)
+    Requirement already satisfied: pyyaml>=5.3.1 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (6.0.3)
+    Requirement already satisfied: requests>=2.23.0 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (2.32.4)
+    Requirement already satisfied: scipy>=1.4.1 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (1.16.3)
+    Requirement already satisfied: torch>=1.8.0 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (2.9.0+cu126)
+    Requirement already satisfied: torchvision>=0.9.0 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (0.24.0+cu126)
+    Requirement already satisfied: psutil>=5.8.0 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (5.9.5)
+    Requirement already satisfied: polars>=0.20.0 in /usr/local/lib/python3.12/dist-packages (from ultralytics) (1.31.0)
+    Collecting ultralytics-thop>=2.0.18 (from ultralytics)
+      Downloading ultralytics_thop-2.0.18-py3-none-any.whl.metadata (14 kB)
+    Requirement already satisfied: certifi in /usr/local/lib/python3.12/dist-packages (from roboflow) (2025.11.12)
+    Collecting idna==3.7 (from roboflow)
+      Downloading idna-3.7-py3-none-any.whl.metadata (9.9 kB)
+    Requirement already satisfied: cycler in /usr/local/lib/python3.12/dist-packages (from roboflow) (0.12.1)
+    Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.4.9)
+    Collecting opencv-python-headless==4.10.0.84 (from roboflow)
+      Downloading opencv_python_headless-4.10.0.84-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (20 kB)
+    Collecting pi-heif<2 (from roboflow)
+      Downloading pi_heif-1.1.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.5 kB)
+    Collecting pillow-avif-plugin<2 (from roboflow)
+      Downloading pillow_avif_plugin-1.5.2-cp312-cp312-manylinux_2_28_x86_64.whl.metadata (2.1 kB)
+    Requirement already satisfied: python-dateutil in /usr/local/lib/python3.12/dist-packages (from roboflow) (2.9.0.post0)
+    Requirement already satisfied: python-dotenv in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.2.1)
+    Requirement already satisfied: six in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.17.0)
+    Requirement already satisfied: urllib3>=1.26.6 in /usr/local/lib/python3.12/dist-packages (from roboflow) (2.5.0)
+    Requirement already satisfied: tqdm>=4.41.0 in /usr/local/lib/python3.12/dist-packages (from roboflow) (4.67.1)
+    Requirement already satisfied: requests-toolbelt in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.0.0)
+    Collecting filetype (from roboflow)
+      Downloading filetype-1.2.0-py2.py3-none-any.whl.metadata (6.5 kB)
+    Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib>=3.3.0->ultralytics) (1.3.3)
+    Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib>=3.3.0->ultralytics) (4.61.1)
+    Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib>=3.3.0->ultralytics) (25.0)
+    Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib>=3.3.0->ultralytics) (3.2.5)
+    Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.12/dist-packages (from requests>=2.23.0->ultralytics) (3.4.4)
+    Requirement already satisfied: filelock in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (3.20.0)
+    Requirement already satisfied: typing-extensions>=4.10.0 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (4.15.0)
+    Requirement already satisfied: setuptools in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (75.2.0)
+    Requirement already satisfied: sympy>=1.13.3 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (1.14.0)
+    Requirement already satisfied: networkx>=2.5.1 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (3.6.1)
+    Requirement already satisfied: jinja2 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (3.1.6)
+    Requirement already satisfied: fsspec>=0.8.5 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (2025.3.0)
+    Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (12.6.77)
+    Requirement already satisfied: nvidia-cuda-runtime-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (12.6.77)
+    Requirement already satisfied: nvidia-cuda-cupti-cu12==12.6.80 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (12.6.80)
+    Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (9.10.2.21)
+    Requirement already satisfied: nvidia-cublas-cu12==12.6.4.1 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (12.6.4.1)
+    Requirement already satisfied: nvidia-cufft-cu12==11.3.0.4 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (11.3.0.4)
+    Requirement already satisfied: nvidia-curand-cu12==10.3.7.77 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (10.3.7.77)
+    Requirement already satisfied: nvidia-cusolver-cu12==11.7.1.2 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (11.7.1.2)
+    Requirement already satisfied: nvidia-cusparse-cu12==12.5.4.2 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (12.5.4.2)
+    Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (0.7.1)
+    Requirement already satisfied: nvidia-nccl-cu12==2.27.5 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (2.27.5)
+    Requirement already satisfied: nvidia-nvshmem-cu12==3.3.20 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (3.3.20)
+    Requirement already satisfied: nvidia-nvtx-cu12==12.6.77 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (12.6.77)
+    Requirement already satisfied: nvidia-nvjitlink-cu12==12.6.85 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (12.6.85)
+    Requirement already satisfied: nvidia-cufile-cu12==1.11.1.6 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (1.11.1.6)
+    Requirement already satisfied: triton==3.5.0 in /usr/local/lib/python3.12/dist-packages (from torch>=1.8.0->ultralytics) (3.5.0)
+    Requirement already satisfied: mpmath<1.4,>=1.1.0 in /usr/local/lib/python3.12/dist-packages (from sympy>=1.13.3->torch>=1.8.0->ultralytics) (1.3.0)
+    Requirement already satisfied: MarkupSafe>=2.0 in /usr/local/lib/python3.12/dist-packages (from jinja2->torch>=1.8.0->ultralytics) (3.0.3)
+    Downloading ultralytics-8.3.246-py3-none-any.whl (1.2 MB)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 23.3 MB/s eta 0:00:00
+    [?25hDownloading roboflow-1.2.11-py3-none-any.whl (89 kB)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 89.9/89.9 kB 9.5 MB/s eta 0:00:00
+    [?25hDownloading idna-3.7-py3-none-any.whl (66 kB)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 66.8/66.8 kB 7.1 MB/s eta 0:00:00
+    [?25hDownloading opencv_python_headless-4.10.0.84-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (49.9 MB)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 49.9/49.9 MB 50.3 MB/s eta 0:00:00
+    [?25hDownloading pi_heif-1.1.1-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (1.4 MB)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 88.6 MB/s eta 0:00:00
+    [?25hDownloading pillow_avif_plugin-1.5.2-cp312-cp312-manylinux_2_28_x86_64.whl (4.2 MB)
+       ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.2/4.2 MB 134.4 MB/s eta 0:00:00
+    [?25hDownloading ultralytics_thop-2.0.18-py3-none-any.whl (28 kB)
+    Downloading filetype-1.2.0-py2.py3-none-any.whl (19 kB)
+    Installing collected packages: pillow-avif-plugin, filetype, pi-heif, opencv-python-headless, idna, ultralytics-thop, roboflow, ultralytics
+      Attempting uninstall: opencv-python-headless
+        Found existing installation: opencv-python-headless 4.12.0.88
+        Uninstalling opencv-python-headless-4.12.0.88:
+          Successfully uninstalled opencv-python-headless-4.12.0.88
+      Attempting uninstall: idna
+        Found existing installation: idna 3.11
+        Uninstalling idna-3.11:
+          Successfully uninstalled idna-3.11
+    Successfully installed filetype-1.2.0 idna-3.7 opencv-python-headless-4.10.0.84 pi-heif-1.1.1 pillow-avif-plugin-1.5.2 roboflow-1.2.11 ultralytics-8.3.246 ultralytics-thop-2.0.18
+    Creating new Ultralytics Settings v0.0.6 file ✅ 
+    View Ultralytics Settings with 'yolo settings' or at '/root/.config/Ultralytics/settings.json'
+    Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+    Requirement already satisfied: roboflow in /usr/local/lib/python3.12/dist-packages (1.2.11)
+    Requirement already satisfied: certifi in /usr/local/lib/python3.12/dist-packages (from roboflow) (2025.11.12)
+    Requirement already satisfied: idna==3.7 in /usr/local/lib/python3.12/dist-packages (from roboflow) (3.7)
+    Requirement already satisfied: cycler in /usr/local/lib/python3.12/dist-packages (from roboflow) (0.12.1)
+    Requirement already satisfied: kiwisolver>=1.3.1 in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.4.9)
+    Requirement already satisfied: matplotlib in /usr/local/lib/python3.12/dist-packages (from roboflow) (3.10.0)
+    Requirement already satisfied: numpy>=1.18.5 in /usr/local/lib/python3.12/dist-packages (from roboflow) (2.0.2)
+    Requirement already satisfied: opencv-python-headless==4.10.0.84 in /usr/local/lib/python3.12/dist-packages (from roboflow) (4.10.0.84)
+    Requirement already satisfied: Pillow>=7.1.2 in /usr/local/lib/python3.12/dist-packages (from roboflow) (11.3.0)
+    Requirement already satisfied: pi-heif<2 in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.1.1)
+    Requirement already satisfied: pillow-avif-plugin<2 in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.5.2)
+    Requirement already satisfied: python-dateutil in /usr/local/lib/python3.12/dist-packages (from roboflow) (2.9.0.post0)
+    Requirement already satisfied: python-dotenv in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.2.1)
+    Requirement already satisfied: requests in /usr/local/lib/python3.12/dist-packages (from roboflow) (2.32.4)
+    Requirement already satisfied: six in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.17.0)
+    Requirement already satisfied: urllib3>=1.26.6 in /usr/local/lib/python3.12/dist-packages (from roboflow) (2.5.0)
+    Requirement already satisfied: tqdm>=4.41.0 in /usr/local/lib/python3.12/dist-packages (from roboflow) (4.67.1)
+    Requirement already satisfied: PyYAML>=5.3.1 in /usr/local/lib/python3.12/dist-packages (from roboflow) (6.0.3)
+    Requirement already satisfied: requests-toolbelt in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.0.0)
+    Requirement already satisfied: filetype in /usr/local/lib/python3.12/dist-packages (from roboflow) (1.2.0)
+    Requirement already satisfied: contourpy>=1.0.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib->roboflow) (1.3.3)
+    Requirement already satisfied: fonttools>=4.22.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib->roboflow) (4.61.1)
+    Requirement already satisfied: packaging>=20.0 in /usr/local/lib/python3.12/dist-packages (from matplotlib->roboflow) (25.0)
+    Requirement already satisfied: pyparsing>=2.3.1 in /usr/local/lib/python3.12/dist-packages (from matplotlib->roboflow) (3.2.5)
+    Requirement already satisfied: charset_normalizer<4,>=2 in /usr/local/lib/python3.12/dist-packages (from requests->roboflow) (3.4.4)
+    loading Roboflow workspace...
+    loading Roboflow project...
+    
+
+    Downloading Dataset Version Zip in Dental-X-Ray-Panoramic-Dataset-1 to yolov8:: 100%|██████████| 2306801/2306801 [00:26<00:00, 86008.22it/s]
+
+    
+    
+
+    
+    Extracting Dataset Version Zip to Dental-X-Ray-Panoramic-Dataset-1 in yolov8:: 100%|██████████| 66336/66336 [00:10<00:00, 6485.11it/s]
+    
+
+
+```python
+
+yaml_path = '/content/Dental-X-Ray-Panoramic-Dataset-1/data.yaml'
+
+model = YOLO('yolo11n.pt')
+
+target_classes = [1, 2, 4, 6, 8, 9, 10, 13, 14, 23]
+
+results = model.train(
+    data=yaml_path,
+    epochs=50,
+    imgsz=640,
+    batch=64,               
+    classes=target_classes, # Sadece bu 10 sınıfa odaklan
+    project='Dental_Roboflow_Filtreli',
+    name='v2_deneme',
+    patience=20,           
+    device=0,
+    plots=True
+)
+```
+
+    Downloading https://github.com/ultralytics/assets/releases/download/v8.3.0/yolo11n.pt to 'yolo11n.pt': 100% ━━━━━━━━━━━━ 5.4MB 65.1MB/s 0.1s
+    Ultralytics 8.3.246 🚀 Python-3.12.12 torch-2.9.0+cu126 CUDA:0 (NVIDIA A100-SXM4-40GB, 40507MiB)
+    engine/trainer: agnostic_nms=False, amp=True, augment=False, auto_augment=randaugment, batch=64, bgr=0.0, box=7.5, cache=False, cfg=None, classes=[1, 2, 4, 6, 8, 9, 10, 13, 14, 23], close_mosaic=10, cls=0.5, compile=False, conf=None, copy_paste=0.0, copy_paste_mode=flip, cos_lr=False, cutmix=0.0, data=/content/Dental-X-Ray-Panoramic-Dataset-1/data.yaml, degrees=0.0, deterministic=True, device=0, dfl=1.5, dnn=False, dropout=0.0, dynamic=False, embed=None, epochs=50, erasing=0.4, exist_ok=False, fliplr=0.5, flipud=0.0, format=torchscript, fraction=1.0, freeze=None, half=False, hsv_h=0.015, hsv_s=0.7, hsv_v=0.4, imgsz=640, int8=False, iou=0.7, keras=False, kobj=1.0, line_width=None, lr0=0.01, lrf=0.01, mask_ratio=4, max_det=300, mixup=0.0, mode=train, model=yolo11n.pt, momentum=0.937, mosaic=1.0, multi_scale=False, name=v2_deneme, nbs=64, nms=False, opset=None, optimize=False, optimizer=auto, overlap_mask=True, patience=20, perspective=0.0, plots=True, pose=12.0, pretrained=True, profile=False, project=Dental_Roboflow_Filtreli, rect=False, resume=False, retina_masks=False, save=True, save_conf=False, save_crop=False, save_dir=/content/Dental_Roboflow_Filtreli/v2_deneme, save_frames=False, save_json=False, save_period=-1, save_txt=False, scale=0.5, seed=0, shear=0.0, show=False, show_boxes=True, show_conf=True, show_labels=True, simplify=True, single_cls=False, source=None, split=val, stream_buffer=False, task=detect, time=None, tracker=botsort.yaml, translate=0.1, val=True, verbose=True, vid_stride=1, visualize=False, warmup_bias_lr=0.1, warmup_epochs=3.0, warmup_momentum=0.8, weight_decay=0.0005, workers=8, workspace=None
+    Downloading https://ultralytics.com/assets/Arial.ttf to '/root/.config/Ultralytics/Arial.ttf': 100% ━━━━━━━━━━━━ 755.1KB 15.3MB/s 0.0s
+    Overriding model.yaml nc=80 with nc=31
+    
+                       from  n    params  module                                       arguments                     
+      0                  -1  1       464  ultralytics.nn.modules.conv.Conv             [3, 16, 3, 2]                 
+      1                  -1  1      4672  ultralytics.nn.modules.conv.Conv             [16, 32, 3, 2]                
+      2                  -1  1      6640  ultralytics.nn.modules.block.C3k2            [32, 64, 1, False, 0.25]      
+      3                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+      4                  -1  1     26080  ultralytics.nn.modules.block.C3k2            [64, 128, 1, False, 0.25]     
+      5                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+      6                  -1  1     87040  ultralytics.nn.modules.block.C3k2            [128, 128, 1, True]           
+      7                  -1  1    295424  ultralytics.nn.modules.conv.Conv             [128, 256, 3, 2]              
+      8                  -1  1    346112  ultralytics.nn.modules.block.C3k2            [256, 256, 1, True]           
+      9                  -1  1    164608  ultralytics.nn.modules.block.SPPF            [256, 256, 5]                 
+     10                  -1  1    249728  ultralytics.nn.modules.block.C2PSA           [256, 256, 1]                 
+     11                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+     12             [-1, 6]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+     13                  -1  1    111296  ultralytics.nn.modules.block.C3k2            [384, 128, 1, False]          
+     14                  -1  1         0  torch.nn.modules.upsampling.Upsample         [None, 2, 'nearest']          
+     15             [-1, 4]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+     16                  -1  1     32096  ultralytics.nn.modules.block.C3k2            [256, 64, 1, False]           
+     17                  -1  1     36992  ultralytics.nn.modules.conv.Conv             [64, 64, 3, 2]                
+     18            [-1, 13]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+     19                  -1  1     86720  ultralytics.nn.modules.block.C3k2            [192, 128, 1, False]          
+     20                  -1  1    147712  ultralytics.nn.modules.conv.Conv             [128, 128, 3, 2]              
+     21            [-1, 10]  1         0  ultralytics.nn.modules.conv.Concat           [1]                           
+     22                  -1  1    378880  ultralytics.nn.modules.block.C3k2            [384, 256, 1, True]           
+     23        [16, 19, 22]  1    436717  ultralytics.nn.modules.head.Detect           [31, [64, 128, 256]]          
+    YOLO11n summary: 181 layers, 2,595,885 parameters, 2,595,869 gradients, 6.5 GFLOPs
+    
+    Transferred 448/499 items from pretrained weights
+    Freezing layer 'model.23.dfl.conv.weight'
+    AMP: running Automatic Mixed Precision (AMP) checks...
+    AMP: checks passed ✅
+    train: Fast image access ✅ (ping: 0.0±0.0 ms, read: 1908.9±688.5 MB/s, size: 66.3 KB)
+    train: Scanning /content/Dental-X-Ray-Panoramic-Dataset-1/train/labels... 29022 images, 2 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 29022/29022 1.1Kit/s 25.4s
+    train: New cache created: /content/Dental-X-Ray-Panoramic-Dataset-1/train/labels.cache
+    albumentations: Blur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+    val: Fast image access ✅ (ping: 0.0±0.0 ms, read: 949.9±528.7 MB/s, size: 51.8 KB)
+    val: Scanning /content/Dental-X-Ray-Panoramic-Dataset-1/valid/labels... 2760 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 2760/2760 612.3it/s 4.5s
+    val: New cache created: /content/Dental-X-Ray-Panoramic-Dataset-1/valid/labels.cache
+    Plotting labels to /content/Dental_Roboflow_Filtreli/v2_deneme/labels.jpg... 
+    optimizer: 'optimizer=auto' found, ignoring 'lr0=0.01' and 'momentum=0.937' and determining best 'optimizer', 'lr0' and 'momentum' automatically... 
+    optimizer: SGD(lr=0.01, momentum=0.9) with parameter groups 81 weight(decay=0.0), 88 weight(decay=0.0005), 87 bias(decay=0.0)
+    Image sizes 640 train, 640 val
+    Using 8 dataloader workers
+    Logging results to /content/Dental_Roboflow_Filtreli/v2_deneme
+    Starting training for 50 epochs...
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+           1/50      10.8G      2.094       2.83      1.454        386        640: 100% ━━━━━━━━━━━━ 454/454 3.1it/s 2:26
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.3it/s 16.9s
+                       all       2760      26328      0.604      0.397        0.3      0.143
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+           2/50      11.7G      1.858      1.736      1.299        343        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.8it/s 12.0s
+                       all       2760      26328      0.335      0.409      0.338      0.158
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+           3/50      11.7G      1.839      1.631      1.282        356        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.8it/s 12.5s
+                       all       2760      26328      0.325      0.409      0.294      0.139
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+           4/50      11.7G      1.815      1.496      1.281        475        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:60
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.9s
+                       all       2760      26328      0.351      0.451      0.364      0.177
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+           5/50      11.7G      1.767      1.389      1.264        360        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.8it/s 12.5s
+                       all       2760      26328      0.499      0.476      0.383      0.191
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+           6/50      11.7G      1.739       1.34      1.252        443        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.6s
+                       all       2760      26328      0.521      0.507      0.421      0.213
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+           7/50      11.7G      1.719      1.313      1.243        370        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:01
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.3s
+                       all       2760      26328      0.526      0.479      0.401      0.196
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+           8/50      11.7G        1.7      1.287      1.237        493        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.8it/s 12.0s
+                       all       2760      26328      0.548      0.539      0.454      0.233
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+           9/50      11.7G      1.691      1.271      1.231        415        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:60
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.8it/s 12.1s
+                       all       2760      26328      0.534      0.509      0.436      0.223
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          10/50      11.7G      1.678      1.253      1.226        358        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:00
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.3s
+                       all       2760      26328      0.529      0.526      0.445      0.222
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          11/50      12.6G      1.666      1.237      1.222        511        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.8it/s 12.0s
+                       all       2760      26328      0.503      0.529      0.457      0.227
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          12/50      12.7G      1.661      1.225      1.218        405        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:00
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.5s
+                       all       2760      26328      0.587      0.515      0.469      0.245
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          13/50      12.7G      1.653      1.219      1.214        447        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.6s
+                       all       2760      26328      0.563      0.513      0.459      0.237
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          14/50      12.7G      1.645       1.21      1.209        401        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:00
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 11.2s
+                       all       2760      26328      0.589      0.527       0.48      0.245
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          15/50      12.7G      1.639        1.2      1.207        342        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.7s
+                       all       2760      26328      0.606      0.526      0.477      0.243
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          16/50      12.7G       1.63      1.187      1.203        363        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:01
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 11.2s
+                       all       2760      26328      0.586      0.526       0.49      0.258
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          17/50      12.7G      1.623      1.183      1.202        406        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.6s
+                       all       2760      26328      0.598      0.516      0.484      0.251
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          18/50      12.7G      1.619      1.175      1.199        429        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.6s
+                       all       2760      26328       0.59      0.541      0.492      0.259
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          19/50      12.7G       1.61      1.169      1.197        283        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:00
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 10.9s
+                       all       2760      26328      0.612      0.533      0.477      0.246
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          20/50      13.7G      1.608       1.16      1.193        319        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:01
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 10.9s
+                       all       2760      26328      0.621      0.543      0.496      0.258
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          21/50      13.7G      1.607      1.156      1.194        364        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:00
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.3s
+                       all       2760      26328       0.62      0.538      0.497      0.259
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          22/50      14.7G      1.601      1.144       1.19        324        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:58
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.7s
+                       all       2760      26328      0.629       0.54      0.504      0.264
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          23/50      14.7G      1.592      1.137      1.185        499        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:01
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 10.8s
+                       all       2760      26328      0.628      0.531      0.498      0.263
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          24/50      14.7G      1.588      1.131      1.184        326        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:01
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.1it/s 10.7s
+                       all       2760      26328      0.626      0.555      0.504      0.269
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          25/50      14.7G      1.585      1.131      1.183        429        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:00
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 11.1s
+                       all       2760      26328      0.638      0.548      0.512       0.27
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          26/50      14.7G       1.58      1.117      1.179        353        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:60
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 11.1s
+                       all       2760      26328      0.637      0.546      0.511      0.271
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          27/50      14.7G      1.579      1.115      1.178        414        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.8it/s 11.9s
+                       all       2760      26328      0.641      0.547      0.516      0.275
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          28/50      14.7G      1.573       1.11      1.177        290        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:60
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 11.3s
+                       all       2760      26328      0.643       0.55      0.522      0.277
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          29/50      14.7G      1.567      1.097       1.17        471        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:60
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.7s
+                       all       2760      26328       0.65      0.549       0.52      0.276
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          30/50      14.7G      1.563      1.096      1.169        438        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.6s
+                       all       2760      26328      0.652      0.547      0.519      0.277
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          31/50      14.8G       1.56      1.085      1.167        440        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:58
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.6s
+                       all       2760      26328      0.648      0.553      0.521      0.279
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          32/50      14.8G      1.557      1.084      1.168        311        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.8it/s 12.0s
+                       all       2760      26328      0.647      0.556       0.52      0.279
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          33/50      14.8G      1.552       1.08      1.167        406        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:60
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.4s
+                       all       2760      26328      0.658      0.549      0.521       0.28
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          34/50      14.8G       1.55       1.07      1.163        381        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:60
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 11.2s
+                       all       2760      26328      0.657      0.555      0.524      0.282
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          35/50      14.8G      1.544      1.064      1.159        339        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:60
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 10.9s
+                       all       2760      26328      0.655       0.56      0.527      0.283
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          36/50      14.8G      1.541      1.062      1.157        451        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.6s
+                       all       2760      26328       0.66      0.557       0.53      0.285
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          37/50      14.8G      1.534      1.055      1.155        321        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:59
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.8it/s 11.9s
+                       all       2760      26328      0.657      0.559      0.531      0.285
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          38/50      14.8G      1.533      1.047      1.152        441        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:00
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.0it/s 10.9s
+                       all       2760      26328      0.652      0.565       0.53      0.285
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          39/50      14.8G      1.525      1.045      1.151        412        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 2:00
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.6s
+                       all       2760      26328      0.658       0.56      0.531      0.285
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          40/50      14.8G      1.524      1.034      1.149        332        640: 100% ━━━━━━━━━━━━ 454/454 3.8it/s 1:60
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.9it/s 11.7s
+                       all       2760      26328      0.655      0.565      0.531      0.286
+    Closing dataloader mosaic
+    albumentations: Blur(p=0.01, blur_limit=(3, 7)), MedianBlur(p=0.01, blur_limit=(3, 7)), ToGray(p=0.01, method='weighted_average', num_output_channels=3), CLAHE(p=0.01, clip_limit=(1.0, 4.0), tile_grid_size=(8, 8))
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          41/50      14.9G      1.485      1.017      1.195        272        640: 100% ━━━━━━━━━━━━ 454/454 4.3it/s 1:45
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.3it/s 9.5s
+                       all       2760      26328      0.656      0.564      0.532      0.287
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          42/50      14.9G      1.472     0.9966      1.187        258        640: 100% ━━━━━━━━━━━━ 454/454 4.5it/s 1:41
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.3it/s 9.6s
+                       all       2760      26328       0.66      0.563      0.533      0.288
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          43/50      14.9G      1.464     0.9817      1.185        265        640: 100% ━━━━━━━━━━━━ 454/454 4.5it/s 1:42
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.3it/s 9.4s
+                       all       2760      26328      0.664      0.561      0.534      0.289
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          44/50      14.9G      1.457     0.9697       1.18        316        640: 100% ━━━━━━━━━━━━ 454/454 4.5it/s 1:41
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.3it/s 9.4s
+                       all       2760      26328      0.668       0.56      0.536       0.29
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          45/50      14.9G       1.45      0.957      1.177        231        640: 100% ━━━━━━━━━━━━ 454/454 4.5it/s 1:41
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.4it/s 9.4s
+                       all       2760      26328      0.671      0.562      0.537      0.291
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          46/50      14.9G      1.442     0.9432      1.173        273        640: 100% ━━━━━━━━━━━━ 454/454 4.5it/s 1:41
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.3it/s 9.5s
+                       all       2760      26328      0.676       0.56      0.539      0.292
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          47/50      14.9G      1.436     0.9346      1.169        283        640: 100% ━━━━━━━━━━━━ 454/454 4.4it/s 1:43
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.3it/s 9.5s
+                       all       2760      26328      0.679       0.56      0.539      0.292
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          48/50      14.9G      1.429     0.9219      1.163        230        640: 100% ━━━━━━━━━━━━ 454/454 4.5it/s 1:42
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.3it/s 9.4s
+                       all       2760      26328      0.677      0.562      0.541      0.293
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          49/50      14.9G      1.424     0.9126      1.164        223        640: 100% ━━━━━━━━━━━━ 454/454 4.5it/s 1:42
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.4it/s 9.3s
+                       all       2760      26328      0.677      0.563      0.542      0.293
+    
+          Epoch    GPU_mem   box_loss   cls_loss   dfl_loss  Instances       Size
+          50/50      14.9G      1.417     0.9043       1.16        259        640: 100% ━━━━━━━━━━━━ 454/454 4.5it/s 1:41
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 2.3it/s 9.4s
+                       all       2760      26328      0.678      0.563      0.542      0.294
+    
+    50 epochs completed in 1.785 hours.
+    Optimizer stripped from /content/Dental_Roboflow_Filtreli/v2_deneme/weights/last.pt, 5.5MB
+    Optimizer stripped from /content/Dental_Roboflow_Filtreli/v2_deneme/weights/best.pt, 5.5MB
+    
+    Validating /content/Dental_Roboflow_Filtreli/v2_deneme/weights/best.pt...
+    Ultralytics 8.3.246 🚀 Python-3.12.12 torch-2.9.0+cu126 CUDA:0 (NVIDIA A100-SXM4-40GB, 40507MiB)
+    YOLO11n summary (fused): 100 layers, 2,588,197 parameters, 0 gradients, 6.3 GFLOPs
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 22/22 1.6it/s 13.7s
+                       all       2760      26328      0.675      0.565      0.542      0.294
+                    Caries        610       2188       0.62      0.225      0.307      0.111
+                     Crown        851       2368      0.738      0.913      0.868      0.543
+                   Filling       2009       9914      0.677      0.641      0.686      0.316
+                   Implant        139        468      0.904      0.955      0.968      0.562
+          Mandibular Canal         59        112      0.511      0.795      0.652      0.458
+             Missing teeth        332        702      0.458      0.538      0.361      0.152
+         Periapical lesion        461       1040      0.453      0.119      0.129     0.0445
+             Retained root         15         45          1          0     0.0709     0.0291
+      Root Canal Treatment       1118       3901      0.521      0.513      0.447      0.188
+            impacted tooth       2295       5590      0.866      0.951      0.935      0.535
+    Speed: 0.1ms preprocess, 0.4ms inference, 0.0ms loss, 1.6ms postprocess per image
+    Results saved to /content/Dental_Roboflow_Filtreli/v2_deneme
+    
+
+
+```python
+import matplotlib.pyplot as plt
+import cv2
+
+path = '/content/Dental_Roboflow_Filtreli/v2_deneme/results.png'
+
+img = cv2.imread(path)
+plt.figure(figsize=(15, 10))
+plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
+plt.axis('off')
+plt.title('Eğitim Süreci: Loss ve Doğruluk Grafikleri', fontsize=15)
+plt.show()
+```
+
+
+    
+![png](Untitled8_files/Untitled8_2_0.png)
+    
+
+
+
+```python
+import matplotlib.pyplot as plt
+import pandas as pd
+
+data = {
+    'Grup': ['Implant', 'Impacted Tooth', 'Crown', 'Filling', 'Mandibular Canal',
+             'Root Canal Treatment', 'Missing Teeth', 'Caries', 'Periapical Lesion', 'Retained Root'],
+    'Başarı (mAP50)': [0.968, 0.935, 0.868, 0.686, 0.652, 0.447, 0.361, 0.307, 0.129, 0.071]
+}
+
+df = pd.DataFrame(data).sort_values('Başarı (mAP50)', ascending=True)
+
+plt.figure(figsize=(12, 7))
+colors = ['#ff4d4d' if x < 0.4 else '#ffd11a' if x < 0.7 else '#2eb82e' for x in df['Başarı (mAP50)']]
+bars = plt.barh(df['Grup'], df['Başarı (mAP50)'], color=colors)
+
+for bar in bars:
+    plt.text(bar.get_width() + 0.01, bar.get_y() + bar.get_height()/2,
+             f'{bar.get_width():.2f}', va='center', fontweight='bold')
+
+plt.title('Dental Model 10 Sınıf Performans Analizi', fontsize=16)
+plt.xlabel('mAP@50 Skoru', fontsize=12)
+plt.grid(axis='x', linestyle='--', alpha=0.6)
+plt.tight_layout()
+plt.show()
+```
+
+
+    
+![png](Untitled8_files/Untitled8_3_0.png)
+    
+
+
+
+```python
+from ultralytics import YOLO
+
+model = YOLO('/content/Dental_Roboflow_Filtreli/v2_deneme/weights/best.pt')
+
+target_classes = [1, 2, 4, 6, 8, 9, 10, 13, 14, 23]
+
+metrics = model.val(
+    data='/content/Dental-X-Ray-Panoramic-Dataset-1/data.yaml',
+    classes=target_classes,
+    plots=True,
+    project='Dental_Grafikler',
+    name='sonuc_analizi'
+)
+```
+
+    Ultralytics 8.3.246 🚀 Python-3.12.12 torch-2.9.0+cu126 CUDA:0 (NVIDIA A100-SXM4-40GB, 40507MiB)
+    YOLO11n summary (fused): 100 layers, 2,588,197 parameters, 0 gradients, 6.3 GFLOPs
+    val: Fast image access ✅ (ping: 0.0±0.0 ms, read: 1037.3±463.7 MB/s, size: 52.1 KB)
+    val: Scanning /content/Dental-X-Ray-Panoramic-Dataset-1/valid/labels.cache... 2760 images, 0 backgrounds, 0 corrupt: 100% ━━━━━━━━━━━━ 2760/2760 4.3Mit/s 0.0s
+                     Class     Images  Instances      Box(P          R      mAP50  mAP50-95): 100% ━━━━━━━━━━━━ 173/173 10.4it/s 16.6s
+                       all       2760      26328      0.677      0.564      0.543      0.294
+                    Caries        610       2188      0.623      0.223      0.308      0.112
+                     Crown        851       2368      0.737      0.911      0.867      0.544
+                   Filling       2009       9914      0.679      0.639      0.686      0.317
+                   Implant        139        468      0.897      0.955      0.969      0.564
+          Mandibular Canal         59        112      0.514      0.795      0.652      0.458
+             Missing teeth        332        702      0.461      0.538      0.362      0.152
+         Periapical lesion        461       1040      0.468       0.12      0.131     0.0449
+             Retained root         15         45          1          0     0.0727     0.0291
+      Root Canal Treatment       1118       3901      0.525      0.511      0.449      0.188
+            impacted tooth       2295       5590      0.867       0.95      0.935      0.535
+    Speed: 0.7ms preprocess, 0.9ms inference, 0.0ms loss, 1.5ms postprocess per image
+    Results saved to /content/Dental_Grafikler/sonuc_analizi
+    
+
+
+```python
+import glob
+
+grafikler = glob.glob("/content/**/*.png", recursive=True)
+for g in grafikler:
+    print(f"Bulunan Grafik: {g}")
+```
+
+    Bulunan Grafik: /content/Dental_Roboflow_Filtreli/v2_deneme/BoxP_curve.png
+    Bulunan Grafik: /content/Dental_Roboflow_Filtreli/v2_deneme/BoxPR_curve.png
+    Bulunan Grafik: /content/Dental_Roboflow_Filtreli/v2_deneme/confusion_matrix_normalized.png
+    Bulunan Grafik: /content/Dental_Roboflow_Filtreli/v2_deneme/BoxR_curve.png
+    Bulunan Grafik: /content/Dental_Roboflow_Filtreli/v2_deneme/results.png
+    Bulunan Grafik: /content/Dental_Roboflow_Filtreli/v2_deneme/BoxF1_curve.png
+    Bulunan Grafik: /content/Dental_Roboflow_Filtreli/v2_deneme/confusion_matrix.png
+    Bulunan Grafik: /content/Dental_Grafikler/sonuc_analizi/BoxP_curve.png
+    Bulunan Grafik: /content/Dental_Grafikler/sonuc_analizi/BoxPR_curve.png
+    Bulunan Grafik: /content/Dental_Grafikler/sonuc_analizi/confusion_matrix_normalized.png
+    Bulunan Grafik: /content/Dental_Grafikler/sonuc_analizi/BoxR_curve.png
+    Bulunan Grafik: /content/Dental_Grafikler/sonuc_analizi/BoxF1_curve.png
+    Bulunan Grafik: /content/Dental_Grafikler/sonuc_analizi/confusion_matrix.png
+    
+
+
+```python
+import matplotlib.pyplot as plt
+import cv2
+import os
+
+base_path = '/content/Dental_Roboflow_Filtreli/v2_deneme/'
+
+grafikler = {
+    'results.png': '1. Genel Eğitim Sonuçları (Loss ve mAP@50-95)',
+    'BoxF1_curve.png': '2. F1-Güven Eğrisi (En İyi Threshold Değeri)',
+    'BoxPR_curve.png': '3. Hassasiyet-Duyarlılık (PR) Eğrisi',
+    'confusion_matrix.png': '4. Karmaşıklık Matrisi (Ham Sayılar)',
+    'confusion_matrix_normalized.png': '5. Karmaşıklık Matrisi (Yüzdesel Başarı)',
+    'BoxP_curve.png': '6. Kesinlik (Precision) Eğrisi',
+    'BoxR_curve.png': '7. Duyarlılık (Recall) Eğrisi'
+}
+
+print("Grafikler Hazırlanıyor...\n")
+
+for file_name, title in grafikler.items():
+    full_path = os.path.join(base_path, file_name)
+
+    if os.path.exists(full_path):
+        img = cv2.imread(full_path)
+        img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+        plt.figure(figsize=(16, 12))
+        plt.imshow(img_rgb)
+        plt.title(title, fontsize=18, fontweight='bold', pad=20)
+        plt.axis('off')
+        plt.show()
+        print("-" * 100)
+    else:
+        print(f"⚠️ {file_name} bulunamadı, bu aşama atlanıyor.")
+
+print("\nTüm analizler tamamlandı.")
+```
+
+    Grafikler Hazırlanıyor...
+    
+    
+
+
+    
+![png](Untitled8_files/Untitled8_6_1.png)
+    
+
+
+    ----------------------------------------------------------------------------------------------------
+    
+
+
+    
+![png](Untitled8_files/Untitled8_6_3.png)
+    
+
+
+    ----------------------------------------------------------------------------------------------------
+    
+
+
+    
+![png](Untitled8_files/Untitled8_6_5.png)
+    
+
+
+    ----------------------------------------------------------------------------------------------------
+    
+
+
+    
+![png](Untitled8_files/Untitled8_6_7.png)
+    
+
+
+    ----------------------------------------------------------------------------------------------------
+    
+
+
+    
+![png](Untitled8_files/Untitled8_6_9.png)
+    
+
+
+    ----------------------------------------------------------------------------------------------------
+    
+
+
+    
+![png](Untitled8_files/Untitled8_6_11.png)
+    
+
+
+    ----------------------------------------------------------------------------------------------------
+    
+
+
+    
+![png](Untitled8_files/Untitled8_6_13.png)
+    
+
+
+    ----------------------------------------------------------------------------------------------------
+    
+    Tüm analizler tamamlandı.
+    
+
+
+```python
+from google.colab import files
+
+model_path = '/content/Dental_Roboflow_Filtreli/v2_deneme/weights/best.pt'
+
+if os.path.exists(model_path):
+    files.download(model_path)
+    print("Model indirme işlemi başladı...")
+else:
+    print("HATA: Model dosyası belirtilen yolda bulunamadı!")
+```
+
+
+    <IPython.core.display.Javascript object>
+
+
+
+    <IPython.core.display.Javascript object>
+
+
+    Model indirme işlemi başladı...
+    
+
+
+```python
+from ultralytics import YOLO
+import os
+
+model = YOLO('/content/Dental_Roboflow_Filtreli/v2_deneme/weights/best.pt')
+
+test_path = '/content/Dental-X-Ray-Panoramic-Dataset-1/test/images'
+
+results = model.predict(
+    source=test_path,
+    conf=0.25,        # Güven eşiği (%25 ve üzeri olanları göster)
+    save=True,        
+    project='Dental_Test_Sonuclari',
+    name='tahmin_cikislari'
+)
+
+print(f"Bütün test verileri işlendi. Sonuçlar burada: /content/Dental_Test_Sonuclari/tahmin_cikislari")
+```
+
+    
+    WARNING ⚠️ 
+    Inference results will accumulate in RAM unless `stream=True` is passed, which can cause out-of-memory errors for large
+    sources or long-running streams and videos. See https://docs.ultralytics.com/modes/predict/ for help.
+    
+    Example:
+        results = model(source=..., stream=True)  # generator of Results objects
+        for r in results:
+            boxes = r.boxes  # Boxes object for bbox outputs
+            masks = r.masks  # Masks object for segment masks outputs
+            probs = r.probs  # Class probabilities for classification outputs
+    
+    image 1/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/00cf39c1-Karaptiyan_Robert_50yo_13032021_185908_jpg.rf.6a346058dbf10d856f83cdda11122493.jpg: 640x640 9 Crowns, 9 Fillings, 1 Missing teeth, 1 Periapical lesion, 6 Root Canal Treatments, 11.4ms
+    image 2/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/00cf39c1-Karaptiyan_Robert_50yo_13032021_185908_jpg.rf.c05dbec6b2a7d801c77e5ac037ef3f65.jpg: 640x640 9 Crowns, 9 Fillings, 1 Missing teeth, 1 Periapical lesion, 6 Root Canal Treatments, 12.3ms
+    image 3/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/01b0dd74-Gazavandi_Neda_2022-05-14190158_jpg.rf.967941a33ea9999e8fc697989734cb08.jpg: 640x640 1 Caries, 6 Fillings, 2 Missing teeths, 8 Root Canal Treatments, 11.8ms
+    image 4/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/01b0dd74-Gazavandi_Neda_2022-05-14190158_jpg.rf.977771cca7fadb8b16bd4a03c5e6181d.jpg: 640x640 1 Caries, 7 Fillings, 2 Missing teeths, 8 Root Canal Treatments, 11.5ms
+    image 5/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/033516be-SAFAPOOR_MOHAMMADHOSEIN_2020-07-21162045_jpg.rf.5fa8a8f61e3242a008168af1f8629838.jpg: 640x640 1 Caries, 3 impacted tooths, 9.4ms
+    image 6/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/047576e0-ROSHAN_HOSEYN_2020-08-19104705_jpg.rf.d1f3fe43d391123cda0fdc9089c49038.jpg: 640x640 1 Crown, 3 Fillings, 3 Missing teeths, 3 Root Canal Treatments, 9.1ms
+    image 7/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0602be33-Khalajasadi_Mahmood_2022-05-14101511_jpg.rf.a7332a7fff798df45a68ca704fadcb68.jpg: 640x640 2 Cariess, 6 Crowns, 11 Fillings, 2 Missing teeths, 21 Root Canal Treatments, 9.3ms
+    image 8/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/093ca428-CHOPANI_MAHNAZ_2020-07-21161258_jpg.rf.0108aeaf858a107230ca2e409aba8748.jpg: 640x640 7 Crowns, 8 Fillings, 2 Missing teeths, 4 Root Canal Treatments, 9.3ms
+    image 9/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/093ca428-CHOPANI_MAHNAZ_2020-07-21161258_jpg.rf.57310efb38c430ea8914a67c65f54d5f.jpg: 640x640 7 Crowns, 7 Fillings, 2 Missing teeths, 5 Root Canal Treatments, 9.1ms
+    image 10/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0a4f2d22-Hematian_Fariba_57y_31052021_132542_jpg.rf.7a8f708864d47333e40598625331ac6b.jpg: 640x640 5 Fillings, 5 Missing teeths, 2 Root Canal Treatments, 9.1ms
+    image 11/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0ab29cbb-Dahghani_sanij_Mani_16yo_02062021_122725_jpg.rf.132ca83512eda0d97def8aa580a53ba7.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 12/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0c9e1e1a-Rezaee_Mostafa_2022-06-12140251_jpg.rf.85248a21e7d4d556412a952a38fbf7f6.jpg: 640x640 8 Cariess, 4 Fillings, 3 Periapical lesions, 4 Root Canal Treatments, 9.1ms
+    image 13/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0cb54eba-GOLIJ_ALI_2020-05-27202749_jpg.rf.a94abb657db29042d84f03f8ca3fbcba.jpg: 640x640 3 Fillings, 3 Missing teeths, 6 Root Canal Treatments, 10.8ms
+    image 14/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0eda48fc-MERIKH_DAVOD_2020-06-18122737_jpg.rf.7ce15bfa5b1013758ffcb3e42f63dc9b.jpg: 640x640 1 Caries, 3 Crowns, 7 Fillings, 12 Root Canal Treatments, 9.0ms
+    image 15/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0f323795-ASGARI_JAVAD_2020-07-06201430_jpg.rf.e130286f6342453d50f955efb794c46e.jpg: 640x640 5 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 16/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1007190000-jpg_png_jpg.rf.334e3fb1bdabf3c40821f853d253ac49.jpg: 640x640 1 Crown, 3 Fillings, 3 impacted tooths, 9.1ms
+    image 17/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1045540000-jpg_png_jpg.rf.e44a3eb8d9cc7f4c38f8d55e4ef9433e.jpg: 640x640 1 Caries, 3 Crowns, 4 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 18/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1045860000-jpg_png_jpg.rf.ea94d81eb30213ac5e41ddb276b73c42.jpg: 640x640 2 Crowns, 12 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 19/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1080320000-jpg_png_jpg.rf.e4f9e0b60480be6ed13bbd4d092d2ff3.jpg: 640x640 2 Crowns, 7 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.9ms
+    image 20/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1080870000-jpg_png_jpg.rf.3d5e92be9b6b3b75faa5173798874a28.jpg: 640x640 4 impacted tooths, 12.1ms
+    image 21/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1091430000-jpg_png_jpg.rf.b42187d6dd421a61997160c545259374.jpg: 640x640 3 impacted tooths, 9.8ms
+    image 22/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1100250000-jpg_png_jpg.rf.061e49e6df0862bb1ee769952a543b8b.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 1 impacted tooth, 10.0ms
+    image 23/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1123200000-jpg_png_jpg.rf.5a17ad098dea789f33663e4da83beae6.jpg: 640x640 2 Fillings, 2 Missing teeths, 1 impacted tooth, 9.7ms
+    image 24/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/113600000-jpg_png_jpg.rf.5b604ff87381eb3d7788c853320786b8.jpg: 640x640 4 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.5ms
+    image 25/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1149910000-jpg_png_jpg.rf.c282a0275d81f5284451abbf76a9f307.jpg: 640x640 7 Fillings, 5 impacted tooths, 9.4ms
+    image 26/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1178800000-jpg_png_jpg.rf.1a2bd1cf0158b2600ec3ce4b7da8c4a7.jpg: 640x640 6 Fillings, 2 impacted tooths, 9.4ms
+    image 27/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1179640000-jpg_png_jpg.rf.f09a814c6bfcf8ae50560066cfbf9ae0.jpg: 640x640 1 Crown, 2 impacted tooths, 9.1ms
+    image 28/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1181690000-jpg_png_jpg.rf.fc3bcc45a489eae26b7ac40e32fc4b45.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 29/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1197960000-jpg_png_jpg.rf.02ab66494e7bea496aeb98a109d3eff6.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.2ms
+    image 30/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/120140000-jpg_png_jpg.rf.344aa2e233aeb8b529c16797ed5e2905.jpg: 640x640 7 Fillings, 2 impacted tooths, 9.1ms
+    image 31/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/120dfa9b-JAFARNADERY_JAVID_2020-06-07092041_jpg.rf.e33d624c2381dbecd12a339f7c414175.jpg: 640x640 2 Crowns, 12 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 32/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1241450000-jpg_png_jpg.rf.daec002a38cebd6681c8ec18e11dbb5d.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 33/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1271790000-jpg_png_jpg.rf.14a326b168d628a23f4f41b120294c0a.jpg: 640x640 1 Crown, 5 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.0ms
+    image 34/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1339590000-jpg_png_jpg.rf.dc28d70e274fbe92616518ad1d8cfa08.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 35/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1340890000-jpg_png_jpg.rf.b0ac63a0757022e3e3073fae1ad55542.jpg: 640x640 6 impacted tooths, 9.2ms
+    image 36/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1341170000-jpg_png_jpg.rf.bb9446c0609e69d1df3d78637e7789b1.jpg: 640x640 1 Filling, 3 impacted tooths, 9.1ms
+    image 37/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1349770000-jpg_png_jpg.rf.3a43bbb6b1febd9443234e3f8f77809a.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 38/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1349770000-jpg_png_jpg.rf.b7c393ca63df5040862673ff9300cc8b.jpg: 640x640 1 Filling, 3 impacted tooths, 9.6ms
+    image 39/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1366190000-jpg_png_jpg.rf.19f3fc68a042745de7f2e5d788e25204.jpg: 640x640 4 Crowns, 3 Fillings, 4 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 40/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1372210000-jpg_png_jpg.rf.c5d3f46e123425ec0a1c834bc81c1827.jpg: 640x640 1 Crown, 4 Fillings, 3 impacted tooths, 9.3ms
+    image 41/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1392610000-jpg_png_jpg.rf.5401d2b5e42efddcae00b79ae22646c1.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.0ms
+    image 42/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/139540000-jpg_png_jpg.rf.1e5325fc2fe607ef5eedfdc70c46975a.jpg: 640x640 1 Crown, 11 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 43/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1427260000-jpg_png_jpg.rf.abfa7ab96b98a18fc6232a6b86ac1c61.jpg: 640x640 1 Caries, 2 Crowns, 4 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 44/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1436820000-jpg_png_jpg.rf.bb7aa0188e49e168b94be108cf42fce4.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 45/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1452650000-jpg_png_jpg.rf.6b4f2d7a0b421936b4d5a8e874e7c413.jpg: 640x640 9 Fillings, 3 impacted tooths, 9.6ms
+    image 46/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1456650000-jpg_png_jpg.rf.28ecfb340165aa5415bfeedfa86a1e87.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 47/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1489970000-jpg_png_jpg.rf.79ed16ce626ab97d848964707ed5d3ba.jpg: 640x640 1 Filling, 1 Periapical lesion, 4 impacted tooths, 9.4ms
+    image 48/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1493310000-jpg_png_jpg.rf.851c4357d8a85f6a3807a4b87b7791bf.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.3ms
+    image 49/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1505390000-jpg_png_jpg.rf.d65dd2082db3abd6eee24594df2a23d2.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 50/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1527220000-jpg_png_jpg.rf.b9080201173ea8bd6f48d0e227380162.jpg: 640x640 1 Filling, 4 impacted tooths, 9.4ms
+    image 51/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1537080000-jpg_png_jpg.rf.f3ee457fb7484311a3b1ce7dc6b4071e.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 52/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1552180000-jpg_png_jpg.rf.1ccab3a0cc9acd3e9f2c67731fb03d34.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 53/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1563320000-jpg_png_jpg.rf.3861c2f4948f07a055da6224cef31a3a.jpg: 640x640 6 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.2ms
+    image 54/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1563330000-jpg_png_jpg.rf.e6a4829da56246aae139af5963882e5a.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.0ms
+    image 55/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1567860000-jpg_png_jpg.rf.99ef54faeb6db1248048dfb5ecd29bbd.jpg: 640x640 4 impacted tooths, 11.3ms
+    image 56/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1567860000-jpg_png_jpg.rf.aedc3d1438703d3f7e57d752427b34cc.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 57/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/15e9be6f-ROSHANZAMIR_MASOMEH_2020-06-08112423_jpg.rf.084469e7b9424dd5ed6b563b14310589.jpg: 640x640 3 Crowns, 9 Fillings, 1 Periapical lesion, 7 Root Canal Treatments, 9.0ms
+    image 58/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1639290000-jpg_png_jpg.rf.dd1f6becfdf2c351a9406c44c83de2ed.jpg: 640x640 1 Crown, 3 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 59/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1640550000-jpg_png_jpg.rf.2824022f3fb767a6de703e20b54c750f.jpg: 640x640 3 Fillings, 6 impacted tooths, 9.0ms
+    image 60/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1651590000-jpg_png_jpg.rf.d6086238dfae224ff5e7dcefff2db811.jpg: 640x640 1 Missing teeth, 4 impacted tooths, 8.9ms
+    image 61/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1684370000-jpg_png_jpg.rf.ad36eae02cb20fd15d90004489139fd6.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 62/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1698160000-jpg_png_jpg.rf.0b69a5f303b233c17c8d83966743a58e.jpg: 640x640 2 Crowns, 1 Missing teeth, 4 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 63/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1718440000-jpg_png_jpg.rf.8383cb74a088dd3b640b1b6c0916dc59.jpg: 640x640 2 Crowns, 8 Fillings, 1 Missing teeth, 3 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 64/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1719420000-jpg_png_jpg.rf.586d2c6b9d175274f34a9e0a7cf34355.jpg: 640x640 2 Crowns, 3 Fillings, 1 Implant, 2 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 65/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1719420000-jpg_png_jpg.rf.eb18786c30b0e363c794744c1ee7753d.jpg: 640x640 2 Crowns, 3 Fillings, 1 Implant, 1 Periapical lesion, 2 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 66/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1726350000-jpg_png_jpg.rf.05bd7d0cd706b78ec362b7723b75a352.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.0ms
+    image 67/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1738490000-jpg_png_jpg.rf.f45db589292ec976e55004624a697666.jpg: 640x640 1 Filling, 6 impacted tooths, 9.1ms
+    image 68/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1744240000-jpg_png_jpg.rf.05ced30e533d10c78847b05ea4489894.jpg: 640x640 1 Crown, 5 Fillings, 2 impacted tooths, 9.1ms
+    image 69/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1767020000-jpg_png_jpg.rf.49be0bb92068567134423bbf65360776.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.0ms
+    image 70/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1796500000-jpg_png_jpg.rf.6cd73a3313198e51570362fc5de9d408.jpg: 640x640 1 impacted tooth, 9.1ms
+    image 71/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/18173abd-khodabakhsh_Venisa_18yo_11102020_194137_jpg.rf.74b0aad56e1063ce818038b9ff24ac11.jpg: 640x640 13 Fillings, 2 Periapical lesions, 4 impacted tooths, 9.2ms
+    image 72/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1860230000-jpg_png_jpg.rf.11164dc8c8792e378882c58f3079affc.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 73/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1862040000-jpg_png_jpg.rf.2b13691f3fb9f481c3974bd13acb1b2f.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 74/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1862040000-jpg_png_jpg.rf.d7905bd0ac2278ce1c4dec6bcec61676.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 75/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1864780000-jpg_png_jpg.rf.e4c0c74e4ef11e32a9bba40dc0d3125b.jpg: 640x640 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 76/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1883480000-jpg_png_jpg.rf.dffd42ec16241dc17d8f9714fc6db844.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.8ms
+    image 77/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/18d6b97a-SARKARVAKILI_MEHRI_2020-06-21121217_jpg.rf.ee8201e632a7d6e7e29efa9f89bf43f7.jpg: 640x640 3 Cariess, 2 Crowns, 8 Fillings, 4 Missing teeths, 1 Periapical lesion, 8 Root Canal Treatments, 9.4ms
+    image 78/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1921820000-jpg_png_jpg.rf.f4bb25b0958e106ec64784275febb816.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 79/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1942280000-jpg_png_jpg.rf.043e254dde793c44c2574bc7d4e035f5.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.2ms
+    image 80/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1949510000-jpg_png_jpg.rf.5ef02117bb0679681405287253f59ab0.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 81/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1985410000-jpg_png_jpg.rf.b12aa9fe6997adfc5252bb408725c312.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 82/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1b5470d3-Ebrahimi_Ali_akbar_2022-06-12142443_jpg.rf.cbb365995cda712693fae1725753ce4a.jpg: 640x640 1 Caries, 9.2ms
+    image 83/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1fa3900a-Fathizade_Kazhal_36yo_01062021_154836_jpg.rf.eaba86853b8a351826ac076ca606d0aa.jpg: 640x640 2 Crowns, 4 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 84/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2008510000-jpg_png_jpg.rf.13f785186811472b787249d1850f8357.jpg: 640x640 2 Crowns, 2 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 10.0ms
+    image 85/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/205634d1-RAFIQ_MAHMOOD_2020-06-16110702_jpg.rf.7ae8f1419a7c3821d9529dc196a86376.jpg: 640x640 5 Crowns, 3 Fillings, 2 Missing teeths, 10 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 86/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2089150000-jpg_png_jpg.rf.f4c752bf22113b65c67932b9e912712d.jpg: 640x640 1 Filling, 3 impacted tooths, 9.1ms
+    image 87/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2144410000-jpg_png_jpg.rf.76d86439c3ca4ef4f8b99262a49f0780.jpg: 640x640 14 Fillings, 4 impacted tooths, 9.4ms
+    image 88/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2145590000-jpg_png_jpg.rf.3e39b438eaac62d529f6fa878140eece.jpg: 640x640 5 Crowns, 10 Fillings, 1 Implant, 1 Root Canal Treatment, 2 impacted tooths, 9.4ms
+    image 89/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2150780000-jpg_png_jpg.rf.33d2eb13c6ef0ff49dab0de20f674fbc.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 90/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2175520000-jpg_png_jpg.rf.875e1ffdf13ef9945b0850afe65a7eea.jpg: 640x640 1 Crown, 1 Filling, 3 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 91/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2191100000-jpg_png_jpg.rf.cd177dad9d07fda609c5c55c444ff86d.jpg: 640x640 1 Crown, 3 Fillings, 1 impacted tooth, 9.2ms
+    image 92/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2198290000-jpg_png_jpg.rf.47ddacc57e655dad8a9b41b2a41e7c39.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 93/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2201430000-jpg_png_jpg.rf.50ffef04d59cd5c8ddeb942b65872a0c.jpg: 640x640 10 Fillings, 4 impacted tooths, 9.2ms
+    image 94/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2226710000-jpg_png_jpg.rf.92c37329c507f4bff3306363eccd984a.jpg: 640x640 1 Crown, 17 Fillings, 4 impacted tooths, 9.5ms
+    image 95/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2258350000-jpg_png_jpg.rf.b9410475ba19dfae11af2f91850d9c49.jpg: 640x640 9 Fillings, 3 impacted tooths, 9.7ms
+    image 96/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2264820000-jpg_png_jpg.rf.0904d8ac5b1289b42ade7f3fceaf5b11.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.6ms
+    image 97/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2273960000-jpg_png_jpg.rf.558db42522120572263aa2e414f83760.jpg: 640x640 4 Crowns, 6 Fillings, 6 Root Canal Treatments, 1 impacted tooth, 9.6ms
+    image 98/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2286070000-jpg_png_jpg.rf.d5d8a47c5234df7ed9ba6cfbcd3de72f.jpg: 640x640 1 Filling, 2 Root Canal Treatments, 3 impacted tooths, 9.7ms
+    image 99/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2332170000-jpg_png_jpg.rf.6a9477bd0c7d8ca4dfa2eca23bf27ca8.jpg: 640x640 1 Crown, 12 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 100/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2332170000-jpg_png_jpg.rf.ed8dd16e9d20fa664d13812fea833ad0.jpg: 640x640 1 Crown, 12 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 101/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2347790000-jpg_png_jpg.rf.26f94647935563a3874be48eddfdb48e.jpg: 640x640 6 Crowns, 5 Fillings, 1 Periapical lesion, 8 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 102/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2364920000-jpg_png_jpg.rf.d3c3530f8e160375e7c79f877ea37364.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.5ms
+    image 103/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2379520000-jpg_png_jpg.rf.82778b4b5d8ff947f8ab57bceae9ccf5.jpg: 640x640 1 Crown, 5 impacted tooths, 9.3ms
+    image 104/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2391560000-jpg_png_jpg.rf.46d67db2a7e9188c37baec8d60753d92.jpg: 640x640 2 Crowns, 3 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 105/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2398570000-jpg_png_jpg.rf.5d255b2b4b05b3a3b0210f63e62b3243.jpg: 640x640 1 Crown, 4 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 106/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2400030000-jpg_png_jpg.rf.0acce1c3fab6c787a9bad4084ead02bf.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.1ms
+    image 107/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2400180000-jpg_png_jpg.rf.bda577b3d9a397056b01c92380ae8894.jpg: 640x640 1 impacted tooth, 9.0ms
+    image 108/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2425480000-jpg_png_jpg.rf.c627eb13b5fbb9334c6f02567f1c8092.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 109/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2439630000-jpg_png_jpg.rf.faec60c0aaca2dc8ffe7ec5aee614d58.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.1ms
+    image 110/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2479540000-jpg_png_jpg.rf.542c310a50832f618552bb0bafa27e02.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 111/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2486950000-jpg_png_jpg.rf.746f2f3739a43ee225bbcbd8599e14a2.jpg: 640x640 12 Fillings, 2 impacted tooths, 9.1ms
+    image 112/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2492790000-jpg_png_jpg.rf.15566c09953628b7bec68a38b8987f35.jpg: 640x640 10 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 113/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/249993e5-HEMMATI_AMIRABBAS_2020-08-18130608_jpg.rf.a179c30368977fc338fa1366e9535b19.jpg: 640x640 4 Cariess, 10.3ms
+    image 114/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2527870000-jpg_png_jpg.rf.24bd0de048ee43ca9fa7fee54883f354.jpg: 640x640 1 Caries, 1 Crown, 1 Filling, 3 Missing teeths, 1 impacted tooth, 9.0ms
+    image 115/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2530160000-jpg_png_jpg.rf.e44f9722364ed8f783daebc8a89078ae.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 116/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2555130000-jpg_png_jpg.rf.e9adec9fd8971356b191085c5146e44d.jpg: 640x640 1 impacted tooth, 9.0ms
+    image 117/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2576480000-jpg_png_jpg.rf.57008eea9519008aca7b0e810c9832ab.jpg: 640x640 1 Filling, 5 impacted tooths, 9.2ms
+    image 118/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2583070000-jpg_png_jpg.rf.33b669f30478bbb27630e9cefea5b028.jpg: 640x640 4 Fillings, 1 impacted tooth, 9.2ms
+    image 119/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/264d0857-Jalilvand_Yones_2022-06-12142921_jpg.rf.a2dcfc15e7b1a56146c24aa760bb5cdc.jpg: 640x640 5 Cariess, 6 Fillings, 2 Periapical lesions, 11 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 120/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/264d0857-Jalilvand_Yones_2022-06-12142921_jpg.rf.d2f08c3e98eaa2feb7ebc9ac6d62e059.jpg: 640x640 5 Cariess, 6 Fillings, 2 Periapical lesions, 11 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 121/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2655840000-jpg_png_jpg.rf.e22e5ca6fcf37df6e8f8e5e7c6697236.jpg: 640x640 4 Crowns, 6 Fillings, 1 Implant, 3 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 122/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2664470000-jpg_png_jpg.rf.9e11cc26a14798afca184892070bc3ae.jpg: 640x640 1 Crown, 9 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.5ms
+    image 123/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2672940000-jpg_png_jpg.rf.4edf37c88f42d7a29c1b2e25feb5839e.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 124/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2672940000-jpg_png_jpg.rf.9fbbba0b7d06e56cd8f2defc143e0378.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 125/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/26ffef0b-Zakeri_Abolfazl_2020-11-14135110_jpg.rf.b5cac4d8516be35093949c51e52ea9f0.jpg: 640x640 2 Cariess, 1 Crown, 20 Fillings, 1 Missing teeth, 7 Root Canal Treatments, 9.1ms
+    image 126/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2720930000-jpg_png_jpg.rf.82ae65c51a387931745b98fc64969c59.jpg: 640x640 1 Crown, 19 Fillings, 2 impacted tooths, 9.1ms
+    image 127/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2751580000-jpg_png_jpg.rf.c6d163ab46054c6069c95f7ec0322463.jpg: 640x640 1 Missing teeth, 2 impacted tooths, 9.2ms
+    image 128/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2764190000-jpg_png_jpg.rf.a846267d59eabc5a2d845a3483082282.jpg: 640x640 2 Crowns, 13 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.1ms
+    image 129/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/276690000-jpg_png_jpg.rf.29778b259582952e087c4f2855532e7d.jpg: 640x640 1 Filling, 2 impacted tooths, 9.1ms
+    image 130/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/27fe5697-Mehri_Elisa_2020-09-08173214_jpg.rf.9bc6296fb0399e0f0b8ab5d2e69572d0.jpg: 640x640 3 Crowns, 13 Fillings, 1 Missing teeth, 2 Periapical lesions, 17 Root Canal Treatments, 9.0ms
+    image 131/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/27fe5697-Mehri_Elisa_2020-09-08173214_jpg.rf.eeb175c5f0e0f7f7148e942808ea97d1.jpg: 640x640 3 Crowns, 13 Fillings, 1 Missing teeth, 2 Periapical lesions, 17 Root Canal Treatments, 9.2ms
+    image 132/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2801440000-jpg_png_jpg.rf.11fd54cb64785058e078f8414ca533c1.jpg: 640x640 9 Fillings, 3 impacted tooths, 9.4ms
+    image 133/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2817620000-jpg_png_jpg.rf.e0f838978f060088d57ff2b41d45b4ac.jpg: 640x640 1 Crown, 4 Fillings, 2 impacted tooths, 9.4ms
+    image 134/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2849340000-jpg_png_jpg.rf.0a5339ae554aebf0b3d00baa14730428.jpg: 640x640 8 Fillings, 2 impacted tooths, 9.2ms
+    image 135/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2860000000-jpg_png_jpg.rf.32d1e266911629b05bd0729f68eb5aba.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 136/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2869840000-jpg_png_jpg.rf.9eef5f993dd3162522d739d7f65d0001.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.1ms
+    image 137/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2911280000-jpg_png_jpg.rf.f5cac32c3c40042e4e1a09359964899f.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.2ms
+    image 138/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2916510000-jpg_png_jpg.rf.874f6d2fd48c67f3c1a09d8015d7f237.jpg: 640x640 7 Crowns, 11 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 139/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2938520000-jpg_png_jpg.rf.99eb2d1fbf08f1f1b8175265b080bae2.jpg: 640x640 1 Crown, 4 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 140/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2939710000-jpg_png_jpg.rf.dc0f548ed50ed1def3e691a6b25ad77e.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 141/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2957090000-jpg_png_jpg.rf.9797782f8eb5650ce7f2ec57c7d95403.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 142/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2964180000-jpg_png_jpg.rf.70218a31b4e0c316f21a7e4f60412af0.jpg: 640x640 5 Fillings, 1 Periapical lesion, 1 Root Canal Treatment, 2 impacted tooths, 9.4ms
+    image 143/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2966060000-jpg_png_jpg.rf.17108c64f8fd7be6828b66d2fb6a7b00.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 144/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2986230000-jpg_png_jpg.rf.b8463a09c62f702badefb6c1eaa9a60e.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 145/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2991120000-jpg_png_jpg.rf.01a795961bc2cc53dea920de459c3efc.jpg: 640x640 2 Crowns, 16 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 146/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2996550000-jpg_png_jpg.rf.2a65d9bda786df270a2500910c85ac7b.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 147/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2996550000-jpg_png_jpg.rf.39fd4f9055ff9887c5b5d59cac476266.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 148/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2a69c174-Shakoori_Khadijeh_2022-05-14105827_jpg.rf.0077cb6591d2d5862190f1094373d835.jpg: 640x640 1 Caries, 15 Fillings, 2 Missing teeths, 2 Root Canal Treatments, 9.1ms
+    image 149/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2a69c174-Shakoori_Khadijeh_2022-05-14105827_jpg.rf.1f9d1a53b3e9747f8889e7f2c7b912fa.jpg: 640x640 2 Cariess, 14 Fillings, 3 Missing teeths, 2 Root Canal Treatments, 9.0ms
+    image 150/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2a6bd043-Ghasemi_Parmis_12yo_31052021_181156_jpg.rf.85351f2b7059bcecfaf0a53fb42d623f.jpg: 640x640 4 Fillings, 9.1ms
+    image 151/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2ac917cc-Ranjbar_Azam_2022-05-14123922_jpg.rf.c8d15f1b8b4c727cd5a42afdbd5c0487.jpg: 640x640 1 Caries, 1 Filling, 5 Missing teeths, 1 Periapical lesion, 9.1ms
+    image 152/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2ac917cc-Ranjbar_Azam_2022-05-14123922_jpg.rf.d15e0a83cf267be4c3d91bfaf5e29eee.jpg: 640x640 1 Caries, 1 Filling, 5 Missing teeths, 1 Periapical lesion, 9.6ms
+    image 153/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2b4edf31-IISAABADY_MOIIN_2020-02-22092515_jpg.rf.1d4e9b317f34137e78b46e58c7c59272.jpg: 640x640 16 Fillings, 1 Periapical lesion, 3 Root Canal Treatments, 1 impacted tooth, 9.5ms
+    image 154/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3008120000-jpg_png_jpg.rf.69f634401917d01001b5de3264c2d7a3.jpg: 640x640 2 Crowns, 6 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 9.2ms
+    image 155/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3036890000-jpg_png_jpg.rf.81d7eaf22c8f5aa313e35671b42b0fa6.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 156/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3040580000-jpg_png_jpg.rf.834342baeac52f36fa3495f64273a1ce.jpg: 640x640 1 Crown, 3 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 157/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3049470000-jpg_png_jpg.rf.4bcbd3617630b911dae3126ba49e4b1a.jpg: 640x640 1 Crown, 2 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 158/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3061010000-jpg_png_jpg.rf.58a85b49485591f0aab04cebe4691915.jpg: 640x640 1 Filling, 1 impacted tooth, 9.3ms
+    image 159/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3063850000-jpg_png_jpg.rf.93f5a9cc2e95ddb62cbc2b0d491a4cbb.jpg: 640x640 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 9.3ms
+    image 160/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3063850000-jpg_png_jpg.rf.f213956765fc5ffbf530f9ca666964ca.jpg: 640x640 1 Filling, 1 Root Canal Treatment, 1 impacted tooth, 9.3ms
+    image 161/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3078830000-jpg_png_jpg.rf.981810be87b958a769fc66aa959dc9b3.jpg: 640x640 4 Cariess, 2 Crowns, 2 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.8ms
+    image 162/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/310280000-jpg_png_jpg.rf.cfffbab05f625e6717a1d3a67cfac181.jpg: 640x640 7 Crowns, 1 Missing teeth, 1 Periapical lesion, 7 Root Canal Treatments, 9.3ms
+    image 163/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3106160000-jpg_png_jpg.rf.36a47deab68d8bce84a61427d6d49d36.jpg: 640x640 8 Fillings, 1 impacted tooth, 9.2ms
+    image 164/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/31135e19-Darabi_Parasto_2022-06-12142058_jpg.rf.b70e05423590c51870f9352718bd95e8.jpg: 640x640 1 Filling, 2 Missing teeths, 2 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 165/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3120860000-jpg_png_jpg.rf.23dde3b965644b6629c60180a87f5495.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.3ms
+    image 166/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3130550000-jpg_png_jpg.rf.90307981a911f3d443b538469808f0c5.jpg: 640x640 1 Filling, 3 impacted tooths, 9.1ms
+    image 167/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3137410000-jpg_png_jpg.rf.28518d1afa181effbc8e1b2b2bf03b8e.jpg: 640x640 2 impacted tooths, 11.7ms
+    image 168/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3150700000-jpg_png_jpg.rf.933c7ba163d728cc3965d9fb473d0452.jpg: 640x640 1 Crown, 1 Filling, 1 Periapical lesion, 3 Root Canal Treatments, 1 impacted tooth, 9.5ms
+    image 169/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3153760000-jpg_png_jpg.rf.3b103e6068cfe3fa6f53e2b4db185666.jpg: 640x640 2 Crowns, 2 impacted tooths, 9.2ms
+    image 170/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3166750000-jpg_png_jpg.rf.a9a6980c48df7cbf628596866cbf4cbf.jpg: 640x640 7 Fillings, 1 Root Canal Treatment, 6 impacted tooths, 9.2ms
+    image 171/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3192780000-jpg_png_jpg.rf.b1d3426d380042eda3c45afe87918f1e.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.3ms
+    image 172/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3193720000-jpg_png_jpg.rf.12c05fff304e7aade96fe2ffdec0de73.jpg: 640x640 1 Crown, 3 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 173/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3196890000-jpg_png_jpg.rf.8cd79f3b3e32fd90749aa63f3f9cecfc.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 174/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3217240000-jpg_png_jpg.rf.d0f3a54d81ac3dbb289ad0961dbed7c8.jpg: 640x640 1 Crown, 1 Filling, 2 impacted tooths, 9.1ms
+    image 175/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3218180000-jpg_png_jpg.rf.287b3c87a2326330cee901144b17d086.jpg: 640x640 11 Fillings, 3 impacted tooths, 9.2ms
+    image 176/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3238940000-jpg_png_jpg.rf.51681bad7d1c00382f504a3e46379aa5.jpg: 640x640 5 Crowns, 2 Fillings, 6 Root Canal Treatments, 4 impacted tooths, 11.1ms
+    image 177/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3248480000-jpg_png_jpg.rf.765e418bbb18ca385e99dfe4f2f90c0c.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 178/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3249a2ce-Barati_Parvin_2022-06-12141659_jpg.rf.e3a1310460a056f30e57db9dcb033fe9.jpg: 640x640 6 Cariess, 2 Missing teeths, 9.2ms
+    image 179/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3255060000-jpg_png_jpg.rf.749c73c452a3f168d1ba5c96497daa1a.jpg: 640x640 10 Fillings, 2 impacted tooths, 9.2ms
+    image 180/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3260040000-jpg_png_jpg.rf.86716be1112a1a9a9c0cf9807d576c5e.jpg: 640x640 1 Filling, 2 impacted tooths, 9.3ms
+    image 181/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3269630000-jpg_png_jpg.rf.25efd8a1d1bdd65fbea3d7c43fc752a6.jpg: 640x640 3 Crowns, 18 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 182/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3274380000-jpg_png_jpg.rf.5f36037ef4f797fcfba2972f7b130eb7.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 183/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3301970000-jpg_png_jpg.rf.07e8f6eec6feafb2d75ccb50c6b4fd70.jpg: 640x640 2 Fillings, 1 Periapical lesion, 4 impacted tooths, 9.5ms
+    image 184/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3306200000-jpg_png_jpg.rf.bdbdbe8d427c1c7f24382cbc9f08def4.jpg: 640x640 2 Root Canal Treatments, 5 impacted tooths, 9.2ms
+    image 185/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3309220000-jpg_png_jpg.rf.c7da64af31773e4fdf8d68c08cb8d282.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.1ms
+    image 186/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3312840000-jpg_png_jpg.rf.0ca05734fbe906aea81a793f3dace330.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.1ms
+    image 187/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3315570000-jpg_png_jpg.rf.67511c9be1ec8505b2c93b060f84aa8d.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 188/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3319930000-jpg_png_jpg.rf.a774fd2ab67cff5f33bc91b0d953ad3d.jpg: 640x640 4 Crowns, 7 Fillings, 6 Root Canal Treatments, 4 impacted tooths, 10.9ms
+    image 189/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/331b9d0e-Yazdi_Morteza_2022-06-12142409_jpg.rf.a9f7856d472406669d1dd4a419d85c6d.jpg: 640x640 12 Fillings, 6 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 190/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3331570000-jpg_png_jpg.rf.fd6505bbff45e7fd765b45b49c3ad43d.jpg: 640x640 6 Fillings, 2 impacted tooths, 9.1ms
+    image 191/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3338670000-jpg_png_jpg.rf.fde06c5356fe7477e34e36bb8dc5dd03.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 192/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3341180000-jpg_png_jpg.rf.444ce62546e3408d3c56755805faf54d.jpg: 640x640 12 Crowns, 1 Filling, 1 Implant, 7 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 193/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3345570000-jpg_png_jpg.rf.e014bf640711291e8816e8a0fee785ee.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 194/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3349130000-jpg_png_jpg.rf.7e283aa3f69eff4e6ed7c4e7b116856d.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 195/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3377690000-jpg_png_jpg.rf.e4d1e6984fe89c26e960ef248ba9f984.jpg: 640x640 1 Filling, 1 impacted tooth, 9.0ms
+    image 196/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3380810000-jpg_png_jpg.rf.ed356f2326d9e0eb70320ddbf6eedbed.jpg: 640x640 8 Fillings, 2 impacted tooths, 9.0ms
+    image 197/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3382670000-jpg_png_jpg.rf.30bff3b80928ba066855d9a4e00b98ab.jpg: 640x640 1 Crown, 5 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 198/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3382670000-jpg_png_jpg.rf.a50c18587064bb090b61c339db0a3898.jpg: 640x640 1 Crown, 5 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 199/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3383500000-jpg_png_jpg.rf.0da22d7c8de610198b1f232e04a324fd.jpg: 640x640 3 Crowns, 12 Fillings, 1 Implant, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 200/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3385330000-jpg_png_jpg.rf.6be4f62e91539c38f1b5d320c207e4d7.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 4 impacted tooths, 8.9ms
+    image 201/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3396960000-jpg_png_jpg.rf.da86c9ceb9443f4b30233b7c1d05b88d.jpg: 640x640 7 Fillings, 1 Implant, 4 impacted tooths, 9.0ms
+    image 202/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/339eee12-NAJAFI_MARYAM_2020-06-13205811_jpg.rf.4af97dc20beee482e61b946ba62eef41.jpg: 640x640 1 Caries, 2 Crowns, 6 Fillings, 2 Missing teeths, 5 Root Canal Treatments, 9.1ms
+    image 203/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3407560000-jpg_png_jpg.rf.aae3afa34a8753f00e8afe62ba30f843.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 204/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3413010000-jpg_png_jpg.rf.cd97b5c81b8553fa495a6f81f74af4ff.jpg: 640x640 1 impacted tooth, 10.3ms
+    image 205/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3422950000-jpg_png_jpg.rf.c8eb8e998ddd67380f0026df506c45e4.jpg: 640x640 4 Fillings, 1 impacted tooth, 9.3ms
+    image 206/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3423560000-jpg_png_jpg.rf.cf6fb10fa3745a65b6d3adf85c7d38ff.jpg: 640x640 5 Crowns, 7 Fillings, 3 Periapical lesions, 7 Root Canal Treatments, 4 impacted tooths, 9.2ms
+    image 207/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3424080000-jpg_png_jpg.rf.d3251bb525a46942d947dc50f039e8d9.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.1ms
+    image 208/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3426100000-jpg_png_jpg.rf.35a4a598e4086d72df1dda4b328c1ef2.jpg: 640x640 1 Crown, 8 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 209/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3431030000-jpg_png_jpg.rf.bae0aad9228dcbab1626bee5b3593b64.jpg: 640x640 7 Fillings, 2 impacted tooths, 9.1ms
+    image 210/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3438800000-jpg_png_jpg.rf.8753e1b3f9f074e447a997f10faffca9.jpg: 640x640 2 Crowns, 9 Fillings, 6 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 211/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3464760000-jpg_png_jpg.rf.e0275040713b7661e87e690ddba290fe.jpg: 640x640 4 Crowns, 12 Fillings, 1 Implant, 5 Root Canal Treatments, 4 impacted tooths, 9.2ms
+    image 212/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3466550000-jpg_png_jpg.rf.2807d1127104c271deed8e9c1d51dce7.jpg: 640x640 3 Crowns, 5 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 213/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3467130000-jpg_png_jpg.rf.e8e0e2d29b2f490b17a187381ad07869.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 214/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3468230000-jpg_png_jpg.rf.e03f5bcc25acbf3ea47df2cf1da17ffc.jpg: 640x640 4 Fillings, 2 Periapical lesions, 1 impacted tooth, 9.7ms
+    image 215/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3468390000-jpg_png_jpg.rf.738959832bb09688ae1afd3f507e425a.jpg: 640x640 2 Fillings, 4 impacted tooths, 11.3ms
+    image 216/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3468390000-jpg_png_jpg.rf.9f9d20b6552d2da8f80474b1d3550e8e.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.5ms
+    image 217/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3483570000-jpg_png_jpg.rf.d3ea1a9a652ac0fc3d4b979da3ea4ed3.jpg: 640x640 1 Crown, 9 Fillings, 2 impacted tooths, 9.2ms
+    image 218/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3493460000-jpg_png_jpg.rf.35dcd9441ccaaa7721ff1b2a8e426447.jpg: 640x640 1 Filling, 3 impacted tooths, 9.6ms
+    image 219/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3495090000-jpg_png_jpg.rf.5a24c27e8d5e47b73f3d576baae40d42.jpg: 640x640 2 Crowns, 5 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 220/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3496290000-jpg_png_jpg.rf.2a090af67dd7cc2809d1517b64904959.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.3ms
+    image 221/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3501200000-jpg_png_jpg.rf.4383fe51979ad50da47a9c46df52b3c1.jpg: 640x640 3 Crowns, 9 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 9.2ms
+    image 222/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3501200000-jpg_png_jpg.rf.f4889485436a243584300a6052b21225.jpg: 640x640 3 Crowns, 10 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 223/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3501440000-jpg_png_jpg.rf.6688bb9a17ce8545d05050ae18cebcf5.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.3ms
+    image 224/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3502500000-jpg_png_jpg.rf.7e5ac9e99497e16dce6b0e84fd033a19.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.2ms
+    image 225/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3514790000-jpg_png_jpg.rf.9b3807543ef06c91c6fd2b3eee77c77a.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 226/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3515850000-jpg_png_jpg.rf.feef38fa1a2d121a436070944d76e693.jpg: 640x640 1 Filling, 1 impacted tooth, 9.1ms
+    image 227/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3515900000-jpg_png_jpg.rf.ea780796f2f06970132efc347b41c76b.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 228/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3517580000-jpg_png_jpg.rf.45986520709697e97974838e3a53ea7c.jpg: 640x640 3 Crowns, 2 Implants, 4 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 229/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3530900000-jpg_png_jpg.rf.26b267f520aec20b09701f4ee199c33c.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 230/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3547e205-RAJABI_MINA_2020-06-09130704_jpg.rf.f517de41a962c5ecfe16e5892decdfae.jpg: 640x640 2 Crowns, 9 Fillings, 4 Root Canal Treatments, 9.1ms
+    image 231/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3549950000-jpg_png_jpg.rf.3a947badca3b1c1c8c28a6ca2d791d8b.jpg: 640x640 2 Fillings, 1 impacted tooth, 8.9ms
+    image 232/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3551010000-jpg_png_jpg.rf.c168b7696c5810ef56baa07730df77c1.jpg: 640x640 12 Fillings, 1 impacted tooth, 9.1ms
+    image 233/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3555350000-jpg_png_jpg.rf.cb81e8ce3cdfaebb4893166a7038fe94.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 234/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3558560000-jpg_png_jpg.rf.3e463d02877edd531bb2b87bc017a135.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 235/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3562360000-jpg_png_jpg.rf.0f9f0dfd8f9de10661f926ac846109b8.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 236/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3566970000-jpg_png_jpg.rf.9a21baa301c720c85c068ea8363bebfa.jpg: 640x640 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 237/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3569440000-jpg_png_jpg.rf.51d11bd8594d4be14da1cca8b5c4a363.jpg: 640x640 5 impacted tooths, 9.1ms
+    image 238/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3570080000-jpg_png_jpg.rf.3beff45566e3f546c0282e4bd1dc93da.jpg: 640x640 6 Fillings, 1 impacted tooth, 9.1ms
+    image 239/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3573400000-jpg_png_jpg.rf.73e67631ce44149025502a995f22fb68.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.2ms
+    image 240/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3573650000-jpg_png_jpg.rf.13c7444ce225de9dd33541de5b53afb3.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 241/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3573830000-jpg_png_jpg.rf.11fc774b00ede2f5c66fb791d5c9f2ea.jpg: 640x640 18 Fillings, 3 impacted tooths, 9.1ms
+    image 242/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3575580000-jpg_png_jpg.rf.0400220425c7af0028edcd5b70f50fb6.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 243/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3577050000-jpg_png_jpg.rf.46427a9765f014e56eb284f00d8e4bf3.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 244/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3578960000-jpg_png_jpg.rf.b0a27d1b08bb237fcb800d04cc935e10.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 245/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3579920000-jpg_png_jpg.rf.86526a344d751a2f948ef25efd54acff.jpg: 640x640 1 Crown, 1 Filling, 2 impacted tooths, 9.1ms
+    image 246/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3582190000-jpg_png_jpg.rf.9007f73e275c2c7350c51ed3c67be180.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 247/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3583840000-jpg_png_jpg.rf.826aace48846c6b73fe8b6756538fce1.jpg: 640x640 1 Crown, 5 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 248/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3583970000-jpg_png_jpg.rf.b6d7564147d58e96b4d8b00f04c93a6e.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 249/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3584710000-jpg_png_jpg.rf.5bfad685a1440bf4b61dbb9c444710ed.jpg: 640x640 1 Crown, 13 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 250/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585180000-jpg_png_jpg.rf.153019b68a43b572accbff3a77983b27.jpg: 640x640 8 Fillings, 3 impacted tooths, 9.2ms
+    image 251/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585260000-jpg_png_jpg.rf.5a3f216cd65eb6bd43ff38fa577c5b50.jpg: 640x640 12 Fillings, 4 impacted tooths, 9.1ms
+    image 252/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585260000-jpg_png_jpg.rf.a43e9823cf2aa7c14e79603f6dee062b.jpg: 640x640 12 Fillings, 5 impacted tooths, 9.1ms
+    image 253/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585260000-jpg_png_jpg.rf.fc53dc9e323af2e303c01bee3f087bba.jpg: 640x640 13 Fillings, 4 impacted tooths, 9.5ms
+    image 254/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585500000-jpg_png_jpg.rf.28b62d9b83f1a7d983db6885d2204c6a.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.1ms
+    image 255/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585550000-jpg_png_jpg.rf.7a141168b16df0b6c0f05d9d0cd401c7.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.4ms
+    image 256/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3587830000-jpg_png_jpg.rf.15dc42aa06dd302b2cfc5b72ba29754d.jpg: 640x640 1 Crown, 3 Fillings, 2 impacted tooths, 9.5ms
+    image 257/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3587930000-jpg_png_jpg.rf.ee7ef62e391af23320997a846ada5a6c.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.1ms
+    image 258/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3589950000-jpg_png_jpg.rf.9d8d8ddac8b06bf961bc1c15d9c0e36d.jpg: 640x640 2 impacted tooths, 9.8ms
+    image 259/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3590480000-jpg_png_jpg.rf.ebcf0ba7861943f338946e8d25700612.jpg: 640x640 1 Crown, 14 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.3ms
+    image 260/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3591840000-jpg_png_jpg.rf.f7abdf5c654ad7136156db3c16436ea2.jpg: 640x640 2 Crowns, 9 Fillings, 4 impacted tooths, 9.4ms
+    image 261/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3593310000-jpg_png_jpg.rf.61e1274dff18fc03e1b13595c07d5bc5.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.5ms
+    image 262/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3593900000-jpg_png_jpg.rf.955c6aae6a01473de547c95033a0bd87.jpg: 640x640 2 impacted tooths, 9.5ms
+    image 263/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3594140000-jpg_png_jpg.rf.93fd6a644e75bf1a44ee0dac68f1b09f.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 264/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3594480000-jpg_png_jpg.rf.ad2b15d7e67d1ab24e3308418e328a89.jpg: 640x640 4 Cariess, 1 Missing teeth, 1 Periapical lesion, 9.3ms
+    image 265/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3595820000-jpg_png_jpg.rf.8ef622fe57919d1d77fad2506808c315.jpg: 640x640 1 Crown, 1 Filling, 1 Periapical lesion, 3 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 266/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3600030000-jpg_png_jpg.rf.ca41d07318ad532394c526a18868395d.jpg: 640x640 2 Crowns, 8 Fillings, 5 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 267/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3600740000-jpg_png_jpg.rf.9d476a4ceb573498a09acbacf6e6b316.jpg: 640x640 1 Crown, 7 Fillings, 1 Periapical lesion, 2 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 268/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3600850000-jpg_png_jpg.rf.38543ac1b65723976834109c80a1eff7.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 269/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3601050000-jpg_png_jpg.rf.1f61dfbc4eaa2f2c2825e37fbb33ad48.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 1 impacted tooth, 9.0ms
+    image 270/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3601170000-jpg_png_jpg.rf.66630ead76128ee7923550803e3b8faf.jpg: 640x640 5 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 271/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3601540000-jpg_png_jpg.rf.afd11c76345c43761c51d2b586dcc98d.jpg: 640x640 16 Fillings, 3 impacted tooths, 9.2ms
+    image 272/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3601540000-jpg_png_jpg.rf.d088bbcb3e7392746316ae8ad577249f.jpg: 640x640 19 Fillings, 3 impacted tooths, 9.1ms
+    image 273/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3602880000-jpg_png_jpg.rf.9a8b3a43ea7e1b4d9c12d94feb0d2189.jpg: 640x640 7 Crowns, 3 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 274/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3603840000-jpg_png_jpg.rf.88100e1a8d9ea3eb5c033479d6bd69bb.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 4 impacted tooths, 9.1ms
+    image 275/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3603890000-jpg_png_jpg.rf.8ea807cbdcdbdb4eadf5b89767890205.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 276/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3604290000-jpg_png_jpg.rf.2babb1713c2a3bd33ec959cdceecf1ef.jpg: 640x640 6 Fillings, 5 impacted tooths, 9.1ms
+    image 277/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3604480000-jpg_png_jpg.rf.762e3b87ec3395d94b52d9ae6f039293.jpg: 640x640 1 Filling, 2 impacted tooths, 9.1ms
+    image 278/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3604510000-jpg_png_jpg.rf.ce7754d83a86ff2b55d2df8ccaed9973.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 279/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3606090000-jpg_png_jpg.rf.29558e056ed6e3a4512360d1c8aca6a0.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 280/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3606400000-jpg_png_jpg.rf.da980aa387bd54e1b3261bd17f47caec.jpg: 640x640 3 Crowns, 4 Fillings, 5 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 281/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3609480000-jpg_png_jpg.rf.cb5e6efb66bf537c164dd9b8b9600a4f.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 282/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3610150000-jpg_png_jpg.rf.f19086d782c5a9ca5458c676d8b1b98d.jpg: 640x640 8 Crowns, 1 Filling, 3 Implants, 2 impacted tooths, 9.1ms
+    image 283/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3610340000-jpg_png_jpg.rf.dd59c8e503de024f2014aa04a7c60937.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 284/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3611590000-jpg_png_jpg.rf.83d2b96421d09052d29bcbecddc212a3.jpg: 640x640 1 Caries, 1 Filling, 3 impacted tooths, 9.1ms
+    image 285/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3611630000-jpg_png_jpg.rf.ae8e07e7bd1b41cac6ce84f5d48071c6.jpg: 640x640 2 Crowns, 1 Filling, 4 impacted tooths, 9.3ms
+    image 286/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3612880000-jpg_png_jpg.rf.3472951cfee30f5f0f79823e529680bd.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 287/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3614190000-jpg_png_jpg.rf.b2c6e94daeab8d4dc66dda0a79249110.jpg: 640x640 1 Crown, 3 Fillings, 1 Missing teeth, 1 Periapical lesion, 7 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 288/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3615230000-jpg_png_jpg.rf.b17240cf50af6c9184dc53ff2ed10dde.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 289/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3615830000-jpg_png_jpg.rf.b0853f083077a1e3807cee32b07d0141.jpg: 640x640 6 Crowns, 3 Fillings, 1 Periapical lesion, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 290/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3616000000-jpg_png_jpg.rf.00b755f111c29d65e273e11e7eb2e070.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 291/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3616810000-jpg_png_jpg.rf.0f1f8077001587bcf8f05e1df9009c5e.jpg: 640x640 2 Cariess, 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 292/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3617270000-jpg_png_jpg.rf.8bfbc31993c5633d22a51b2affd2e021.jpg: 640x640 1 Filling, 3 impacted tooths, 9.2ms
+    image 293/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3617630000-jpg_png_jpg.rf.b9f3fe20ea97b6e8362ea43bbb80c01f.jpg: 640x640 6 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.2ms
+    image 294/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3617880000-jpg_png_jpg.rf.a293e314af4f7449f9f0fd1b9fffa5bd.jpg: 640x640 2 Crowns, 3 Fillings, 6 Root Canal Treatments, 1 impacted tooth, 10.4ms
+    image 295/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3620730000-jpg_png_jpg.rf.76f81512610edb0e0528c2a23622dfa9.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 8.9ms
+    image 296/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3621060000-jpg_png_jpg.rf.cb1b3d902f68157acb537e57a97b2c74.jpg: 640x640 2 Crowns, 2 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 8.9ms
+    image 297/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3621380000-jpg_png_jpg.rf.f0982fe3c95e6c1f1fc83a51998c6678.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 8.9ms
+    image 298/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3622770000-jpg_png_jpg.rf.a8d3df3bb695599fbc6cea60df554f35.jpg: 640x640 4 Crowns, 8 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 299/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3623320000-jpg_png_jpg.rf.66042c059669702a0159890dab32a53b.jpg: 640x640 3 Fillings, 3 impacted tooths, 8.9ms
+    image 300/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3625350000-jpg_png_jpg.rf.5fef51d1ee4d76361f6d64e90c7b604b.jpg: 640x640 4 Crowns, 7 Root Canal Treatments, 5 impacted tooths, 9.0ms
+    image 301/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3626480000-jpg_png_jpg.rf.42493c0d546219aa7f986a78b65ff499.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 302/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3626480000-jpg_png_jpg.rf.437e03241b408ed4dc0a46152a54e972.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 303/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3626930000-jpg_png_jpg.rf.f63285e6dfe9bcfac8c0867993c770bb.jpg: 640x640 1 Crown, 6 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 304/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3627570000-jpg_png_jpg.rf.fa0453f192d06300fc6f152235e7dd41.jpg: 640x640 1 impacted tooth, 9.6ms
+    image 305/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3627780000-jpg_png_jpg.rf.ffe9f21d9e28241d01174bff4a0a1a46.jpg: 640x640 1 Crown, 7 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 306/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3627850000-jpg_png_jpg.rf.11102267ec321ae062e96e1e036c4bf7.jpg: 640x640 1 Implant, 1 impacted tooth, 9.5ms
+    image 307/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3627850000-jpg_png_jpg.rf.5dfda937291471cd33d1a6ebbaf8c576.jpg: 640x640 1 Implant, 1 impacted tooth, 9.7ms
+    image 308/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3628420000-jpg_png_jpg.rf.ff83f0c94367973cfb208902a49b12dc.jpg: 640x640 2 Crowns, 7 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.5ms
+    image 309/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3628550000-jpg_png_jpg.rf.950174da5ff77c2d52e5a052c70c5ea1.jpg: 640x640 1 Filling, 4 impacted tooths, 9.4ms
+    image 310/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3628770000-jpg_png_jpg.rf.84d2f5933e82f8877dc06dac81eb8feb.jpg: 640x640 2 impacted tooths, 9.8ms
+    image 311/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3629500000-jpg_png_jpg.rf.92f2631ac399316195a3a66d2514266a.jpg: 640x640 1 Crown, 6 Fillings, 4 Root Canal Treatments, 4 impacted tooths, 9.4ms
+    image 312/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3629910000-jpg_png_jpg.rf.da4cf64c9bc1bb7e058438afa84bacc1.jpg: 640x640 1 Crown, 9 Fillings, 3 impacted tooths, 9.5ms
+    image 313/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3630190000-jpg_png_jpg.rf.f4c71970e69626e46edb2c20cbc09c40.jpg: 640x640 1 Crown, 11 Fillings, 4 Root Canal Treatments, 3 impacted tooths, 9.5ms
+    image 314/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3639420000-jpg_png_jpg.rf.d1a416e869f5dfc3ab4b1945aa1171be.jpg: 640x640 1 Filling, 1 Periapical lesion, 1 Root Canal Treatment, 1 impacted tooth, 9.8ms
+    image 315/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3642310000-jpg_png_jpg.rf.bbb72d53d98a8182462633f90b5539b6.jpg: 640x640 1 Filling, 2 impacted tooths, 9.3ms
+    image 316/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3642870000-jpg_png_jpg.rf.139dee88d7eef2bb9acdc306383cabee.jpg: 640x640 10 Fillings, 2 impacted tooths, 9.3ms
+    image 317/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3643990000-jpg_png_jpg.rf.ac3e2154ce7ba12a5adff129217cca00.jpg: 640x640 1 Crown, 5 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 318/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3644130000-jpg_png_jpg.rf.0ab16fdd1d2c77f4c21563519b3f8b4e.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.2ms
+    image 319/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3644130000-jpg_png_jpg.rf.460f5543a20712e0d3def1b51058e0ee.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.1ms
+    image 320/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3645420000-jpg_png_jpg.rf.8f341ff57b74f62c0c1407b43d0a091e.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 321/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3645870000-jpg_png_jpg.rf.c3981e2b2fd637c5fdfb1029d1c1d177.jpg: 640x640 1 impacted tooth, 9.1ms
+    image 322/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3646640000-jpg_png_jpg.rf.d7aee1c6a38e469c07f62062fae2c17e.jpg: 640x640 6 Fillings, 2 impacted tooths, 10.1ms
+    image 323/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3646900000-jpg_png_jpg.rf.1be1446050e743e2ad62dde29458db53.jpg: 640x640 2 impacted tooths, 9.7ms
+    image 324/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3647370000-jpg_png_jpg.rf.1ca29d8c36e1939565b7b988f5617c17.jpg: 640x640 3 impacted tooths, 9.7ms
+    image 325/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3648480000-jpg_png_jpg.rf.b7d05b7696ac3ead6b862cd55223c24b.jpg: 640x640 1 Caries, 1 Filling, 3 Root Canal Treatments, 4 impacted tooths, 9.7ms
+    image 326/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3648610000-jpg_png_jpg.rf.3e0cadf479b39fbe274891c43eb77f97.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.9ms
+    image 327/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3648720000-jpg_png_jpg.rf.f7b7d5b61425b88b41e445af91527299.jpg: 640x640 1 Filling, 6 impacted tooths, 10.1ms
+    image 328/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3649220000-jpg_png_jpg.rf.1ca3aab169e65edd8248d09170652f59.jpg: 640x640 1 Crown, 2 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.9ms
+    image 329/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3650740000-jpg_png_jpg.rf.de3ba2bcb42a6b692265709acc696ebb.jpg: 640x640 1 Filling, 1 Missing teeth, 2 Periapical lesions, 2 impacted tooths, 9.7ms
+    image 330/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3651990000-jpg_png_jpg.rf.41ea46b19782e51fd5952dc03deef5f3.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.6ms
+    image 331/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3652100000-jpg_png_jpg.rf.e7f2507d4b2db818e42a3f2eb0928dfd.jpg: 640x640 1 Crown, 5 Fillings, 1 impacted tooth, 9.4ms
+    image 332/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3653190000-jpg_png_jpg.rf.8b887037b5934b776bdb4dbda168b820.jpg: 640x640 1 Filling, 4 impacted tooths, 9.3ms
+    image 333/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3653190000-jpg_png_jpg.rf.c9f08f5d5ad6621b5d65116b0ca53898.jpg: 640x640 1 Filling, 4 impacted tooths, 9.5ms
+    image 334/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3653190000-jpg_png_jpg.rf.eac2c87cdc8da6f290f6200eb4f13009.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.2ms
+    image 335/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3653380000-jpg_png_jpg.rf.40616e3d30d7607da342114e889d7ae9.jpg: 640x640 11 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.4ms
+    image 336/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3653790000-jpg_png_jpg.rf.14f7f994ae9d15be38eebbfcf1fed75b.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 337/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3655230000-jpg_png_jpg.rf.4fa716495e0a6652f7a124e205661241.jpg: 640x640 1 Caries, 4 Fillings, 8 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 338/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3655870000-jpg_png_jpg.rf.eef31461099c681732bb4f52fb094f2d.jpg: 640x640 1 Filling, 4 impacted tooths, 9.4ms
+    image 339/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3655930000-jpg_png_jpg.rf.031f7171b0d4453bdd3c12b739f4d32b.jpg: 640x640 1 Filling, 2 impacted tooths, 9.4ms
+    image 340/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3656160000-jpg_png_jpg.rf.03b4958d788ca7f2fc322d8a5f482443.jpg: 640x640 4 impacted tooths, 9.4ms
+    image 341/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3656380000-jpg_png_jpg.rf.c7aedf46eaf05e8f0631c2fc49affab7.jpg: 640x640 11 Fillings, 4 impacted tooths, 9.4ms
+    image 342/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3656440000-jpg_png_jpg.rf.b2b7503a1837f43bf97ddc1a208e47d0.jpg: 640x640 1 Crown, 6 Fillings, 2 impacted tooths, 9.8ms
+    image 343/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3656890000-jpg_png_jpg.rf.23c562e0668a713046e99a40b6c8ea45.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.6ms
+    image 344/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3657100000-jpg_png_jpg.rf.fe35a7d79798ea8c30e2dd05f3ea6c93.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 345/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3657110000-jpg_png_jpg.rf.4b460633b2cd1f170c9beacc776a2a0f.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 346/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3658350000-jpg_png_jpg.rf.af59a6d5a46b7838f93caaf4644f20e9.jpg: 640x640 2 Fillings, 7 impacted tooths, 9.4ms
+    image 347/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3659170000-jpg_png_jpg.rf.890267e73758f86f4eb8f777adc4c902.jpg: 640x640 1 Caries, 2 Fillings, 3 impacted tooths, 9.2ms
+    image 348/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3659210000-jpg_png_jpg.rf.d09f794a11fcbe9b7f46f94018b449f5.jpg: 640x640 1 impacted tooth, 9.3ms
+    image 349/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3660210000-jpg_png_jpg.rf.f7a3cc38fb3eb33cc37e72aafeaec9bf.jpg: 640x640 1 Filling, 2 impacted tooths, 9.3ms
+    image 350/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3660470000-jpg_png_jpg.rf.3bcb4094d8ec91ce50906078bd56147a.jpg: 640x640 1 impacted tooth, 9.2ms
+    image 351/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3660780000-jpg_png_jpg.rf.6b39b1e03477f8820787abacb23541dd.jpg: 640x640 2 Crowns, 13 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 352/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3661080000-jpg_png_jpg.rf.ab97370394be83b2ad378d4ecdab84cd.jpg: 640x640 1 Caries, 1 Crown, 2 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 353/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3662910000-jpg_png_jpg.rf.9978646a347416bdc765a2938075b1ad.jpg: 640x640 1 Filling, 4 impacted tooths, 9.4ms
+    image 354/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3664540000-jpg_png_jpg.rf.420d23e5410bd47727316464f5c4ae16.jpg: 640x640 6 Crowns, 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 355/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3666400000-jpg_png_jpg.rf.dda3b70ba534906377e547806411542e.jpg: 640x640 9 Fillings, 2 impacted tooths, 9.2ms
+    image 356/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3667260000-jpg_png_jpg.rf.4178af3284f06b0d2fd328225fdf6d06.jpg: 640x640 1 Crown, 1 Missing teeth, 1 impacted tooth, 9.1ms
+    image 357/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3668250000-jpg_png_jpg.rf.376d87a7ce0cfb22df0253668294edd4.jpg: 640x640 5 Crowns, 1 Filling, 7 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 358/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3669430000-jpg_png_jpg.rf.ac4ece8accfb56ab8d36cd13c9c6bdf0.jpg: 640x640 1 Crown, 1 Filling, 2 impacted tooths, 9.3ms
+    image 359/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3669450000-jpg_png_jpg.rf.4bada958deb7b09cebafcf15f61e7dcb.jpg: 640x640 1 Crown, 4 Fillings, 2 impacted tooths, 9.3ms
+    image 360/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3669540000-jpg_png_jpg.rf.eeb42f7384e9642eca11ce9f63c631cb.jpg: 640x640 8 Fillings, 3 impacted tooths, 9.2ms
+    image 361/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3671780000-jpg_png_jpg.rf.b91cfdc1e20fb98a0cc4c87b8cefcc5e.jpg: 640x640 2 Crowns, 8 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 9.2ms
+    image 362/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3672230000-jpg_png_jpg.rf.5485e80959d6abd6b5a2dbdd7032527a.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 363/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3672910000-jpg_png_jpg.rf.35423c6a55d3bf39450614acdc397b64.jpg: 640x640 2 Crowns, 5 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 364/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3673540000-jpg_png_jpg.rf.d4b3ecf554b549b8d0789f41dfb8c3ce.jpg: 640x640 7 Fillings, 2 impacted tooths, 9.1ms
+    image 365/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3676210000-jpg_png_jpg.rf.a7dac709ff180a34658e1f831401a289.jpg: 640x640 5 Fillings, 2 impacted tooths, 9.1ms
+    image 366/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3676580000-jpg_png_jpg.rf.6861280d7fab0c6905efb48d712db8f2.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 367/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3678030000-jpg_png_jpg.rf.46a323096424697a00bfbb671d947a20.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 368/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3678030000-jpg_png_jpg.rf.6afa516d878c05b850446f43d1c85055.jpg: 640x640 1 Filling, 4 impacted tooths, 9.4ms
+    image 369/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3678990000-jpg_png_jpg.rf.20ad985b72487d9c0c062388b86f9a9d.jpg: 640x640 4 Crowns, 4 Root Canal Treatments, 2 impacted tooths, 9.6ms
+    image 370/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3681470000-jpg_png_jpg.rf.c4e241b98a6bb1ec7fea60ac09037f96.jpg: 640x640 1 impacted tooth, 9.1ms
+    image 371/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3681900000-jpg_png_jpg.rf.d5d7af43ca6eb7febf23d9beb89ef9e3.jpg: 640x640 4 Crowns, 10 Fillings, 1 Implant, 4 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 372/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3683190000-jpg_png_jpg.rf.f543e61da3232254e5dce288f568f236.jpg: 640x640 2 Crowns, 6 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 373/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3683910000-jpg_png_jpg.rf.a9e8aff9a82de864e4616ce7b3cbbb66.jpg: 640x640 1 Crown, 5 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 374/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3685830000-jpg_png_jpg.rf.2c94dd473e7ad3924d93b6e677f4488e.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.1ms
+    image 375/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3685830000-jpg_png_jpg.rf.32a76e087c20c4c5c205cfaedd8c1126.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.1ms
+    image 376/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3685970000-jpg_png_jpg.rf.5a112c60f6d35c86146c9851d881c6af.jpg: 640x640 6 Fillings, 3 impacted tooths, 9.1ms
+    image 377/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3686780000-jpg_png_jpg.rf.5bdacf97a2fd783ad2d55ebb713e86a3.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 378/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3689640000-jpg_png_jpg.rf.9809810a8709d2b58adde3dfa4b50a3e.jpg: 640x640 1 Crown, 9 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.8ms
+    image 379/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3695010000-jpg_png_jpg.rf.afa1756190dea09fb8d802158aeb3ad7.jpg: 640x640 2 Crowns, 2 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 380/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3697630000-jpg_png_jpg.rf.3e09d7e3e35b38ce38b9f90b4309a67f.jpg: 640x640 3 Fillings, 5 impacted tooths, 9.4ms
+    image 381/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3698160000-jpg_png_jpg.rf.c7708fb70cb260d2d0e47e4c3cbf4e50.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.2ms
+    image 382/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3713090000-jpg_png_jpg.rf.f50cf7d6bed84a531fe65618e13d6d41.jpg: 640x640 5 Crowns, 1 Filling, 4 Missing teeths, 6 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 383/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3713650000-jpg_png_jpg.rf.6d7d70eb9ae5621d61a7a14c9e8ce0c7.jpg: 640x640 1 Crown, 1 Filling, 2 Periapical lesions, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 384/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3717300000-jpg_png_jpg.rf.1b8394c871e96586264878620371c1aa.jpg: 640x640 1 Crown, 7 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.3ms
+    image 385/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3717940000-jpg_png_jpg.rf.b23e3118e9411e7c6da81e1b9af9dd32.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.5ms
+    image 386/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3720050000-jpg_png_jpg.rf.fed1e1e3a15c0e20e92cbadd9f5e8aee.jpg: 640x640 5 Crowns, 2 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 387/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3721080000-jpg_png_jpg.rf.db2d06f673d12bf19bc1d4ce22ff7651.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 9.4ms
+    image 388/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3721080000-jpg_png_jpg.rf.feff54dc1faec861c8e5ee73da0f2562.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 389/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3721920000-jpg_png_jpg.rf.98cb90432cbe60b35c13dc7bb4a24542.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.3ms
+    image 390/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3726250000-jpg_png_jpg.rf.b7d27f630ef1ae2a7bc61fadf3be1612.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.4ms
+    image 391/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3728210000-jpg_png_jpg.rf.c9c6b0f2721bc35e7aea5e2933750492.jpg: 640x640 1 Crown, 2 Fillings, 4 impacted tooths, 9.3ms
+    image 392/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3732830000-jpg_png_jpg.rf.9e788ab3333162c4a9d39ac1db7dcc81.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.3ms
+    image 393/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3734190000-jpg_png_jpg.rf.ba7580626b484894dcfb6520eededdeb.jpg: 640x640 5 Crowns, 3 Fillings, 1 Implant, 2 Missing teeths, 2 Root Canal Treatments, 1 impacted tooth, 9.5ms
+    image 394/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3734530000-jpg_png_jpg.rf.5b713c454e67350291169c0271888743.jpg: 640x640 2 Fillings, 1 Root Canal Treatment, 5 impacted tooths, 11.3ms
+    image 395/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3739180000-jpg_png_jpg.rf.d274bb5bfe8b2b11b830598f7c927840.jpg: 640x640 3 Missing teeths, 2 impacted tooths, 9.4ms
+    image 396/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3740180000-jpg_png_jpg.rf.2c29b2a84b852c89905a4a11f2df5a07.jpg: 640x640 3 Crowns, 5 Fillings, 1 Missing teeth, 4 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 397/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3741460000-jpg_png_jpg.rf.49728034717e9961161408570f0cdf8e.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 398/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3742060000-jpg_png_jpg.rf.a12d531741e33b74cfc02e0397c369ee.jpg: 640x640 1 impacted tooth, 9.4ms
+    image 399/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3743530000-jpg_png_jpg.rf.99127b18059c81910b8df0f24b26d1a8.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 400/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3744020000-jpg_png_jpg.rf.8ec4b45af4fe2a3cbb4193d62df1e6aa.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 401/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3747480000-jpg_png_jpg.rf.e835b76da27ec534c284fc997899db41.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 402/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3749600000-jpg_png_jpg.rf.9e929554ce36d1c2581244393df58feb.jpg: 640x640 3 Crowns, 2 Periapical lesions, 2 impacted tooths, 9.4ms
+    image 403/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3749600000-jpg_png_jpg.rf.d490f0c24aebcfb0fcd45bdb25824cc9.jpg: 640x640 3 Crowns, 2 Root Canal Treatments, 2 impacted tooths, 9.6ms
+    image 404/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3750330000-jpg_png_jpg.rf.32bceba658a975d50febc49c2c06c2c6.jpg: 640x640 1 impacted tooth, 9.6ms
+    image 405/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3754180000-jpg_png_jpg.rf.96c5d13b171e857de8e2bf6e4ea459f9.jpg: 640x640 1 Crown, 1 Filling, 2 Root Canal Treatments, 4 impacted tooths, 9.5ms
+    image 406/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3754430000-jpg_png_jpg.rf.0deee4687a7f90dbc06d49a68c28ed81.jpg: 640x640 4 impacted tooths, 9.6ms
+    image 407/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3754550000-jpg_png_jpg.rf.661cec4b7c3ef79b4d762345f65195e9.jpg: 640x640 3 Fillings, 1 Implant, 1 Missing teeth, 1 impacted tooth, 9.7ms
+    image 408/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3754910000-jpg_png_jpg.rf.62f2d898ecd0eb8e1efd1c8b7ba2b059.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.6ms
+    image 409/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3755630000-jpg_png_jpg.rf.f38eb233755c1b6e3ea601d8ae7cc9cc.jpg: 640x640 1 Periapical lesion, 2 impacted tooths, 9.6ms
+    image 410/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3758740000-jpg_png_jpg.rf.5a0394260c46a4f07ee50311586390f0.jpg: 640x640 1 Crown, 3 Fillings, 1 Missing teeth, 2 Root Canal Treatments, 4 impacted tooths, 9.6ms
+    image 411/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3759770000-jpg_png_jpg.rf.837cff816be9724732864889eed4cb5d.jpg: 640x640 1 impacted tooth, 9.5ms
+    image 412/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3761850000-jpg_png_jpg.rf.2f9eecccf315d880b9c2904460fb9bd9.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.5ms
+    image 413/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3765370000-jpg_png_jpg.rf.e7e8c2d6db6d473bd3454af08d7fb452.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.4ms
+    image 414/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3767260000-jpg_png_jpg.rf.66dd61ba5e2e76a0b3e7d6d2bae752a3.jpg: 640x640 1 Crown, 1 Filling, 2 Periapical lesions, 2 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 415/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3769220000-jpg_png_jpg.rf.95180172e8d42b13e722ea36240e78d2.jpg: 640x640 6 Fillings, 3 impacted tooths, 9.3ms
+    image 416/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3769990000-jpg_png_jpg.rf.5937d20fd612afea2e55c10d4e262381.jpg: 640x640 7 Fillings, 2 impacted tooths, 9.4ms
+    image 417/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3771480000-jpg_png_jpg.rf.6ed062c6b6a78ed7b0ea0fb08ed30655.jpg: 640x640 1 Crown, 2 Fillings, 4 Root Canal Treatments, 3 impacted tooths, 9.4ms
+    image 418/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3771480000-jpg_png_jpg.rf.76ce6efec8a088509deb47d01c9efb76.jpg: 640x640 1 Crown, 2 Fillings, 4 Root Canal Treatments, 3 impacted tooths, 9.4ms
+    image 419/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3771980000-jpg_png_jpg.rf.cc4385191684af04d96a8e9f482202eb.jpg: 640x640 1 Filling, 1 impacted tooth, 9.5ms
+    image 420/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3774160000-jpg_png_jpg.rf.9fcf7ac6064d337d19e4ef88b46f2796.jpg: 640x640 2 Crowns, 13 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 421/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3774330000-jpg_png_jpg.rf.06c7f787b76870a4ac8e65a20929bb80.jpg: 640x640 5 Fillings, 1 impacted tooth, 9.3ms
+    image 422/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3774480000-jpg_png_jpg.rf.c710d13c4f612b3936554f20a850cf3d.jpg: 640x640 1 Filling, 4 impacted tooths, 9.6ms
+    image 423/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3774920000-jpg_png_jpg.rf.9a908e4b0e674b33a0d90770427fa774.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 424/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3777360000-jpg_png_jpg.rf.ca128411306504634a16911e72dca06b.jpg: 640x640 4 impacted tooths, 9.4ms
+    image 425/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3778200000-jpg_png_jpg.rf.6977ab3a665390d37eaca1a203dbbb88.jpg: 640x640 9 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 426/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3779440000-jpg_png_jpg.rf.2a8f04a9c6c69c57e09fd0bb0a6b020b.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.4ms
+    image 427/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3780210000-jpg_png_jpg.rf.e6430ad38b5171682554c832724b65e0.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 428/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3780420000-jpg_png_jpg.rf.df9f91384ad40c519b9cc13279a75d20.jpg: 640x640 2 Crowns, 1 Filling, 4 impacted tooths, 9.2ms
+    image 429/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3781290000-jpg_png_jpg.rf.e8dfed6861412c63c90b65fbb0828326.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 430/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3784290000-jpg_png_jpg.rf.de068046fef1d92487001ad81a0151f7.jpg: 640x640 9 Fillings, 3 impacted tooths, 9.1ms
+    image 431/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3784770000-jpg_png_jpg.rf.13ded0557fc1b69b5e9dacf8e20ccfca.jpg: 640x640 5 Crowns, 6 Fillings, 9 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 432/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3785910000-jpg_png_jpg.rf.4201d154498375c67e11a4c4ca4ebf4e.jpg: 640x640 5 impacted tooths, 9.2ms
+    image 433/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3787880000-jpg_png_jpg.rf.eb6f76ab6d441ab18838037a2ab46dc5.jpg: 640x640 7 Fillings, 3 impacted tooths, 9.2ms
+    image 434/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3788090000-jpg_png_jpg.rf.d599034f3b49c5cd624ff503ec9654e5.jpg: 640x640 7 Fillings, 2 impacted tooths, 9.1ms
+    image 435/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3788230000-jpg_png_jpg.rf.0702408bb82c181ede8b14c97e643502.jpg: 640x640 5 impacted tooths, 9.1ms
+    image 436/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3788660000-jpg_png_jpg.rf.28a4e85061933f7291a793e25d65b0f4.jpg: 640x640 1 Crown, 1 Filling, 5 impacted tooths, 9.2ms
+    image 437/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3789170000-jpg_png_jpg.rf.3a9d22cad90189afa42b9dd56cc13958.jpg: 640x640 5 impacted tooths, 9.1ms
+    image 438/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3793410000-jpg_png_jpg.rf.083d6ccd98025b8be139d52ff910593a.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.2ms
+    image 439/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3793550000-jpg_png_jpg.rf.65c6dca971754f62c672e5d73a90f63b.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 440/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3794250000-jpg_png_jpg.rf.257720e811c415d84c0cdd6568b94cea.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 441/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3795520000-jpg_png_jpg.rf.5284e41ae5be22b1b275f989af9d26d4.jpg: 640x640 1 Filling, 4 impacted tooths, 9.3ms
+    image 442/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3796060000-jpg_png_jpg.rf.29afe9a481304f0253c9172cd44128f4.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 443/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3796250000-jpg_png_jpg.rf.69bd25a6317fd9ca9040003afd6b722c.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.1ms
+    image 444/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3796480000-jpg_png_jpg.rf.a7b02e232528cdaf9a806308251e7b27.jpg: 640x640 1 Crown, 1 Filling, 2 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 445/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3799970000-jpg_png_jpg.rf.bda44c5ccde07595b195127139c4dab1.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 446/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/37a867b3-Nazari_Akram_2022-06-12141514_jpg.rf.4e447ca306968f77538ecc5cb2beaeca.jpg: 640x640 1 Caries, 12 Fillings, 2 Missing teeths, 13 Root Canal Treatments, 9.3ms
+    image 447/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3800200000-jpg_png_jpg.rf.252bd4c965415ae5df325db83ce395a1.jpg: 640x640 1 Periapical lesion, 3 impacted tooths, 9.2ms
+    image 448/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3800450000-jpg_png_jpg.rf.b16c183805fd9690d784595a55985fdc.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 449/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3800450000-jpg_png_jpg.rf.e4e3be375f62a04052abd5da228bd9e5.jpg: 640x640 1 Filling, 2 impacted tooths, 9.1ms
+    image 450/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3800660000-jpg_png_jpg.rf.8ee07e24ddcc8a21e13d5f222bdaefe9.jpg: 640x640 1 Crown, 4 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.0ms
+    image 451/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3800900000-jpg_png_jpg.rf.d779a9138de6c73e85e4e7206724ac16.jpg: 640x640 1 impacted tooth, 9.0ms
+    image 452/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3803030000-jpg_png_jpg.rf.7818b9475fe39a565571059404b34fe8.jpg: 640x640 2 Fillings, 1 Missing teeth, 2 impacted tooths, 10.0ms
+    image 453/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3803650000-jpg_png_jpg.rf.e827a3929954c23c5bf11b1a4353f4b4.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 454/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3804750000-jpg_png_jpg.rf.8b3d9e78dd9e6e2763d5cc535143feca.jpg: 640x640 7 Crowns, 8 Fillings, 13 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 455/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3805350000-jpg_png_jpg.rf.9ee98d7bc93aaaec27fc62c7f2db8f16.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.2ms
+    image 456/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3805570000-jpg_png_jpg.rf.281e3ef07a81fc83cd69f4d1b0dd4eec.jpg: 640x640 1 Crown, 15 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 457/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3807040000-jpg_png_jpg.rf.5a51919c7771c8e9bf3e73677267713e.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 458/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3807100000-jpg_png_jpg.rf.1ba98025fd91c8d08e481ec425213514.jpg: 640x640 1 Crown, 4 Fillings, 1 Implant, 2 Periapical lesions, 4 Root Canal Treatments, 9.1ms
+    image 459/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3808690000-jpg_png_jpg.rf.c6a8c879e856a0f3ead44005ddd4b55d.jpg: 640x640 1 Crown, 10 Fillings, 1 impacted tooth, 9.2ms
+    image 460/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3809790000-jpg_png_jpg.rf.1e0cc9d6ea440cd2066269cfbff34c5a.jpg: 640x640 9 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 10.0ms
+    image 461/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3811150000-jpg_png_jpg.rf.8a6f03e33f9bb950fa0d7407a848348d.jpg: 640x640 1 Crown, 8 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 10.6ms
+    image 462/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3811890000-jpg_png_jpg.rf.5c76fae3f38e0495b6d81f0005af1cee.jpg: 640x640 13 Fillings, 4 impacted tooths, 10.5ms
+    image 463/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3812230000-jpg_png_jpg.rf.4ad011bde3b08081d7377fbe17018b2a.jpg: 640x640 3 Crowns, 9 Fillings, 2 Implants, 2 Root Canal Treatments, 2 impacted tooths, 10.8ms
+    image 464/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3813810000-jpg_png_jpg.rf.70b36dde7ea64c9e72753011e02ea19e.jpg: 640x640 2 Cariess, 1 Crown, 3 Root Canal Treatments, 2 impacted tooths, 10.8ms
+    image 465/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3813810000-jpg_png_jpg.rf.f53acba42e2133e74259a98fef2d9f44.jpg: 640x640 1 Caries, 1 Crown, 4 Root Canal Treatments, 2 impacted tooths, 9.6ms
+    image 466/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3814350000-jpg_png_jpg.rf.b3380e1b932aa3f616ebf2bcf6a6f0b5.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 467/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3815560000-jpg_png_jpg.rf.c76586ec62052b9c179dcd58c72bef5f.jpg: 640x640 2 Crowns, 2 Root Canal Treatments, 1 impacted tooth, 9.5ms
+    image 468/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3816260000-jpg_png_jpg.rf.4073b478b6b3d1a81aa0838f8c5765d2.jpg: 640x640 3 Crowns, 8 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 9.3ms
+    image 469/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3817070000-jpg_png_jpg.rf.a4a24dc0fbfdd79f6b54a0a09b6e4550.jpg: 640x640 1 Filling, 2 impacted tooths, 9.6ms
+    image 470/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3821600000-jpg_png_jpg.rf.3fa81c43aa0ff7afd2911bb1c619bb6b.jpg: 640x640 4 Crowns, 4 Fillings, 5 Root Canal Treatments, 3 impacted tooths, 9.5ms
+    image 471/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3821930000-jpg_png_jpg.rf.a23248d9d665cbc39ab6ddf3d95089e1.jpg: 640x640 15 Fillings, 4 impacted tooths, 9.8ms
+    image 472/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3821930000-jpg_png_jpg.rf.e0c100eb4a4b6ed2c22727c6c3aa9524.jpg: 640x640 20 Fillings, 4 impacted tooths, 9.7ms
+    image 473/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3822000000-jpg_png_jpg.rf.58e49475f178b3e6a13c11a96ed04920.jpg: 640x640 2 Crowns, 1 impacted tooth, 9.5ms
+    image 474/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3823660000-jpg_png_jpg.rf.3d5b491ae3508350cc81015de5deca46.jpg: 640x640 1 Filling, 4 impacted tooths, 9.4ms
+    image 475/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3823860000-jpg_png_jpg.rf.bc69aa352690391f695fd729502c38cd.jpg: 640x640 2 Crowns, 2 Fillings, 3 Root Canal Treatments, 6 impacted tooths, 9.5ms
+    image 476/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3825900000-jpg_png_jpg.rf.6f6bd47b597d3c706c6bd42910e18900.jpg: 640x640 5 Fillings, 2 impacted tooths, 10.2ms
+    image 477/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3827860000-jpg_png_jpg.rf.35d8fea205e012fad653659155cfe7ca.jpg: 640x640 1 Crown, 3 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.4ms
+    image 478/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3827860000-jpg_png_jpg.rf.d8602942fd23a3619952c0a14364cf30.jpg: 640x640 1 Crown, 3 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.3ms
+    image 479/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3831620000-jpg_png_jpg.rf.17d8fa7194ed7306950a02c9cb4ad389.jpg: 640x640 3 Fillings, 5 impacted tooths, 9.8ms
+    image 480/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3832310000-jpg_png_jpg.rf.6ab4d7a6c214d6a33b2e818e256b3ae7.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.3ms
+    image 481/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3834570000-jpg_png_jpg.rf.93f30d24c76387eb657e0627f091fa07.jpg: 640x640 4 Crowns, 7 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.7ms
+    image 482/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3836370000-jpg_png_jpg.rf.05a602d41f4eed1d11c73a73ddfb71cf.jpg: 640x640 1 impacted tooth, 9.2ms
+    image 483/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3836710000-jpg_png_jpg.rf.d1b2076d4f233348966429d9e895a1bb.jpg: 640x640 2 Crowns, 5 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 484/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3837170000-jpg_png_jpg.rf.36630422d36d332fc717d9805891d28b.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 485/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3837430000-jpg_png_jpg.rf.10e90da96608c5bf88cb8147013583e2.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.3ms
+    image 486/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3838410000-jpg_png_jpg.rf.34c4323559f209e0cb01aabb27f77346.jpg: 640x640 1 Crown, 2 Fillings, 2 Periapical lesions, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 487/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3838820000-jpg_png_jpg.rf.3d20c761030fde21b82ec96112ac4045.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.5ms
+    image 488/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3839030000-jpg_png_jpg.rf.9dff8a98220873ad1dc387aa24bacc03.jpg: 640x640 2 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 9.8ms
+    image 489/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3841080000-jpg_png_jpg.rf.1a71190b4e441f5f9b29c2bc3fc219a8.jpg: 640x640 4 impacted tooths, 10.2ms
+    image 490/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3842370000-jpg_png_jpg.rf.f54ea5cd286cdad889f7e4700b6dab9e.jpg: 640x640 7 Fillings, 4 impacted tooths, 10.2ms
+    image 491/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3843120000-jpg_png_jpg.rf.6a87b67b6345b580b78552c0974e4b57.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 492/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3843260000-jpg_png_jpg.rf.d48d40706d178279c1603e53b839ba8f.jpg: 640x640 1 Filling, 3 impacted tooths, 9.6ms
+    image 493/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3843510000-jpg_png_jpg.rf.3c5f112fc6a5a41ec2e9316f01cf589d.jpg: 640x640 3 impacted tooths, 9.7ms
+    image 494/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3843510000-jpg_png_jpg.rf.6052acb5430fd2068ad121fd53466b40.jpg: 640x640 3 impacted tooths, 9.7ms
+    image 495/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3844230000-jpg_png_jpg.rf.fad689e52ed4f0b31bed98ed7180eac5.jpg: 640x640 3 impacted tooths, 9.5ms
+    image 496/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3845130000-jpg_png_jpg.rf.cebd0effa7fa88b3152529b556172017.jpg: 640x640 2 Crowns, 3 Fillings, 4 impacted tooths, 9.1ms
+    image 497/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3846070000-jpg_png_jpg.rf.e1155dd8bd35385b06ab0e279725270e.jpg: 640x640 2 Crowns, 2 Fillings, 1 impacted tooth, 9.4ms
+    image 498/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3847840000-jpg_png_jpg.rf.0466a48d463e934d1bd4cf75b35fd739.jpg: 640x640 1 Crown, 8 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 499/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3847890000-jpg_png_jpg.rf.ab26cc5027654a54509facb513ec5aa7.jpg: 640x640 4 Crowns, 6 Fillings, 4 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 500/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3849430000-jpg_png_jpg.rf.adcfaf8350e56f5e0745d51d89d8ad21.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.1ms
+    image 501/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3850130000-jpg_png_jpg.rf.79b139f0b0aafb3ce85e23d33da1629f.jpg: 640x640 1 impacted tooth, 9.1ms
+    image 502/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3852420000-jpg_png_jpg.rf.0b2ee609848fd5c5dfc2b4fb4819d63f.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.2ms
+    image 503/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3852420000-jpg_png_jpg.rf.fda98a7ebc140c80bf08cb65c30a86d1.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.1ms
+    image 504/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3852980000-jpg_png_jpg.rf.96370433d6535200ee2cddecc3be5cfe.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 505/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3853140000-jpg_png_jpg.rf.6cd86f0f679dc0ff3335e839c70e47aa.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 506/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3853140000-jpg_png_jpg.rf.ac2db6d7cd76231b205ca8d8e5fd84d5.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 507/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3854240000-jpg_png_jpg.rf.1645ae106e459bbf9e0f8dbba4895e0e.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 508/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3855680000-jpg_png_jpg.rf.79f052c1ebd13a1585222c2d5202d91e.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 9.4ms
+    image 509/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3855760000-jpg_png_jpg.rf.72ef9d310367b11b1ef2c5da26d57bcd.jpg: 640x640 7 Crowns, 4 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 510/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3855760000-jpg_png_jpg.rf.fe99ca21fb52b47b124bf82f15722bcb.jpg: 640x640 9 Crowns, 7 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 511/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3856440000-jpg_png_jpg.rf.d30c15d2a907c54677ca12ab31a31df0.jpg: 640x640 1 Crown, 8 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.5ms
+    image 512/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3857770000-jpg_png_jpg.rf.e7bd2e667c272a7d8f85bc2f4f935331.jpg: 640x640 6 Crowns, 1 Filling, 5 Root Canal Treatments, 5 impacted tooths, 9.6ms
+    image 513/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3857890000-jpg_png_jpg.rf.2ca6051ce8f884d07e5e358a451ba8bb.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.3ms
+    image 514/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3857890000-jpg_png_jpg.rf.b709c761f03554e1bc59c5101c660a9e.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.1ms
+    image 515/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3858950000-jpg_png_jpg.rf.5aabc934385f22611cfa7c7c27a8f44c.jpg: 640x640 1 Periapical lesion, 4 impacted tooths, 9.1ms
+    image 516/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3859200000-jpg_png_jpg.rf.b12639646614c3041c3dc802e1d0514e.jpg: 640x640 2 Crowns, 5 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 517/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3861240000-jpg_png_jpg.rf.37e9b0ceafa72369de47b87ed4d20807.jpg: 640x640 1 Crown, 3 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.4ms
+    image 518/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3862680000-jpg_png_jpg.rf.8c280100bfcad780d6502da7051239cf.jpg: 640x640 2 Crowns, 5 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 519/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3862750000-jpg_png_jpg.rf.7d7e2277e793f28ec36777a8d37fa31e.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 520/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3862750000-jpg_png_jpg.rf.85531d12c00d02debfdda6b8e44f90b7.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 521/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3864160000-jpg_png_jpg.rf.cb59ec5b24be950a6b61dc264e734167.jpg: 640x640 3 Fillings, 5 impacted tooths, 9.3ms
+    image 522/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3864360000-jpg_png_jpg.rf.876377f2c8621422383a754128208857.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 523/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3864460000-jpg_png_jpg.rf.49f7c4245bc18de2869ab159f45bbb33.jpg: 640x640 5 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 524/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3864860000-jpg_png_jpg.rf.87985d7c94ecce494c7925dccfe716b1.jpg: 640x640 1 Crown, 11 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.1ms
+    image 525/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3865150000-jpg_png_jpg.rf.433070afe75c86c0dba7fd73473b54cb.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 526/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3867620000-jpg_png_jpg.rf.d5c1628a42052f67c5ebe801f9ab9846.jpg: 640x640 5 impacted tooths, 9.3ms
+    image 527/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3867880000-jpg_png_jpg.rf.38800153d5e8def4e68623a15347b436.jpg: 640x640 5 Fillings, 2 impacted tooths, 9.0ms
+    image 528/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3868640000-jpg_png_jpg.rf.98270070cd67e0111e88175b6c0e0fb9.jpg: 640x640 4 Crowns, 2 Fillings, 9 Root Canal Treatments, 4 impacted tooths, 9.2ms
+    image 529/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3870150000-jpg_png_jpg.rf.07886557503ea20a3cb866ca83a0813e.jpg: 640x640 3 Crowns, 1 Filling, 2 Root Canal Treatments, 4 impacted tooths, 11.0ms
+    image 530/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/387070000-jpg_png_jpg.rf.c9781a1dd1ce8619c22721eb6f406d80.jpg: 640x640 12 Fillings, 4 impacted tooths, 9.4ms
+    image 531/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3871160000-jpg_png_jpg.rf.32af98f2203c3ac88a22ab83ee377867.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 532/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3871650000-jpg_png_jpg.rf.68845650af08d4c762ec4a56dc52f849.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.5ms
+    image 533/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3872580000-jpg_png_jpg.rf.f570a1d67581aa8714ced9ff54053d92.jpg: 640x640 13 Fillings, 3 impacted tooths, 9.9ms
+    image 534/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3872820000-jpg_png_jpg.rf.2e97453d7c0db435d68373ef8f239c08.jpg: 640x640 4 Crowns, 5 Fillings, 7 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 535/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3873550000-jpg_png_jpg.rf.7692452e934113a62c20b6244d50b600.jpg: 640x640 3 impacted tooths, 9.5ms
+    image 536/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3873850000-jpg_png_jpg.rf.260b51646521b179cf9d0b38a88757c9.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 537/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3874030000-jpg_png_jpg.rf.bf9cd20766430db4347123f524ae5d64.jpg: 640x640 1 Filling, 3 impacted tooths, 9.7ms
+    image 538/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3874230000-jpg_png_jpg.rf.8a9ec2556817101270ba79efa196c640.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 539/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3874540000-jpg_png_jpg.rf.f5c3d18c8b966aed7a59825a5065ea8d.jpg: 640x640 6 Fillings, 2 impacted tooths, 10.7ms
+    image 540/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3875100000-jpg_png_jpg.rf.3d9d5c0077151e9f0523db78147b7731.jpg: 640x640 3 Cariess, 2 impacted tooths, 9.4ms
+    image 541/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3876720000-jpg_png_jpg.rf.3382ece8983214cdd01224e38d84b91f.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 542/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3876720000-jpg_png_jpg.rf.718bf82fc9e5ab1f3b14bfeeab0370b5.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 543/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3876730000-jpg_png_jpg.rf.8750cd5005d9a483c71a8e58d45f98d4.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 544/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3876820000-jpg_png_jpg.rf.9154d540d435d0a384f01fbfd4226bc7.jpg: 640x640 4 Crowns, 7 Fillings, 7 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 545/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3876880000-jpg_png_jpg.rf.cfe2d6bf46880d837f9955f1618848a0.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.3ms
+    image 546/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3878720000-jpg_png_jpg.rf.faec533dde4d77b8754221fe4b1fa6ed.jpg: 640x640 4 impacted tooths, 9.4ms
+    image 547/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3879150000-jpg_png_jpg.rf.6926ad9b8b68044365bdd269991de392.jpg: 640x640 1 impacted tooth, 9.7ms
+    image 548/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3879640000-jpg_png_jpg.rf.092ee31fc0024cbeca5e36f54ffe8d80.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.4ms
+    image 549/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3879890000-jpg_png_jpg.rf.503242a84d75874fdf54e6f7cd19658b.jpg: 640x640 3 impacted tooths, 9.5ms
+    image 550/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3880750000-jpg_png_jpg.rf.08e652dad320efaeb632754e068a4944.jpg: 640x640 1 Crown, 3 impacted tooths, 9.2ms
+    image 551/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3882320000-jpg_png_jpg.rf.1e79d82686201917245f6861405d9c9c.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.3ms
+    image 552/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3882400000-jpg_png_jpg.rf.8982297e86ff0e0fd1da4c2cfa641538.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 553/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3883270000-jpg_png_jpg.rf.6317aed87ec17b9441915606fbe91d05.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 9.3ms
+    image 554/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3883270000-jpg_png_jpg.rf.bd3fe8bf8c3c80da279d976296532c98.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 555/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3883310000-jpg_png_jpg.rf.e84b5f614fa17be597c6b817004f2ca6.jpg: 640x640 4 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.4ms
+    image 556/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3885940000-jpg_png_jpg.rf.fe0459fadb8c25302fb07acdeb6945ec.jpg: 640x640 1 Caries, 7 Fillings, 2 impacted tooths, 9.6ms
+    image 557/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3886390000-jpg_png_jpg.rf.38578b5eefc7deaef9f17cc6b7aed3b2.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.8ms
+    image 558/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3886430000-jpg_png_jpg.rf.c5fdc10f564dc5eded904c39d14936e4.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.9ms
+    image 559/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3886500000-jpg_png_jpg.rf.3276dda7d2fefac15f1ea2c5718f5d9d.jpg: 640x640 1 Caries, 2 impacted tooths, 9.3ms
+    image 560/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3886500000-jpg_png_jpg.rf.33bc25a0e9fbb465309051bcb3363088.jpg: 640x640 1 Caries, 2 impacted tooths, 9.7ms
+    image 561/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3888290000-jpg_png_jpg.rf.140965ba7cfc4b3e59f07d828be6edfc.jpg: 640x640 1 Crown, 1 Filling, 3 impacted tooths, 9.3ms
+    image 562/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3888290000-jpg_png_jpg.rf.57d8b4e48cfbd24633488e785ee4a5d4.jpg: 640x640 1 Crown, 1 Filling, 3 impacted tooths, 9.4ms
+    image 563/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3888410000-jpg_png_jpg.rf.9db5161a6943dc7be3f4530384b443db.jpg: 640x640 8 Fillings, 2 impacted tooths, 10.1ms
+    image 564/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3889540000-jpg_png_jpg.rf.d127d421e5ebfe63a3cdaa9db3c2493f.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.6ms
+    image 565/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3889550000-jpg_png_jpg.rf.0d59149215d8d9ac6b5938bd0dbfff9e.jpg: 640x640 4 Crowns, 8 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 3 impacted tooths, 9.4ms
+    image 566/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3889750000-jpg_png_jpg.rf.80655403debf6be9f0a6a8976742e47e.jpg: 640x640 2 Crowns, 1 Implant, 2 Root Canal Treatments, 2 impacted tooths, 9.6ms
+    image 567/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3891790000-jpg_png_jpg.rf.abe02edb817130dacd76a111cc2ae154.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 568/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3892030000-jpg_png_jpg.rf.d0d29bba590c65819f50f5df720a43be.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 569/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/389240000-jpg_png_jpg.rf.db0a46f3184f9257f8e21e669db3c855.jpg: 640x640 5 Fillings, 2 impacted tooths, 9.5ms
+    image 570/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3892580000-jpg_png_jpg.rf.ee62baf4e521c6d042de918274d4b20f.jpg: 640x640 9 Fillings, 2 impacted tooths, 9.6ms
+    image 571/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3892790000-jpg_png_jpg.rf.ca10f814c1c884b195db87307f55a7f0.jpg: 640x640 5 Fillings, 3 impacted tooths, 10.0ms
+    image 572/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3893290000-jpg_png_jpg.rf.b9893acd227acc4d8ced87f96d1ff61c.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 573/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3893960000-jpg_png_jpg.rf.d849b71e9e3e021e13347138bbfdaf7b.jpg: 640x640 2 Fillings, 4 impacted tooths, 10.6ms
+    image 574/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3895290000-jpg_png_jpg.rf.92f99db62cf3a95853235a06ee20e236.jpg: 640x640 1 Crown, 2 impacted tooths, 9.2ms
+    image 575/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3895460000-jpg_png_jpg.rf.515e6de6e468c6a3ea94c6e53f0d6ae0.jpg: 640x640 1 Caries, 9.2ms
+    image 576/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3895880000-jpg_png_jpg.rf.73fa13a79c167ed2dfdc6a9195193771.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.1ms
+    image 577/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3896060000-jpg_png_jpg.rf.8c15c031c1deb3435ad8a75aa17996cc.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.1ms
+    image 578/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3896540000-jpg_png_jpg.rf.b95c5334a98ae49ce49aba18d6e10797.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 579/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3897390000-jpg_png_jpg.rf.dd5ecde32b2bf660b030049f5a1c5d5a.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.1ms
+    image 580/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3897490000-jpg_png_jpg.rf.fea81760c19d848cda8163f9890fa73b.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 581/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/38c4e216-Norozi_syavazan_Atefeh_2022-06-12142626_jpg.rf.37db5410bf0a7682daf3b1995c10e6e4.jpg: 640x640 9 Cariess, 9.3ms
+    image 582/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3900700000-jpg_png_jpg.rf.e1e489bc174b5dc2b1ce8e8a06401fa3.jpg: 640x640 7 Fillings, 1 impacted tooth, 9.2ms
+    image 583/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3901320000-jpg_png_jpg.rf.b1adafa90390ac59ddaf5f84db4acd4b.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 584/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3905600000-jpg_png_jpg.rf.b047a01fd3110ca3458250ac82291664.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 585/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3905800000-jpg_png_jpg.rf.5d2f917b8bbf41e274a78d12450ee536.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.6ms
+    image 586/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3906000000-jpg_png_jpg.rf.4240c69725ab3c32be8df481213ce37c.jpg: 640x640 1 Crown, 7 Fillings, 4 impacted tooths, 9.2ms
+    image 587/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3907600000-jpg_png_jpg.rf.015f5f2011ce9b0f29dc6915250fdad4.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 588/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3907600000-jpg_png_jpg.rf.d922aa59851d991db7974e1b7d79af99.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 589/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3908490000-jpg_png_jpg.rf.2afac031e8f273a4149570d4150449ee.jpg: 640x640 8 Crowns, 9 Fillings, 8 Root Canal Treatments, 4 impacted tooths, 9.2ms
+    image 590/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3908970000-jpg_png_jpg.rf.b81f6b7de637c4a0e85f9a044db05fd8.jpg: 640x640 3 Crowns, 5 Fillings, 1 Implant, 1 impacted tooth, 9.1ms
+    image 591/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3908990000-jpg_png_jpg.rf.4ba3135ee04534988d631155ed1466a4.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 592/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3909430000-jpg_png_jpg.rf.4e06bc9943c68b3c71dd5216ca2fe202.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 593/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3909450000-jpg_png_jpg.rf.22ec9b0a8ed38ecf65bc2604bf418c65.jpg: 640x640 1 Filling, 1 Missing teeth, 2 impacted tooths, 9.0ms
+    image 594/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3910690000-jpg_png_jpg.rf.94b47f1965575bdb9857562af3fb6c6d.jpg: 640x640 2 Crowns, 3 Fillings, 2 Missing teeths, 5 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 595/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3911160000-jpg_png_jpg.rf.a1857b5f17cfe7681ed9af7f9b8ad669.jpg: 640x640 2 Crowns, 15 Fillings, 7 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 596/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3911370000-jpg_png_jpg.rf.9dc1f4aac4cfaad463f92345bd94ebe1.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 597/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3911990000-jpg_png_jpg.rf.80488c3d4085b4c12fcfab56e705960e.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.0ms
+    image 598/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3912400000-jpg_png_jpg.rf.169d471048639a73cf723987c0c6ee3e.jpg: 640x640 2 Crowns, 5 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 599/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3912480000-jpg_png_jpg.rf.2062e02ecede27bda72d7949c1692f9f.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.1ms
+    image 600/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3913360000-jpg_png_jpg.rf.12d10c6c042f793acbb12fcdfaaa98e0.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 601/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3913820000-jpg_png_jpg.rf.278cdc9e33a1d8cd301aa0e689c3af68.jpg: 640x640 5 Crowns, 1 Missing teeth, 3 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 602/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3914170000-jpg_png_jpg.rf.c4fc7db297f6bf58e0de0e18acbf27fb.jpg: 640x640 4 Crowns, 1 Filling, 1 Implant, 3 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 603/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3914220000-jpg_png_jpg.rf.9598d29cb997cfa5f92b1309c9280373.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.0ms
+    image 604/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3915320000-jpg_png_jpg.rf.798955895fce614453756f576d61aabb.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 605/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3915600000-jpg_png_jpg.rf.cb52fae65be430298a158edd888924aa.jpg: 640x640 2 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 606/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3915910000-jpg_png_jpg.rf.441650b2dd5782d08e5d12d2e25ffa60.jpg: 640x640 15 Fillings, 4 impacted tooths, 9.1ms
+    image 607/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3916120000-jpg_png_jpg.rf.72a49a4fd4ddac5316fac224bb9d8ba0.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 608/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3916120000-jpg_png_jpg.rf.d10d3fb34af87d75d7ceb42d56617ef1.jpg: 640x640 2 impacted tooths, 9.5ms
+    image 609/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3917540000-jpg_png_jpg.rf.65f137b0082bed8045bf034868d1a430.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 610/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3917770000-jpg_png_jpg.rf.111d54014b75d28aa7781a4440a2c850.jpg: 640x640 5 Crowns, 3 Fillings, 8 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 611/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3917980000-jpg_png_jpg.rf.d8305c7e154ec9bbec35f5b0b339f3ba.jpg: 640x640 1 Crown, 5 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.1ms
+    image 612/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3918480000-jpg_png_jpg.rf.69bced2b84a348d3aa99cf5daba4fff0.jpg: 640x640 1 Missing teeth, 3 impacted tooths, 9.2ms
+    image 613/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3918700000-jpg_png_jpg.rf.87aed63865b113d446ca2e0d99b9e833.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.0ms
+    image 614/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3918990000-jpg_png_jpg.rf.48ad4cece15ada2b7d2483019d1f30a5.jpg: 640x640 12 Fillings, 2 impacted tooths, 9.1ms
+    image 615/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3919290000-jpg_png_jpg.rf.8cfd8daca06da383050d3d0cc7683608.jpg: 640x640 1 Crown, 1 Filling, 4 impacted tooths, 9.4ms
+    image 616/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3920000000-jpg_png_jpg.rf.ae2c577c9d9cf1cd7402cb450c43651e.jpg: 640x640 1 Crown, 3 Fillings, 1 Missing teeth, 1 impacted tooth, 9.3ms
+    image 617/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3920000000-jpg_png_jpg.rf.aff5462fd5f41d470a91a2d85a47010c.jpg: 640x640 1 Crown, 2 Fillings, 1 Missing teeth, 1 impacted tooth, 9.1ms
+    image 618/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3920240000-jpg_png_jpg.rf.d7cb7effcff6eb03a34d731d5985e31f.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.1ms
+    image 619/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3920750000-jpg_png_jpg.rf.73b82af6d36275bd4ef5a43ef78d2029.jpg: 640x640 4 Crowns, 2 Fillings, 6 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 620/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3921960000-jpg_png_jpg.rf.1bff8e542707d34bab87d700467275c1.jpg: 640x640 1 Crown, 14 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 621/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3922380000-jpg_png_jpg.rf.88d88c8b4902126ad509805e33351034.jpg: 640x640 3 impacted tooths, 9.5ms
+    image 622/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3922820000-jpg_png_jpg.rf.737b62277daa6e39d18d1f7d880c1c0b.jpg: 640x640 4 Crowns, 7 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 623/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3923310000-jpg_png_jpg.rf.d431b1b2629244a38ec4dadabb2e0af8.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 624/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3923550000-jpg_png_jpg.rf.4ad99de8c6bb94dbe220387e88e2cdbd.jpg: 640x640 1 Filling, 4 impacted tooths, 9.0ms
+    image 625/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3923680000-jpg_png_jpg.rf.3bf315342d4c9006da6f15f7b30d6c38.jpg: 640x640 4 Crowns, 2 Missing teeths, 1 Root Canal Treatment, 1 impacted tooth, 9.1ms
+    image 626/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3924310000-jpg_png_jpg.rf.f85cee716d425c1ad99cabc973dcb1cf.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.1ms
+    image 627/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3924440000-jpg_png_jpg.rf.bfe6e8efa21d01a75b36ff2e67acb033.jpg: 640x640 1 Filling, 3 impacted tooths, 9.1ms
+    image 628/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3924510000-jpg_png_jpg.rf.06c10a7347e5f6a21c7582c9f28e61c6.jpg: 640x640 1 Filling, 4 impacted tooths, 9.0ms
+    image 629/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3924710000-jpg_png_jpg.rf.d37f4afa60eee151902ae27c8be0c5e9.jpg: 640x640 8 Fillings, 3 impacted tooths, 9.1ms
+    image 630/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3925750000-jpg_png_jpg.rf.49eb25a9ae8c5f3a31d19257987e98b2.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.1ms
+    image 631/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3926100000-jpg_png_jpg.rf.3e9462e854bc5fd954e5b6b09e63e51f.jpg: 640x640 9 Fillings, 2 impacted tooths, 9.2ms
+    image 632/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3926420000-jpg_png_jpg.rf.566181fad8f630a791fe68a8966fb9cc.jpg: 640x640 21 Fillings, 4 impacted tooths, 9.3ms
+    image 633/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3927150000-jpg_png_jpg.rf.4e1ddf37c82846e759919713a3a60955.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.1ms
+    image 634/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3927320000-jpg_png_jpg.rf.4bf6e8bf8ecdf80b34ae7c51c377d495.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.0ms
+    image 635/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3927950000-jpg_png_jpg.rf.cf3964ce06fa9d380e565a3956f0bc2f.jpg: 640x640 1 Crown, 3 impacted tooths, 9.1ms
+    image 636/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3928630000-jpg_png_jpg.rf.d3e468227ed714610fe231e1a02d83ab.jpg: 640x640 1 Crown, 4 Fillings, 1 impacted tooth, 9.1ms
+    image 637/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3929080000-jpg_png_jpg.rf.e8ca9a3db861e9cab601fea95054a0c9.jpg: 640x640 5 Fillings, 2 impacted tooths, 9.2ms
+    image 638/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3929800000-jpg_png_jpg.rf.ae65a203794f3ee5c6347865e1008548.jpg: 640x640 1 Crown, 7 Fillings, 1 impacted tooth, 9.2ms
+    image 639/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3930560000-jpg_png_jpg.rf.7af17f0e206530557fee8a4105db6e19.jpg: 640x640 5 impacted tooths, 9.2ms
+    image 640/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3930560000-jpg_png_jpg.rf.91e522d6f40fde8950788c69e3cb4e1e.jpg: 640x640 5 impacted tooths, 9.2ms
+    image 641/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3931330000-jpg_png_jpg.rf.15a99f086d034ede8b9e08939fa91456.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 642/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3932210000-jpg_png_jpg.rf.a247abeaf21b30d5894159d938d82beb.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 1 impacted tooth, 9.1ms
+    image 643/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3932640000-jpg_png_jpg.rf.19787fd318d53478ca98aee40d29ed3c.jpg: 640x640 12 Fillings, 3 impacted tooths, 9.3ms
+    image 644/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3932650000-jpg_png_jpg.rf.24f232a719020efc6df4b1c6dfc9cc1d.jpg: 640x640 1 Crown, 6 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 645/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3932950000-jpg_png_jpg.rf.0b9f41cb3b5199d0f45e8cbe0e413464.jpg: 640x640 1 Crown, 9 Fillings, 2 impacted tooths, 9.1ms
+    image 646/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3933050000-jpg_png_jpg.rf.95e84f2cc34cbd1efaf4c698c98eda00.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 647/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3933830000-jpg_png_jpg.rf.861865785aec1f31c1e47a391149fde2.jpg: 640x640 13 Fillings, 4 impacted tooths, 9.3ms
+    image 648/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3933970000-jpg_png_jpg.rf.796ebab69dbf9e10fcd7b18f95201717.jpg: 640x640 9 Fillings, 4 impacted tooths, 9.1ms
+    image 649/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3935710000-jpg_png_jpg.rf.2fb0519532755ba37c989fdb185dbd1e.jpg: 640x640 1 Caries, 9 Fillings, 6 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 650/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3935870000-jpg_png_jpg.rf.e1aa771266e548df5ed054039a8a63df.jpg: 640x640 1 Filling, 3 impacted tooths, 9.3ms
+    image 651/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3937200000-jpg_png_jpg.rf.89e95cfdc0db8bb9f93dcb74354187ae.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 652/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3937330000-jpg_png_jpg.rf.0f688ff79d5bae3511ff5c7d5ce416d1.jpg: 640x640 1 Filling, 3 impacted tooths, 9.1ms
+    image 653/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3938310000-jpg_png_jpg.rf.663c417dd5b8c6bc6c8401af23bddec3.jpg: 640x640 1 Crown, 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 654/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3939720000-jpg_png_jpg.rf.67ae670b4cdcf8d50b99fdf165720adb.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 655/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3939720000-jpg_png_jpg.rf.9cef2a4138488c08e8f46255aa8df79b.jpg: 640x640 1 Filling, 2 impacted tooths, 9.3ms
+    image 656/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3940970000-jpg_png_jpg.rf.bd59f1a74565bd871d0371f5ad6a1629.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.7ms
+    image 657/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3942180000-jpg_png_jpg.rf.a5716def68541b95b7e4c5324c4370c7.jpg: 640x640 1 Crown, 7 Fillings, 1 Missing teeth, 2 impacted tooths, 9.3ms
+    image 658/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3942850000-jpg_png_jpg.rf.f76a6c6948d6c4e170eaa95712aa4da7.jpg: 640x640 4 Crowns, 1 Filling, 3 Implants, 1 Missing teeth, 3 Root Canal Treatments, 3 impacted tooths, 9.2ms
+    image 659/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3942850000-jpg_png_jpg.rf.fe7fd5f79351fa6d1d3ca398bc68fd5b.jpg: 640x640 4 Crowns, 1 Filling, 3 Implants, 1 Missing teeth, 3 Root Canal Treatments, 2 impacted tooths, 10.2ms
+    image 660/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3943270000-jpg_png_jpg.rf.6015856cfac0d6dbd27e8641041a0d8b.jpg: 640x640 5 Fillings, 4 Root Canal Treatments, 4 impacted tooths, 9.6ms
+    image 661/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3943670000-jpg_png_jpg.rf.25ac433abd05868d0026a6c99546016f.jpg: 640x640 1 Filling, 2 impacted tooths, 9.6ms
+    image 662/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3943860000-jpg_png_jpg.rf.fc4cd98d52eb86970d72056858c86362.jpg: 640x640 3 impacted tooths, 9.7ms
+    image 663/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3944060000-jpg_png_jpg.rf.582cf533c33b86287c402cf3436902c8.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 3 impacted tooths, 9.8ms
+    image 664/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3944720000-jpg_png_jpg.rf.2aff5dd89012395b5391c63faea00310.jpg: 640x640 4 impacted tooths, 9.7ms
+    image 665/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3944720000-jpg_png_jpg.rf.5527b2aaacb4476a2ef6d3671c5745a0.jpg: 640x640 4 impacted tooths, 9.7ms
+    image 666/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3944720000-jpg_png_jpg.rf.b32f1e2e22363a3387fd0c0393ea6171.jpg: 640x640 4 impacted tooths, 9.7ms
+    image 667/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3945670000-jpg_png_jpg.rf.95e4fea32121176f80f5790e236e2d18.jpg: 640x640 4 impacted tooths, 9.8ms
+    image 668/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3945750000-jpg_png_jpg.rf.c117bf46efdf1ce53913e364ecd129bd.jpg: 640x640 1 Crown, 5 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.7ms
+    image 669/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3945830000-jpg_png_jpg.rf.1caec6a1e75c0e263b342105a54d5242.jpg: 640x640 2 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 670/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3946340000-jpg_png_jpg.rf.9d11dad5495d1ed8f623268d026a8479.jpg: 640x640 1 Caries, 15 Crowns, 2 Fillings, 2 Implants, 1 Missing teeth, 17 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 671/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3946400000-jpg_png_jpg.rf.7f61331e21ced1a98eca4580ce338707.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.9ms
+    image 672/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3946400000-jpg_png_jpg.rf.96267062f92d15f2ace8c39601138d65.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.7ms
+    image 673/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3947440000-jpg_png_jpg.rf.4a6e3dabdabda00121fc24ba7911a064.jpg: 640x640 3 Crowns, 1 Filling, 6 Root Canal Treatments, 2 impacted tooths, 9.9ms
+    image 674/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3947590000-jpg_png_jpg.rf.888d3c9fd314d3f8799fde6251d0f0ad.jpg: 640x640 6 Crowns, 7 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.6ms
+    image 675/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3948220000-jpg_png_jpg.rf.ce4588d6133f87b594f926b566272b04.jpg: 640x640 2 impacted tooths, 9.7ms
+    image 676/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3949000000-jpg_png_jpg.rf.631c1ebd79429737bbed0187d81d72e2.jpg: 640x640 9 Fillings, 1 impacted tooth, 9.7ms
+    image 677/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3949340000-jpg_png_jpg.rf.6b165d55fd5d51685b185675c30892f2.jpg: 640x640 3 Crowns, 3 Implants, 2 impacted tooths, 9.6ms
+    image 678/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3950380000-jpg_png_jpg.rf.ff85834ac035198b46bf394f57814fa0.jpg: 640x640 1 Filling, 4 impacted tooths, 9.6ms
+    image 679/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3950760000-jpg_png_jpg.rf.3eb685ebac869ecdc0bf066febb2d830.jpg: 640x640 8 Fillings, 3 impacted tooths, 9.5ms
+    image 680/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3950760000-jpg_png_jpg.rf.d54d4726f4b74d32f9857f3f359fdf83.jpg: 640x640 8 Fillings, 3 impacted tooths, 9.7ms
+    image 681/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3952380000-jpg_png_jpg.rf.8e24c1c0757a05c8d61f1aa432a88626.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.6ms
+    image 682/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3952850000-jpg_png_jpg.rf.0f0a105492b60750f83c277a7e9f3660.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.4ms
+    image 683/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3952850000-jpg_png_jpg.rf.9e3c9782c20a0e8f675c248d8b959dbe.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.5ms
+    image 684/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3953210000-jpg_png_jpg.rf.c2c3e013c1c070a515e98966e17f76e6.jpg: 640x640 1 Caries, 3 Fillings, 1 impacted tooth, 9.5ms
+    image 685/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3953920000-jpg_png_jpg.rf.820d4eb8283e021b670ce3e3fc94e27f.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 686/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3954440000-jpg_png_jpg.rf.8bdc40fc0852056a655032e37243d825.jpg: 640x640 5 Crowns, 3 Implants, 4 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 687/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3954540000-jpg_png_jpg.rf.5369f05fe975ed1497e787495b2f9d4d.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 688/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3954550000-jpg_png_jpg.rf.cc63008b9e3dcbf5dc88f80d36ce639c.jpg: 640x640 1 Periapical lesion, 4 impacted tooths, 9.1ms
+    image 689/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3954790000-jpg_png_jpg.rf.09f2efe56553b4629fc91212687184ae.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 690/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3955400000-jpg_png_jpg.rf.3b7e24102737b1691d1af807a20eb0f5.jpg: 640x640 1 Crown, 1 Filling, 4 impacted tooths, 9.1ms
+    image 691/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3955570000-jpg_png_jpg.rf.1f3fba4bc5d94bc2e614d320efad91c7.jpg: 640x640 3 Crowns, 8 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.6ms
+    image 692/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3957280000-jpg_png_jpg.rf.0d3ad93714d1d739599ac1d480838587.jpg: 640x640 6 Fillings, 3 impacted tooths, 9.3ms
+    image 693/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3957770000-jpg_png_jpg.rf.6799fa1f2d2c72c4bd4ffb2ea7ae0730.jpg: 640x640 4 Fillings, 1 impacted tooth, 9.5ms
+    image 694/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3957920000-jpg_png_jpg.rf.ce10eeda532be21502e8384dcc3517a6.jpg: 640x640 14 Fillings, 2 impacted tooths, 9.3ms
+    image 695/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3959160000-jpg_png_jpg.rf.c703b216c95cb519ebf4a431f5d30080.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 696/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3960040000-jpg_png_jpg.rf.5537858fa8d763f5b5fc9f5075361ea7.jpg: 640x640 1 Crown, 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 697/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3960370000-jpg_png_jpg.rf.e6f831fef7e7a6fcb6746d348955d40d.jpg: 640x640 1 Crown, 1 Filling, 2 impacted tooths, 9.1ms
+    image 698/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3960500000-jpg_png_jpg.rf.8ae11077fa58fae540647cba8034f120.jpg: 640x640 5 impacted tooths, 9.2ms
+    image 699/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3960500000-jpg_png_jpg.rf.d7d3729db4bf574281d65bb4de222eac.jpg: 640x640 5 impacted tooths, 9.3ms
+    image 700/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3961750000-jpg_png_jpg.rf.5b2429b95e286c9a6900d896fcb18443.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 701/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3962060000-jpg_png_jpg.rf.224bac9ca4ab0236c680d5af8dbf1d4e.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 702/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3962060000-jpg_png_jpg.rf.24d819e1826f7d262e84930aaf9e479c.jpg: 640x640 4 impacted tooths, 9.9ms
+    image 703/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3962570000-jpg_png_jpg.rf.6ba35360d6131eb9b65d45712f836f9e.jpg: 640x640 7 Crowns, 2 Fillings, 5 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 704/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3963370000-jpg_png_jpg.rf.972e3cd12123d1bf9b1378b934099e40.jpg: 640x640 1 Filling, 1 impacted tooth, 9.0ms
+    image 705/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3963580000-jpg_png_jpg.rf.562e45c05dcc57af36d0d8a6c33eaab1.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 3 impacted tooths, 9.1ms
+    image 706/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3965350000-jpg_png_jpg.rf.d22c6f49deee9affeea076ef1cbc3a70.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.2ms
+    image 707/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3965690000-jpg_png_jpg.rf.c930d23d441f99ef0209b232d9d8f0f2.jpg: 640x640 4 Crowns, 5 Fillings, 8 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 708/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3967480000-jpg_png_jpg.rf.2f60aeec9b03d3a93a8d6c320c469fa5.jpg: 640x640 4 Crowns, 4 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 709/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3967740000-jpg_png_jpg.rf.05358610ac4672fbb69d59aa02410202.jpg: 640x640 2 Crowns, 2 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 710/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3968000000-jpg_png_jpg.rf.a8937cc8e8d5ea99ffc54dc296616173.jpg: 640x640 7 Fillings, 1 Missing teeth, 4 impacted tooths, 9.0ms
+    image 711/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3968050000-jpg_png_jpg.rf.9faf03cae7ed9c650be751fea1fdffc2.jpg: 640x640 1 Crown, 1 Implant, 2 impacted tooths, 9.2ms
+    image 712/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3968170000-jpg_png_jpg.rf.da4907799427830e66d9951298c32cce.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.2ms
+    image 713/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3970420000-jpg_png_jpg.rf.89e1bdf7ee10d1095dc62979092e627b.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 714/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3971510000-jpg_png_jpg.rf.159bfe8acc995636a9a019326a016bc0.jpg: 640x640 1 Crown, 5 Fillings, 2 Root Canal Treatments, 9.4ms
+    image 715/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3971540000-jpg_png_jpg.rf.0633b98fb161165f2a6724822e1a6d7c.jpg: 640x640 5 impacted tooths, 9.5ms
+    image 716/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3972250000-jpg_png_jpg.rf.53726951ec77495c03d3b1b0b2868315.jpg: 640x640 2 impacted tooths, 9.7ms
+    image 717/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3972380000-jpg_png_jpg.rf.0147d9ec28a3b1dff15485504bec3506.jpg: 640x640 1 Filling, 3 impacted tooths, 9.8ms
+    image 718/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3972660000-jpg_png_jpg.rf.5e27999ddde7e03f1ca0136a783a4ec7.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.6ms
+    image 719/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3972870000-jpg_png_jpg.rf.1bf9fe979aa93071c277fdbbe1a02491.jpg: 640x640 1 Periapical lesion, 4 impacted tooths, 10.1ms
+    image 720/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3973510000-jpg_png_jpg.rf.1072feab24d5b59ee12d2772969966fc.jpg: 640x640 1 Crown, 3 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 9.4ms
+    image 721/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3973580000-jpg_png_jpg.rf.fc6b3a89910e33dc031871c652be9fa8.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.5ms
+    image 722/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3973940000-jpg_png_jpg.rf.454e91d34b5fb617827344b136b79f40.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 723/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3974170000-jpg_png_jpg.rf.36c6753b7e40e23eef06a611b35e8089.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 724/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3975200000-jpg_png_jpg.rf.88370ba1e492531ec4cc7460568d526a.jpg: 640x640 1 Crown, 15 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.5ms
+    image 725/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3975890000-jpg_png_jpg.rf.ae0dd2f23ca5da2d23f5f0bad44e6d4c.jpg: 640x640 15 Fillings, 2 impacted tooths, 9.5ms
+    image 726/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3975890000-jpg_png_jpg.rf.dfb7819ac3f5bd4df9443253d173efbc.jpg: 640x640 12 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.5ms
+    image 727/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3975950000-jpg_png_jpg.rf.3f9944ac267c46cdaed6f9f1412937b2.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.5ms
+    image 728/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3976120000-jpg_png_jpg.rf.3a4cff64bb70dce8ee7e7882912d0a74.jpg: 640x640 6 Fillings, 2 impacted tooths, 9.6ms
+    image 729/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3976160000-jpg_png_jpg.rf.6eed4e02c5ab7d61124054c7e258857d.jpg: 640x640 2 Crowns, 5 Fillings, 9.3ms
+    image 730/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3976900000-jpg_png_jpg.rf.199d2544457e62329e94054e2ddda107.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 731/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3977200000-jpg_png_jpg.rf.80ae3a9429f3ffdc55010b65c7c1c8a8.jpg: 640x640 2 Crowns, 6 Fillings, 1 Implant, 2 Root Canal Treatments, 1 impacted tooth, 9.7ms
+    image 732/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3977620000-jpg_png_jpg.rf.b46c2807a65aac0095c4277553742909.jpg: 640x640 3 impacted tooths, 10.5ms
+    image 733/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3977670000-jpg_png_jpg.rf.19b11aa4e11d096bd6610223d69cf7d7.jpg: 640x640 1 impacted tooth, 9.4ms
+    image 734/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3977820000-jpg_png_jpg.rf.9e54cb517604284ff2e05c73b9961cfb.jpg: 640x640 2 Crowns, 5 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 735/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3978430000-jpg_png_jpg.rf.4507d01525152bfe89e4d5031dcd5e69.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 736/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3979030000-jpg_png_jpg.rf.996d21b5aee564e07c33a04ebf1f2fe8.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.3ms
+    image 737/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3980310000-jpg_png_jpg.rf.0e38dd33dd6ef0c8ed0679139cf41c7f.jpg: 640x640 1 impacted tooth, 9.2ms
+    image 738/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3981040000-jpg_png_jpg.rf.dfa09357fa91cf6db0897ac693d6fba0.jpg: 640x640 6 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 739/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3981930000-jpg_png_jpg.rf.5c5a95eceb5c5572047e2c53187a8875.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 740/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3982280000-jpg_png_jpg.rf.129abb7029cfd065db4f2b0a46340e79.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.1ms
+    image 741/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3982580000-jpg_png_jpg.rf.c3afd27f7d9b033a85ed97931a830cbe.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.0ms
+    image 742/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3982840000-jpg_png_jpg.rf.5d7bab4dc96d2b1311fddc1ebc304dd9.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 743/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3983010000-jpg_png_jpg.rf.38b7d85a982c2549c10cabed91ba9836.jpg: 640x640 6 Fillings, 2 impacted tooths, 9.0ms
+    image 744/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3983570000-jpg_png_jpg.rf.c64b60280a2e0dadeb68da6a322ffa0b.jpg: 640x640 2 Fillings, 1 Missing teeth, 4 impacted tooths, 9.6ms
+    image 745/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3984500000-jpg_png_jpg.rf.b64db7cb7fb438f3cc9366fb85edbaf4.jpg: 640x640 6 Fillings, 2 impacted tooths, 9.2ms
+    image 746/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3985750000-jpg_png_jpg.rf.0662c6d840e6e80b16993a0932333e9f.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 747/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3986160000-jpg_png_jpg.rf.51e7ca94175eba7da51a166156a7158f.jpg: 640x640 1 Caries, 2 impacted tooths, 9.1ms
+    image 748/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3986270000-jpg_png_jpg.rf.3740aabd99ec776cb74368f4f831e6b8.jpg: 640x640 1 Filling, 2 impacted tooths, 9.1ms
+    image 749/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3987980000-jpg_png_jpg.rf.afd3c01c9e123a17641ca1c254e3f26b.jpg: 640x640 1 Crown, 4 Fillings, 2 impacted tooths, 9.1ms
+    image 750/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3988440000-jpg_png_jpg.rf.9814bba0e4785ffa96cec672c8723970.jpg: 640x640 1 Filling, 1 impacted tooth, 9.2ms
+    image 751/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3988640000-jpg_png_jpg.rf.0a0f73420379219b6d56387d6db35397.jpg: 640x640 2 impacted tooths, 9.5ms
+    image 752/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3988810000-jpg_png_jpg.rf.8ffdf7e6dec2f16b80016612140541ff.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 753/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3991010000-jpg_png_jpg.rf.75967a3a661d6f309eddc79fa5a09866.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 754/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3991100000-jpg_png_jpg.rf.d118556e27244847fc4d5308cd61ce80.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.4ms
+    image 755/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3991540000-jpg_png_jpg.rf.7287acac153c7b1380f3f123c7c7dce6.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 9.3ms
+    image 756/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3991870000-jpg_png_jpg.rf.3ae0496e8a70a01179daeb9e02772935.jpg: 640x640 5 Fillings, 2 impacted tooths, 9.2ms
+    image 757/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3991870000-jpg_png_jpg.rf.867c190e20290bd9dab5b47e3ccd05b6.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.6ms
+    image 758/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3992430000-jpg_png_jpg.rf.b8381f36cd533717df9570d0f97ca619.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.7ms
+    image 759/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3992430000-jpg_png_jpg.rf.de96102276d05d1587dd89e2691d4f60.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.2ms
+    image 760/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3992530000-jpg_png_jpg.rf.0cc624b18eca9f0a9a28f248d283fc6d.jpg: 640x640 3 Crowns, 4 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 761/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3993420000-jpg_png_jpg.rf.62560c940929c98c6cdde4c0a490c971.jpg: 640x640 3 impacted tooths, 9.6ms
+    image 762/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3995490000-jpg_png_jpg.rf.1dc7870a29e847e99de51c2477e06c0f.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 763/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3995860000-jpg_png_jpg.rf.13467abe00e599c6b93638fe02752c1a.jpg: 640x640 8 Fillings, 4 impacted tooths, 9.1ms
+    image 764/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3995870000-jpg_png_jpg.rf.0c29e3daf3ffb6b30e5fd549248166cc.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.0ms
+    image 765/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3995930000-jpg_png_jpg.rf.2c94207b03cb9e4a0b8d068a25a15500.jpg: 640x640 4 Crowns, 3 Fillings, 7 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 766/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3995930000-jpg_png_jpg.rf.579f6cc5f6f11228a8b007102a6e8ce6.jpg: 640x640 4 Crowns, 6 Fillings, 7 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 767/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3996490000-jpg_png_jpg.rf.f8891aa78a86ae8912600ab7c93b7cc2.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 768/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3996530000-jpg_png_jpg.rf.acd4e7900a54305ffac03a1f9a81defe.jpg: 640x640 9 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.4ms
+    image 769/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3996610000-jpg_png_jpg.rf.9155846e4599fdbf6ec8da11db0df263.jpg: 640x640 11 Fillings, 4 impacted tooths, 9.3ms
+    image 770/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3997240000-jpg_png_jpg.rf.fe07ef1e11f0c9923bf5e9b439d21145.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 771/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3997710000-jpg_png_jpg.rf.c81a862730f8e0d2948f4c8c3afb746b.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 772/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3997810000-jpg_png_jpg.rf.117a6e6496a2e3ff6183ee91e7b91746.jpg: 640x640 19 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 9.2ms
+    image 773/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3997830000-jpg_png_jpg.rf.948517a8d7d46bdafe12f879ba92b0d1.jpg: 640x640 4 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 774/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3998320000-jpg_png_jpg.rf.f29d494146b68dc4846963c1d43ed366.jpg: 640x640 1 Crown, 4 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.8ms
+    image 775/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3998850000-jpg_png_jpg.rf.25b2665b2248b87378dc9108f2103cfb.jpg: 640x640 10 Fillings, 2 impacted tooths, 9.6ms
+    image 776/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3998870000-jpg_png_jpg.rf.70a7120753e8ce6204f24b3c5141e1fe.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.3ms
+    image 777/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3998870000-jpg_png_jpg.rf.c19c2b838b5165a4a4f8a7f2c48d0bdc.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.4ms
+    image 778/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3a7ab44d-ZAKI_REYHANEH_2020-07-25112034_jpg.rf.51f7907425a78bd51af1fd04559db30e.jpg: 640x640 3 Cariess, 9.3ms
+    image 779/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3e071de5-Jalilvand_Yones_2022-06-12140411_jpg.rf.4b2d2cc4568ee664df210eb47d2a353d.jpg: 640x640 7 Cariess, 6 Fillings, 1 Periapical lesion, 14 Root Canal Treatments, 9.0ms
+    image 780/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3f72c699-Avize_Behzad_2022-06-12141052_jpg.rf.be5657b55024f18a7e3f9caf77d8e66e.jpg: 640x640 4 Cariess, 1 Missing teeth, 9.2ms
+    image 781/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3f8f5e7f-falah_nagme_2022-06-12142001_jpg.rf.79f40f3014552ff8143e306a404b99cb.jpg: 640x640 2 Cariess, 13 Fillings, 6 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 782/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3f8f5e7f-falah_nagme_2022-06-12142001_jpg.rf.ba6afefb5a3300b62175ac90f81c198a.jpg: 640x640 4 Cariess, 13 Fillings, 6 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 783/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000290000-jpg_png_jpg.rf.347182dfe5f529ee11903ec4356875ba.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 784/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000430000-jpg_png_jpg.rf.50bd7539a94680b577d09643c445410d.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 785/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000570000-jpg_png_jpg.rf.27e94545af5dcf5505f55871d023c50b.jpg: 640x640 4 Fillings, 1 impacted tooth, 9.8ms
+    image 786/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000860000-jpg_png_jpg.rf.1eff7d9747f226ebc8ee0579046e60d5.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 787/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000860000-jpg_png_jpg.rf.90aceb0ab8fb1ace47bf257f503e8dc1.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 788/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000860000-jpg_png_jpg.rf.a75950cc4be35845f84ed1a4508d2497.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 4 impacted tooths, 9.2ms
+    image 789/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4001560000-jpg_png_jpg.rf.818a6fe6f31ac005cf0ce3f9ec3bcbc5.jpg: 640x640 17 Fillings, 2 impacted tooths, 9.1ms
+    image 790/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4002510000-jpg_png_jpg.rf.277ae734d660bb46454a06201271bc1d.jpg: 640x640 1 Crown, 8 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 10.2ms
+    image 791/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4002850000-jpg_png_jpg.rf.52610ba6a17aa3f80862c380d63372f7.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 792/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4003200000-jpg_png_jpg.rf.d15c08a63a1b6955a5d8e498176e2986.jpg: 640x640 2 Crowns, 7 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.1ms
+    image 793/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4003440000-jpg_png_jpg.rf.bb58a30552b9aa8e9360c06159cf6724.jpg: 640x640 1 Crown, 1 Filling, 4 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 794/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4004070000-jpg_png_jpg.rf.fc095aadcc6957ae32b2e457c45bedf8.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.0ms
+    image 795/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4004080000-jpg_png_jpg.rf.baee71ffea90c5a8cdd1533eb247469a.jpg: 640x640 2 Crowns, 9 Fillings, 2 Root Canal Treatments, 5 impacted tooths, 9.0ms
+    image 796/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4004920000-jpg_png_jpg.rf.778b364d200bde22f1e5194fbde53bc6.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.1ms
+    image 797/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4005070000-jpg_png_jpg.rf.19a4951b1419cd1d9278f3b646c30d2e.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.1ms
+    image 798/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4005160000-jpg_png_jpg.rf.15685cc2e8fba89b1ed7722ae0d0169f.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 799/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4005180000-jpg_png_jpg.rf.04e2f2e0b7a0b0ecb9f5a64c4da82765.jpg: 640x640 3 Crowns, 5 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 800/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4005200000-jpg_png_jpg.rf.5145ee7fd4dcfe43ac45ecbae180a3f7.jpg: 640x640 2 Fillings, 1 Periapical lesion, 2 impacted tooths, 9.8ms
+    image 801/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4006850000-jpg_png_jpg.rf.9e419a9d46f3026dbbc12e74b912e449.jpg: 640x640 5 Crowns, 9 Fillings, 6 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 802/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4007900000-jpg_png_jpg.rf.0be4a75282423f2607a17d0bb7dee228.jpg: 640x640 11 Crowns, 5 Fillings, 12 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 803/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4008330000-jpg_png_jpg.rf.2d61404700ab42011fbab8cd18a48c9c.jpg: 640x640 2 Crowns, 2 Fillings, 4 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 804/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4009670000-jpg_png_jpg.rf.a176160722ff1d91545e089987cf98f9.jpg: 640x640 1 Filling, 2 impacted tooths, 9.3ms
+    image 805/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4009920000-jpg_png_jpg.rf.68f19d114e264e5f8175cb9b2cbfa0d0.jpg: 640x640 3 Crowns, 16 Fillings, 3 impacted tooths, 9.8ms
+    image 806/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4010700000-jpg_png_jpg.rf.689da04ced0dfb98ef93a1799c5d42d5.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.7ms
+    image 807/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4011700000-jpg_png_jpg.rf.cc3a78363303f92efbea3beb06c80b97.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.4ms
+    image 808/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4012540000-jpg_png_jpg.rf.01f6497dd6bcf3c0ad52ff6dbeb68d8c.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 4 impacted tooths, 9.3ms
+    image 809/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4012990000-jpg_png_jpg.rf.8a390656da31755ae4c727f5b2221ea6.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.1ms
+    image 810/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4013750000-jpg_png_jpg.rf.067d149254e8037615e1d567f293a66e.jpg: 640x640 4 Fillings, 1 impacted tooth, 9.5ms
+    image 811/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4014660000-jpg_png_jpg.rf.b4f52ed41fa5f427ff51b0177bbac5c4.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 812/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4015780000-jpg_png_jpg.rf.1c7f6d580580abcf1531e7170f64958a.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 813/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4015790000-jpg_png_jpg.rf.84c69dcb401293abeabe9621cc1a09ad.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 814/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4016000000-jpg_png_jpg.rf.4f4fda1988bde05ef7ee7120e2f3f375.jpg: 640x640 2 Fillings, 5 impacted tooths, 9.0ms
+    image 815/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4016040000-jpg_png_jpg.rf.c958566b00c034a5b646a72de44d03e5.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 816/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4016300000-jpg_png_jpg.rf.c94e3adc4c146fe1b0b957a1eb5f50a1.jpg: 640x640 5 Crowns, 11 Fillings, 2 Root Canal Treatments, 9.1ms
+    image 817/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4016760000-jpg_png_jpg.rf.12ac1b8585154f3c73d3072ce6640463.jpg: 640x640 3 impacted tooths, 9.7ms
+    image 818/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4017070000-jpg_png_jpg.rf.720981b7a479320a4a4e9c3f0c33f6b9.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.4ms
+    image 819/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4017450000-jpg_png_jpg.rf.0de277b895479916767388fafc5c2c20.jpg: 640x640 4 impacted tooths, 9.9ms
+    image 820/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4017660000-jpg_png_jpg.rf.c2745101f69559f85d32b87e0d53ab4e.jpg: 640x640 4 Crowns, 9 Fillings, 4 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 821/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4021330000-jpg_png_jpg.rf.65a7eb9c8cbecbc473d2dc39ab894085.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 822/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4021500000-jpg_png_jpg.rf.e8ca1d183d0cf495eda9f949e9fc90b5.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.1ms
+    image 823/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4021750000-jpg_png_jpg.rf.0ecd0438c7429e1a5a203cc77ce34117.jpg: 640x640 7 Fillings, 2 impacted tooths, 9.3ms
+    image 824/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4021820000-jpg_png_jpg.rf.145f7bad661d16fafe2ffe60b9ad5b2a.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 825/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4022050000-jpg_png_jpg.rf.fda3ffd07baa953b509cf01a950481e0.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 826/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4022660000-jpg_png_jpg.rf.71e437294f390b3903becbd014d49495.jpg: 640x640 1 Crown, 4 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 827/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4022810000-jpg_png_jpg.rf.57aa93166af6d637e100ddc51db1219c.jpg: 640x640 2 Crowns, 9 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 828/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4023150000-jpg_png_jpg.rf.872596db040a963471476c30726102e5.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 829/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4023160000-jpg_png_jpg.rf.93f17406679383c621d0b1c69778495f.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 830/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4023160000-jpg_png_jpg.rf.c309c0900207755711979b11d257b612.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 831/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4023370000-jpg_png_jpg.rf.7a6ad6e24b694eb6d088430da47223e2.jpg: 640x640 4 Crowns, 5 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 832/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4023580000-jpg_png_jpg.rf.e3778d4bda3505ce80300f70ca7103c5.jpg: 640x640 4 Crowns, 4 Fillings, 11 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 833/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4025060000-jpg_png_jpg.rf.21042d1b6cf4fb5654e378cb89fab084.jpg: 640x640 4 Crowns, 6 Fillings, 3 Periapical lesions, 6 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 834/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4025740000-jpg_png_jpg.rf.e0c0b2c26fd94a7e25df1bd2717cb463.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 835/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4025950000-jpg_png_jpg.rf.d33e021e07a1924a1556f6fc04c525d4.jpg: 640x640 1 Crown, 1 Missing teeth, 2 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 836/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4025980000-jpg_png_jpg.rf.8a9d93771895ea426a3e473f1da00efe.jpg: 640x640 2 Crowns, 2 Fillings, 5 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 837/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4026090000-jpg_png_jpg.rf.063a577b90859fbd80a512e0899d6f3e.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.0ms
+    image 838/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4026540000-jpg_png_jpg.rf.d029fd6654e3d60d3406e5f6b2412537.jpg: 640x640 1 Crown, 11 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 839/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4026950000-jpg_png_jpg.rf.3d24d65e5dddc1a96260fe5849ef0f68.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.3ms
+    image 840/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4027080000-jpg_png_jpg.rf.3bdb674b74c1382e76b0450b822cdb66.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 841/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4027190000-jpg_png_jpg.rf.459523bd5ff4ea4672f4fd0268241ffd.jpg: 640x640 2 Crowns, 3 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 8.9ms
+    image 842/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4028010000-jpg_png_jpg.rf.e5c2452ee20f0965b63d848a9046e6d6.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.2ms
+    image 843/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4028290000-jpg_png_jpg.rf.40c2f83dc0e346dd7a3da587ff8b11a6.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 844/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4029490000-jpg_png_jpg.rf.61fcf523d1cb0062bfa7dca6205ed27d.jpg: 640x640 9 Fillings, 2 impacted tooths, 9.1ms
+    image 845/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4029690000-jpg_png_jpg.rf.84ab64834757bb333beb1ee628ad9c60.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 846/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4030430000-jpg_png_jpg.rf.217afef74d55070bee8a83105bff294f.jpg: 640x640 4 Fillings, 1 impacted tooth, 9.1ms
+    image 847/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4031320000-jpg_png_jpg.rf.2fdd66532be077ffef9741bc0e0565d2.jpg: 640x640 1 impacted tooth, 9.2ms
+    image 848/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4032190000-jpg_png_jpg.rf.3c05847b52c0fbcae59f1899624462b7.jpg: 640x640 3 Crowns, 10 Fillings, 8 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 849/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4032310000-jpg_png_jpg.rf.7d5c0098ce919e7c38e0ce0066c68b18.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 850/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4032540000-jpg_png_jpg.rf.1accb88199898ed38235404cd5fc656b.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 851/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4032750000-jpg_png_jpg.rf.b40e716bff95028f0b9fb19edec384ce.jpg: 640x640 2 Crowns, 5 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 852/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4033830000-jpg_png_jpg.rf.4a6943f4413de4bc6a4cc59ab74aae72.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.1ms
+    image 853/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4034580000-jpg_png_jpg.rf.d37466f84aef12f2b78667dab3138910.jpg: 640x640 11 Fillings, 2 impacted tooths, 10.0ms
+    image 854/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4034720000-jpg_png_jpg.rf.aca05950c4399b0be00fcd836fb0e36a.jpg: 640x640 1 Crown, 1 Filling, 1 Periapical lesion, 1 Root Canal Treatment, 3 impacted tooths, 9.7ms
+    image 855/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4034780000-jpg_png_jpg.rf.e03596bba593a390a210dcc7bc252e88.jpg: 640x640 17 Fillings, 1 impacted tooth, 9.2ms
+    image 856/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4035830000-jpg_png_jpg.rf.7b1f60d2b4479b57305008c89485c700.jpg: 640x640 1 Caries, 23 Fillings, 2 impacted tooths, 9.2ms
+    image 857/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4036640000-jpg_png_jpg.rf.6b0c6cfa67ed7209759e015854c9a91e.jpg: 640x640 5 impacted tooths, 9.7ms
+    image 858/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4038380000-jpg_png_jpg.rf.c28ef55efc5127692da3e6dbebbe3cc6.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 859/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4039830000-jpg_png_jpg.rf.6d9de908aa82868c7b00238d2b2416b7.jpg: 640x640 3 impacted tooths, 9.7ms
+    image 860/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4040810000-jpg_png_jpg.rf.608228dfdd323def4c105b36651a4e69.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 861/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4041490000-jpg_png_jpg.rf.297463b214e2ff1147b1a2230d10c5a7.jpg: 640x640 2 Crowns, 1 Filling, 3 Root Canal Treatments, 2 impacted tooths, 10.3ms
+    image 862/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4042480000-jpg_png_jpg.rf.edf24033ec964cb689e4cdc90ea6fb24.jpg: 640x640 1 Crown, 13 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 863/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4043240000-jpg_png_jpg.rf.38bd8917938c2b23068fc65b523f8326.jpg: 640x640 4 Cariess, 7 Fillings, 1 Periapical lesion, 1 impacted tooth, 9.1ms
+    image 864/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4043930000-jpg_png_jpg.rf.3d0ca38704ed29a5eb26f4fd1c3b6218.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 865/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4044020000-jpg_png_jpg.rf.e9b1bdf07ac56352c5b279bdadfe9f6c.jpg: 640x640 17 Fillings, 1 impacted tooth, 9.1ms
+    image 866/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4044470000-jpg_png_jpg.rf.245e738d28aec0ddb359a1bd8f65f973.jpg: 640x640 1 Crown, 7 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.1ms
+    image 867/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4044820000-jpg_png_jpg.rf.aedb13c5010dcdb58fc3c2a27c109031.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 1 impacted tooth, 9.1ms
+    image 868/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4045720000-jpg_png_jpg.rf.28077c8f69bdd06b87be6f3825c9b54b.jpg: 640x640 2 Crowns, 10 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 869/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4045730000-jpg_png_jpg.rf.1d3e0fe3596537ff40178b0ccbd5b22d.jpg: 640x640 5 Fillings, 2 impacted tooths, 9.0ms
+    image 870/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4046360000-jpg_png_jpg.rf.e97ce050a20d89cf801501d3953470f3.jpg: 640x640 17 Fillings, 2 Implants, 3 impacted tooths, 9.3ms
+    image 871/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4048390000-jpg_png_jpg.rf.4ebe71abd10d2e66095f9770509071d1.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 872/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4048390000-jpg_png_jpg.rf.cf84702438557df237af75abb24d6a6b.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 873/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4048850000-jpg_png_jpg.rf.5787b55de37ad1dd96faded6d5e45791.jpg: 640x640 1 impacted tooth, 9.2ms
+    image 874/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4048950000-jpg_png_jpg.rf.dad9887702ec398111b83dc0c9c70e05.jpg: 640x640 5 Crowns, 8 Fillings, 9 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 875/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4049260000-jpg_png_jpg.rf.07e56de736c6c6c8a14e3f24f579f65a.jpg: 640x640 7 Fillings, 4 impacted tooths, 9.7ms
+    image 876/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4050990000-jpg_png_jpg.rf.7458b76d63701b9fe56f2e30a1324592.jpg: 640x640 11 Crowns, 5 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 877/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4051620000-jpg_png_jpg.rf.cea144c2de08c382f19ba71516e00921.jpg: 640x640 2 Crowns, 13 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.8ms
+    image 878/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4052370000-jpg_png_jpg.rf.61bbb357698751a29122077fb0c37c5e.jpg: 640x640 8 Fillings, 2 impacted tooths, 9.4ms
+    image 879/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4052640000-jpg_png_jpg.rf.6a7e286b3113f889552fde6b7dd62ce2.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 4 impacted tooths, 9.4ms
+    image 880/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4053180000-jpg_png_jpg.rf.7cb5264bc93b17755c9c651f0e0f6acf.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.1ms
+    image 881/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4053560000-jpg_png_jpg.rf.0af1913c7c9cf3067bbcb6d5d9948a8c.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.4ms
+    image 882/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4053760000-jpg_png_jpg.rf.1eb72fd5f881750c57268f3fcea0f35a.jpg: 640x640 1 Crown, 4 Fillings, 5 Root Canal Treatments, 4 impacted tooths, 9.3ms
+    image 883/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4053760000-jpg_png_jpg.rf.73ecbaa66739ea990b758f624939ca4e.jpg: 640x640 1 Crown, 4 Fillings, 5 Root Canal Treatments, 4 impacted tooths, 9.4ms
+    image 884/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4054160000-jpg_png_jpg.rf.ca6bcb93213fac292c0d21cc3717cc1e.jpg: 640x640 15 Fillings, 3 impacted tooths, 9.3ms
+    image 885/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4054540000-jpg_png_jpg.rf.020df11ffe61e262b76255e91028e2d2.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 886/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4055090000-jpg_png_jpg.rf.8bac00d27d274ee3712a065b04e79052.jpg: 640x640 6 Fillings, 3 impacted tooths, 10.3ms
+    image 887/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4055100000-jpg_png_jpg.rf.0fc5638bc8258039f7f38b06751b0940.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 888/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4055140000-jpg_png_jpg.rf.523cc228595c6eb7747cfc617396e43c.jpg: 640x640 1 Crown, 3 Fillings, 3 impacted tooths, 9.6ms
+    image 889/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4055670000-jpg_png_jpg.rf.00884eb33dec09ab55112b536f1e53aa.jpg: 640x640 2 Crowns, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 890/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4057980000-jpg_png_jpg.rf.c5d666e71ad5d373c2fbd6127344c822.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 891/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4058510000-jpg_png_jpg.rf.bfc0fb834c114517fae01992c611f74f.jpg: 640x640 8 Fillings, 3 impacted tooths, 9.0ms
+    image 892/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4059210000-jpg_png_jpg.rf.3273cb5675e75cbc08943f1f1f4c29eb.jpg: 640x640 1 Crown, 2 Fillings, 2 Root Canal Treatments, 5 impacted tooths, 9.2ms
+    image 893/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4059790000-jpg_png_jpg.rf.655ba9c73437442c5c5bc6a6fcc6fbd2.jpg: 640x640 1 Caries, 4 Crowns, 1 Filling, 4 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 894/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4060720000-jpg_png_jpg.rf.5e883a5242ab9012015769a9a235e2ae.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 895/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4060980000-jpg_png_jpg.rf.dfb9bb9cfb18cd39402300df640611de.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.2ms
+    image 896/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4062050000-jpg_png_jpg.rf.7305ef13bed929d25d070c9d2f7c9444.jpg: 640x640 9 Fillings, 2 impacted tooths, 9.1ms
+    image 897/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4062410000-jpg_png_jpg.rf.b90688e581973d8bc271aaaeca208201.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 898/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4064340000-jpg_png_jpg.rf.a1902d352f96ff80795692f4a9e1c52e.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.0ms
+    image 899/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4064810000-jpg_png_jpg.rf.cc445f19da6e1bddc5f4706da9960321.jpg: 640x640 3 Crowns, 8 Fillings, 11 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 900/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4064890000-jpg_png_jpg.rf.7827c35123eafe5f96aa68f663b60a52.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.3ms
+    image 901/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4065060000-jpg_png_jpg.rf.8fd3d5caef9f573b7dc33743f166630a.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.0ms
+    image 902/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4065060000-jpg_png_jpg.rf.f3a4b3e8868a46f76cea71ec93b95953.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.1ms
+    image 903/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4065400000-jpg_png_jpg.rf.bcbfecb37e8fbc074da4fb89dea0feb2.jpg: 640x640 3 Crowns, 5 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.5ms
+    image 904/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4066720000-jpg_png_jpg.rf.ed0d87b77104e0ed73576ea12d710bf5.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 905/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4066870000-jpg_png_jpg.rf.f7d19c202b6eeccf15a01b28b79a9146.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.4ms
+    image 906/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4069250000-jpg_png_jpg.rf.27cef59ecd0e0ab69332e83bbadaf388.jpg: 640x640 1 Crown, 1 Implant, 2 impacted tooths, 10.1ms
+    image 907/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4069260000-jpg_png_jpg.rf.43ec32b1751013a3d70cd0c2dacb689f.jpg: 640x640 4 impacted tooths, 10.0ms
+    image 908/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4072150000-jpg_png_jpg.rf.c9951f6bfafe109819f10ca8c4735c77.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.6ms
+    image 909/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4074960000-jpg_png_jpg.rf.f4638176fe6b454897b4bf93e27501af.jpg: 640x640 2 Cariess, 1 Filling, 3 impacted tooths, 9.7ms
+    image 910/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4075260000-jpg_png_jpg.rf.92e46f31f0adf11567cf4a0a9a9fec00.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 911/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4075810000-jpg_png_jpg.rf.fba8239572bbfd669fda38cf21474d2c.jpg: 640x640 3 impacted tooths, 9.6ms
+    image 912/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4076550000-jpg_png_jpg.rf.4bd5bed02295ee6c74dc336e6a28c6a0.jpg: 640x640 4 impacted tooths, 9.4ms
+    image 913/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4076950000-jpg_png_jpg.rf.d32ed15c7113dfd9add7cefbaf8d01af.jpg: 640x640 1 Crown, 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 914/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4077290000-jpg_png_jpg.rf.0dd1a40e21a32193b938394d81662f71.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.7ms
+    image 915/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4077470000-jpg_png_jpg.rf.0d2241af27fbc368fc3846dee2f2154b.jpg: 640x640 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 9.6ms
+    image 916/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4078490000-jpg_png_jpg.rf.8634cebb5d50225ec716925c35125625.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 917/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4078690000-jpg_png_jpg.rf.3b1e2d37e1a5e9137875598b945d5c4c.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 918/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4079730000-jpg_png_jpg.rf.51e281686d5fcf3de23a4b54446ea5c7.jpg: 640x640 2 Fillings, 4 Root Canal Treatments, 4 impacted tooths, 9.4ms
+    image 919/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4082160000-jpg_png_jpg.rf.3710909976e026001a34397c012d4c18.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 920/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4083060000-jpg_png_jpg.rf.af03c9aa04619c35cfe4f4b05f74151e.jpg: 640x640 1 Crown, 13 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.4ms
+    image 921/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4083500000-jpg_png_jpg.rf.1566f1da3edbae40380ec1eca6e0910a.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.4ms
+    image 922/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4083500000-jpg_png_jpg.rf.2bc6b1f60100e39d005942f14c2afca3.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.5ms
+    image 923/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4083780000-jpg_png_jpg.rf.7572a00547d884eeffbb13ebff0cc645.jpg: 640x640 14 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 924/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4084040000-jpg_png_jpg.rf.ed3287f09844af41914095ae69ca544e.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 925/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4084630000-jpg_png_jpg.rf.fc2be7cf2db2b15d827c6f27f55a1cfd.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 926/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4084750000-jpg_png_jpg.rf.e94aab9c5dd66feff753522f31d43bd4.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.3ms
+    image 927/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085110000-jpg_png_jpg.rf.552845983af4455ee47b02bd295da514.jpg: 640x640 4 Crowns, 10 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 928/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085130000-jpg_png_jpg.rf.aa79468379422e199ab861e192caf712.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 929/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085170000-jpg_png_jpg.rf.073fb03f684ab97975d0e16d2d3a5b24.jpg: 640x640 1 Filling, 1 impacted tooth, 9.3ms
+    image 930/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085400000-jpg_png_jpg.rf.dcf803c375f29fd9568c9ef6d03d8ed7.jpg: 640x640 1 Filling, 3 impacted tooths, 9.2ms
+    image 931/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085790000-jpg_png_jpg.rf.02745b09bb8bd0c499958362521a399c.jpg: 640x640 1 Crown, 5 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 932/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085790000-jpg_png_jpg.rf.4f700dbdf4d70cfc2cc51e143ecc92e5.jpg: 640x640 1 Crown, 7 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 933/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4086480000-jpg_png_jpg.rf.b14d9b6465b2fb1251ddda89fabb56d6.jpg: 640x640 1 impacted tooth, 9.3ms
+    image 934/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4087110000-jpg_png_jpg.rf.50685729b387f7ad8327ded60b02978a.jpg: 640x640 17 Fillings, 3 impacted tooths, 9.2ms
+    image 935/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4087160000-jpg_png_jpg.rf.3f599ab3922fce17b5213054df2eed1f.jpg: 640x640 1 Crown, 3 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.4ms
+    image 936/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4087460000-jpg_png_jpg.rf.0ca469767bb19b151fb01e9586a61173.jpg: 640x640 3 Crowns, 5 Root Canal Treatments, 4 impacted tooths, 9.3ms
+    image 937/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4087470000-jpg_png_jpg.rf.abfc7c6bd65278227a25564115417a0f.jpg: 640x640 1 impacted tooth, 9.4ms
+    image 938/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4087860000-jpg_png_jpg.rf.a3238c15511e5b963c8a4754dcf05a6a.jpg: 640x640 1 Crown, 13 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.4ms
+    image 939/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4088130000-jpg_png_jpg.rf.1897a5e4f55d1c48b9806721ad8bbfb4.jpg: 640x640 7 Crowns, 1 Implant, 1 Missing teeth, 2 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 940/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4088650000-jpg_png_jpg.rf.c83e69d92dd1ef0545f0f6ff0caf1c7e.jpg: 640x640 1 Crown, 3 impacted tooths, 9.2ms
+    image 941/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4088750000-jpg_png_jpg.rf.0bf51f181c85b744f7e4c213480993da.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 942/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4088750000-jpg_png_jpg.rf.929b5dd5c4a072dca5209fe1c4ebef5e.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 943/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4089280000-jpg_png_jpg.rf.930fb63c1d9de297e8aecfd10e0d4a52.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.5ms
+    image 944/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4089550000-jpg_png_jpg.rf.0ea760e1f4fed8307f90151e674e935e.jpg: 640x640 1 Crown, 7 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 9.2ms
+    image 945/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4089630000-jpg_png_jpg.rf.8e65aaf298b4a6f9efcc11dd22edc5db.jpg: 640x640 1 Crown, 2 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 946/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4090750000-jpg_png_jpg.rf.3acd4db1014afcd940c967cf74f0260d.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.7ms
+    image 947/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4090780000-jpg_png_jpg.rf.270e32d6bfb664587dd43b8199c254a7.jpg: 640x640 3 impacted tooths, 9.6ms
+    image 948/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4090800000-jpg_png_jpg.rf.b5be2d9d50fb914d0650f36fc4cd5d46.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 949/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4092360000-jpg_png_jpg.rf.a0e52dc2e3f3e4910f74b38b26b10c4e.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.2ms
+    image 950/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4094140000-jpg_png_jpg.rf.0f3635268d8fc0cd6d9130887c329d5b.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 951/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4094160000-jpg_png_jpg.rf.1efd2968b6d76f5585f2be6c4e989f71.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 952/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4094760000-jpg_png_jpg.rf.8529f33da3f8369d3f93725d9675403b.jpg: 640x640 1 Caries, 4 Crowns, 16 Fillings, 6 Root Canal Treatments, 2 impacted tooths, 9.7ms
+    image 953/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4094940000-jpg_png_jpg.rf.b07f91197a094e0eb9f93e0e98721c95.jpg: 640x640 1 Caries, 4 impacted tooths, 9.3ms
+    image 954/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4095140000-jpg_png_jpg.rf.4eb3fbf603d6756fe4ab369f705219f7.jpg: 640x640 3 impacted tooths, 10.5ms
+    image 955/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4095700000-jpg_png_jpg.rf.a1feb927a54f8477fad664530f90a948.jpg: 640x640 2 Fillings, 3 impacted tooths, 10.1ms
+    image 956/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4096310000-jpg_png_jpg.rf.b46de2866be157ebc4f2d6e01ab875dc.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.3ms
+    image 957/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/409640000-jpg_png_jpg.rf.67257d98001aadac727f578fabd0e4c6.jpg: 640x640 1 Filling, 2 impacted tooths, 9.4ms
+    image 958/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4096710000-jpg_png_jpg.rf.09bc1281a160dec16577e0cbde738fdc.jpg: 640x640 1 Crown, 5 Fillings, 1 Implant, 4 impacted tooths, 9.4ms
+    image 959/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4096820000-jpg_png_jpg.rf.0f48e1019fd62e5453f796570e6b8423.jpg: 640x640 7 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.2ms
+    image 960/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4096830000-jpg_png_jpg.rf.4839b3647042c61cfa0361951bb11115.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 961/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4097770000-jpg_png_jpg.rf.f9e16041f9dc12358bdd9bd16a00db66.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.3ms
+    image 962/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4098120000-jpg_png_jpg.rf.07b26f043e03e933300eb3993a1692cf.jpg: 640x640 1 Crown, 1 Implant, 3 impacted tooths, 9.2ms
+    image 963/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4098600000-jpg_png_jpg.rf.003ad2031f911a86addaaf560ad91bf9.jpg: 640x640 2 Crowns, 8 Fillings, 1 Periapical lesion, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 964/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4099190000-jpg_png_jpg.rf.63b7b38e19b5d07a9dabd04c80a7055b.jpg: 640x640 2 Crowns, 6 Fillings, 3 impacted tooths, 9.2ms
+    image 965/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/40c7270e-Ghasemi_Fatemeh_2020-09-08174634_jpg.rf.d08cde3846567e633ca031edfcf0c7f6.jpg: 640x640 1 Caries, 1 Crown, 11 Fillings, 3 Missing teeths, 6 Root Canal Treatments, 9.0ms
+    image 966/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/40c7270e-Ghasemi_Fatemeh_2020-09-08174634_jpg.rf.f455f2b855033089dab52fb716dc1694.jpg: 640x640 1 Caries, 1 Crown, 11 Fillings, 3 Missing teeths, 8 Root Canal Treatments, 9.3ms
+    image 967/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4100120000-jpg_png_jpg.rf.0139780cdc6b4ed017771b334bf9810e.jpg: 640x640 12 Fillings, 2 impacted tooths, 9.3ms
+    image 968/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4102090000-jpg_png_jpg.rf.14ed3508f31d8bd8feef710f18ccfec6.jpg: 640x640 8 Crowns, 4 Fillings, 8 Implants, 1 Missing teeth, 6 Root Canal Treatments, 1 impacted tooth, 10.0ms
+    image 969/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4102090000-jpg_png_jpg.rf.46c092721c640c2a2cca2ae497517219.jpg: 640x640 7 Crowns, 4 Fillings, 8 Implants, 6 Root Canal Treatments, 2 impacted tooths, 10.0ms
+    image 970/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4102620000-jpg_png_jpg.rf.da2c0b576db2c97895f9996752b3df4f.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.6ms
+    image 971/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4104830000-jpg_png_jpg.rf.d87370d775b06cd9a0e6b4e6f3c740fd.jpg: 640x640 2 Crowns, 1 Missing teeth, 3 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 972/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4105370000-jpg_png_jpg.rf.b614b6b2ad203936f4be4987b58d5b67.jpg: 640x640 2 Crowns, 8 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 9.3ms
+    image 973/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4106060000-jpg_png_jpg.rf.9b90aafb2a7decb284c4e576a0ee0e96.jpg: 640x640 1 Filling, 4 impacted tooths, 9.6ms
+    image 974/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4106150000-jpg_png_jpg.rf.71b6bdf1a886b69043aa0d25cec52936.jpg: 640x640 3 Fillings, 5 impacted tooths, 10.0ms
+    image 975/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4106150000-jpg_png_jpg.rf.84ce333080acca0614fce1e72ac4e640.jpg: 640x640 1 Filling, 5 impacted tooths, 9.7ms
+    image 976/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4107420000-jpg_png_jpg.rf.07a7e56f0d7976be74afc28fdf64bdbc.jpg: 640x640 1 Filling, 3 impacted tooths, 10.4ms
+    image 977/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4107530000-jpg_png_jpg.rf.7fd65fe2328018c3f431b2011a2870da.jpg: 640x640 2 Crowns, 3 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.5ms
+    image 978/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4107590000-jpg_png_jpg.rf.fe784252b852ebc8e801aa5ed29666a0.jpg: 640x640 13 Fillings, 3 impacted tooths, 10.4ms
+    image 979/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4108020000-jpg_png_jpg.rf.582deb0ea687b0b37888fa672c0f7470.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 980/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4108330000-jpg_png_jpg.rf.647f1147a8dbc0b8096c09b66c4e9aef.jpg: 640x640 4 Crowns, 1 Filling, 1 Missing teeth, 5 Root Canal Treatments, 2 impacted tooths, 9.6ms
+    image 981/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/410850000-jpg_png_jpg.rf.2a9209cd473f4cd24dfea23cfb8701b3.jpg: 640x640 4 impacted tooths, 9.6ms
+    image 982/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4108900000-jpg_png_jpg.rf.0d044f4885468f7c980ab6080204e062.jpg: 640x640 1 Crown, 1 Filling, 2 Missing teeths, 2 Root Canal Treatments, 2 impacted tooths, 9.6ms
+    image 983/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4109290000-jpg_png_jpg.rf.470dd04c73969c6f46da6b546f224222.jpg: 640x640 1 impacted tooth, 9.4ms
+    image 984/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4109330000-jpg_png_jpg.rf.7920f0237466653051746698b072e7c2.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.3ms
+    image 985/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4109540000-jpg_png_jpg.rf.43d9093e498ffcb303218321c7410d71.jpg: 640x640 1 Caries, 2 impacted tooths, 9.6ms
+    image 986/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4109540000-jpg_png_jpg.rf.6622bc1c892b5e49c4083cd866b85093.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 987/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4109670000-jpg_png_jpg.rf.037b30fddcd8d122612905abd825a96f.jpg: 640x640 2 Missing teeths, 3 impacted tooths, 9.4ms
+    image 988/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/410d77b1-DASHTBANI_BATOL_2020-07-05103248_jpg.rf.08d7ad0afbff9e69b9a3cf0fb5c520c8.jpg: 640x640 2 Crowns, 7 Fillings, 6 Root Canal Treatments, 9.0ms
+    image 989/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4110520000-jpg_png_jpg.rf.ec26ec9deb7c5801ae2d6b948e3cc2e4.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 990/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4110570000-jpg_png_jpg.rf.e5d46d742a7656b7d4591fc0be499e0c.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 991/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4111090000-jpg_png_jpg.rf.d73c95f1bea6bab9d12451c4726b4267.jpg: 640x640 1 Crown, 1 Filling, 1 impacted tooth, 9.1ms
+    image 992/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4111500000-jpg_png_jpg.rf.9d49825f8e5bb1cec8123b38d4dc7402.jpg: 640x640 1 Crown, 4 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 993/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4111750000-jpg_png_jpg.rf.f56637955d5d4c058cf16c10406df2ba.jpg: 640x640 1 Filling, 2 impacted tooths, 9.3ms
+    image 994/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4112770000-jpg_png_jpg.rf.4b5cfaa92772220d2072062bcf3fbf29.jpg: 640x640 1 Filling, 3 impacted tooths, 9.4ms
+    image 995/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4113290000-jpg_png_jpg.rf.26965133d1a13a9c2210146ce2a354ea.jpg: 640x640 11 Fillings, 2 impacted tooths, 9.1ms
+    image 996/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4113390000-jpg_png_jpg.rf.c09c4b8698e70ef239f313f3ed8c744a.jpg: 640x640 2 Crowns, 2 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 997/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4114470000-jpg_png_jpg.rf.d4227c75f9fc274c128d1e007e5e0e71.jpg: 640x640 2 Crowns, 16 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.4ms
+    image 998/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4114940000-jpg_png_jpg.rf.b0aba1ccbb2de1b680228e7c857930d0.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 999/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4115930000-jpg_png_jpg.rf.5ff30a2313380b1df258b303aff25ea2.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 1000/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4116660000-jpg_png_jpg.rf.c269ef2bc3021899a4b013021d955660.jpg: 640x640 1 Filling, 4 impacted tooths, 9.5ms
+    image 1001/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4116780000-jpg_png_jpg.rf.29f09b13e200bf3a5979c243cc5f9a02.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 1002/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4118210000-jpg_png_jpg.rf.36c72c674d8ece546ad0263820a9885e.jpg: 640x640 4 impacted tooths, 10.1ms
+    image 1003/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4118210000-jpg_png_jpg.rf.c3a9763ab863b84000747b40b9e4e597.jpg: 640x640 1 Filling, 4 impacted tooths, 9.8ms
+    image 1004/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4119230000-jpg_png_jpg.rf.f8471af3f2fd8fca3cd2ab2f50ed39d4.jpg: 640x640 4 impacted tooths, 9.8ms
+    image 1005/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4119530000-jpg_png_jpg.rf.870381be7467bd0d1682d4867f53f4ef.jpg: 640x640 1 Crown, 1 Implant, 1 Root Canal Treatment, 1 impacted tooth, 9.4ms
+    image 1006/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4119530000-jpg_png_jpg.rf.d14141fb19b72b17059a9d937b5576cc.jpg: 640x640 1 Crown, 1 Implant, 1 Missing teeth, 2 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 1007/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4120230000-jpg_png_jpg.rf.6c1fbe904ab9458cafcfa24bbb7ce8f8.jpg: 640x640 1 Caries, 1 Filling, 2 impacted tooths, 9.3ms
+    image 1008/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4122810000-jpg_png_jpg.rf.5eb8f232f3a2bafdab4ef6214c191684.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 1009/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4123660000-jpg_png_jpg.rf.6f0b14a3f7cc78ff17d30456c6d9e6ab.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.3ms
+    image 1010/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4123770000-jpg_png_jpg.rf.47bddfea8d935233276ff34e4788ba86.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.1ms
+    image 1011/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4123800000-jpg_png_jpg.rf.6333eee8a90d61f6c71c629679a37f8d.jpg: 640x640 9 Fillings, 2 impacted tooths, 11.5ms
+    image 1012/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4124250000-jpg_png_jpg.rf.51f263fd508619243ee03123f822458c.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 1013/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4124880000-jpg_png_jpg.rf.7bbcb216d7f9d674e547bfee2d36c05c.jpg: 640x640 6 Fillings, 4 impacted tooths, 8.9ms
+    image 1014/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4125080000-jpg_png_jpg.rf.1d0ac92fdd4c90860a1d0faf2d7a6051.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.2ms
+    image 1015/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4127070000-jpg_png_jpg.rf.8a31f7b7dbabdde2fd52a17366527523.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 1016/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4128800000-jpg_png_jpg.rf.727b289e807beb156337282aa994f34f.jpg: 640x640 2 Fillings, 3 impacted tooths, 8.8ms
+    image 1017/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4129330000-jpg_png_jpg.rf.6c7aae79236a24446d05a31d2259489d.jpg: 640x640 1 Missing teeth, 2 impacted tooths, 9.1ms
+    image 1018/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4130180000-jpg_png_jpg.rf.c741e37e0499ca4efa222855d43d251f.jpg: 640x640 1 Caries, 4 impacted tooths, 9.0ms
+    image 1019/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4130420000-jpg_png_jpg.rf.fc957924e2c87d7188cacc13081f39d8.jpg: 640x640 5 Fillings, 4 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 1020/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4132500000-jpg_png_jpg.rf.883e826883de65327f1fd2948f97bd0d.jpg: 640x640 1 Filling, 3 impacted tooths, 8.9ms
+    image 1021/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4132500000-jpg_png_jpg.rf.9ff37929d465e61e6cfc5e2a3ed712bf.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 1022/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4132690000-jpg_png_jpg.rf.5b529acbb4cf57e1d3f1a7f25ef325c3.jpg: 640x640 1 Crown, 5 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.0ms
+    image 1023/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4133650000-jpg_png_jpg.rf.2469a20bbea483c554dd96b8936a6f73.jpg: 640x640 1 Caries, 2 Fillings, 2 impacted tooths, 9.4ms
+    image 1024/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4133650000-jpg_png_jpg.rf.4b98c524f8a9aa7006b4dbd427bcc609.jpg: 640x640 1 Caries, 2 Fillings, 2 impacted tooths, 9.6ms
+    image 1025/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4133850000-jpg_png_jpg.rf.d79aa47cf1e0cf4ac0ad8cb6f39e89c9.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 1026/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4134640000-jpg_png_jpg.rf.b56bb892fb0e93885befc934a46ae3c5.jpg: 640x640 4 Crowns, 5 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 8.9ms
+    image 1027/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4135930000-jpg_png_jpg.rf.0e5a8417ab49878390eaef6a04911116.jpg: 640x640 3 Crowns, 5 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 1028/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4136220000-jpg_png_jpg.rf.6ea5655c657f31506de234212f774837.jpg: 640x640 2 Crowns, 8 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 1029/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4136320000-jpg_png_jpg.rf.87e00b1376f36ca4e1724d67cf31753a.jpg: 640x640 2 Crowns, 7 Fillings, 2 impacted tooths, 8.9ms
+    image 1030/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4137090000-jpg_png_jpg.rf.dd0959e81d030c61a084c5d0fa060af2.jpg: 640x640 1 Crown, 7 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 1031/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4140860000-jpg_png_jpg.rf.d42914f9e09654d56f2e28eedad1ad3a.jpg: 640x640 5 Crowns, 16 Fillings, 6 Root Canal Treatments, 3 impacted tooths, 8.9ms
+    image 1032/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4141560000-jpg_png_jpg.rf.e5c61f0b0065ba843a89bf92457a6222.jpg: 640x640 1 Caries, 1 Crown, 2 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 8.9ms
+    image 1033/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4143410000-jpg_png_jpg.rf.6051fa97707a96fc44c6b6bb129f5406.jpg: 640x640 8 Fillings, 2 impacted tooths, 9.2ms
+    image 1034/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4143690000-jpg_png_jpg.rf.fc5a7c8b89b23fe2952b89dbfc2c2b46.jpg: 640x640 5 Fillings, 2 Missing teeths, 1 Root Canal Treatment, 2 impacted tooths, 8.8ms
+    image 1035/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4143730000-jpg_png_jpg.rf.ea08cfa3181da72937ac4987e00f13b2.jpg: 640x640 9 Fillings, 1 impacted tooth, 8.9ms
+    image 1036/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4143830000-jpg_png_jpg.rf.194c30e8538cdbc79925db6c8c84cb16.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 1037/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4143910000-jpg_png_jpg.rf.97b3deb7fc1255b645e6f51635879c70.jpg: 640x640 1 Filling, 3 impacted tooths, 9.0ms
+    image 1038/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4144510000-jpg_png_jpg.rf.251d99a31f6c05a178c885a50f72cea2.jpg: 640x640 8 Fillings, 4 impacted tooths, 8.8ms
+    image 1039/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4145140000-jpg_png_jpg.rf.9da23498539a927d9fd7fa8aec50cead.jpg: 640x640 1 Filling, 4 impacted tooths, 8.9ms
+    image 1040/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4145690000-jpg_png_jpg.rf.c7c6d8cdbee13d71834439a5ed565e28.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 1041/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4145760000-jpg_png_jpg.rf.d276ece5fa58f6555730c4e3c7ae185a.jpg: 640x640 1 impacted tooth, 8.9ms
+    image 1042/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4146000000-jpg_png_jpg.rf.6b2839732f3b98f9c235c5974ad74215.jpg: 640x640 3 impacted tooths, 8.8ms
+    image 1043/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4146420000-jpg_png_jpg.rf.3db005015386eb1140d73479de98f24a.jpg: 640x640 1 Crown, 1 Filling, 4 impacted tooths, 9.0ms
+    image 1044/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4146590000-jpg_png_jpg.rf.4ff447153571f2d49f51f17793366c5d.jpg: 640x640 2 Crowns, 8 Fillings, 4 impacted tooths, 9.5ms
+    image 1045/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4146810000-jpg_png_jpg.rf.f35eb54af85d1c5daad70897caf822fb.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 1046/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4147740000-jpg_png_jpg.rf.b169ee508e4b796fc3b5b5ccf1a46d59.jpg: 640x640 1 Crown, 12 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 1047/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4147780000-jpg_png_jpg.rf.7c8fa11e4cd9c6ba38b4afd804b38871.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 1048/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4147930000-jpg_png_jpg.rf.44164d904472726c517bb03ff2b5f92d.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.4ms
+    image 1049/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4148070000-jpg_png_jpg.rf.737b1476c4b1948e3a8914b58dda409f.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.2ms
+    image 1050/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4148310000-jpg_png_jpg.rf.2f99c7ab172ac07d5488f35977a29451.jpg: 640x640 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 9.5ms
+    image 1051/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4148310000-jpg_png_jpg.rf.d2b4f0a6c920832b95b4383425fd1d08.jpg: 640x640 1 Filling, 2 impacted tooths, 10.3ms
+    image 1052/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4150000000-jpg_png_jpg.rf.2a40b7f15f2e2e7294565a3a670758a7.jpg: 640x640 1 Crown, 3 Root Canal Treatments, 2 impacted tooths, 11.6ms
+    image 1053/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4150570000-jpg_png_jpg.rf.fb3d832dd098a2de00c489841f492b39.jpg: 640x640 2 impacted tooths, 11.4ms
+    image 1054/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4152180000-jpg_png_jpg.rf.3fb0ed7ea396b08c14b7012e1a7f6ddb.jpg: 640x640 3 impacted tooths, 12.0ms
+    image 1055/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4152650000-jpg_png_jpg.rf.75321ed8f50e34dbfd3286f22587e2b8.jpg: 640x640 5 Crowns, 11 Fillings, 10 Root Canal Treatments, 3 impacted tooths, 9.5ms
+    image 1056/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4153410000-jpg_png_jpg.rf.02c1ae473162d199915b69811a5ad280.jpg: 640x640 2 Fillings, 2 impacted tooths, 10.5ms
+    image 1057/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4153410000-jpg_png_jpg.rf.f85b2d417c73adca5b330c9bd474021d.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.2ms
+    image 1058/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4154150000-jpg_png_jpg.rf.2de7eaed8e4970d88ebf813066201108.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.3ms
+    image 1059/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4154590000-jpg_png_jpg.rf.71a3d772114df009d4456d68e4bf84ef.jpg: 640x640 3 Crowns, 2 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 1060/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4155260000-jpg_png_jpg.rf.d8dac75928eed2084a23468685e3f406.jpg: 640x640 2 Crowns, 3 Fillings, 3 impacted tooths, 9.0ms
+    image 1061/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4155900000-jpg_png_jpg.rf.44be575199ec49dd0a5f776800eba417.jpg: 640x640 2 Fillings, 1 Implant, 1 impacted tooth, 9.3ms
+    image 1062/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4155980000-jpg_png_jpg.rf.ff23e7220074af44d3e91a1344fa8e08.jpg: 640x640 1 Filling, 3 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 1063/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4156130000-jpg_png_jpg.rf.ceaea92a95e0dc60b6b98980d0464999.jpg: 640x640 1 Crown, 8 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 1064/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4156130000-jpg_png_jpg.rf.d37461776af0e2939b78383e0118ca03.jpg: 640x640 1 Crown, 9 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 1065/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4156550000-jpg_png_jpg.rf.96d5eb3f49fbe3892bf249e8aca7aaf9.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 1066/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4156560000-jpg_png_jpg.rf.b1d95d3245fbf08b932a6b0025ffde77.jpg: 640x640 7 Crowns, 7 Fillings, 5 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 1067/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4156910000-jpg_png_jpg.rf.03a8ee1f5cd2e511cd7dacefe859d75d.jpg: 640x640 1 Filling, 2 impacted tooths, 9.6ms
+    image 1068/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4157590000_jpg.rf.259ab11f972c2102fb2341cc1742595c.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.6ms
+    image 1069/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4157600000_jpg.rf.c79f4d76fda6edfa98a4e67517e67f8d.jpg: 640x640 2 Crowns, 3 Fillings, 1 Implant, 2 Root Canal Treatments, 2 impacted tooths, 11.0ms
+    image 1070/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4159250000_jpg.rf.b6e22848e43eb2e742b7e2a3f2a964f3.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.8ms
+    image 1071/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4159290000_jpg.rf.136889b9b6392ca43c9a55e3f6a30b99.jpg: 640x640 10 Fillings, 4 impacted tooths, 9.3ms
+    image 1072/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4161540000_jpg.rf.ca865a36abefd11631445b4e702714a2.jpg: 640x640 1 Crown, 5 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 1073/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4162210000_jpg.rf.b7a5c95d117ccabc31c0acccd993f81a.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 1074/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4163230000_jpg.rf.572999d4682c8170464fa847b59d1fbc.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 1075/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4163270000_jpg.rf.d8eb0a6faa272759fdd816cfa81387b9.jpg: 640x640 1 Crown, 5 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.4ms
+    image 1076/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4164930000_jpg.rf.6125f58d4278fdf9fd14e3458f974569.jpg: 640x640 5 Fillings, 5 impacted tooths, 9.2ms
+    image 1077/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4165200000_jpg.rf.368abb28378fa3fbfdc7e78ce2be3c68.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 1078/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4165330000_jpg.rf.709667b46fec5b758945584ed59ff93d.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 1079/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4165420000_jpg.rf.cd5d0951194061e2a8ad78b37d88bdf8.jpg: 640x640 4 Crowns, 7 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 1080/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4166000000_jpg.rf.1428552c7bed34df2907a2f87b099043.jpg: 640x640 1 impacted tooth, 9.5ms
+    image 1081/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4166050000_jpg.rf.fe8587df2b9a06539b5f23cd9bfd7ddb.jpg: 640x640 1 Filling, 3 impacted tooths, 9.1ms
+    image 1082/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4167250000_jpg.rf.fa8d50bf4252a7372ec0b399818c3a47.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.0ms
+    image 1083/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/416740000-jpg_png_jpg.rf.4b13a0a809f0dc4aa22097081f5be7fb.jpg: 640x640 12 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 1084/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4168110000_jpg.rf.83027ff7c4fe44e75324411bda9c2f1d.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.0ms
+    image 1085/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4168110000_jpg.rf.c5596bd6a2199141b63312c9414cc19c.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.0ms
+    image 1086/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4169060000_jpg.rf.bf538f158d79082ce36aaba982bc2038.jpg: 640x640 15 Fillings, 4 impacted tooths, 8.9ms
+    image 1087/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4169350000_jpg.rf.e4cc48061ad6e472d4703e394392bfe2.jpg: 640x640 4 Crowns, 1 Filling, 6 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 1088/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4169840000_jpg.rf.751c12ed89bcf2ffb129f5f7641d2a9e.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.6ms
+    image 1089/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4169850000_jpg.rf.45470634ae78273654ead3724b66c87b.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.1ms
+    image 1090/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173100000_jpg.rf.bb0a4fb12a6f5f6510225777efe8c9b6.jpg: 640x640 2 Fillings, 4 impacted tooths, 8.8ms
+    image 1091/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173190000_jpg.rf.56da8e9327498d599f751c795021c0b4.jpg: 640x640 2 Crowns, 2 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 1092/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173230000_jpg.rf.2bf7ee99585075ae1eb75364696f8b86.jpg: 640x640 1 impacted tooth, 8.9ms
+    image 1093/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173230000_jpg.rf.988f21b7567824cc816bc03d84ed3463.jpg: 640x640 1 impacted tooth, 9.0ms
+    image 1094/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173290000_jpg.rf.f680c2aac2fbca607ec24d90af80a8a2.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 10.7ms
+    image 1095/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173480000_jpg.rf.c4d0f4672de77e3087cd77aab9ec148f.jpg: 640x640 1 Crown, 6 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 11.3ms
+    image 1096/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173670000_jpg.rf.af91e2e8672e8620cb6211007e43c80a.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 1097/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4175560000_jpg.rf.a9fa502e11a61195331fc37715244add.jpg: 640x640 8 Crowns, 4 Fillings, 7 Root Canal Treatments, 1 impacted tooth, 10.0ms
+    image 1098/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4179260000_jpg.rf.d29470cff9fa03aae5ec10b11780496e.jpg: 640x640 1 Crown, 19 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 1099/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4180370000_jpg.rf.e8c313ba3660e98c79c94d668a1207fe.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.1ms
+    image 1100/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4180560000_jpg.rf.a6e80dd3fbfe16c0ddac8742c3e8a828.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.2ms
+    image 1101/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4180790000_jpg.rf.530b7b4dcc98ec90601474065fcda1e9.jpg: 640x640 2 impacted tooths, 9.5ms
+    image 1102/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4181410000_jpg.rf.bb23f737378ebddbb11738708125914f.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.1ms
+    image 1103/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4181830000_jpg.rf.6852aaa720f57cd262c3ba56ec9ba364.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 1104/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4181830000_jpg.rf.f2a5e3a29cccd684e8620b22ad08643d.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 1105/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4182350000_jpg.rf.d2861fad0c0b6b72b84e6e04562a52c0.jpg: 640x640 10 Fillings, 2 impacted tooths, 9.4ms
+    image 1106/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/43a3d624-Safary_Ebrahim_2022-06-12140900_jpg.rf.6181a294c8fdc5e9c7407f1cf066e8bc.jpg: 640x640 14 Fillings, 1 Missing teeth, 9.0ms
+    image 1107/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/444440000-jpg_png_jpg.rf.0d7d30948ea6a0d867f577cc94647ce8.jpg: 640x640 1 impacted tooth, 9.1ms
+    image 1108/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/449270000-jpg_png_jpg.rf.50ea0344a0a11eb500a418089089c418.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.1ms
+    image 1109/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/454880000-jpg_png_jpg.rf.3b86b34891d41a3870d0521f6a74c260.jpg: 640x640 5 Fillings, 1 impacted tooth, 9.1ms
+    image 1110/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/45aabe56-Rezaee_Alireza_2022-06-12142256_jpg.rf.7bb90e3bf66321b041539425959f259a.jpg: 640x640 2 Crowns, 2 Fillings, 2 Missing teeths, 6 Root Canal Treatments, 9.0ms
+    image 1111/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/461f0e29-Jalali_Mojtaba_44yo_31052021_144441_jpg.rf.0e833069e2d4379f67541629650d9a95.jpg: 640x640 1 Filling, 3 impacted tooths, 9.0ms
+    image 1112/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/471980000-jpg_png_jpg.rf.5dac3cf8de417eafbaffbd592d761242.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 1113/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/474570000-jpg_png_jpg.rf.3b106a74ff8c44e3452b8d07eb6c2ff8.jpg: 640x640 1 Filling, 2 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 1114/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/483690000-jpg_png_jpg.rf.7066c072aa4c1d438ccc454ebd7a69fc.jpg: 640x640 3 Fillings, 5 impacted tooths, 10.5ms
+    image 1115/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4afa105e-SAHARI_PARSA_2020-06-01180600_jpg.rf.39db6652eb6a711b9b9f1b2d639d37de.jpg: 640x640 11 Cariess, 9.7ms
+    image 1116/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4d487220-ZAREII_MOJTABA_2020-07-12125051_jpg.rf.fcb2f7544c481c05596e314bf6c90f1e.jpg: 640x640 2 Crowns, 7 Fillings, 2 Missing teeths, 6 Root Canal Treatments, 9.4ms
+    image 1117/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4f0fbb1a-AMINI_NORI_ZAHIE_2020-08-24114944_jpg.rf.9eb5a407ca496991a247b69362850d8a.jpg: 640x640 1 Caries, 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.3ms
+    image 1118/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4ff121c7-GHASEMI_MOHAMADHASAN_2020-07-21111636_jpg.rf.65dba8e3b34a06d2c309e266fdfb1f50.jpg: 640x640 8 Crowns, 7 Fillings, 1 Mandibular Canal, 2 Missing teeths, 2 Root Canal Treatments, 9.4ms
+    image 1119/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/506970000-jpg_png_jpg.rf.602d402ac74cb158145870e01910c00c.jpg: 640x640 10 Fillings, 3 impacted tooths, 9.5ms
+    image 1120/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/514540000-jpg_png_jpg.rf.e1de9df432f6f86eb2b51a1a6ae7ca2c.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.4ms
+    image 1121/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/51dbf488-KAKOLI_FATEMEH_2020-05-18192148_jpg.rf.1fb174dee3e9a6c793e7f5c12c513849.jpg: 640x640 (no detections), 9.5ms
+    image 1122/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/529630000-jpg_png_jpg.rf.851f2222651ad50f9c1e7d3f83f282c4.jpg: 640x640 10 Fillings, 2 impacted tooths, 10.1ms
+    image 1123/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/529630000-jpg_png_jpg.rf.935c1c88c40f325cf9a0a3e01b5e5329.jpg: 640x640 12 Fillings, 2 impacted tooths, 10.2ms
+    image 1124/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/551330000-jpg_png_jpg.rf.470ef2178e2912a151dd5c3aa896de3b.jpg: 640x640 2 Crowns, 5 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 1125/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/557e6075-Rezaee_Mostafa_2022-06-12140251_jpg.rf.d250b9a4e5b90f27aad607ebc5f8e31e.jpg: 640x640 7 Cariess, 3 Fillings, 1 Periapical lesion, 2 Root Canal Treatments, 9.3ms
+    image 1126/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/55e731f5-Basirnejad_Mohammad_hossein_59y_31052021_173800_jpg.rf.5bcf49b55983ee7960380eea78a41e60.jpg: 640x640 3 Crowns, 4 Fillings, 3 Missing teeths, 9 Root Canal Treatments, 1 impacted tooth, 9.5ms
+    image 1127/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/565020000-jpg_png_jpg.rf.c9be297ee8f10d5be59a122a31f4c64f.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.7ms
+    image 1128/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/569080000-jpg_png_jpg.rf.7a501c140ad96e5e2fa7564d526e322b.jpg: 640x640 4 impacted tooths, 9.4ms
+    image 1129/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/585090000-jpg_png_jpg.rf.f7bd05cb5783e7a945807a08c24094f0.jpg: 640x640 1 Filling, 2 impacted tooths, 9.4ms
+    image 1130/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/58ef2561-Ghasemi_Ali_2022-05-14201609_jpg.rf.ea1bea647c019720ae48a52aa6d601df.jpg: 640x640 4 Cariess, 2 Missing teeths, 2 Periapical lesions, 9.4ms
+    image 1131/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/591140000-jpg_png_jpg.rf.3943557c8d454827fe2abb98eaca919a.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 1132/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/596970000-jpg_png_jpg.rf.c3385ed3fec3e6d3bc37a45bf4a608ec.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.0ms
+    image 1133/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5999d45d-JAMAAT_ASHRAF_2020-08-11124553_jpg.rf.96d4c9bb2688569cb64e0c894c338e8b.jpg: 640x640 2 Crowns, 12 Fillings, 9 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 1134/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5b9f3557-Khodayvandi_Foroud_2022-05-14104605_jpg.rf.d223899b7b0d4925b8f7e9ffc86fb614.jpg: 640x640 1 Caries, 1 Filling, 3 Missing teeths, 1 Periapical lesion, 1 Root Canal Treatment, 9.1ms
+    image 1135/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5be6087c-Asghari_Sajjad_2022-06-12142142_jpg.rf.3839a70cd1afe9bd7c4a3216fc10d24b.jpg: 640x640 5 Fillings, 2 Missing teeths, 2 Periapical lesions, 11 Root Canal Treatments, 8.9ms
+    image 1136/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5c85f7b0-Foroghi_Zahra_45yo_01062021_191937_jpg.rf.a316966c3f91d122c60d0fab601fdc2d.jpg: 640x640 1 Crown, 22 Fillings, 1 Missing teeth, 4 Root Canal Treatments, 9.1ms
+    image 1137/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5d70d498-Golshenas_Hassan_35yo_31052021_184131_jpg.rf.0e8a072a8aae5410e97f60a3cdc3fb0b.jpg: 640x640 1 Caries, 9 Crowns, 2 Fillings, 2 Missing teeths, 7 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 1138/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5dc6c07e-NEJAT_MOHAMMAD_2020-06-10182747_jpg.rf.ad35217c403b125a1ab88b32c1dc9f0b.jpg: 640x640 6 Fillings, 4 Missing teeths, 2 Periapical lesions, 9.5ms
+    image 1139/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5e90e658-Faridnia_Mohmmadtaha_2022-06-12141755_jpg.rf.07d3c22b05c1bd950e73154177664a28.jpg: 640x640 1 impacted tooth, 9.4ms
+    image 1140/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5f81def8-Niazi_Mohammad_hasan_2022-06-12141459_jpg.rf.149801e1f4c10d6f95335f54758f57fe.jpg: 640x640 5 Cariess, 1 Missing teeth, 9.2ms
+    image 1141/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5f81def8-Niazi_Mohammad_hasan_2022-06-12141459_jpg.rf.2719a4e8c192e0084573aa019b9bb781.jpg: 640x640 9 Cariess, 1 Missing teeth, 9.2ms
+    image 1142/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/606030000-jpg_png_jpg.rf.7477e89e6aaed7e04a4e66029fdba706.jpg: 640x640 1 impacted tooth, 9.8ms
+    image 1143/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/606030000-jpg_png_jpg.rf.97abf8e4e4a528e451a72c6cc3eab272.jpg: 640x640 1 impacted tooth, 9.3ms
+    image 1144/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/619b45c4-Hatami_Hamedeh_2022-05-14130727_jpg.rf.949f54a5f5962fb8fc9d5c10c1a97391.jpg: 640x640 1 Caries, 4 Fillings, 2 Missing teeths, 13 Root Canal Treatments, 9.3ms
+    image 1145/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/645f5268-SHAHABI_MARZIIEH_2020-08-11110530_jpg.rf.c72c4c593ab74fffe066fef2a5d27f30.jpg: 640x640 5 Crowns, 20 Fillings, 13 Root Canal Treatments, 1 impacted tooth, 9.5ms
+    image 1146/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/657890000-jpg_png_jpg.rf.de1797031d3788503d528c0a8b49a295.jpg: 640x640 1 Filling, 4 impacted tooths, 9.5ms
+    image 1147/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/66c704cb-Eildar_Mohammaad_2022-06-12141219_jpg.rf.f3afe77885a5f7cea14c696317317d8e.jpg: 640x640 2 Cariess, 1 Filling, 3 Root Canal Treatments, 9.1ms
+    image 1148/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/680650000-jpg_png_jpg.rf.d5cd1a037fe1c31506be01fe4ef65800.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 1149/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/68fbecf7-JOKAR_PARVIN_2020-08-16192334_jpg.rf.57bf371986aa23d72fe5511183b3a9eb.jpg: 640x640 3 Missing teeths, 9.8ms
+    image 1150/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/695440000-jpg_png_jpg.rf.73604fa3346b7846ff9682da7cb502a2.jpg: 640x640 11 Fillings, 3 impacted tooths, 9.4ms
+    image 1151/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/695440000-jpg_png_jpg.rf.f9fbf43e0cf5e39de5424b0c410cd3ff.jpg: 640x640 11 Fillings, 3 impacted tooths, 9.6ms
+    image 1152/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/696830000-jpg_png_jpg.rf.247ae6064a3b7f07f8b6b3e8b7a84d86.jpg: 640x640 3 Crowns, 2 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 1153/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/696830000-jpg_png_jpg.rf.4367823d87d2705cb76112dfe56d3da0.jpg: 640x640 3 Crowns, 2 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 1154/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/6a7d8a38-Ghazvini_andarod_Mahsa_32y_01062021_092125_jpg.rf.99b440766cca8d7e9949bfeeebebbc4b.jpg: 640x640 3 Crowns, 20 Fillings, 2 Implants, 1 Missing teeth, 7 Root Canal Treatments, 9.7ms
+    image 1155/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/6fcaf7f8-HOOSHANGI_HOSEIN_2020-07-28194851_jpg.rf.330264423e73094835bfb0032fe5f09a.jpg: 640x640 1 Caries, 1 Crown, 10 Fillings, 4 Missing teeths, 2 Periapical lesions, 6 Root Canal Treatments, 9.8ms
+    image 1156/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/6fcaf7f8-HOOSHANGI_HOSEIN_2020-07-28194851_jpg.rf.4b691b0132f8d0d6b0ed6d9a150e1168.jpg: 640x640 1 Caries, 1 Crown, 9 Fillings, 3 Missing teeths, 2 Periapical lesions, 6 Root Canal Treatments, 9.4ms
+    image 1157/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/720990000-jpg_png_jpg.rf.8ad78f62d79159ceaaecc6db5a110d3b.jpg: 640x640 6 Crowns, 6 Fillings, 6 Root Canal Treatments, 1 impacted tooth, 9.7ms
+    image 1158/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/728710000-jpg_png_jpg.rf.276e03b5bbedfd1d7652e8e6a1b92690.jpg: 640x640 3 Crowns, 4 Fillings, 1 impacted tooth, 9.4ms
+    image 1159/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/738810000-jpg_png_jpg.rf.2a24c577865ea1ff44d2dd1081fcb2ac.jpg: 640x640 3 Crowns, 5 Fillings, 2 impacted tooths, 9.2ms
+    image 1160/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/738810000-jpg_png_jpg.rf.c69f52e074fe566283fb710270228e8c.jpg: 640x640 3 Crowns, 7 Fillings, 3 impacted tooths, 9.2ms
+    image 1161/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/74cef83a-SAFARY_KOBRA_2020-08-04121727_jpg.rf.9bfa9f86a66ad43f923e981ac1e11bef.jpg: 640x640 2 Crowns, 18 Fillings, 5 Root Canal Treatments, 9.4ms
+    image 1162/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/766200000-jpg_png_jpg.rf.54e3ad13a47df9cde6f9e8947745d85d.jpg: 640x640 4 Crowns, 1 Implant, 3 Root Canal Treatments, 3 impacted tooths, 8.9ms
+    image 1163/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/76a627bd-GOMESHLI_AMIRREZA_2020-08-16114426_jpg.rf.e23fec9f6dd8dee2b9a044f518b7ee77.jpg: 640x640 11 Cariess, 1 Filling, 9.3ms
+    image 1164/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/76d97056-KAKOLI_FATEMEH_2020-05-18192132_jpg.rf.1830960d68291b829851c6b54cf6d768.jpg: 640x640 1 Caries, 2 Crowns, 8 Fillings, 1 Periapical lesion, 9 Root Canal Treatments, 9.3ms
+    image 1165/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/7790000-jpg_png_jpg.rf.040e1b62909190170302f19100ee3de3.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 1166/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/78b4adec-Gheme_Atefe_32yo_31052021_134714_jpg.rf.e106fa37a5d00090493243d727110c51.jpg: 640x640 1 Caries, 3 Fillings, 1 Missing teeth, 4 Root Canal Treatments, 9.2ms
+    image 1167/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/7b790b79-MORADLI_QOLAMALI_2020-06-16120854_jpg.rf.c77f30af7059c635db6c308ba5e79cdc.jpg: 640x640 3 Cariess, 5 Crowns, 7 Fillings, 6 Root Canal Treatments, 9.2ms
+    image 1168/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/801070000-jpg_png_jpg.rf.dfa707def3827531c8e1a747110a8870.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.1ms
+    image 1169/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/82fb4119-Feyzi_Fateme_55yo_01062021_154551_jpg.rf.d9ed585a53d8221f2ba96f42a1c5ad26.jpg: 640x640 4 Crowns, 17 Fillings, 1 Missing teeth, 6 Root Canal Treatments, 9.2ms
+    image 1170/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/82fb4119-Feyzi_Fateme_55yo_01062021_154551_jpg.rf.fb218e63cb7cdf8b846ffdf2309daf5e.jpg: 640x640 3 Crowns, 16 Fillings, 1 Missing teeth, 6 Root Canal Treatments, 9.2ms
+    image 1171/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/847260000-jpg_png_jpg.rf.269b4705b6b19808f1d2b255082af6d0.jpg: 640x640 1 Periapical lesion, 2 impacted tooths, 9.3ms
+    image 1172/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/84ac63a0-Alimoradi_Setareh_2022-06-12142305_jpg.rf.bc3e79496a9f6252e9a6625eddab0473.jpg: 640x640 4 Cariess, 9.1ms
+    image 1173/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/84e51705-NIROMAND_ROGHAYEH_2020-06-14113133_jpg.rf.fd18bbb0675ba96821424a602c4680ee.jpg: 640x640 1 Caries, 15 Fillings, 2 Periapical lesions, 10 Root Canal Treatments, 9.3ms
+    image 1174/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/884710000-jpg_png_jpg.rf.908b6a8d32f08ec03e93ee660908c01a.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 1175/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/8f659123-Arshikamel_Saeid_2022-06-12141848_jpg.rf.9b7752673a12acc3149f452929891d6a.jpg: 640x640 1 Filling, 9.2ms
+    image 1176/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/9007adf1-Hemati_Fatemeh_2022-06-12142847_jpg.rf.5c4575fae3020d2c31c60a8b8fa9285a.jpg: 640x640 1 Caries, 8 Crowns, 3 Fillings, 2 Missing teeths, 4 Root Canal Treatments, 9.3ms
+    image 1177/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/901500000-jpg_png_jpg.rf.093c847bb98c36309dc784ce6dd38823.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.4ms
+    image 1178/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/904370000-jpg_png_jpg.rf.2ed27b9bb46caf900b26770ecfe48d5f.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 1179/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/911450000-jpg_png_jpg.rf.3aaa5bd7e9c8b6cfbe1e03105e0eb5b3.jpg: 640x640 4 Crowns, 2 Implants, 3 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 1180/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/91320865-AHMADI_EDRIS_2020-07-18180728_jpg.rf.beb11d12d62ab288237fd83ee15f283b.jpg: 640x640 2 Cariess, 1 Crown, 11 Fillings, 6 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 1181/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/9152ba23-Janati_Ali_asghar_28yo_03012021_094614_jpg.rf.88ded5fef8c5e6c03f7b127915cb27da.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 9.2ms
+    image 1182/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/918810000-jpg_png_jpg.rf.6f4a19ebf9439172fdd58914ce7effeb.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 1 impacted tooth, 9.1ms
+    image 1183/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/95575d7a-Khazaee_Abbas_2022-06-12142012_jpg.rf.2b26faf6ea3eeb9ce709834870967dc0.jpg: 640x640 7 Crowns, 4 Fillings, 1 Missing teeth, 1 Root Canal Treatment, 9.0ms
+    image 1184/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/960210000-jpg_png_jpg.rf.2fea5bb08eba7b8471a5aa535276d1ca.jpg: 640x640 1 Crown, 5 Fillings, 4 impacted tooths, 9.1ms
+    image 1185/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/964810000-jpg_png_jpg.rf.90e0f72aa499de8c63d647a3940b9345.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.1ms
+    image 1186/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/96738126-Faraj_Fatemeh_2022-06-12142338_jpg.rf.d5a90f0711f99a9a4e45c13594e49d72.jpg: 640x640 2 Cariess, 1 Crown, 1 Filling, 9.6ms
+    image 1187/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/97cd2c67-HALVAII_ZAHRA_2020-08-04102531_jpg.rf.64aaed4d8eb9c97db4022cf1df4177fb.jpg: 640x640 6 Crowns, 3 Fillings, 1 Missing teeth, 1 Root Canal Treatment, 9.2ms
+    image 1188/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/97cd2c67-HALVAII_ZAHRA_2020-08-04102531_jpg.rf.ab1548a874edc02057d82e2c244e01af.jpg: 640x640 6 Crowns, 3 Fillings, 1 Missing teeth, 1 Root Canal Treatment, 9.8ms
+    image 1189/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/985850000-jpg_png_jpg.rf.04706dd7efa5881d6930bd1bbf7efda7.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 1190/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/986190000-jpg_png_jpg.rf.ccfed9c21f9997f110483dc2b76d4904.jpg: 640x640 2 Fillings, 2 Missing teeths, 3 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 1191/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/987389b6-Hatami_Maryam_2022-06-12141013_jpg.rf.c5814d90726d7cdc9776cc12185b095a.jpg: 640x640 2 Cariess, 6 Fillings, 3 Missing teeths, 8 Root Canal Treatments, 9.2ms
+    image 1192/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/9a0ce887-Beyranvand_Mohammadmahdi_2022-06-12141541_jpg.rf.15aebe04ad229ac35382c8be89a125d9.jpg: 640x640 4 Cariess, 9.1ms
+    image 1193/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a0e9cf32-ESKANDARI_ABOLFAZL_2020-07-15181937_jpg.rf.2795cdf13d675e61e741a167310c6c29.jpg: 640x640 1 Caries, 2 Missing teeths, 9.2ms
+    image 1194/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a0e9cf32-ESKANDARI_ABOLFAZL_2020-07-15181937_jpg.rf.6815ac28f39d3aeeeed2f3984b1a9951.jpg: 640x640 1 Caries, 3 Missing teeths, 9.2ms
+    image 1195/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a1b5bbda-Parhizkar_Marziyeh_2022-06-12142931_jpg.rf.77927c13ce3aadfbc430650cf1eb8c68.jpg: 640x640 6 Cariess, 5 Fillings, 1 Missing teeth, 1 Periapical lesion, 5 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 1196/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a26c9066-Rezaee_Leila_2022-05-14194153_jpg.rf.c3a6e73fe2e4b1b813d1b548d489c2df.jpg: 640x640 1 Caries, 7 Fillings, 1 Missing teeth, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 1197/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a284e7f9-KAKOLI_FATEMEH_2020-05-18192132_jpg.rf.1e519fe5ea02e615aac3bff5cb009bc0.jpg: 640x640 1 Crown, 9 Fillings, 12 Root Canal Treatments, 9.9ms
+    image 1198/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a5617492-Godarzi_Ferdos_2022-06-12142243_jpg.rf.558b68391186fec9e76e5d5085506792.jpg: 640x640 2 Cariess, 5 Crowns, 4 Fillings, 4 Missing teeths, 1 Periapical lesion, 19 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 1199/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a76f409a-Kamrani_Zahra_46y_01062021_114236_jpg.rf.7e97a164682e77587a60e4f9f89c212f.jpg: 640x640 10 Crowns, 8 Fillings, 2 Implants, 1 Missing teeth, 8 Root Canal Treatments, 9.3ms
+    image 1200/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a814aa00-Gharibian_Arpa_29y_01062021_190839_jpg.rf.3158e8faa90a6b4c1cdd664991d363f6.jpg: 640x640 1 Caries, 1 Crown, 5 Fillings, 4 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 1201/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/aa528b04-Jadid_tavaf_Aliye_58y_02062021_101731_jpg.rf.1d542c801a33d6fd614517773e13e616.jpg: 640x640 12 Crowns, 3 Implants, 1 Missing teeth, 8 Root Canal Treatments, 9.4ms
+    image 1202/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/ae1079a6-Khalajamirhoseini_Hediyeh_2022-06-12140652_jpg.rf.aad734a1719eb803370637c9d92b59e0.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.2ms
+    image 1203/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b1593d4d-Kheyri_Hamid_reza_32yo_01062021_145239_jpg.rf.0cabf9bc33923451b3db7987a8944e6f.jpg: 640x640 8 Fillings, 1 Missing teeth, 1 Periapical lesion, 3 Root Canal Treatments, 9.4ms
+    image 1204/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b1593d4d-Kheyri_Hamid_reza_32yo_01062021_145239_jpg.rf.95966aa66d3be020a0e15af777f8804c.jpg: 640x640 1 Caries, 10 Fillings, 1 Missing teeth, 3 Periapical lesions, 4 Root Canal Treatments, 9.3ms
+    image 1205/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b2a5c463-Azimi_Fatemeh_2022-06-12142800_jpg.rf.736c207ed26fbb04a20907ed9df8fe12.jpg: 640x640 1 Caries, 1 Filling, 2 Missing teeths, 9.1ms
+    image 1206/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b2a5c463-Azimi_Fatemeh_2022-06-12142800_jpg.rf.cee4e4c8f1e59cd0af0c6e4a3bb569cc.jpg: 640x640 1 Caries, 1 Filling, 2 Missing teeths, 9.1ms
+    image 1207/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b2a5c463-Azimi_Fatemeh_2022-06-12142800_jpg.rf.d7d8ae0cf9f52215f9161ea6b721921a.jpg: 640x640 1 Caries, 1 Filling, 2 Missing teeths, 9.2ms
+    image 1208/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b471100b-SALIMI_ATEFEH_2020-07-21100703_jpg.rf.4b92bf92c101fa94a2df1dfcf010d669.jpg: 640x640 5 Cariess, 1 Filling, 1 Root Canal Treatment, 9.1ms
+    image 1209/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b477df0d-Karegar_Rahman_38y_01062021_141537_jpg.rf.4941576df42ee0d83a4b479d25a92651.jpg: 640x640 1 Caries, 4 Missing teeths, 1 impacted tooth, 9.2ms
+    image 1210/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b477df0d-Karegar_Rahman_38y_01062021_141537_jpg.rf.6aa3dad193db5c30ba6e1629a038504a.jpg: 640x640 1 Caries, 4 Missing teeths, 1 impacted tooth, 8.9ms
+    image 1211/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b54db56a-Haji_esfandiyari_Fereshteh_2022-05-14201132_jpg.rf.2ad1d3cbd3d717ca885d09910dfb1490.jpg: 640x640 2 Cariess, 1 Crown, 8 Fillings, 3 Missing teeths, 7 Root Canal Treatments, 9.2ms
+    image 1212/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b66fbd9e-KARIMI_MILAD_2020-07-26191709_jpg.rf.28b4b54e68ef7dec92c23b2c92e05add.jpg: 640x640 4 Cariess, 1 Missing teeth, 2 impacted tooths, 8.8ms
+    image 1213/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b7246eca-RAMAZANI_REZA_2020-02-22120547_jpg.rf.0d0ecbd8ea6318d72ae5aa556e06bf0a.jpg: 640x640 3 Cariess, 2 Crowns, 12 Fillings, 13 Root Canal Treatments, 9.1ms
+    image 1214/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b99b3517-Fath_abadi_boz_cheloee_Fateme_46yo_31052021_155111_jpg.rf.5b3c458e6b0e09459619b3109ddfece0.jpg: 640x640 5 Crowns, 7 Fillings, 8 Root Canal Treatments, 9.0ms
+    image 1215/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b99b3517-Fath_abadi_boz_cheloee_Fateme_46yo_31052021_155111_jpg.rf.b2fe876fcd349d62147d9468c02b03b5.jpg: 640x640 5 Crowns, 9 Fillings, 9 Root Canal Treatments, 9.4ms
+    image 1216/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b9f5d067-Arshikamel_Saeid_2022-06-12141857_jpg.rf.f4202f361881284c06243f86a2bee3af.jpg: 640x640 2 Fillings, 2 Missing teeths, 1 Root Canal Treatment, 8.9ms
+    image 1217/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b9f5d067-Arshikamel_Saeid_2022-06-12141857_jpg.rf.fc41a11b3fa95d449e560c79c9514ab2.jpg: 640x640 2 Fillings, 2 Missing teeths, 1 Root Canal Treatment, 8.8ms
+    image 1218/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/bc2dd43c-Fallahi_Golamreza_2022-06-12141808_jpg.rf.d225d3e9018d440241c1626b7a2775f5.jpg: 640x640 4 Fillings, 1 Missing teeth, 7 Root Canal Treatments, 11.4ms
+    image 1219/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/bc55b198-Vasegh_Sepideh_2022-06-12142738_jpg.rf.c3674239336131769151a5da49a00f6d.jpg: 640x640 3 Crowns, 20 Fillings, 8 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 1220/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/bd60ee19-BABAII_FATEMEH_2020-07-29112645_jpg.rf.c835b71c1170fb10fab6e7fe42351f17.jpg: 640x640 7 Crowns, 3 Fillings, 2 Missing teeths, 6 Root Canal Treatments, 9.2ms
+    image 1221/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/c159ab67-Hoseinian_rad_Helia_6yo_02062021_115503_jpg.rf.4ad3e9fb5349d3be1927dc7d3432ee4b.jpg: 640x640 1 Caries, 9.3ms
+    image 1222/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/c38626fe-Jahedi_dlivand_Azam_42yo_02062021_130546_jpg.rf.b977b68fb89276b70bfcfd6ec68a79f2.jpg: 640x640 2 Crowns, 7 Fillings, 1 Missing teeth, 2 Root Canal Treatments, 9.0ms
+    image 1223/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/c3ae3680-Lotfi_Amin_2022-05-14175852_jpg.rf.ab3c46b44bbebe8c01c85645d097d969.jpg: 640x640 2 Cariess, 3 Fillings, 2 Periapical lesions, 1 impacted tooth, 8.9ms
+    image 1224/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/c9b78aa3-LOTFI_PARIA_2020-05-18184452_jpg.rf.42576813d7ed867c9cbef75fd9b3f5b8.jpg: 640x640 4 Crowns, 10 Fillings, 3 Missing teeths, 6 Root Canal Treatments, 8.9ms
+    image 1225/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AAYUSHI-_2023-10-26183314_1_png.rf.4e922604a759e7c19a767fb5d9391aaf.jpg: 640x640 2 Mandibular Canals, 3 impacted tooths, 9.0ms
+    image 1226/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ABHIJOT-SINGH_2023-10-21142308_1_png.rf.1a1c49066bf6f51972623319ef533a5c.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 1227/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AGYA-KAUR_2023-10-20191848_1_png.rf.2f0bcdbf204e316c4e86e17e3fa714f6.jpg: 640x640 5 Implants, 2 Missing teeths, 2 Root Canal Treatments, 8.9ms
+    image 1228/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMANDEEP-KAUR_2023-10-20190033_1_png.rf.dc6d2b59d56b003137323ba614e100f8.jpg: 640x640 2 Cariess, 2 Mandibular Canals, 4 Missing teeths, 8.8ms
+    image 1229/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMANDEEP-KAUR_2023-10-21140436_1_png.rf.45a51a91ea6533aaf62a822a0b0cdba3.jpg: 640x640 3 Crowns, 4 Missing teeths, 1 Root Canal Treatment, 8.8ms
+    image 1230/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMANDEEP-KAUR_2023-10-21152645_1_png.rf.4f6c9797fde0204771c3fb9563e848f0.jpg: 640x640 1 Filling, 2 Mandibular Canals, 3 Root Canal Treatments, 8.8ms
+    image 1231/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMARJEET-KAUR_2023-10-20190704_1_png.rf.a9de6e8a7b1035272565e98650ba1428.jpg: 640x640 1 Mandibular Canal, 2 Missing teeths, 8.7ms
+    image 1232/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMARPREET-KALAIR_2023-10-21124049_1_png.rf.cff4435e8b1dd8a98cd32e7cb3b86e81.jpg: 640x640 9 Crowns, 6 Implants, 2 Mandibular Canals, 2 Missing teeths, 9.1ms
+    image 1233/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMRITPAL-KAUR_2023-10-21115717_1_png.rf.bf8cbff021be1569201abea89305b053.jpg: 640x640 1 Caries, 1 Mandibular Canal, 2 impacted tooths, 8.7ms
+    image 1234/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ANIL-MITTAL_2023-10-20144943_1_png.rf.75482d6047e49449fdda25f685ef66ed.jpg: 640x640 19 Crowns, 1 Filling, 2 Mandibular Canals, 4 Missing teeths, 1 Root Canal Treatment, 1 impacted tooth, 8.7ms
+    image 1235/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ANITA-BANSAL_2023-10-20191615_1_png.rf.891a1aa3a29d520b01ec9751d4a3f833.jpg: 640x640 2 Crowns, 1 Filling, 1 Mandibular Canal, 2 Missing teeths, 2 Root Canal Treatments, 8.8ms
+    image 1236/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ANJU-BUTTAR_2023-10-20191020_1_png.rf.182858a77047a943ccc3ffaf3e0f6ac9.jpg: 640x640 4 Crowns, 2 Mandibular Canals, 1 Missing teeth, 8.7ms
+    image 1237/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ANKITA-RANI_2023-10-20191304_1_png.rf.8345d846dcea7d98026ad21811b5a12e.jpg: 640x640 2 Cariess, 2 Mandibular Canals, 8.8ms
+    image 1238/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ARJAN-SINGH_2023-10-21114049_1_png.rf.fb41bddc836df174a279a41cfcde8c8e.jpg: 640x640 1 Caries, 1 Mandibular Canal, 1 Root Canal Treatment, 8.7ms
+    image 1239/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ARMINDER-SINGH_2023-10-21151030_1_png.rf.16098151a708e7e70f3dce140144c62e.jpg: 640x640 2 Mandibular Canals, 8.7ms
+    image 1240/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ARVIND-SINGH_2023-10-21135329_1_png.rf.3f9387c63e0330bc01af801a4dfec13c.jpg: 640x640 2 Mandibular Canals, 1 Missing teeth, 8.7ms
+    image 1241/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ASMITA-_2023-10-26182940_1_png.rf.275a5791f432d8f4dae05299d02346cc.jpg: 640x640 7 Crowns, 9.7ms
+    image 1242/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BALJINDER-KAUR_2023-10-20161909_1_png.rf.f987f66f2c00d64d84223e9925f7d0e8.jpg: 640x640 10 Crowns, 2 Mandibular Canals, 2 Missing teeths, 15 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 1243/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BALWANT-SINGH_2023-10-20145931_1_png.rf.97e2015330cbf1a363f0bc04610d7a52.jpg: 640x640 2 Cariess, 2 Mandibular Canals, 2 Missing teeths, 2 Periapical lesions, 9.1ms
+    image 1244/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BHAVTAARAN-KAUR_2023-10-20162536_1_png.rf.a630c950cbf81fff3fd2692f50a9e80a.jpg: 640x640 2 Mandibular Canals, 3 impacted tooths, 9.3ms
+    image 1245/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BHOLA-KHAN_2023-10-20161201_1_png.rf.a2e3c6fc6a6ec035809c1d102ac08e41.jpg: 640x640 1 Caries, 2 Mandibular Canals, 9.1ms
+    image 1246/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BHUPINDER-SINGH_2023-10-20151610_1_png.rf.15061371e6ef0e414da7f09988fcf40b.jpg: 640x640 1 Caries, 1 Mandibular Canal, 6 Missing teeths, 8.9ms
+    image 1247/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BHUPINDER-SINGH_2023-10-20151610_1_png.rf.f7d30875368c9750d39efded3b7cef4e.jpg: 640x640 1 Caries, 2 Mandibular Canals, 5 Missing teeths, 8.9ms
+    image 1248/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Baljit-Singh_2023-10-26182420_1_png.rf.de97fc48696bc2b661bf650a6a6f5f9f.jpg: 640x640 3 Fillings, 2 Mandibular Canals, 4 Root Canal Treatments, 9.0ms
+    image 1249/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_CHANDER-BHUSHAN_2023-10-20154033_1_png.rf.e45170a85b72db432da68f1075daf6b6.jpg: 640x640 9 Crowns, 2 Fillings, 2 Implants, 2 Mandibular Canals, 1 Missing teeth, 7 Root Canal Treatments, 9.4ms
+    image 1250/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_CHARNJIT-KAUR_2023-10-21113227_1_png.rf.4bebd0d4d0dc9c8c10c79307a9b43187.jpg: 640x640 1 Caries, 2 Mandibular Canals, 4 Missing teeths, 9.3ms
+    image 1251/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_CHINDERPAL-KAUR_2023-10-21160848_1_png.rf.fb2aebe0bf7ef1b9e3f4cc28dbd0e611.jpg: 640x640 9 Crowns, 2 Mandibular Canals, 6 Root Canal Treatments, 9.0ms
+    image 1252/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_DALISHA-MONGA_2023-10-20164736_1_png.rf.4865a4612685ef2fed8fd3b4cf89f0e2.jpg: 640x640 1 Missing teeth, 9.0ms
+    image 1253/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_DALWINDER-SINGH_2023-10-21132612_1_png.rf.b0a5696f15d7d50a3aa04a1485059b08.jpg: 640x640 (no detections), 9.1ms
+    image 1254/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_DHARAM-SINGH_2023-10-20153546_1_png.rf.72a57e8263089fa41087deffe243b925.jpg: 640x640 2 Crowns, 1 Mandibular Canal, 2 Missing teeths, 5 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 1255/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_DINESH-LOKHANDE_2023-10-26182717_1_png.rf.3f5429fa4939e1ff1e5743fcb41e9f7c.jpg: 640x640 3 Crowns, 2 Mandibular Canals, 8.9ms
+    image 1256/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Davinder-Singh_2023-10-26185246_1_png.rf.2771c08802c90746a8c051c79f58d669.jpg: 640x640 1 Caries, 2 Mandibular Canals, 2 Missing teeths, 8.8ms
+    image 1257/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_GAGANDEEP-KAUR_2023-10-20162347_1_png.rf.29c892f2d38135440be713162e3a3dfd.jpg: 640x640 1 Caries, 2 Mandibular Canals, 9.0ms
+    image 1258/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_GURNAM-SINGH_2023-10-21115229_1_png.rf.9c7877698ad81e40fb1078a566b38f7a.jpg: 640x640 2 Mandibular Canals, 2 Missing teeths, 9.0ms
+    image 1259/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_GURPINDER-KAUR_2023-10-20163202_1_png.rf.51f11a9cbe81a2fdad6c1cb9eeeb037b.jpg: 640x640 1 Caries, 2 Mandibular Canals, 1 Missing teeth, 2 impacted tooths, 8.8ms
+    image 1260/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_GURPREET-KAUR-_2023-10-21142921_1_png.rf.edd50e1cff52b85089a3bce42d583c12.jpg: 640x640 2 Mandibular Canals, 3 impacted tooths, 8.8ms
+    image 1261/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Gurleen-Kaur_2023-10-26182145_1_png.rf.62c9c65916ddaf48ced4b08037b486c7.jpg: 640x640 1 Mandibular Canal, 3 impacted tooths, 9.1ms
+    image 1262/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Gurmail-Kaur_2023-10-26181734_1_png.rf.799ff092ed6d1a2fc450d8b0d3b74d8c.jpg: 640x640 3 Missing teeths, 8.9ms
+    image 1263/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_HARDEV-SINGH_2023-10-21135132_1_png.rf.c076069f97ac96d5724033a0f5848bcb.jpg: 640x640 3 Cariess, 1 Filling, 2 Mandibular Canals, 1 Missing teeth, 1 Periapical lesion, 4 Root Canal Treatments, 8.9ms
+    image 1264/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_HARJINDER-SINGH_2023-10-20161418_1_png.rf.0e07ea11a3288b8e68146067da033ba2.jpg: 640x640 1 Crown, 3 Missing teeths, 1 Root Canal Treatment, 8.8ms
+    image 1265/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_HARPAL-SINGH_2023-10-20160532_1_png.rf.58d5f06923c607621415271f0b96fd2d.jpg: 640x640 1 Mandibular Canal, 2 Missing teeths, 2 Periapical lesions, 8.9ms
+    image 1266/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_HARSIMRAN-SINGH_2023-10-20162516_1_png.rf.edb93209257dcfe69d978d685b45a496.jpg: 640x640 2 Mandibular Canals, 5 impacted tooths, 9.0ms
+    image 1267/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Harwinder-Singh_2023-10-26181841_1_png.rf.8f25a8dafe4e5618d2d87a449a560659.jpg: 640x640 1 Mandibular Canal, 8.9ms
+    image 1268/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JAGROOP-SINGH_2023-10-21142648_1_png.rf.f294b7920ce084f4500323bb3a326eb8.jpg: 640x640 1 Mandibular Canal, 3 Missing teeths, 8.9ms
+    image 1269/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JAGWINDER-SINGH_2023-10-21161007_1_png.rf.f6c82ab78f60dfcaa9acac2ba27b3842.jpg: 640x640 1 Missing teeth, 1 Root Canal Treatment, 2 impacted tooths, 8.8ms
+    image 1270/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JANISH-NIKHANJ_2023-10-20161445_1_png.rf.d11a8406c5ae72ae89e74ac0fc96d380.jpg: 640x640 2 Mandibular Canals, 4 impacted tooths, 9.1ms
+    image 1271/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JASMEEN-KAUR_2023-10-20145534_1_png.rf.47e389154aba8f5ad2e3663f4aa6d2d8.jpg: 640x640 2 Cariess, 4 impacted tooths, 9.2ms
+    image 1272/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JASNEET-SINGH_2023-10-21143000_1_png.rf.d83844ca3f623d29164ff19f9ccb940d.jpg: 640x640 6 Crowns, 6 Fillings, 4 Missing teeths, 5 Root Canal Treatments, 9.5ms
+    image 1273/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JASWINDER-KAUR_2023-10-20161029_1_png.rf.ac52057568cad4510ed0bc74495500ca.jpg: 640x640 1 Caries, 1 Crown, 4 Fillings, 2 Mandibular Canals, 3 Missing teeths, 9 Root Canal Treatments, 9.1ms
+    image 1274/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JASWINDER-KAUR_2023-10-21151433_1_png.rf.b4381391bcf933e339e9ec121231a8de.jpg: 640x640 1 Caries, 1 Filling, 6 Missing teeths, 4 Root Canal Treatments, 9.4ms
+    image 1275/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JATINDER-NARULA_2023-10-20162902_1_png.rf.2b92849dc8c0239423c82cb371294dcc.jpg: 640x640 1 Mandibular Canal, 3 Missing teeths, 9.0ms
+    image 1276/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Jatan-jot-Kaur_2023-10-26182308_1_png.rf.663991f1bcca6ec128a5a280b1e80f3f.jpg: 640x640 2 Mandibular Canals, 1 Missing teeth, 8.9ms
+    image 1277/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_KAVITA-GOYAL_2023-10-21152605_1_png.rf.b3f9c8dbff11bafcbf02b21526459135.jpg: 640x640 2 Cariess, 9.6ms
+    image 1278/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_KRISHAN-KUMAR_2023-10-20160352_1_png.rf.f222b04f1444f3bbac2a1b35ceff91eb.jpg: 640x640 1 Caries, 1 Crown, 1 Filling, 6 Missing teeths, 1 Periapical lesion, 1 Root Canal Treatment, 8.8ms
+    image 1279/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_KULDEEP-KAUR_2023-10-20153121_1_png.rf.49201980bdbe74659a9d7494f8cbcd79.jpg: 640x640 1 Missing teeth, 9.4ms
+    image 1280/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Kuldeep-Kaur_2023-10-26182125_1_png.rf.0471d3c3756516f33eaa83e9bffc73cc.jpg: 640x640 1 Caries, 6 Crowns, 2 Fillings, 2 Mandibular Canals, 4 Missing teeths, 1 Periapical lesion, 2 Root Canal Treatments, 8.8ms
+    image 1281/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Kuldeep-Singh_2023-10-26184048_1_png.rf.2b99642764ef4e90883f01d50a8056b8.jpg: 640x640 9 Crowns, 1 Mandibular Canal, 5 Missing teeths, 9.5ms
+    image 1282/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Kuljeet-Kaur_2023-10-21115654_1_png.rf.63773512420a221a7b77b0ec3452c98e.jpg: 640x640 4 Crowns, 1 Filling, 3 Implants, 5 Missing teeths, 6 Root Canal Treatments, 8.8ms
+    image 1283/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MALKEET-KAUR_2023-10-20151411_1_png.rf.e111536c919266dc2db71efdf63e11c8.jpg: 640x640 3 Cariess, 6 Crowns, 6 Missing teeths, 4 Root Canal Treatments, 8.8ms
+    image 1284/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MAMTA-RANI_2023-10-20191749_1_png.rf.363322892977072a417880e71146cd93.jpg: 640x640 1 Caries, 3 Crowns, 1 Filling, 5 Missing teeths, 2 Root Canal Treatments, 8.9ms
+    image 1285/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MANDEEP-SINGH_2023-10-20145639_1_png.rf.3af05028eab04136d57b208a858a3a0f.jpg: 640x640 1 Caries, 2 Fillings, 2 Mandibular Canals, 1 Missing teeth, 1 impacted tooth, 8.8ms
+    image 1286/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MANJU-BHANDU_2023-10-26155054_1_png.rf.747c6fb71cce99df23bfda7c591e0511.jpg: 640x640 2 Mandibular Canals, 9.1ms
+    image 1287/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MEENU-SAUN_2023-10-21152626_1_png.rf.964b7f992ce9cd780dcd762dba15d295.jpg: 640x640 4 Cariess, 4 Fillings, 5 Missing teeths, 1 Root Canal Treatment, 8.9ms
+    image 1288/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MOHINDER-PAL_2023-10-20163439_1_png.rf.72fd76ece51da62a5a4c0075d7b975a2.jpg: 640x640 3 Cariess, 1 Missing teeth, 8.8ms
+    image 1289/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MUNSHI-RAM_2023-10-20191153_1_png.rf.01bc79a46a422ed59902bafce1e1b6d8.jpg: 640x640 1 Caries, 2 Mandibular Canals, 2 Missing teeths, 8.9ms
+    image 1290/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Mangat-Singh_2023-10-26155846_1_png.rf.c6b8c518447ed7b722a189451ea5d6dc.jpg: 640x640 14 Crowns, 1 Missing teeth, 2 Root Canal Treatments, 9.0ms
+    image 1291/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Myara-_2023-10-26182103_1_png.rf.51c04519cf58e85a8893601e4abd5e3d.jpg: 640x640 (no detections), 9.1ms
+    image 1292/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_NACHHATTAR-SINGH_2023-10-20191643_1_png.rf.c07b2dba72460fc11af766e7b303039c.jpg: 640x640 3 Cariess, 9.0ms
+    image 1293/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_NARESH-KUMAR_2023-10-20165636_1_png.rf.1ef625f795046761a6db64db88e7f436.jpg: 640x640 2 Mandibular Canals, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 1294/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_NARINDER-SINGH_2023-10-20161939_1_png.rf.0723fa2945ac076f74a493331d225b1a.jpg: 640x640 4 Cariess, 1 Crown, 2 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 8.9ms
+    image 1295/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_NEERAJ-_2023-10-21135717_1_png.rf.fa559209e2ad623aa6faec0dbd4a425e.jpg: 640x640 1 Caries, 2 Crowns, 1 Mandibular Canal, 9.0ms
+    image 1296/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Narinder-mohan_2023-10-26155801_1_png.rf.4f43336581f4419714fa67adafe7f32d.jpg: 640x640 8 Crowns, 4 Root Canal Treatments, 9.2ms
+    image 1297/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_P-S-MANN_2023-10-20145003_1_png.rf.077ab38dc849f1869638f76986f3fa27.jpg: 640x640 2 Cariess, 1 Filling, 1 Mandibular Canal, 2 Missing teeths, 9.4ms
+    image 1298/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PARMINDER-KAUR_2023-10-20145303_1_png.rf.267d6535704090d35fd7cc76837618bc.jpg: 640x640 1 Caries, 1 Crown, 1 Filling, 3 Missing teeths, 6 Root Canal Treatments, 10.0ms
+    image 1299/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PARMJEET-KAUR_2023-10-21142426_1_png.rf.28792f2e7f6efe6581b19569f64a21ce.jpg: 640x640 1 Caries, 6 Missing teeths, 9.5ms
+    image 1300/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PARMJEET-KAUR_2023-10-21150909_1_png.rf.afc68ea354d0f9cecd6c378e93a29e22.jpg: 640x640 1 Mandibular Canal, 4 Missing teeths, 2 impacted tooths, 9.4ms
+    image 1301/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PAVAN-KUMAR_2023-10-20164616_1_png.rf.2a581b8b00451781f761b801bf4f6623.jpg: 640x640 1 Filling, 1 Mandibular Canal, 4 Missing teeths, 9.3ms
+    image 1302/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_POOJA-_2023-10-21134550_1_png.rf.e74a8989e4110815d9a389844c04b281.jpg: 640x640 1 Caries, 1 Crown, 2 Mandibular Canals, 1 Missing teeth, 2 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 1303/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PRINCE-GOYAL_2023-10-20161359_1_png.rf.a4dfc31734797e52c6f1d97395fab1cc.jpg: 640x640 1 Caries, 1 Mandibular Canal, 9.5ms
+    image 1304/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PRITAM-SINGH_2023-10-21124852_1_png.rf.8463cfed8873369d475a98e9491b6889.jpg: 640x640 7 Crowns, 7 Missing teeths, 9 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 1305/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PURSHOTAM-DAS_2023-10-20150734_1_png.rf.3e2340ad0fc3bda85f567c9474e1ae4a.jpg: 640x640 2 Mandibular Canals, 1 Missing teeth, 1 Root Canal Treatment, 9.5ms
+    image 1306/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PURSHOTAM-DAS_2023-10-20150734_1_png.rf.8cedd68770bbfe9ca15c8a6671080507.jpg: 640x640 1 Caries, 2 Mandibular Canals, 1 Missing teeth, 1 Root Canal Treatment, 9.2ms
+    image 1307/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Parmjeet-Kaur_2023-10-26184553_1_png.rf.72468dd074558cedea18bfc950df2976.jpg: 640x640 2 Mandibular Canals, 1 Missing teeth, 1 Periapical lesion, 1 Root Canal Treatment, 9.3ms
+    image 1308/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAJ-KUMAR_2023-10-20150610_1_png.rf.f229ee08fccd4e170861e6d8a555b70a.jpg: 640x640 3 Cariess, 5 Missing teeths, 3 Periapical lesions, 9.1ms
+    image 1309/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAJ-KUMAR_2023-10-21123035_1_png.rf.938b37a99f509dfd423d2a90544c75e2.jpg: 640x640 2 Mandibular Canals, 9.1ms
+    image 1310/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAJEEV-DAS_2023-10-21113347_1_png.rf.9023a4687513b83a0ce9a062090605af.jpg: 640x640 1 Mandibular Canal, 1 Missing teeth, 8.9ms
+    image 1311/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAJENDER-KALRA_2023-10-20191516_1_png.rf.149fcc2bf31213e2fbee455ac374f747.jpg: 640x640 1 Filling, 2 Missing teeths, 5 Root Canal Treatments, 9.2ms
+    image 1312/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAJVEER-SINGH_2023-10-21142823_1_png.rf.33e21c96137227df9594d97bb8a99d32.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 1313/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAM-SINGH_2023-10-21113847_1_png.rf.c1d3cd9bbe78b6bf1e8a4ac881992b2c.jpg: 640x640 2 Fillings, 3 Missing teeths, 9.3ms
+    image 1314/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAMANDEEP-KAUR_2023-10-20151946_1_png.rf.d349a57c5a1fa917ac5b5d99b529a945.jpg: 640x640 1 Caries, 1 Mandibular Canal, 3 impacted tooths, 9.1ms
+    image 1315/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Resham-Singh_2023-10-21160819_1_png.rf.4dc84c6dfa54ea4c17aac1190fa1dc34.jpg: 640x640 10 Crowns, 7 Implants, 3 Missing teeths, 7 Root Canal Treatments, 9.1ms
+    image 1316/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SANTOSH-SINGLA_2023-10-26164008_1_png.rf.915f6c962748fb38bc4edbc81ab533c9.jpg: 640x640 15 Crowns, 15 Implants, 7 Root Canal Treatments, 9.0ms
+    image 1317/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SARABJEET-KAUR_2023-10-26163908_1_png.rf.9830368c050533988e3311aca0d4843c.jpg: 640x640 1 Filling, 2 Mandibular Canals, 2 Missing teeths, 9.1ms
+    image 1318/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SHARANDEEP-SINGH_2023-10-26161152_1_png.rf.b2de28e346f1fb5e48339094defc4ae2.jpg: 640x640 1 Caries, 2 Mandibular Canals, 8.9ms
+    image 1319/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SHER-SINGH_2023-10-20154325_1_png.rf.218ee16e029b5e62146fe9a36a342470.jpg: 640x640 1 Mandibular Canal, 1 Missing teeth, 3 Periapical lesions, 8.9ms
+    image 1320/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SHINDER-KAUR_2023-10-21132413_1_png.rf.a55b9b742d8105d8d440333c6b5ac75d.jpg: 640x640 1 Missing teeth, 9.0ms
+    image 1321/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SHINDERPAL-KAUR_2023-10-26160745_1_png.rf.c144950f109ce6ad2b20530843c6f626.jpg: 640x640 2 Mandibular Canals, 9.0ms
+    image 1322/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SUKHJIT-KAUR_2023-10-20145701_1_png.rf.9cc7498e3c2bbe06b916842208972950.jpg: 640x640 1 Mandibular Canal, 3 Missing teeths, 8.9ms
+    image 1323/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SUKHVEER-KAUR_2023-10-20165013_1_png.rf.b2348ae229b2206c227d1db7f4200c9e.jpg: 640x640 1 Caries, 2 Mandibular Canals, 1 Root Canal Treatment, 9.1ms
+    image 1324/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SURJEET-SINGH_2023-10-21115406_1_png.rf.b7f136fb55b222a64c993181eec5626d.jpg: 640x640 1 Caries, 4 Fillings, 2 Mandibular Canals, 1 impacted tooth, 9.1ms
+    image 1325/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SUSHMA-RANI_2023-10-20145431_1_png.rf.f6501963015619f7c74d637227a0a4eb.jpg: 640x640 3 Crowns, 8 Implants, 4 Missing teeths, 10 Root Canal Treatments, 9.1ms
+    image 1326/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Sukhwinder-Kour_2023-10-26155301_1_png.rf.6eed9e54564df6288b4e47850884c73e.jpg: 640x640 5 Cariess, 2 Fillings, 2 Mandibular Canals, 1 Missing teeth, 9.0ms
+    image 1327/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Suspal-Singh_2023-10-26183817_1_png.rf.3bc23f10963137c5a6901742a44e7b6c.jpg: 640x640 2 Mandibular Canals, 4 Missing teeths, 2 impacted tooths, 9.0ms
+    image 1328/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_TARSEM-KAUR_2023-10-20161226_1_png.rf.ae160ac42674c7b561de3e3e320acefd.jpg: 640x640 1 Filling, 1 Mandibular Canal, 1 Missing teeth, 2 Root Canal Treatments, 9.0ms
+    image 1329/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_TULSI-BAI_2023-10-20122254_1_png.rf.ad9fc105dbbec946331e092f68d24199.jpg: 640x640 2 Cariess, 1 Filling, 1 Mandibular Canal, 2 Missing teeths, 9.8ms
+    image 1330/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_UPINDERJEET-KAUR_2023-10-21132726_1_png.rf.56742269c63da1f5c7b4b730f4bfdc77.jpg: 640x640 2 Cariess, 1 Periapical lesion, 9.1ms
+    image 1331/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_UPINDERJEET-KAUR_2023-10-21132726_1_png.rf.8190ae734d13ea024b141387023ab7d4.jpg: 640x640 2 Cariess, 1 Periapical lesion, 9.1ms
+    image 1332/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_VARPREET-SINGH_2023-10-20152112_1_png.rf.ce31567c6b79481758440b78b90c9f37.jpg: 640x640 15 Fillings, 2 Missing teeths, 2 impacted tooths, 9.0ms
+    image 1333/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_aman-goyal_2023-10-26182616_1_png.rf.be22e5e8109905d3bc5b3861bef4da2c.jpg: 640x640 2 Mandibular Canals, 8.9ms
+    image 1334/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_aman-kaur_2023-10-26185139_1_png.rf.84c76c2c094fcd0090ab553901d81852.jpg: 640x640 1 Caries, 2 Mandibular Canals, 1 Missing teeth, 9.6ms
+    image 1335/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ashu-_2023-10-21161110_1_png.rf.8522aa4617b3c241fc04e47e76e76a02.jpg: 640x640 3 Crowns, 8 Fillings, 2 Implants, 2 Missing teeths, 2 Root Canal Treatments, 9.1ms
+    image 1336/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_dr-vijay-kumar-_2023-10-26182023_1_png.rf.8024a3fe868723d3b5f73872147a8bd7.jpg: 640x640 4 Crowns, 3 Implants, 2 Mandibular Canals, 1 Missing teeth, 3 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 1337/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_hargun-_2023-10-21111055_1_png.rf.b85911091a349f3ea042fff0ef817c81.jpg: 640x640 1 Caries, 9.4ms
+    image 1338/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_jaskaran-singh_2023-10-21151313_1_png.rf.231d862c0908792696b04a109f2bcd6c.jpg: 640x640 1 Filling, 2 Root Canal Treatments, 9.4ms
+    image 1339/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_kulveer-singh_2023-10-26183352_1_png.rf.080ff4fdbae55a593d4e06ecb41f7d70.jpg: 640x640 2 Mandibular Canals, 9.6ms
+    image 1340/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_lakhveer-singh_2023-10-21124952_1_png.rf.ff2fbeeceb1ccbd76e9431e88a3d7720.jpg: 640x640 4 Cariess, 4 Missing teeths, 1 Periapical lesion, 9.7ms
+    image 1341/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_poonam-mittal_2023-10-21152850_1_png.rf.e1810e0d76789647aeb72936134905d0.jpg: 640x640 2 Mandibular Canals, 9.3ms
+    image 1342/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_saroj-rani_2023-10-26163624_1_png.rf.4033d79cdda31378eaf529392a911cd1.jpg: 640x640 1 Mandibular Canal, 9.6ms
+    image 1343/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_saroj-rani_2023-10-26163624_1_png.rf.a35b8375271dcbfbeabc20e2831ff1bb.jpg: 640x640 1 Mandibular Canal, 1 Missing teeth, 9.1ms
+    image 1344/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d016e413-SHAYAN_TAYEBEH_2020-06-09113936_jpg.rf.76a433bd58fdba677a60b2ab22bcd212.jpg: 640x640 16 Crowns, 5 Fillings, 2 Implants, 1 Missing teeth, 17 Root Canal Treatments, 9.1ms
+    image 1345/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d1abf3f1-Karimi_pour_Hosein_47y_22052021_183902_jpg.rf.aba13c54b674e974119a17c1b68683d9.jpg: 640x640 12 Crowns, 6 Fillings, 2 Missing teeths, 12 Root Canal Treatments, 9.3ms
+    image 1346/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d3d37038-Arjmand_Fatemeh_2022-06-12141203_jpg.rf.0eaed33ae29b282f34e60ac15609f2f1.jpg: 640x640 2 Cariess, 7 Fillings, 1 Periapical lesion, 4 Root Canal Treatments, 9.7ms
+    image 1347/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d4159f80-Mohagheghi_Nahid_2022-05-14185709_jpg.rf.8797a1995b3507fd1dce3603fcc448dc.jpg: 640x640 3 Cariess, 7 Fillings, 1 Missing teeth, 8 Root Canal Treatments, 9.2ms
+    image 1348/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d4159f80-Mohagheghi_Nahid_2022-05-14185709_jpg.rf.f3f64425b2e334b9e42f7ef40b280cc7.jpg: 640x640 4 Cariess, 6 Fillings, 1 Missing teeth, 8 Root Canal Treatments, 9.4ms
+    image 1349/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d474ffc9-SALEHI_KOBRA_2020-07-12184001_jpg.rf.11a1ea143a30484085b7c51b8a9739bc.jpg: 640x640 9 Crowns, 8 Fillings, 4 Missing teeths, 7 Root Canal Treatments, 9.2ms
+    image 1350/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d6568516-Hesar_shoorkabi_Tohid_32yo_09112020_171100_jpg.rf.7d6a7a93586051d4077b84640d69d70e.jpg: 640x640 5 Crowns, 8 Fillings, 2 Periapical lesions, 11 Root Canal Treatments, 9.0ms
+    image 1351/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d6d682f6-Davoodi_Mahshid_45yo_08052021_181230_jpg.rf.1c224ab794d401f3c3190ef91d637e80.jpg: 640x640 7 Crowns, 10 Fillings, 1 Periapical lesion, 9 Root Canal Treatments, 9.3ms
+    image 1352/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d6f01c76-GOODARZI_MARZIYEH_2020-06-28182529_jpg.rf.420c3354ee34bd0aca530161f4ebe25d.jpg: 640x640 3 Cariess, 8 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 1353/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d797cd7c-TELAVAT_MARYAM_2020-07-12111212_jpg.rf.c9c7e5ecb5d13cce6a5c37aa4e5516f8.jpg: 640x640 1 Caries, 14 Fillings, 2 Missing teeths, 2 Root Canal Treatments, 9.0ms
+    image 1354/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d83d22ac-JAVADI_MASOOMEH_2020-06-07192729_jpg.rf.94aa049dc7b970ec8ebab13905599fcb.jpg: 640x640 5 Cariess, 2 Crowns, 11 Fillings, 1 Mandibular Canal, 1 Periapical lesion, 4 Root Canal Treatments, 9.4ms
+    image 1355/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/db4ae6ed-MEHRI_MASUME_2020-07-05195723_jpg.rf.7eee2639b2246a7f3e12b7d8cad5a421.jpg: 640x640 1 Caries, 10 Fillings, 2 Missing teeths, 2 Periapical lesions, 4 Root Canal Treatments, 9.3ms
+    image 1356/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/df33db5f-MASOOMI_AMINEH_2020-06-28182210_jpg.rf.5a6ac1ce390f52ee367994079bec8644.jpg: 640x640 2 Cariess, 6 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 2 impacted tooths, 9.8ms
+    image 1357/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e0d035aa-Panahi_Mahnaz_2022-06-12142606_jpg.rf.2991220180da83ae38c13c563a555088.jpg: 640x640 5 Cariess, 1 Crown, 9 Fillings, 2 Missing teeths, 7 Periapical lesions, 10 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 1358/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e17f7d04-NADERI_AMIR_2020-06-10190539_jpg.rf.f30b29b6704c360e74089693264561f6.jpg: 640x640 2 Cariess, 3 Fillings, 1 Missing teeth, 9.3ms
+    image 1359/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e1e15226-Chegini_Mahdi_2022-06-12142812_jpg.rf.463522933c4fbfabfe3ac498677af324.jpg: 640x640 2 Cariess, 4 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 1360/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e6067300-Shahmohamadi_Roghayeh_2022-05-14195349_jpg.rf.0bb1cbe6ddadf3bf0c643278893e47b6.jpg: 640x640 3 Cariess, 3 Fillings, 1 Missing teeth, 3 Root Canal Treatments, 9.2ms
+    image 1361/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e67f9ae3-RAHNAMA_NARGES_2020-08-18105255_jpg.rf.2d1b268ffd71ce6b00f20d325c9ea1fb.jpg: 640x640 4 Cariess, 9 Fillings, 2 impacted tooths, 9.3ms
+    image 1362/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e7267c04-Faraj_Fatemeh_2022-06-12142338_jpg.rf.dff8af92a22c88f15cdc404fe6b8ceb9.jpg: 640x640 6 Cariess, 1 Filling, 11.4ms
+    image 1363/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e74f6976-SAFARI_MARZIEH_2020-07-06175225_jpg.rf.ccb137d7c85c7a0a9f3322916d768877.jpg: 640x640 1 Caries, 5 Fillings, 2 Root Canal Treatments, 9.1ms
+    image 1364/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e81fa83a-AHMADI_HOSEYN_2020-08-01121113_jpg.rf.df62639113497b0e1dece33ba66e4796.jpg: 640x640 3 Cariess, 8 Crowns, 3 Missing teeths, 2 Periapical lesions, 1 Root Canal Treatment, 9.5ms
+    image 1365/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e8706b42-Shafaghi_Mehrdad_2022-06-12142121_jpg.rf.8a71402118eeb1fc7cc11e4946ae8c39.jpg: 640x640 5 Fillings, 2 Root Canal Treatments, 9.4ms
+    image 1366/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e8793cf7-ROSTAMI_ZAHRA_2020-08-02104344_jpg.rf.dcd825a8af6c46d4a9e8d899e5722169.jpg: 640x640 1 Caries, 5 Fillings, 4 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 1367/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e8d96237-Sharifi_Sara_2022-06-12141134_jpg.rf.3fd1da804646d524546384ba2ca1a79b.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.5ms
+    image 1368/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/eb534e53-Ghasemi_Leyla_43yo_01062021_192938_jpg.rf.39c4ffc10e47f06a3d1daebf3e10e9c5.jpg: 640x640 7 Crowns, 7 Fillings, 4 Implants, 1 Missing teeth, 10 Root Canal Treatments, 9.1ms
+    image 1369/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/eeb607e4-Roshanaee_Sedigheh_2022-06-12141303_jpg.rf.0b17b30563bf798e3ca2f6f24673b9f1.jpg: 640x640 5 Fillings, 2 Missing teeths, 8 Root Canal Treatments, 9.5ms
+    image 1370/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f0b9230a-KHALAJ_MOHADESE_2020-05-05180930_jpg.rf.7c13a9488e47ec749e6bdd2e1d808119.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 1371/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f36813c6-Delparvar_Nasim_2022-05-14183633_jpg.rf.13de8ff10f4733431b952ed70a6c462a.jpg: 640x640 4 Fillings, 6 Missing teeths, 2 Root Canal Treatments, 9.7ms
+    image 1372/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f4257bd2-Cheraghali_Fatemeh_2020-09-01120434_jpg.rf.3648d252f34bc034b03f92522e59c911.jpg: 640x640 22 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 2 impacted tooths, 9.9ms
+    image 1373/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f5ea4ee5-Farazi_Mansoreh_2020-09-12125632_jpg.rf.091fe78e6496682ae58e24ba28fa66c6.jpg: 640x640 2 Cariess, 4 Crowns, 12 Fillings, 2 Implants, 9 Root Canal Treatments, 9.5ms
+    image 1374/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f98ce873-RAFIE_RADIN_2020-08-04182713_jpg.rf.ce7ae7272532c81e9d054afd2d81403c.jpg: 640x640 4 Cariess, 9.2ms
+    image 1375/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f9e524ae-Hoseynzadeh_Sakineh_2022-06-12142132_jpg.rf.98ca6606ab81e6ba2fd495f5b37b6f31.jpg: 640x640 2 Cariess, 5 Missing teeths, 9.2ms
+    image 1376/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/fa85e939-MAJIDI_ALIREZA_2020-07-05122036_jpg.rf.eb80a1a3076f396f4dea06e1519c23e3.jpg: 640x640 2 Cariess, 1 Filling, 3 Root Canal Treatments, 9.3ms
+    image 1377/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/fa89d7dd-FATHOLAHI_FATEME_2020-08-16112532_jpg.rf.d8a964456a07f83e09c8e6d3224a3762.jpg: 640x640 6 Crowns, 11 Fillings, 2 Missing teeths, 12 Root Canal Treatments, 9.3ms
+    image 1378/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/fad43613-Rezaee_Mostafa_2022-06-12142824_jpg.rf.5ddc8f578d19a8108073053f1eb2cc54.jpg: 640x640 6 Cariess, 3 Fillings, 1 Periapical lesion, 2 Root Canal Treatments, 9.3ms
+    image 1379/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/fd92dea6-MOGHAMI_REZA_2020-08-18100307_jpg.rf.2ca90ad9c1fbfca8bf264fd2ce13835b.jpg: 640x640 5 Cariess, 5 Crowns, 1 Filling, 2 Missing teeths, 3 Periapical lesions, 9 Root Canal Treatments, 9.7ms
+    image 1380/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/ffa16c16-Hoseyni_Habibe_48yo_31052021_130138_jpg.rf.06e45ebb3110e1228c4f6f41cfb8e819.jpg: 640x640 1 Caries, 6 Fillings, 5 Missing teeths, 8.9ms
+    Speed: 1.9ms preprocess, 9.3ms inference, 1.2ms postprocess per image at shape (1, 3, 640, 640)
+    Results saved to /content/Dental_Test_Sonuclari/tahmin_cikislari
+    Bütün test verileri işlendi. Sonuçlar burada: /content/Dental_Test_Sonuclari/tahmin_cikislari
+    
+
+
+```python
+import matplotlib.pyplot as plt
+import cv2
+import glob
+
+predict_files = glob.glob('/content/Dental_Test_Sonuclari/tahmin_cikislari/*.jpg')
+
+plt.figure(figsize=(20, 20))
+for i, img_path in enumerate(predict_files[:5]):
+    img = cv2.imread(img_path)
+    img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+    plt.subplot(5, 1, i+1)
+    plt.imshow(img_rgb)
+    plt.axis('off')
+    plt.title(f"Test Tahmini {i+1}", fontsize=15)
+
+plt.tight_layout()
+plt.show()
+```
+
+
+    
+![png](Untitled8_files/Untitled8_9_0.png)
+    
+
+
+
+```python
+import shutil
+from google.colab import files
+
+shutil.make_archive('dental_tahminler', 'zip', '/content/Dental_Test_Sonuclari/tahmin_cikislari')
+
+files.download('dental_tahminler.zip')
+```
+
+
+    <IPython.core.display.Javascript object>
+
+
+
+    <IPython.core.display.Javascript object>
+
+
+
+```python
+from ultralytics import YOLO
+
+model = YOLO('/content/Dental_Roboflow_Filtreli/v2_deneme/weights/best.pt')
+
+results = model.predict(
+    source='/content/Dental-X-Ray-Panoramic-Dataset-1/test/images',
+    conf=0.30,           # Güven eşiğini biraz artırarak düşük kaliteli kutuları eledik
+    iou=0.40,            # Çakışma eşiğini düşürdük (0.45'ten 0.40'a), daha agresif temizlik yapar
+    agnostic_nms=True,   # Farklı sınıfların birbirini ezmesine izin ver (üst üste binmeyi önler)
+    save=True,
+    project='Dental_Test_Temiz',
+    name='nms_duzeltilmis'
+)
+
+print("İşlem tamamlandı. Daha temiz kutucuklar burada: /content/Dental_Test_Temiz/nms_duzeltilmis")
+```
+
+    
+    WARNING ⚠️ 
+    Inference results will accumulate in RAM unless `stream=True` is passed, which can cause out-of-memory errors for large
+    sources or long-running streams and videos. See https://docs.ultralytics.com/modes/predict/ for help.
+    
+    Example:
+        results = model(source=..., stream=True)  # generator of Results objects
+        for r in results:
+            boxes = r.boxes  # Boxes object for bbox outputs
+            masks = r.masks  # Masks object for segment masks outputs
+            probs = r.probs  # Class probabilities for classification outputs
+    
+    image 1/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/00cf39c1-Karaptiyan_Robert_50yo_13032021_185908_jpg.rf.6a346058dbf10d856f83cdda11122493.jpg: 640x640 9 Crowns, 9 Fillings, 1 Missing teeth, 1 Periapical lesion, 3 Root Canal Treatments, 11.4ms
+    image 2/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/00cf39c1-Karaptiyan_Robert_50yo_13032021_185908_jpg.rf.c05dbec6b2a7d801c77e5ac037ef3f65.jpg: 640x640 9 Crowns, 9 Fillings, 1 Missing teeth, 1 Periapical lesion, 3 Root Canal Treatments, 9.2ms
+    image 3/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/01b0dd74-Gazavandi_Neda_2022-05-14190158_jpg.rf.967941a33ea9999e8fc697989734cb08.jpg: 640x640 6 Fillings, 2 Missing teeths, 6 Root Canal Treatments, 9.1ms
+    image 4/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/01b0dd74-Gazavandi_Neda_2022-05-14190158_jpg.rf.977771cca7fadb8b16bd4a03c5e6181d.jpg: 640x640 1 Caries, 6 Fillings, 2 Missing teeths, 6 Root Canal Treatments, 9.1ms
+    image 5/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/033516be-SAFAPOOR_MOHAMMADHOSEIN_2020-07-21162045_jpg.rf.5fa8a8f61e3242a008168af1f8629838.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 6/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/047576e0-ROSHAN_HOSEYN_2020-08-19104705_jpg.rf.d1f3fe43d391123cda0fdc9089c49038.jpg: 640x640 1 Crown, 3 Fillings, 3 Missing teeths, 2 Root Canal Treatments, 9.0ms
+    image 7/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0602be33-Khalajasadi_Mahmood_2022-05-14101511_jpg.rf.a7332a7fff798df45a68ca704fadcb68.jpg: 640x640 5 Crowns, 10 Fillings, 2 Missing teeths, 16 Root Canal Treatments, 9.1ms
+    image 8/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/093ca428-CHOPANI_MAHNAZ_2020-07-21161258_jpg.rf.0108aeaf858a107230ca2e409aba8748.jpg: 640x640 6 Crowns, 5 Fillings, 2 Missing teeths, 4 Root Canal Treatments, 9.2ms
+    image 9/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/093ca428-CHOPANI_MAHNAZ_2020-07-21161258_jpg.rf.57310efb38c430ea8914a67c65f54d5f.jpg: 640x640 6 Crowns, 4 Fillings, 2 Missing teeths, 4 Root Canal Treatments, 9.0ms
+    image 10/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0a4f2d22-Hematian_Fariba_57y_31052021_132542_jpg.rf.7a8f708864d47333e40598625331ac6b.jpg: 640x640 4 Fillings, 4 Missing teeths, 2 Root Canal Treatments, 9.0ms
+    image 11/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0ab29cbb-Dahghani_sanij_Mani_16yo_02062021_122725_jpg.rf.132ca83512eda0d97def8aa580a53ba7.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 12/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0c9e1e1a-Rezaee_Mostafa_2022-06-12140251_jpg.rf.85248a21e7d4d556412a952a38fbf7f6.jpg: 640x640 4 Cariess, 3 Fillings, 2 Root Canal Treatments, 8.8ms
+    image 13/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0cb54eba-GOLIJ_ALI_2020-05-27202749_jpg.rf.a94abb657db29042d84f03f8ca3fbcba.jpg: 640x640 3 Fillings, 3 Missing teeths, 4 Root Canal Treatments, 9.0ms
+    image 14/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0eda48fc-MERIKH_DAVOD_2020-06-18122737_jpg.rf.7ce15bfa5b1013758ffcb3e42f63dc9b.jpg: 640x640 1 Caries, 3 Crowns, 7 Fillings, 8 Root Canal Treatments, 8.9ms
+    image 15/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/0f323795-ASGARI_JAVAD_2020-07-06201430_jpg.rf.e130286f6342453d50f955efb794c46e.jpg: 640x640 5 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 16/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1007190000-jpg_png_jpg.rf.334e3fb1bdabf3c40821f853d253ac49.jpg: 640x640 1 Crown, 2 Fillings, 3 impacted tooths, 8.9ms
+    image 17/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1045540000-jpg_png_jpg.rf.e44a3eb8d9cc7f4c38f8d55e4ef9433e.jpg: 640x640 3 Crowns, 2 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 18/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1045860000-jpg_png_jpg.rf.ea94d81eb30213ac5e41ddb276b73c42.jpg: 640x640 2 Crowns, 11 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 19/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1080320000-jpg_png_jpg.rf.e4f9e0b60480be6ed13bbd4d092d2ff3.jpg: 640x640 2 Crowns, 4 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 20/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1080870000-jpg_png_jpg.rf.3d5e92be9b6b3b75faa5173798874a28.jpg: 640x640 4 impacted tooths, 8.8ms
+    image 21/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1091430000-jpg_png_jpg.rf.b42187d6dd421a61997160c545259374.jpg: 640x640 3 impacted tooths, 8.8ms
+    image 22/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1100250000-jpg_png_jpg.rf.061e49e6df0862bb1ee769952a543b8b.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 1 impacted tooth, 8.8ms
+    image 23/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1123200000-jpg_png_jpg.rf.5a17ad098dea789f33663e4da83beae6.jpg: 640x640 2 Fillings, 1 Missing teeth, 1 impacted tooth, 8.7ms
+    image 24/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/113600000-jpg_png_jpg.rf.5b604ff87381eb3d7788c853320786b8.jpg: 640x640 2 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 8.9ms
+    image 25/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1149910000-jpg_png_jpg.rf.c282a0275d81f5284451abbf76a9f307.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.1ms
+    image 26/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1178800000-jpg_png_jpg.rf.1a2bd1cf0158b2600ec3ce4b7da8c4a7.jpg: 640x640 3 Fillings, 2 impacted tooths, 8.9ms
+    image 27/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1179640000-jpg_png_jpg.rf.f09a814c6bfcf8ae50560066cfbf9ae0.jpg: 640x640 1 Crown, 2 impacted tooths, 8.9ms
+    image 28/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1181690000-jpg_png_jpg.rf.fc3bcc45a489eae26b7ac40e32fc4b45.jpg: 640x640 1 Filling, 4 impacted tooths, 8.8ms
+    image 29/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1197960000-jpg_png_jpg.rf.02ab66494e7bea496aeb98a109d3eff6.jpg: 640x640 1 Filling, 4 impacted tooths, 8.8ms
+    image 30/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/120140000-jpg_png_jpg.rf.344aa2e233aeb8b529c16797ed5e2905.jpg: 640x640 7 Fillings, 2 impacted tooths, 8.8ms
+    image 31/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/120dfa9b-JAFARNADERY_JAVID_2020-06-07092041_jpg.rf.e33d624c2381dbecd12a339f7c414175.jpg: 640x640 2 Crowns, 10 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 1 impacted tooth, 8.7ms
+    image 32/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1241450000-jpg_png_jpg.rf.daec002a38cebd6681c8ec18e11dbb5d.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 33/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1271790000-jpg_png_jpg.rf.14a326b168d628a23f4f41b120294c0a.jpg: 640x640 1 Crown, 3 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.0ms
+    image 34/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1339590000-jpg_png_jpg.rf.dc28d70e274fbe92616518ad1d8cfa08.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 35/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1340890000-jpg_png_jpg.rf.b0ac63a0757022e3e3073fae1ad55542.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 36/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1341170000-jpg_png_jpg.rf.bb9446c0609e69d1df3d78637e7789b1.jpg: 640x640 1 Filling, 3 impacted tooths, 8.8ms
+    image 37/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1349770000-jpg_png_jpg.rf.3a43bbb6b1febd9443234e3f8f77809a.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 38/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1349770000-jpg_png_jpg.rf.b7c393ca63df5040862673ff9300cc8b.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 39/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1366190000-jpg_png_jpg.rf.19f3fc68a042745de7f2e5d788e25204.jpg: 640x640 4 Crowns, 3 Fillings, 4 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 40/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1372210000-jpg_png_jpg.rf.c5d3f46e123425ec0a1c834bc81c1827.jpg: 640x640 1 Crown, 2 Fillings, 3 impacted tooths, 9.0ms
+    image 41/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1392610000-jpg_png_jpg.rf.5401d2b5e42efddcae00b79ae22646c1.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.0ms
+    image 42/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/139540000-jpg_png_jpg.rf.1e5325fc2fe607ef5eedfdc70c46975a.jpg: 640x640 1 Crown, 7 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 43/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1427260000-jpg_png_jpg.rf.abfa7ab96b98a18fc6232a6b86ac1c61.jpg: 640x640 1 Caries, 2 Crowns, 3 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.0ms
+    image 44/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1436820000-jpg_png_jpg.rf.bb7aa0188e49e168b94be108cf42fce4.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 45/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1452650000-jpg_png_jpg.rf.6b4f2d7a0b421936b4d5a8e874e7c413.jpg: 640x640 7 Fillings, 2 impacted tooths, 8.9ms
+    image 46/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1456650000-jpg_png_jpg.rf.28ecfb340165aa5415bfeedfa86a1e87.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 47/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1489970000-jpg_png_jpg.rf.79ed16ce626ab97d848964707ed5d3ba.jpg: 640x640 1 Filling, 1 Periapical lesion, 4 impacted tooths, 8.9ms
+    image 48/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1493310000-jpg_png_jpg.rf.851c4357d8a85f6a3807a4b87b7791bf.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 8.9ms
+    image 49/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1505390000-jpg_png_jpg.rf.d65dd2082db3abd6eee24594df2a23d2.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 50/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1527220000-jpg_png_jpg.rf.b9080201173ea8bd6f48d0e227380162.jpg: 640x640 1 Filling, 4 impacted tooths, 9.0ms
+    image 51/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1537080000-jpg_png_jpg.rf.f3ee457fb7484311a3b1ce7dc6b4071e.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 52/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1552180000-jpg_png_jpg.rf.1ccab3a0cc9acd3e9f2c67731fb03d34.jpg: 640x640 3 impacted tooths, 9.8ms
+    image 53/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1563320000-jpg_png_jpg.rf.3861c2f4948f07a055da6224cef31a3a.jpg: 640x640 5 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 10.1ms
+    image 54/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1563330000-jpg_png_jpg.rf.e6a4829da56246aae139af5963882e5a.jpg: 640x640 1 Filling, 3 impacted tooths, 9.4ms
+    image 55/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1567860000-jpg_png_jpg.rf.99ef54faeb6db1248048dfb5ecd29bbd.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 56/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1567860000-jpg_png_jpg.rf.aedc3d1438703d3f7e57d752427b34cc.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 57/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/15e9be6f-ROSHANZAMIR_MASOMEH_2020-06-08112423_jpg.rf.084469e7b9424dd5ed6b563b14310589.jpg: 640x640 3 Crowns, 7 Fillings, 1 Periapical lesion, 5 Root Canal Treatments, 9.0ms
+    image 58/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1639290000-jpg_png_jpg.rf.dd1f6becfdf2c351a9406c44c83de2ed.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 59/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1640550000-jpg_png_jpg.rf.2824022f3fb767a6de703e20b54c750f.jpg: 640x640 2 Fillings, 4 impacted tooths, 8.9ms
+    image 60/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1651590000-jpg_png_jpg.rf.d6086238dfae224ff5e7dcefff2db811.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 61/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1684370000-jpg_png_jpg.rf.ad36eae02cb20fd15d90004489139fd6.jpg: 640x640 3 impacted tooths, 8.8ms
+    image 62/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1698160000-jpg_png_jpg.rf.0b69a5f303b233c17c8d83966743a58e.jpg: 640x640 2 Crowns, 1 Missing teeth, 3 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 63/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1718440000-jpg_png_jpg.rf.8383cb74a088dd3b640b1b6c0916dc59.jpg: 640x640 2 Crowns, 6 Fillings, 1 Missing teeth, 2 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 64/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1719420000-jpg_png_jpg.rf.586d2c6b9d175274f34a9e0a7cf34355.jpg: 640x640 2 Crowns, 3 Fillings, 1 Implant, 2 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 65/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1719420000-jpg_png_jpg.rf.eb18786c30b0e363c794744c1ee7753d.jpg: 640x640 2 Crowns, 3 Fillings, 1 Implant, 2 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 66/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1726350000-jpg_png_jpg.rf.05bd7d0cd706b78ec362b7723b75a352.jpg: 640x640 3 Fillings, 3 impacted tooths, 8.9ms
+    image 67/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1738490000-jpg_png_jpg.rf.f45db589292ec976e55004624a697666.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 68/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1744240000-jpg_png_jpg.rf.05ced30e533d10c78847b05ea4489894.jpg: 640x640 1 Crown, 4 Fillings, 2 impacted tooths, 9.3ms
+    image 69/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1767020000-jpg_png_jpg.rf.49be0bb92068567134423bbf65360776.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.2ms
+    image 70/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1796500000-jpg_png_jpg.rf.6cd73a3313198e51570362fc5de9d408.jpg: 640x640 1 impacted tooth, 9.2ms
+    image 71/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/18173abd-khodabakhsh_Venisa_18yo_11102020_194137_jpg.rf.74b0aad56e1063ce818038b9ff24ac11.jpg: 640x640 12 Fillings, 1 Periapical lesion, 4 impacted tooths, 9.3ms
+    image 72/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1860230000-jpg_png_jpg.rf.11164dc8c8792e378882c58f3079affc.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 73/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1862040000-jpg_png_jpg.rf.2b13691f3fb9f481c3974bd13acb1b2f.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 74/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1862040000-jpg_png_jpg.rf.d7905bd0ac2278ce1c4dec6bcec61676.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 75/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1864780000-jpg_png_jpg.rf.e4c0c74e4ef11e32a9bba40dc0d3125b.jpg: 640x640 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 76/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1883480000-jpg_png_jpg.rf.dffd42ec16241dc17d8f9714fc6db844.jpg: 640x640 2 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 77/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/18d6b97a-SARKARVAKILI_MEHRI_2020-06-21121217_jpg.rf.ee8201e632a7d6e7e29efa9f89bf43f7.jpg: 640x640 3 Cariess, 2 Crowns, 4 Fillings, 3 Missing teeths, 1 Periapical lesion, 4 Root Canal Treatments, 9.0ms
+    image 78/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1921820000-jpg_png_jpg.rf.f4bb25b0958e106ec64784275febb816.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 79/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1942280000-jpg_png_jpg.rf.043e254dde793c44c2574bc7d4e035f5.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 80/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1949510000-jpg_png_jpg.rf.5ef02117bb0679681405287253f59ab0.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 81/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1985410000-jpg_png_jpg.rf.b12aa9fe6997adfc5252bb408725c312.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 82/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1b5470d3-Ebrahimi_Ali_akbar_2022-06-12142443_jpg.rf.cbb365995cda712693fae1725753ce4a.jpg: 640x640 1 Caries, 9.1ms
+    image 83/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/1fa3900a-Fathizade_Kazhal_36yo_01062021_154836_jpg.rf.eaba86853b8a351826ac076ca606d0aa.jpg: 640x640 2 Crowns, 3 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 84/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2008510000-jpg_png_jpg.rf.13f785186811472b787249d1850f8357.jpg: 640x640 2 Crowns, 1 Filling, 2 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 85/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/205634d1-RAFIQ_MAHMOOD_2020-06-16110702_jpg.rf.7ae8f1419a7c3821d9529dc196a86376.jpg: 640x640 4 Crowns, 3 Fillings, 2 Missing teeths, 8 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 86/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2089150000-jpg_png_jpg.rf.f4c752bf22113b65c67932b9e912712d.jpg: 640x640 1 Filling, 3 impacted tooths, 9.2ms
+    image 87/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2144410000-jpg_png_jpg.rf.76d86439c3ca4ef4f8b99262a49f0780.jpg: 640x640 11 Fillings, 4 impacted tooths, 9.2ms
+    image 88/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2145590000-jpg_png_jpg.rf.3e39b438eaac62d529f6fa878140eece.jpg: 640x640 5 Crowns, 7 Fillings, 1 Implant, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 89/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2150780000-jpg_png_jpg.rf.33d2eb13c6ef0ff49dab0de20f674fbc.jpg: 640x640 3 impacted tooths, 10.7ms
+    image 90/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2175520000-jpg_png_jpg.rf.875e1ffdf13ef9945b0850afe65a7eea.jpg: 640x640 1 Crown, 1 Filling, 2 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 91/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2191100000-jpg_png_jpg.rf.cd177dad9d07fda609c5c55c444ff86d.jpg: 640x640 1 Crown, 2 Fillings, 1 impacted tooth, 9.4ms
+    image 92/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2198290000-jpg_png_jpg.rf.47ddacc57e655dad8a9b41b2a41e7c39.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 93/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2201430000-jpg_png_jpg.rf.50ffef04d59cd5c8ddeb942b65872a0c.jpg: 640x640 9 Fillings, 4 impacted tooths, 9.2ms
+    image 94/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2226710000-jpg_png_jpg.rf.92c37329c507f4bff3306363eccd984a.jpg: 640x640 1 Crown, 9 Fillings, 4 impacted tooths, 11.6ms
+    image 95/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2258350000-jpg_png_jpg.rf.b9410475ba19dfae11af2f91850d9c49.jpg: 640x640 6 Fillings, 3 impacted tooths, 9.0ms
+    image 96/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2264820000-jpg_png_jpg.rf.0904d8ac5b1289b42ade7f3fceaf5b11.jpg: 640x640 1 Filling, 1 impacted tooth, 8.9ms
+    image 97/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2273960000-jpg_png_jpg.rf.558db42522120572263aa2e414f83760.jpg: 640x640 3 Crowns, 6 Fillings, 6 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 98/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2286070000-jpg_png_jpg.rf.d5d8a47c5234df7ed9ba6cfbcd3de72f.jpg: 640x640 1 Filling, 2 Root Canal Treatments, 3 impacted tooths, 8.7ms
+    image 99/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2332170000-jpg_png_jpg.rf.6a9477bd0c7d8ca4dfa2eca23bf27ca8.jpg: 640x640 1 Crown, 12 Fillings, 1 impacted tooth, 8.7ms
+    image 100/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2332170000-jpg_png_jpg.rf.ed8dd16e9d20fa664d13812fea833ad0.jpg: 640x640 1 Crown, 12 Fillings, 1 impacted tooth, 9.1ms
+    image 101/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2347790000-jpg_png_jpg.rf.26f94647935563a3874be48eddfdb48e.jpg: 640x640 6 Crowns, 4 Fillings, 6 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 102/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2364920000-jpg_png_jpg.rf.d3c3530f8e160375e7c79f877ea37364.jpg: 640x640 4 Fillings, 3 impacted tooths, 8.7ms
+    image 103/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2379520000-jpg_png_jpg.rf.82778b4b5d8ff947f8ab57bceae9ccf5.jpg: 640x640 1 Crown, 4 impacted tooths, 9.1ms
+    image 104/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2391560000-jpg_png_jpg.rf.46d67db2a7e9188c37baec8d60753d92.jpg: 640x640 2 Crowns, 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 105/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2398570000-jpg_png_jpg.rf.5d255b2b4b05b3a3b0210f63e62b3243.jpg: 640x640 1 Crown, 3 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 8.8ms
+    image 106/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2400030000-jpg_png_jpg.rf.0acce1c3fab6c787a9bad4084ead02bf.jpg: 640x640 1 Filling, 4 impacted tooths, 8.7ms
+    image 107/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2400180000-jpg_png_jpg.rf.bda577b3d9a397056b01c92380ae8894.jpg: 640x640 1 impacted tooth, 9.0ms
+    image 108/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2425480000-jpg_png_jpg.rf.c627eb13b5fbb9334c6f02567f1c8092.jpg: 640x640 1 impacted tooth, 8.9ms
+    image 109/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2439630000-jpg_png_jpg.rf.faec60c0aaca2dc8ffe7ec5aee614d58.jpg: 640x640 1 Filling, 4 impacted tooths, 8.9ms
+    image 110/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2479540000-jpg_png_jpg.rf.542c310a50832f618552bb0bafa27e02.jpg: 640x640 3 impacted tooths, 8.8ms
+    image 111/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2486950000-jpg_png_jpg.rf.746f2f3739a43ee225bbcbd8599e14a2.jpg: 640x640 8 Fillings, 2 impacted tooths, 9.2ms
+    image 112/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2492790000-jpg_png_jpg.rf.15566c09953628b7bec68a38b8987f35.jpg: 640x640 9 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 113/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/249993e5-HEMMATI_AMIRABBAS_2020-08-18130608_jpg.rf.a179c30368977fc338fa1366e9535b19.jpg: 640x640 4 Cariess, 8.8ms
+    image 114/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2527870000-jpg_png_jpg.rf.24bd0de048ee43ca9fa7fee54883f354.jpg: 640x640 1 Crown, 1 Filling, 3 Missing teeths, 1 impacted tooth, 8.8ms
+    image 115/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2530160000-jpg_png_jpg.rf.e44f9722364ed8f783daebc8a89078ae.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 116/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2555130000-jpg_png_jpg.rf.e9adec9fd8971356b191085c5146e44d.jpg: 640x640 1 impacted tooth, 9.0ms
+    image 117/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2576480000-jpg_png_jpg.rf.57008eea9519008aca7b0e810c9832ab.jpg: 640x640 1 Filling, 4 impacted tooths, 8.8ms
+    image 118/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2583070000-jpg_png_jpg.rf.33b669f30478bbb27630e9cefea5b028.jpg: 640x640 1 Filling, 1 impacted tooth, 8.9ms
+    image 119/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/264d0857-Jalilvand_Yones_2022-06-12142921_jpg.rf.a2dcfc15e7b1a56146c24aa760bb5cdc.jpg: 640x640 4 Cariess, 5 Fillings, 1 Periapical lesion, 9 Root Canal Treatments, 8.9ms
+    image 120/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/264d0857-Jalilvand_Yones_2022-06-12142921_jpg.rf.d2f08c3e98eaa2feb7ebc9ac6d62e059.jpg: 640x640 5 Cariess, 5 Fillings, 1 Periapical lesion, 8 Root Canal Treatments, 9.1ms
+    image 121/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2655840000-jpg_png_jpg.rf.e22e5ca6fcf37df6e8f8e5e7c6697236.jpg: 640x640 4 Crowns, 4 Fillings, 1 Implant, 3 Root Canal Treatments, 3 impacted tooths, 8.8ms
+    image 122/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2664470000-jpg_png_jpg.rf.9e11cc26a14798afca184892070bc3ae.jpg: 640x640 1 Crown, 9 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 123/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2672940000-jpg_png_jpg.rf.4edf37c88f42d7a29c1b2e25feb5839e.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 124/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2672940000-jpg_png_jpg.rf.9fbbba0b7d06e56cd8f2defc143e0378.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 125/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/26ffef0b-Zakeri_Abolfazl_2020-11-14135110_jpg.rf.b5cac4d8516be35093949c51e52ea9f0.jpg: 640x640 2 Cariess, 1 Crown, 17 Fillings, 5 Root Canal Treatments, 8.8ms
+    image 126/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2720930000-jpg_png_jpg.rf.82ae65c51a387931745b98fc64969c59.jpg: 640x640 1 Crown, 16 Fillings, 2 impacted tooths, 9.0ms
+    image 127/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2751580000-jpg_png_jpg.rf.c6d163ab46054c6069c95f7ec0322463.jpg: 640x640 1 Missing teeth, 2 impacted tooths, 9.9ms
+    image 128/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2764190000-jpg_png_jpg.rf.a846267d59eabc5a2d845a3483082282.jpg: 640x640 2 Crowns, 10 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 8.9ms
+    image 129/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/276690000-jpg_png_jpg.rf.29778b259582952e087c4f2855532e7d.jpg: 640x640 2 impacted tooths, 8.7ms
+    image 130/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/27fe5697-Mehri_Elisa_2020-09-08173214_jpg.rf.9bc6296fb0399e0f0b8ab5d2e69572d0.jpg: 640x640 3 Crowns, 10 Fillings, 1 Missing teeth, 2 Periapical lesions, 12 Root Canal Treatments, 8.8ms
+    image 131/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/27fe5697-Mehri_Elisa_2020-09-08173214_jpg.rf.eeb175c5f0e0f7f7148e942808ea97d1.jpg: 640x640 3 Crowns, 10 Fillings, 1 Missing teeth, 2 Periapical lesions, 12 Root Canal Treatments, 8.7ms
+    image 132/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2801440000-jpg_png_jpg.rf.11fd54cb64785058e078f8414ca533c1.jpg: 640x640 6 Fillings, 3 impacted tooths, 8.7ms
+    image 133/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2817620000-jpg_png_jpg.rf.e0f838978f060088d57ff2b41d45b4ac.jpg: 640x640 1 Crown, 2 Fillings, 2 impacted tooths, 8.7ms
+    image 134/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2849340000-jpg_png_jpg.rf.0a5339ae554aebf0b3d00baa14730428.jpg: 640x640 6 Fillings, 2 impacted tooths, 8.9ms
+    image 135/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2860000000-jpg_png_jpg.rf.32d1e266911629b05bd0729f68eb5aba.jpg: 640x640 4 impacted tooths, 8.7ms
+    image 136/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2869840000-jpg_png_jpg.rf.9eef5f993dd3162522d739d7f65d0001.jpg: 640x640 2 Fillings, 4 impacted tooths, 8.7ms
+    image 137/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2911280000-jpg_png_jpg.rf.f5cac32c3c40042e4e1a09359964899f.jpg: 640x640 2 Fillings, 2 impacted tooths, 8.8ms
+    image 138/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2916510000-jpg_png_jpg.rf.874f6d2fd48c67f3c1a09d8015d7f237.jpg: 640x640 7 Crowns, 7 Fillings, 5 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 139/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2938520000-jpg_png_jpg.rf.99eb2d1fbf08f1f1b8175265b080bae2.jpg: 640x640 1 Crown, 4 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 140/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2939710000-jpg_png_jpg.rf.dc0f548ed50ed1def3e691a6b25ad77e.jpg: 640x640 2 impacted tooths, 8.8ms
+    image 141/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2957090000-jpg_png_jpg.rf.9797782f8eb5650ce7f2ec57c7d95403.jpg: 640x640 4 impacted tooths, 8.8ms
+    image 142/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2964180000-jpg_png_jpg.rf.70218a31b4e0c316f21a7e4f60412af0.jpg: 640x640 3 Fillings, 1 Periapical lesion, 1 Root Canal Treatment, 2 impacted tooths, 8.9ms
+    image 143/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2966060000-jpg_png_jpg.rf.17108c64f8fd7be6828b66d2fb6a7b00.jpg: 640x640 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 8.7ms
+    image 144/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2986230000-jpg_png_jpg.rf.b8463a09c62f702badefb6c1eaa9a60e.jpg: 640x640 2 impacted tooths, 8.7ms
+    image 145/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2991120000-jpg_png_jpg.rf.01a795961bc2cc53dea920de459c3efc.jpg: 640x640 2 Crowns, 10 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 8.7ms
+    image 146/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2996550000-jpg_png_jpg.rf.2a65d9bda786df270a2500910c85ac7b.jpg: 640x640 3 impacted tooths, 8.7ms
+    image 147/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2996550000-jpg_png_jpg.rf.39fd4f9055ff9887c5b5d59cac476266.jpg: 640x640 3 impacted tooths, 8.8ms
+    image 148/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2a69c174-Shakoori_Khadijeh_2022-05-14105827_jpg.rf.0077cb6591d2d5862190f1094373d835.jpg: 640x640 1 Caries, 14 Fillings, 2 Missing teeths, 1 Root Canal Treatment, 9.0ms
+    image 149/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2a69c174-Shakoori_Khadijeh_2022-05-14105827_jpg.rf.1f9d1a53b3e9747f8889e7f2c7b912fa.jpg: 640x640 1 Caries, 14 Fillings, 3 Missing teeths, 1 Root Canal Treatment, 8.8ms
+    image 150/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2a6bd043-Ghasemi_Parmis_12yo_31052021_181156_jpg.rf.85351f2b7059bcecfaf0a53fb42d623f.jpg: 640x640 4 Fillings, 8.8ms
+    image 151/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2ac917cc-Ranjbar_Azam_2022-05-14123922_jpg.rf.c8d15f1b8b4c727cd5a42afdbd5c0487.jpg: 640x640 1 Caries, 1 Filling, 5 Missing teeths, 1 Periapical lesion, 9.0ms
+    image 152/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2ac917cc-Ranjbar_Azam_2022-05-14123922_jpg.rf.d15e0a83cf267be4c3d91bfaf5e29eee.jpg: 640x640 1 Caries, 1 Filling, 5 Missing teeths, 1 Periapical lesion, 8.9ms
+    image 153/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/2b4edf31-IISAABADY_MOIIN_2020-02-22092515_jpg.rf.1d4e9b317f34137e78b46e58c7c59272.jpg: 640x640 15 Fillings, 1 Periapical lesion, 2 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 154/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3008120000-jpg_png_jpg.rf.69f634401917d01001b5de3264c2d7a3.jpg: 640x640 2 Crowns, 4 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 8.8ms
+    image 155/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3036890000-jpg_png_jpg.rf.81d7eaf22c8f5aa313e35671b42b0fa6.jpg: 640x640 3 impacted tooths, 8.7ms
+    image 156/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3040580000-jpg_png_jpg.rf.834342baeac52f36fa3495f64273a1ce.jpg: 640x640 1 Crown, 2 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 8.7ms
+    image 157/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3049470000-jpg_png_jpg.rf.4bcbd3617630b911dae3126ba49e4b1a.jpg: 640x640 1 Crown, 2 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 158/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3061010000-jpg_png_jpg.rf.58a85b49485591f0aab04cebe4691915.jpg: 640x640 1 impacted tooth, 8.6ms
+    image 159/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3063850000-jpg_png_jpg.rf.93f5a9cc2e95ddb62cbc2b0d491a4cbb.jpg: 640x640 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 8.7ms
+    image 160/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3063850000-jpg_png_jpg.rf.f213956765fc5ffbf530f9ca666964ca.jpg: 640x640 1 Filling, 1 Root Canal Treatment, 1 impacted tooth, 9.3ms
+    image 161/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3078830000-jpg_png_jpg.rf.981810be87b958a769fc66aa959dc9b3.jpg: 640x640 2 Cariess, 2 Crowns, 2 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 162/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/310280000-jpg_png_jpg.rf.cfffbab05f625e6717a1d3a67cfac181.jpg: 640x640 7 Crowns, 1 Periapical lesion, 4 Root Canal Treatments, 9.0ms
+    image 163/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3106160000-jpg_png_jpg.rf.36a47deab68d8bce84a61427d6d49d36.jpg: 640x640 2 Fillings, 1 impacted tooth, 8.8ms
+    image 164/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/31135e19-Darabi_Parasto_2022-06-12142058_jpg.rf.b70e05423590c51870f9352718bd95e8.jpg: 640x640 1 Filling, 2 Missing teeths, 2 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 165/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3120860000-jpg_png_jpg.rf.23dde3b965644b6629c60180a87f5495.jpg: 640x640 2 Fillings, 4 impacted tooths, 8.8ms
+    image 166/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3130550000-jpg_png_jpg.rf.90307981a911f3d443b538469808f0c5.jpg: 640x640 1 Filling, 3 impacted tooths, 8.8ms
+    image 167/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3137410000-jpg_png_jpg.rf.28518d1afa181effbc8e1b2b2bf03b8e.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 168/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3150700000-jpg_png_jpg.rf.933c7ba163d728cc3965d9fb473d0452.jpg: 640x640 1 Crown, 1 Filling, 3 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 169/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3153760000-jpg_png_jpg.rf.3b103e6068cfe3fa6f53e2b4db185666.jpg: 640x640 2 Crowns, 2 impacted tooths, 8.8ms
+    image 170/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3166750000-jpg_png_jpg.rf.a9a6980c48df7cbf628596866cbf4cbf.jpg: 640x640 2 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 8.7ms
+    image 171/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3192780000-jpg_png_jpg.rf.b1d3426d380042eda3c45afe87918f1e.jpg: 640x640 3 Fillings, 4 impacted tooths, 8.7ms
+    image 172/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3193720000-jpg_png_jpg.rf.12c05fff304e7aade96fe2ffdec0de73.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 8.7ms
+    image 173/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3196890000-jpg_png_jpg.rf.8cd79f3b3e32fd90749aa63f3f9cecfc.jpg: 640x640 2 impacted tooths, 8.7ms
+    image 174/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3217240000-jpg_png_jpg.rf.d0f3a54d81ac3dbb289ad0961dbed7c8.jpg: 640x640 1 Crown, 1 Filling, 2 impacted tooths, 9.1ms
+    image 175/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3218180000-jpg_png_jpg.rf.287b3c87a2326330cee901144b17d086.jpg: 640x640 8 Fillings, 2 impacted tooths, 8.9ms
+    image 176/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3238940000-jpg_png_jpg.rf.51681bad7d1c00382f504a3e46379aa5.jpg: 640x640 5 Crowns, 1 Filling, 6 Root Canal Treatments, 3 impacted tooths, 8.9ms
+    image 177/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3248480000-jpg_png_jpg.rf.765e418bbb18ca385e99dfe4f2f90c0c.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 178/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3249a2ce-Barati_Parvin_2022-06-12141659_jpg.rf.e3a1310460a056f30e57db9dcb033fe9.jpg: 640x640 4 Cariess, 2 Missing teeths, 9.0ms
+    image 179/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3255060000-jpg_png_jpg.rf.749c73c452a3f168d1ba5c96497daa1a.jpg: 640x640 8 Fillings, 2 impacted tooths, 9.0ms
+    image 180/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3260040000-jpg_png_jpg.rf.86716be1112a1a9a9c0cf9807d576c5e.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 181/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3269630000-jpg_png_jpg.rf.25efd8a1d1bdd65fbea3d7c43fc752a6.jpg: 640x640 3 Crowns, 12 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 182/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3274380000-jpg_png_jpg.rf.5f36037ef4f797fcfba2972f7b130eb7.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 183/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3301970000-jpg_png_jpg.rf.07e8f6eec6feafb2d75ccb50c6b4fd70.jpg: 640x640 2 Fillings, 1 Periapical lesion, 4 impacted tooths, 8.9ms
+    image 184/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3306200000-jpg_png_jpg.rf.bdbdbe8d427c1c7f24382cbc9f08def4.jpg: 640x640 2 Root Canal Treatments, 4 impacted tooths, 8.9ms
+    image 185/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3309220000-jpg_png_jpg.rf.c7da64af31773e4fdf8d68c08cb8d282.jpg: 640x640 2 Fillings, 3 impacted tooths, 8.9ms
+    image 186/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3312840000-jpg_png_jpg.rf.0ca05734fbe906aea81a793f3dace330.jpg: 640x640 2 Fillings, 1 impacted tooth, 8.9ms
+    image 187/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3315570000-jpg_png_jpg.rf.67511c9be1ec8505b2c93b060f84aa8d.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 188/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3319930000-jpg_png_jpg.rf.a774fd2ab67cff5f33bc91b0d953ad3d.jpg: 640x640 4 Crowns, 5 Fillings, 4 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 189/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/331b9d0e-Yazdi_Morteza_2022-06-12142409_jpg.rf.a9f7856d472406669d1dd4a419d85c6d.jpg: 640x640 12 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 190/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3331570000-jpg_png_jpg.rf.fd6505bbff45e7fd765b45b49c3ad43d.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.4ms
+    image 191/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3338670000-jpg_png_jpg.rf.fde06c5356fe7477e34e36bb8dc5dd03.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 192/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3341180000-jpg_png_jpg.rf.444ce62546e3408d3c56755805faf54d.jpg: 640x640 10 Crowns, 1 Filling, 1 Implant, 6 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 193/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3345570000-jpg_png_jpg.rf.e014bf640711291e8816e8a0fee785ee.jpg: 640x640 3 impacted tooths, 11.6ms
+    image 194/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3349130000-jpg_png_jpg.rf.7e283aa3f69eff4e6ed7c4e7b116856d.jpg: 640x640 1 Filling, 2 impacted tooths, 9.3ms
+    image 195/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3377690000-jpg_png_jpg.rf.e4d1e6984fe89c26e960ef248ba9f984.jpg: 640x640 1 Filling, 1 impacted tooth, 9.3ms
+    image 196/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3380810000-jpg_png_jpg.rf.ed356f2326d9e0eb70320ddbf6eedbed.jpg: 640x640 5 Fillings, 2 impacted tooths, 9.2ms
+    image 197/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3382670000-jpg_png_jpg.rf.30bff3b80928ba066855d9a4e00b98ab.jpg: 640x640 1 Crown, 3 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 11.4ms
+    image 198/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3382670000-jpg_png_jpg.rf.a50c18587064bb090b61c339db0a3898.jpg: 640x640 1 Crown, 3 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 11.4ms
+    image 199/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3383500000-jpg_png_jpg.rf.0da22d7c8de610198b1f232e04a324fd.jpg: 640x640 3 Crowns, 8 Fillings, 1 Implant, 2 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 200/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3385330000-jpg_png_jpg.rf.6be4f62e91539c38f1b5d320c207e4d7.jpg: 640x640 1 Crown, 1 Filling, 4 impacted tooths, 9.1ms
+    image 201/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3396960000-jpg_png_jpg.rf.da86c9ceb9443f4b30233b7c1d05b88d.jpg: 640x640 6 Fillings, 1 Implant, 4 impacted tooths, 9.1ms
+    image 202/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/339eee12-NAJAFI_MARYAM_2020-06-13205811_jpg.rf.4af97dc20beee482e61b946ba62eef41.jpg: 640x640 1 Caries, 2 Crowns, 4 Fillings, 2 Missing teeths, 4 Root Canal Treatments, 9.3ms
+    image 203/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3407560000-jpg_png_jpg.rf.aae3afa34a8753f00e8afe62ba30f843.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 204/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3413010000-jpg_png_jpg.rf.cd97b5c81b8553fa495a6f81f74af4ff.jpg: 640x640 1 impacted tooth, 8.9ms
+    image 205/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3422950000-jpg_png_jpg.rf.c8eb8e998ddd67380f0026df506c45e4.jpg: 640x640 1 Filling, 1 impacted tooth, 8.8ms
+    image 206/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3423560000-jpg_png_jpg.rf.cf6fb10fa3745a65b6d3adf85c7d38ff.jpg: 640x640 5 Crowns, 5 Fillings, 1 Periapical lesion, 3 Root Canal Treatments, 4 impacted tooths, 8.9ms
+    image 207/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3424080000-jpg_png_jpg.rf.d3251bb525a46942d947dc50f039e8d9.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 208/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3426100000-jpg_png_jpg.rf.35a4a598e4086d72df1dda4b328c1ef2.jpg: 640x640 1 Crown, 5 Fillings, 2 impacted tooths, 8.9ms
+    image 209/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3431030000-jpg_png_jpg.rf.bae0aad9228dcbab1626bee5b3593b64.jpg: 640x640 4 Fillings, 2 impacted tooths, 8.8ms
+    image 210/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3438800000-jpg_png_jpg.rf.8753e1b3f9f074e447a997f10faffca9.jpg: 640x640 2 Crowns, 8 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 8.8ms
+    image 211/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3464760000-jpg_png_jpg.rf.e0275040713b7661e87e690ddba290fe.jpg: 640x640 4 Crowns, 7 Fillings, 1 Implant, 5 Root Canal Treatments, 4 impacted tooths, 8.7ms
+    image 212/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3466550000-jpg_png_jpg.rf.2807d1127104c271deed8e9c1d51dce7.jpg: 640x640 3 Crowns, 3 Fillings, 1 impacted tooth, 8.9ms
+    image 213/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3467130000-jpg_png_jpg.rf.e8e0e2d29b2f490b17a187381ad07869.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 214/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3468230000-jpg_png_jpg.rf.e03f5bcc25acbf3ea47df2cf1da17ffc.jpg: 640x640 1 Filling, 1 Periapical lesion, 1 impacted tooth, 8.9ms
+    image 215/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3468390000-jpg_png_jpg.rf.738959832bb09688ae1afd3f507e425a.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 216/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3468390000-jpg_png_jpg.rf.9f9d20b6552d2da8f80474b1d3550e8e.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 217/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3483570000-jpg_png_jpg.rf.d3ea1a9a652ac0fc3d4b979da3ea4ed3.jpg: 640x640 1 Crown, 6 Fillings, 2 impacted tooths, 9.0ms
+    image 218/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3493460000-jpg_png_jpg.rf.35dcd9441ccaaa7721ff1b2a8e426447.jpg: 640x640 1 Filling, 3 impacted tooths, 9.0ms
+    image 219/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3495090000-jpg_png_jpg.rf.5a24c27e8d5e47b73f3d576baae40d42.jpg: 640x640 2 Crowns, 4 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 220/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3496290000-jpg_png_jpg.rf.2a090af67dd7cc2809d1517b64904959.jpg: 640x640 1 Crown, 4 impacted tooths, 8.9ms
+    image 221/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3501200000-jpg_png_jpg.rf.4383fe51979ad50da47a9c46df52b3c1.jpg: 640x640 3 Crowns, 8 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 222/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3501200000-jpg_png_jpg.rf.f4889485436a243584300a6052b21225.jpg: 640x640 3 Crowns, 7 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 223/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3501440000-jpg_png_jpg.rf.6688bb9a17ce8545d05050ae18cebcf5.jpg: 640x640 2 Fillings, 3 impacted tooths, 8.9ms
+    image 224/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3502500000-jpg_png_jpg.rf.7e5ac9e99497e16dce6b0e84fd033a19.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.0ms
+    image 225/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3514790000-jpg_png_jpg.rf.9b3807543ef06c91c6fd2b3eee77c77a.jpg: 640x640 1 Filling, 4 impacted tooths, 9.0ms
+    image 226/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3515850000-jpg_png_jpg.rf.feef38fa1a2d121a436070944d76e693.jpg: 640x640 1 Filling, 1 impacted tooth, 9.0ms
+    image 227/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3515900000-jpg_png_jpg.rf.ea780796f2f06970132efc347b41c76b.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 228/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3517580000-jpg_png_jpg.rf.45986520709697e97974838e3a53ea7c.jpg: 640x640 3 Crowns, 2 Implants, 3 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 229/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3530900000-jpg_png_jpg.rf.26b267f520aec20b09701f4ee199c33c.jpg: 640x640 2 impacted tooths, 9.5ms
+    image 230/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3547e205-RAJABI_MINA_2020-06-09130704_jpg.rf.f517de41a962c5ecfe16e5892decdfae.jpg: 640x640 2 Crowns, 8 Fillings, 1 Root Canal Treatment, 9.1ms
+    image 231/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3549950000-jpg_png_jpg.rf.3a947badca3b1c1c8c28a6ca2d791d8b.jpg: 640x640 1 Filling, 1 impacted tooth, 9.0ms
+    image 232/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3551010000-jpg_png_jpg.rf.c168b7696c5810ef56baa07730df77c1.jpg: 640x640 7 Fillings, 1 impacted tooth, 9.0ms
+    image 233/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3555350000-jpg_png_jpg.rf.cb81e8ce3cdfaebb4893166a7038fe94.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 234/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3558560000-jpg_png_jpg.rf.3e463d02877edd531bb2b87bc017a135.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 235/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3562360000-jpg_png_jpg.rf.0f9f0dfd8f9de10661f926ac846109b8.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 236/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3566970000-jpg_png_jpg.rf.9a21baa301c720c85c068ea8363bebfa.jpg: 640x640 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 237/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3569440000-jpg_png_jpg.rf.51d11bd8594d4be14da1cca8b5c4a363.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 238/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3570080000-jpg_png_jpg.rf.3beff45566e3f546c0282e4bd1dc93da.jpg: 640x640 5 Fillings, 1 impacted tooth, 8.9ms
+    image 239/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3573400000-jpg_png_jpg.rf.73e67631ce44149025502a995f22fb68.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.0ms
+    image 240/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3573650000-jpg_png_jpg.rf.13c7444ce225de9dd33541de5b53afb3.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 241/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3573830000-jpg_png_jpg.rf.11fc774b00ede2f5c66fb791d5c9f2ea.jpg: 640x640 15 Fillings, 3 impacted tooths, 8.9ms
+    image 242/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3575580000-jpg_png_jpg.rf.0400220425c7af0028edcd5b70f50fb6.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 243/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3577050000-jpg_png_jpg.rf.46427a9765f014e56eb284f00d8e4bf3.jpg: 640x640 1 Filling, 4 impacted tooths, 9.0ms
+    image 244/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3578960000-jpg_png_jpg.rf.b0a27d1b08bb237fcb800d04cc935e10.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 245/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3579920000-jpg_png_jpg.rf.86526a344d751a2f948ef25efd54acff.jpg: 640x640 1 Crown, 1 Filling, 2 impacted tooths, 8.9ms
+    image 246/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3582190000-jpg_png_jpg.rf.9007f73e275c2c7350c51ed3c67be180.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 247/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3583840000-jpg_png_jpg.rf.826aace48846c6b73fe8b6756538fce1.jpg: 640x640 1 Crown, 5 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.5ms
+    image 248/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3583970000-jpg_png_jpg.rf.b6d7564147d58e96b4d8b00f04c93a6e.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 249/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3584710000-jpg_png_jpg.rf.5bfad685a1440bf4b61dbb9c444710ed.jpg: 640x640 1 Crown, 11 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 250/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585180000-jpg_png_jpg.rf.153019b68a43b572accbff3a77983b27.jpg: 640x640 8 Fillings, 3 impacted tooths, 8.9ms
+    image 251/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585260000-jpg_png_jpg.rf.5a3f216cd65eb6bd43ff38fa577c5b50.jpg: 640x640 7 Fillings, 4 impacted tooths, 8.9ms
+    image 252/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585260000-jpg_png_jpg.rf.a43e9823cf2aa7c14e79603f6dee062b.jpg: 640x640 6 Fillings, 4 impacted tooths, 8.8ms
+    image 253/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585260000-jpg_png_jpg.rf.fc53dc9e323af2e303c01bee3f087bba.jpg: 640x640 7 Fillings, 4 impacted tooths, 8.9ms
+    image 254/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585500000-jpg_png_jpg.rf.28b62d9b83f1a7d983db6885d2204c6a.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.6ms
+    image 255/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3585550000-jpg_png_jpg.rf.7a141168b16df0b6c0f05d9d0cd401c7.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.1ms
+    image 256/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3587830000-jpg_png_jpg.rf.15dc42aa06dd302b2cfc5b72ba29754d.jpg: 640x640 1 Crown, 1 Filling, 2 impacted tooths, 9.0ms
+    image 257/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3587930000-jpg_png_jpg.rf.ee7ef62e391af23320997a846ada5a6c.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 258/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3589950000-jpg_png_jpg.rf.9d8d8ddac8b06bf961bc1c15d9c0e36d.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 259/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3590480000-jpg_png_jpg.rf.ebcf0ba7861943f338946e8d25700612.jpg: 640x640 1 Crown, 7 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 260/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3591840000-jpg_png_jpg.rf.f7abdf5c654ad7136156db3c16436ea2.jpg: 640x640 2 Crowns, 8 Fillings, 4 impacted tooths, 9.1ms
+    image 261/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3593310000-jpg_png_jpg.rf.61e1274dff18fc03e1b13595c07d5bc5.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.0ms
+    image 262/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3593900000-jpg_png_jpg.rf.955c6aae6a01473de547c95033a0bd87.jpg: 640x640 2 impacted tooths, 8.8ms
+    image 263/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3594140000-jpg_png_jpg.rf.93fd6a644e75bf1a44ee0dac68f1b09f.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 264/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3594480000-jpg_png_jpg.rf.ad2b15d7e67d1ab24e3308418e328a89.jpg: 640x640 2 Cariess, 9.0ms
+    image 265/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3595820000-jpg_png_jpg.rf.8ef622fe57919d1d77fad2506808c315.jpg: 640x640 1 Crown, 1 Filling, 1 Periapical lesion, 2 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 266/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3600030000-jpg_png_jpg.rf.ca41d07318ad532394c526a18868395d.jpg: 640x640 2 Crowns, 3 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 267/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3600740000-jpg_png_jpg.rf.9d476a4ceb573498a09acbacf6e6b316.jpg: 640x640 1 Crown, 5 Fillings, 1 Periapical lesion, 2 Root Canal Treatments, 4 impacted tooths, 8.9ms
+    image 268/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3600850000-jpg_png_jpg.rf.38543ac1b65723976834109c80a1eff7.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 269/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3601050000-jpg_png_jpg.rf.1f61dfbc4eaa2f2c2825e37fbb33ad48.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 1 impacted tooth, 9.0ms
+    image 270/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3601170000-jpg_png_jpg.rf.66630ead76128ee7923550803e3b8faf.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 271/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3601540000-jpg_png_jpg.rf.afd11c76345c43761c51d2b586dcc98d.jpg: 640x640 12 Fillings, 3 impacted tooths, 8.9ms
+    image 272/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3601540000-jpg_png_jpg.rf.d088bbcb3e7392746316ae8ad577249f.jpg: 640x640 12 Fillings, 3 impacted tooths, 8.9ms
+    image 273/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3602880000-jpg_png_jpg.rf.9a8b3a43ea7e1b4d9c12d94feb0d2189.jpg: 640x640 7 Crowns, 2 Fillings, 2 impacted tooths, 8.9ms
+    image 274/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3603840000-jpg_png_jpg.rf.88100e1a8d9ea3eb5c033479d6bd69bb.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 4 impacted tooths, 8.9ms
+    image 275/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3603890000-jpg_png_jpg.rf.8ea807cbdcdbdb4eadf5b89767890205.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 276/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3604290000-jpg_png_jpg.rf.2babb1713c2a3bd33ec959cdceecf1ef.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.0ms
+    image 277/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3604480000-jpg_png_jpg.rf.762e3b87ec3395d94b52d9ae6f039293.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 278/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3604510000-jpg_png_jpg.rf.ce7754d83a86ff2b55d2df8ccaed9973.jpg: 640x640 3 impacted tooths, 8.8ms
+    image 279/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3606090000-jpg_png_jpg.rf.29558e056ed6e3a4512360d1c8aca6a0.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 280/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3606400000-jpg_png_jpg.rf.da980aa387bd54e1b3261bd17f47caec.jpg: 640x640 3 Crowns, 3 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.3ms
+    image 281/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3609480000-jpg_png_jpg.rf.cb5e6efb66bf537c164dd9b8b9600a4f.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 282/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3610150000-jpg_png_jpg.rf.f19086d782c5a9ca5458c676d8b1b98d.jpg: 640x640 8 Crowns, 1 Filling, 2 Implants, 2 impacted tooths, 8.9ms
+    image 283/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3610340000-jpg_png_jpg.rf.dd59c8e503de024f2014aa04a7c60937.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 284/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3611590000-jpg_png_jpg.rf.83d2b96421d09052d29bcbecddc212a3.jpg: 640x640 1 Caries, 1 Filling, 3 impacted tooths, 9.0ms
+    image 285/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3611630000-jpg_png_jpg.rf.ae8e07e7bd1b41cac6ce84f5d48071c6.jpg: 640x640 2 Crowns, 1 Filling, 2 impacted tooths, 8.8ms
+    image 286/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3612880000-jpg_png_jpg.rf.3472951cfee30f5f0f79823e529680bd.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 287/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3614190000-jpg_png_jpg.rf.b2c6e94daeab8d4dc66dda0a79249110.jpg: 640x640 1 Crown, 2 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 288/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3615230000-jpg_png_jpg.rf.b17240cf50af6c9184dc53ff2ed10dde.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 289/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3615830000-jpg_png_jpg.rf.b0853f083077a1e3807cee32b07d0141.jpg: 640x640 5 Crowns, 3 Fillings, 1 Periapical lesion, 1 Root Canal Treatment, 2 impacted tooths, 8.8ms
+    image 290/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3616000000-jpg_png_jpg.rf.00b755f111c29d65e273e11e7eb2e070.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 291/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3616810000-jpg_png_jpg.rf.0f1f8077001587bcf8f05e1df9009c5e.jpg: 640x640 1 Caries, 1 Filling, 2 impacted tooths, 8.9ms
+    image 292/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3617270000-jpg_png_jpg.rf.8bfbc31993c5633d22a51b2affd2e021.jpg: 640x640 3 impacted tooths, 8.8ms
+    image 293/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3617630000-jpg_png_jpg.rf.b9f3fe20ea97b6e8362ea43bbb80c01f.jpg: 640x640 4 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 8.8ms
+    image 294/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3617880000-jpg_png_jpg.rf.a293e314af4f7449f9f0fd1b9fffa5bd.jpg: 640x640 2 Crowns, 1 Filling, 3 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 295/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3620730000-jpg_png_jpg.rf.76f81512610edb0e0528c2a23622dfa9.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.1ms
+    image 296/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3621060000-jpg_png_jpg.rf.cb1b3d902f68157acb537e57a97b2c74.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 297/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3621380000-jpg_png_jpg.rf.f0982fe3c95e6c1f1fc83a51998c6678.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 298/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3622770000-jpg_png_jpg.rf.a8d3df3bb695599fbc6cea60df554f35.jpg: 640x640 4 Crowns, 4 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 299/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3623320000-jpg_png_jpg.rf.66042c059669702a0159890dab32a53b.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.4ms
+    image 300/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3625350000-jpg_png_jpg.rf.5fef51d1ee4d76361f6d64e90c7b604b.jpg: 640x640 4 Crowns, 3 Root Canal Treatments, 4 impacted tooths, 9.4ms
+    image 301/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3626480000-jpg_png_jpg.rf.42493c0d546219aa7f986a78b65ff499.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 302/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3626480000-jpg_png_jpg.rf.437e03241b408ed4dc0a46152a54e972.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 303/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3626930000-jpg_png_jpg.rf.f63285e6dfe9bcfac8c0867993c770bb.jpg: 640x640 1 Crown, 3 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 304/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3627570000-jpg_png_jpg.rf.fa0453f192d06300fc6f152235e7dd41.jpg: 640x640 1 impacted tooth, 9.3ms
+    image 305/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3627780000-jpg_png_jpg.rf.ffe9f21d9e28241d01174bff4a0a1a46.jpg: 640x640 1 Crown, 5 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.6ms
+    image 306/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3627850000-jpg_png_jpg.rf.11102267ec321ae062e96e1e036c4bf7.jpg: 640x640 1 Implant, 1 impacted tooth, 9.6ms
+    image 307/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3627850000-jpg_png_jpg.rf.5dfda937291471cd33d1a6ebbaf8c576.jpg: 640x640 1 Implant, 1 impacted tooth, 9.2ms
+    image 308/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3628420000-jpg_png_jpg.rf.ff83f0c94367973cfb208902a49b12dc.jpg: 640x640 2 Crowns, 5 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 309/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3628550000-jpg_png_jpg.rf.950174da5ff77c2d52e5a052c70c5ea1.jpg: 640x640 1 Filling, 4 impacted tooths, 9.0ms
+    image 310/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3628770000-jpg_png_jpg.rf.84d2f5933e82f8877dc06dac81eb8feb.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 311/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3629500000-jpg_png_jpg.rf.92f2631ac399316195a3a66d2514266a.jpg: 640x640 1 Crown, 6 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 312/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3629910000-jpg_png_jpg.rf.da4cf64c9bc1bb7e058438afa84bacc1.jpg: 640x640 1 Crown, 6 Fillings, 3 impacted tooths, 9.0ms
+    image 313/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3630190000-jpg_png_jpg.rf.f4c71970e69626e46edb2c20cbc09c40.jpg: 640x640 1 Crown, 10 Fillings, 4 Root Canal Treatments, 3 impacted tooths, 8.8ms
+    image 314/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3639420000-jpg_png_jpg.rf.d1a416e869f5dfc3ab4b1945aa1171be.jpg: 640x640 1 Filling, 1 Periapical lesion, 1 Root Canal Treatment, 1 impacted tooth, 8.9ms
+    image 315/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3642310000-jpg_png_jpg.rf.bbb72d53d98a8182462633f90b5539b6.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 316/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3642870000-jpg_png_jpg.rf.139dee88d7eef2bb9acdc306383cabee.jpg: 640x640 10 Fillings, 2 impacted tooths, 9.0ms
+    image 317/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3643990000-jpg_png_jpg.rf.ac3e2154ce7ba12a5adff129217cca00.jpg: 640x640 1 Crown, 4 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 8.7ms
+    image 318/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3644130000-jpg_png_jpg.rf.0ab16fdd1d2c77f4c21563519b3f8b4e.jpg: 640x640 3 Fillings, 4 impacted tooths, 11.5ms
+    image 319/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3644130000-jpg_png_jpg.rf.460f5543a20712e0d3def1b51058e0ee.jpg: 640x640 3 Fillings, 4 impacted tooths, 8.9ms
+    image 320/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3645420000-jpg_png_jpg.rf.8f341ff57b74f62c0c1407b43d0a091e.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 321/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3645870000-jpg_png_jpg.rf.c3981e2b2fd637c5fdfb1029d1c1d177.jpg: 640x640 1 impacted tooth, 9.0ms
+    image 322/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3646640000-jpg_png_jpg.rf.d7aee1c6a38e469c07f62062fae2c17e.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.0ms
+    image 323/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3646900000-jpg_png_jpg.rf.1be1446050e743e2ad62dde29458db53.jpg: 640x640 1 impacted tooth, 8.9ms
+    image 324/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3647370000-jpg_png_jpg.rf.1ca29d8c36e1939565b7b988f5617c17.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 325/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3648480000-jpg_png_jpg.rf.b7d05b7696ac3ead6b862cd55223c24b.jpg: 640x640 1 Caries, 1 Filling, 1 Root Canal Treatment, 3 impacted tooths, 8.8ms
+    image 326/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3648610000-jpg_png_jpg.rf.3e0cadf479b39fbe274891c43eb77f97.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.1ms
+    image 327/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3648720000-jpg_png_jpg.rf.f7b7d5b61425b88b41e445af91527299.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 328/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3649220000-jpg_png_jpg.rf.1ca3aab169e65edd8248d09170652f59.jpg: 640x640 1 Crown, 2 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 329/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3650740000-jpg_png_jpg.rf.de3ba2bcb42a6b692265709acc696ebb.jpg: 640x640 1 Filling, 1 Missing teeth, 1 Periapical lesion, 2 impacted tooths, 9.0ms
+    image 330/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3651990000-jpg_png_jpg.rf.41ea46b19782e51fd5952dc03deef5f3.jpg: 640x640 2 Fillings, 2 impacted tooths, 8.9ms
+    image 331/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3652100000-jpg_png_jpg.rf.e7f2507d4b2db818e42a3f2eb0928dfd.jpg: 640x640 1 Crown, 4 Fillings, 1 impacted tooth, 8.8ms
+    image 332/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3653190000-jpg_png_jpg.rf.8b887037b5934b776bdb4dbda168b820.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 333/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3653190000-jpg_png_jpg.rf.c9f08f5d5ad6621b5d65116b0ca53898.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 334/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3653190000-jpg_png_jpg.rf.eac2c87cdc8da6f290f6200eb4f13009.jpg: 640x640 4 impacted tooths, 9.6ms
+    image 335/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3653380000-jpg_png_jpg.rf.40616e3d30d7607da342114e889d7ae9.jpg: 640x640 7 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 10.3ms
+    image 336/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3653790000-jpg_png_jpg.rf.14f7f994ae9d15be38eebbfcf1fed75b.jpg: 640x640 4 impacted tooths, 9.8ms
+    image 337/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3655230000-jpg_png_jpg.rf.4fa716495e0a6652f7a124e205661241.jpg: 640x640 1 Caries, 4 Fillings, 6 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 338/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3655870000-jpg_png_jpg.rf.eef31461099c681732bb4f52fb094f2d.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 339/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3655930000-jpg_png_jpg.rf.031f7171b0d4453bdd3c12b739f4d32b.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 340/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3656160000-jpg_png_jpg.rf.03b4958d788ca7f2fc322d8a5f482443.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 341/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3656380000-jpg_png_jpg.rf.c7aedf46eaf05e8f0631c2fc49affab7.jpg: 640x640 8 Fillings, 4 impacted tooths, 9.2ms
+    image 342/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3656440000-jpg_png_jpg.rf.b2b7503a1837f43bf97ddc1a208e47d0.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.1ms
+    image 343/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3656890000-jpg_png_jpg.rf.23c562e0668a713046e99a40b6c8ea45.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.3ms
+    image 344/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3657100000-jpg_png_jpg.rf.fe35a7d79798ea8c30e2dd05f3ea6c93.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 345/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3657110000-jpg_png_jpg.rf.4b460633b2cd1f170c9beacc776a2a0f.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 346/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3658350000-jpg_png_jpg.rf.af59a6d5a46b7838f93caaf4644f20e9.jpg: 640x640 1 Filling, 7 impacted tooths, 9.0ms
+    image 347/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3659170000-jpg_png_jpg.rf.890267e73758f86f4eb8f777adc4c902.jpg: 640x640 1 Filling, 3 impacted tooths, 9.3ms
+    image 348/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3659210000-jpg_png_jpg.rf.d09f794a11fcbe9b7f46f94018b449f5.jpg: 640x640 1 impacted tooth, 9.1ms
+    image 349/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3660210000-jpg_png_jpg.rf.f7a3cc38fb3eb33cc37e72aafeaec9bf.jpg: 640x640 1 impacted tooth, 9.1ms
+    image 350/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3660470000-jpg_png_jpg.rf.3bcb4094d8ec91ce50906078bd56147a.jpg: 640x640 (no detections), 9.1ms
+    image 351/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3660780000-jpg_png_jpg.rf.6b39b1e03477f8820787abacb23541dd.jpg: 640x640 2 Crowns, 10 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 8.9ms
+    image 352/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3661080000-jpg_png_jpg.rf.ab97370394be83b2ad378d4ecdab84cd.jpg: 640x640 1 Caries, 1 Crown, 3 impacted tooths, 9.2ms
+    image 353/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3662910000-jpg_png_jpg.rf.9978646a347416bdc765a2938075b1ad.jpg: 640x640 1 Filling, 4 impacted tooths, 9.0ms
+    image 354/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3664540000-jpg_png_jpg.rf.420d23e5410bd47727316464f5c4ae16.jpg: 640x640 5 Crowns, 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 8.9ms
+    image 355/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3666400000-jpg_png_jpg.rf.dda3b70ba534906377e547806411542e.jpg: 640x640 3 Fillings, 2 impacted tooths, 8.9ms
+    image 356/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3667260000-jpg_png_jpg.rf.4178af3284f06b0d2fd328225fdf6d06.jpg: 640x640 1 Crown, 1 Missing teeth, 1 impacted tooth, 8.8ms
+    image 357/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3668250000-jpg_png_jpg.rf.376d87a7ce0cfb22df0253668294edd4.jpg: 640x640 5 Crowns, 6 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 358/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3669430000-jpg_png_jpg.rf.ac4ece8accfb56ab8d36cd13c9c6bdf0.jpg: 640x640 1 Crown, 1 Filling, 2 impacted tooths, 9.0ms
+    image 359/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3669450000-jpg_png_jpg.rf.4bada958deb7b09cebafcf15f61e7dcb.jpg: 640x640 1 Crown, 4 Fillings, 2 impacted tooths, 10.1ms
+    image 360/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3669540000-jpg_png_jpg.rf.eeb42f7384e9642eca11ce9f63c631cb.jpg: 640x640 7 Fillings, 3 impacted tooths, 8.8ms
+    image 361/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3671780000-jpg_png_jpg.rf.b91cfdc1e20fb98a0cc4c87b8cefcc5e.jpg: 640x640 2 Crowns, 7 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 8.7ms
+    image 362/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3672230000-jpg_png_jpg.rf.5485e80959d6abd6b5a2dbdd7032527a.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 363/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3672910000-jpg_png_jpg.rf.35423c6a55d3bf39450614acdc397b64.jpg: 640x640 2 Crowns, 4 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 364/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3673540000-jpg_png_jpg.rf.d4b3ecf554b549b8d0789f41dfb8c3ce.jpg: 640x640 7 Fillings, 2 impacted tooths, 9.0ms
+    image 365/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3676210000-jpg_png_jpg.rf.a7dac709ff180a34658e1f831401a289.jpg: 640x640 4 Fillings, 2 impacted tooths, 8.9ms
+    image 366/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3676580000-jpg_png_jpg.rf.6861280d7fab0c6905efb48d712db8f2.jpg: 640x640 2 impacted tooths, 8.8ms
+    image 367/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3678030000-jpg_png_jpg.rf.46a323096424697a00bfbb671d947a20.jpg: 640x640 1 Filling, 4 impacted tooths, 8.8ms
+    image 368/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3678030000-jpg_png_jpg.rf.6afa516d878c05b850446f43d1c85055.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 369/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3678990000-jpg_png_jpg.rf.20ad985b72487d9c0c062388b86f9a9d.jpg: 640x640 4 Crowns, 3 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 370/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3681470000-jpg_png_jpg.rf.c4e241b98a6bb1ec7fea60ac09037f96.jpg: 640x640 1 impacted tooth, 9.1ms
+    image 371/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3681900000-jpg_png_jpg.rf.d5d7af43ca6eb7febf23d9beb89ef9e3.jpg: 640x640 3 Crowns, 7 Fillings, 1 Implant, 3 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 372/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3683190000-jpg_png_jpg.rf.f543e61da3232254e5dce288f568f236.jpg: 640x640 2 Crowns, 5 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 373/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3683910000-jpg_png_jpg.rf.a9e8aff9a82de864e4616ce7b3cbbb66.jpg: 640x640 1 Crown, 4 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 374/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3685830000-jpg_png_jpg.rf.2c94dd473e7ad3924d93b6e677f4488e.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.2ms
+    image 375/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3685830000-jpg_png_jpg.rf.32a76e087c20c4c5c205cfaedd8c1126.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.1ms
+    image 376/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3685970000-jpg_png_jpg.rf.5a112c60f6d35c86146c9851d881c6af.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.1ms
+    image 377/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3686780000-jpg_png_jpg.rf.5bdacf97a2fd783ad2d55ebb713e86a3.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 378/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3689640000-jpg_png_jpg.rf.9809810a8709d2b58adde3dfa4b50a3e.jpg: 640x640 1 Crown, 7 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 379/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3695010000-jpg_png_jpg.rf.afa1756190dea09fb8d802158aeb3ad7.jpg: 640x640 2 Crowns, 1 Filling, 2 Root Canal Treatments, 3 impacted tooths, 9.2ms
+    image 380/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3697630000-jpg_png_jpg.rf.3e09d7e3e35b38ce38b9f90b4309a67f.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.3ms
+    image 381/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3698160000-jpg_png_jpg.rf.c7708fb70cb260d2d0e47e4c3cbf4e50.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 382/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3713090000-jpg_png_jpg.rf.f50cf7d6bed84a531fe65618e13d6d41.jpg: 640x640 5 Crowns, 1 Filling, 3 Missing teeths, 4 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 383/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3713650000-jpg_png_jpg.rf.6d7d70eb9ae5621d61a7a14c9e8ce0c7.jpg: 640x640 1 Crown, 1 Filling, 1 Periapical lesion, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 384/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3717300000-jpg_png_jpg.rf.1b8394c871e96586264878620371c1aa.jpg: 640x640 5 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.3ms
+    image 385/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3717940000-jpg_png_jpg.rf.b23e3118e9411e7c6da81e1b9af9dd32.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.4ms
+    image 386/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3720050000-jpg_png_jpg.rf.fed1e1e3a15c0e20e92cbadd9f5e8aee.jpg: 640x640 5 Crowns, 2 Fillings, 2 impacted tooths, 9.5ms
+    image 387/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3721080000-jpg_png_jpg.rf.db2d06f673d12bf19bc1d4ce22ff7651.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 9.4ms
+    image 388/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3721080000-jpg_png_jpg.rf.feff54dc1faec861c8e5ee73da0f2562.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 9.3ms
+    image 389/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3721920000-jpg_png_jpg.rf.98cb90432cbe60b35c13dc7bb4a24542.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.2ms
+    image 390/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3726250000-jpg_png_jpg.rf.b7d27f630ef1ae2a7bc61fadf3be1612.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.3ms
+    image 391/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3728210000-jpg_png_jpg.rf.c9c6b0f2721bc35e7aea5e2933750492.jpg: 640x640 1 Crown, 1 Filling, 4 impacted tooths, 9.1ms
+    image 392/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3732830000-jpg_png_jpg.rf.9e788ab3333162c4a9d39ac1db7dcc81.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.3ms
+    image 393/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3734190000-jpg_png_jpg.rf.ba7580626b484894dcfb6520eededdeb.jpg: 640x640 5 Crowns, 2 Fillings, 1 Implant, 2 Missing teeths, 1 Root Canal Treatment, 1 impacted tooth, 9.2ms
+    image 394/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3734530000-jpg_png_jpg.rf.5b713c454e67350291169c0271888743.jpg: 640x640 2 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.3ms
+    image 395/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3739180000-jpg_png_jpg.rf.d274bb5bfe8b2b11b830598f7c927840.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 396/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3740180000-jpg_png_jpg.rf.2c29b2a84b852c89905a4a11f2df5a07.jpg: 640x640 3 Crowns, 4 Fillings, 1 Missing teeth, 3 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 397/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3741460000-jpg_png_jpg.rf.49728034717e9961161408570f0cdf8e.jpg: 640x640 1 impacted tooth, 9.3ms
+    image 398/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3742060000-jpg_png_jpg.rf.a12d531741e33b74cfc02e0397c369ee.jpg: 640x640 1 impacted tooth, 9.3ms
+    image 399/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3743530000-jpg_png_jpg.rf.99127b18059c81910b8df0f24b26d1a8.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 400/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3744020000-jpg_png_jpg.rf.8ec4b45af4fe2a3cbb4193d62df1e6aa.jpg: 640x640 4 impacted tooths, 9.4ms
+    image 401/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3747480000-jpg_png_jpg.rf.e835b76da27ec534c284fc997899db41.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 402/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3749600000-jpg_png_jpg.rf.9e929554ce36d1c2581244393df58feb.jpg: 640x640 3 Crowns, 2 impacted tooths, 9.6ms
+    image 403/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3749600000-jpg_png_jpg.rf.d490f0c24aebcfb0fcd45bdb25824cc9.jpg: 640x640 3 Crowns, 2 impacted tooths, 9.5ms
+    image 404/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3750330000-jpg_png_jpg.rf.32bceba658a975d50febc49c2c06c2c6.jpg: 640x640 1 impacted tooth, 9.3ms
+    image 405/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3754180000-jpg_png_jpg.rf.96c5d13b171e857de8e2bf6e4ea459f9.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.2ms
+    image 406/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3754430000-jpg_png_jpg.rf.0deee4687a7f90dbc06d49a68c28ed81.jpg: 640x640 4 impacted tooths, 9.8ms
+    image 407/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3754550000-jpg_png_jpg.rf.661cec4b7c3ef79b4d762345f65195e9.jpg: 640x640 2 Fillings, 1 Implant, 1 Missing teeth, 1 impacted tooth, 9.8ms
+    image 408/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3754910000-jpg_png_jpg.rf.62f2d898ecd0eb8e1efd1c8b7ba2b059.jpg: 640x640 1 Filling, 3 impacted tooths, 9.5ms
+    image 409/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3755630000-jpg_png_jpg.rf.f38eb233755c1b6e3ea601d8ae7cc9cc.jpg: 640x640 1 Periapical lesion, 2 impacted tooths, 9.4ms
+    image 410/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3758740000-jpg_png_jpg.rf.5a0394260c46a4f07ee50311586390f0.jpg: 640x640 1 Crown, 3 Fillings, 1 Missing teeth, 2 Root Canal Treatments, 4 impacted tooths, 9.4ms
+    image 411/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3759770000-jpg_png_jpg.rf.837cff816be9724732864889eed4cb5d.jpg: 640x640 1 impacted tooth, 9.7ms
+    image 412/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3761850000-jpg_png_jpg.rf.2f9eecccf315d880b9c2904460fb9bd9.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.2ms
+    image 413/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3765370000-jpg_png_jpg.rf.e7e8c2d6db6d473bd3454af08d7fb452.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.9ms
+    image 414/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3767260000-jpg_png_jpg.rf.66dd61ba5e2e76a0b3e7d6d2bae752a3.jpg: 640x640 1 Crown, 1 Filling, 1 Periapical lesion, 2 Root Canal Treatments, 1 impacted tooth, 9.5ms
+    image 415/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3769220000-jpg_png_jpg.rf.95180172e8d42b13e722ea36240e78d2.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.1ms
+    image 416/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3769990000-jpg_png_jpg.rf.5937d20fd612afea2e55c10d4e262381.jpg: 640x640 6 Fillings, 1 impacted tooth, 9.1ms
+    image 417/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3771480000-jpg_png_jpg.rf.6ed062c6b6a78ed7b0ea0fb08ed30655.jpg: 640x640 1 Crown, 2 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 418/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3771480000-jpg_png_jpg.rf.76ce6efec8a088509deb47d01c9efb76.jpg: 640x640 1 Crown, 2 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 419/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3771980000-jpg_png_jpg.rf.cc4385191684af04d96a8e9f482202eb.jpg: 640x640 1 Filling, 1 impacted tooth, 9.0ms
+    image 420/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3774160000-jpg_png_jpg.rf.9fcf7ac6064d337d19e4ef88b46f2796.jpg: 640x640 1 Crown, 7 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 421/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3774330000-jpg_png_jpg.rf.06c7f787b76870a4ac8e65a20929bb80.jpg: 640x640 4 Fillings, 1 impacted tooth, 9.0ms
+    image 422/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3774480000-jpg_png_jpg.rf.c710d13c4f612b3936554f20a850cf3d.jpg: 640x640 1 Filling, 4 impacted tooths, 8.9ms
+    image 423/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3774920000-jpg_png_jpg.rf.9a908e4b0e674b33a0d90770427fa774.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 424/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3777360000-jpg_png_jpg.rf.ca128411306504634a16911e72dca06b.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 425/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3778200000-jpg_png_jpg.rf.6977ab3a665390d37eaca1a203dbbb88.jpg: 640x640 7 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.8ms
+    image 426/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3779440000-jpg_png_jpg.rf.2a8f04a9c6c69c57e09fd0bb0a6b020b.jpg: 640x640 2 Fillings, 1 impacted tooth, 8.9ms
+    image 427/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3780210000-jpg_png_jpg.rf.e6430ad38b5171682554c832724b65e0.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 428/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3780420000-jpg_png_jpg.rf.df9f91384ad40c519b9cc13279a75d20.jpg: 640x640 2 Crowns, 4 impacted tooths, 8.9ms
+    image 429/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3781290000-jpg_png_jpg.rf.e8dfed6861412c63c90b65fbb0828326.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 430/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3784290000-jpg_png_jpg.rf.de068046fef1d92487001ad81a0151f7.jpg: 640x640 6 Fillings, 3 impacted tooths, 8.9ms
+    image 431/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3784770000-jpg_png_jpg.rf.13ded0557fc1b69b5e9dacf8e20ccfca.jpg: 640x640 5 Crowns, 4 Fillings, 6 Root Canal Treatments, 3 impacted tooths, 8.8ms
+    image 432/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3785910000-jpg_png_jpg.rf.4201d154498375c67e11a4c4ca4ebf4e.jpg: 640x640 2 impacted tooths, 8.8ms
+    image 433/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3787880000-jpg_png_jpg.rf.eb6f76ab6d441ab18838037a2ab46dc5.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.1ms
+    image 434/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3788090000-jpg_png_jpg.rf.d599034f3b49c5cd624ff503ec9654e5.jpg: 640x640 4 Fillings, 2 impacted tooths, 8.9ms
+    image 435/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3788230000-jpg_png_jpg.rf.0702408bb82c181ede8b14c97e643502.jpg: 640x640 5 impacted tooths, 8.9ms
+    image 436/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3788660000-jpg_png_jpg.rf.28a4e85061933f7291a793e25d65b0f4.jpg: 640x640 1 Crown, 4 impacted tooths, 8.8ms
+    image 437/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3789170000-jpg_png_jpg.rf.3a9d22cad90189afa42b9dd56cc13958.jpg: 640x640 5 impacted tooths, 9.0ms
+    image 438/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3793410000-jpg_png_jpg.rf.083d6ccd98025b8be139d52ff910593a.jpg: 640x640 3 Fillings, 4 impacted tooths, 8.9ms
+    image 439/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3793550000-jpg_png_jpg.rf.65c6dca971754f62c672e5d73a90f63b.jpg: 640x640 2 impacted tooths, 8.8ms
+    image 440/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3794250000-jpg_png_jpg.rf.257720e811c415d84c0cdd6568b94cea.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 441/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3795520000-jpg_png_jpg.rf.5284e41ae5be22b1b275f989af9d26d4.jpg: 640x640 1 Filling, 4 impacted tooths, 8.8ms
+    image 442/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3796060000-jpg_png_jpg.rf.29afe9a481304f0253c9172cd44128f4.jpg: 640x640 4 impacted tooths, 8.8ms
+    image 443/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3796250000-jpg_png_jpg.rf.69bd25a6317fd9ca9040003afd6b722c.jpg: 640x640 3 Fillings, 3 impacted tooths, 8.8ms
+    image 444/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3796480000-jpg_png_jpg.rf.a7b02e232528cdaf9a806308251e7b27.jpg: 640x640 1 Crown, 1 Filling, 2 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 445/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3799970000-jpg_png_jpg.rf.bda44c5ccde07595b195127139c4dab1.jpg: 640x640 3 impacted tooths, 8.8ms
+    image 446/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/37a867b3-Nazari_Akram_2022-06-12141514_jpg.rf.4e447ca306968f77538ecc5cb2beaeca.jpg: 640x640 1 Caries, 12 Fillings, 2 Missing teeths, 11 Root Canal Treatments, 8.6ms
+    image 447/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3800200000-jpg_png_jpg.rf.252bd4c965415ae5df325db83ce395a1.jpg: 640x640 1 Periapical lesion, 3 impacted tooths, 8.7ms
+    image 448/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3800450000-jpg_png_jpg.rf.b16c183805fd9690d784595a55985fdc.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 449/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3800450000-jpg_png_jpg.rf.e4e3be375f62a04052abd5da228bd9e5.jpg: 640x640 1 Filling, 2 impacted tooths, 8.8ms
+    image 450/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3800660000-jpg_png_jpg.rf.8ee07e24ddcc8a21e13d5f222bdaefe9.jpg: 640x640 1 Crown, 3 Fillings, 1 impacted tooth, 9.1ms
+    image 451/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3800900000-jpg_png_jpg.rf.d779a9138de6c73e85e4e7206724ac16.jpg: 640x640 1 impacted tooth, 8.8ms
+    image 452/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3803030000-jpg_png_jpg.rf.7818b9475fe39a565571059404b34fe8.jpg: 640x640 1 Filling, 1 Missing teeth, 2 impacted tooths, 9.6ms
+    image 453/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3803650000-jpg_png_jpg.rf.e827a3929954c23c5bf11b1a4353f4b4.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 454/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3804750000-jpg_png_jpg.rf.8b3d9e78dd9e6e2763d5cc535143feca.jpg: 640x640 7 Crowns, 6 Fillings, 11 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 455/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3805350000-jpg_png_jpg.rf.9ee98d7bc93aaaec27fc62c7f2db8f16.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.0ms
+    image 456/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3805570000-jpg_png_jpg.rf.281e3ef07a81fc83cd69f4d1b0dd4eec.jpg: 640x640 1 Crown, 11 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 457/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3807040000-jpg_png_jpg.rf.5a51919c7771c8e9bf3e73677267713e.jpg: 640x640 1 Filling, 4 impacted tooths, 8.9ms
+    image 458/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3807100000-jpg_png_jpg.rf.1ba98025fd91c8d08e481ec425213514.jpg: 640x640 1 Crown, 4 Fillings, 1 Implant, 4 Root Canal Treatments, 9.0ms
+    image 459/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3808690000-jpg_png_jpg.rf.c6a8c879e856a0f3ead44005ddd4b55d.jpg: 640x640 1 Crown, 8 Fillings, 1 impacted tooth, 9.0ms
+    image 460/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3809790000-jpg_png_jpg.rf.1e0cc9d6ea440cd2066269cfbff34c5a.jpg: 640x640 7 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 461/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3811150000-jpg_png_jpg.rf.8a6f03e33f9bb950fa0d7407a848348d.jpg: 640x640 1 Crown, 7 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 462/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3811890000-jpg_png_jpg.rf.5c76fae3f38e0495b6d81f0005af1cee.jpg: 640x640 12 Fillings, 4 impacted tooths, 8.9ms
+    image 463/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3812230000-jpg_png_jpg.rf.4ad011bde3b08081d7377fbe17018b2a.jpg: 640x640 3 Crowns, 7 Fillings, 2 Implants, 2 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 464/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3813810000-jpg_png_jpg.rf.70b36dde7ea64c9e72753011e02ea19e.jpg: 640x640 1 Caries, 1 Crown, 2 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 465/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3813810000-jpg_png_jpg.rf.f53acba42e2133e74259a98fef2d9f44.jpg: 640x640 1 Caries, 1 Crown, 2 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 466/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3814350000-jpg_png_jpg.rf.b3380e1b932aa3f616ebf2bcf6a6f0b5.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 467/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3815560000-jpg_png_jpg.rf.c76586ec62052b9c179dcd58c72bef5f.jpg: 640x640 2 Crowns, 2 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 468/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3816260000-jpg_png_jpg.rf.4073b478b6b3d1a81aa0838f8c5765d2.jpg: 640x640 3 Crowns, 8 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.7ms
+    image 469/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3817070000-jpg_png_jpg.rf.a4a24dc0fbfdd79f6b54a0a09b6e4550.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 470/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3821600000-jpg_png_jpg.rf.3fa81c43aa0ff7afd2911bb1c619bb6b.jpg: 640x640 4 Crowns, 3 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 471/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3821930000-jpg_png_jpg.rf.a23248d9d665cbc39ab6ddf3d95089e1.jpg: 640x640 8 Fillings, 4 impacted tooths, 9.2ms
+    image 472/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3821930000-jpg_png_jpg.rf.e0c100eb4a4b6ed2c22727c6c3aa9524.jpg: 640x640 13 Fillings, 4 impacted tooths, 9.0ms
+    image 473/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3822000000-jpg_png_jpg.rf.58e49475f178b3e6a13c11a96ed04920.jpg: 640x640 2 Crowns, 1 impacted tooth, 9.1ms
+    image 474/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3823660000-jpg_png_jpg.rf.3d5b491ae3508350cc81015de5deca46.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 475/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3823860000-jpg_png_jpg.rf.bc69aa352690391f695fd729502c38cd.jpg: 640x640 2 Crowns, 2 Fillings, 3 Root Canal Treatments, 5 impacted tooths, 9.2ms
+    image 476/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3825900000-jpg_png_jpg.rf.6f6bd47b597d3c706c6bd42910e18900.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.2ms
+    image 477/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3827860000-jpg_png_jpg.rf.35d8fea205e012fad653659155cfe7ca.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.1ms
+    image 478/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3827860000-jpg_png_jpg.rf.d8602942fd23a3619952c0a14364cf30.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.1ms
+    image 479/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3831620000-jpg_png_jpg.rf.17d8fa7194ed7306950a02c9cb4ad389.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.0ms
+    image 480/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3832310000-jpg_png_jpg.rf.6ab4d7a6c214d6a33b2e818e256b3ae7.jpg: 640x640 1 Filling, 3 impacted tooths, 8.9ms
+    image 481/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3834570000-jpg_png_jpg.rf.93f30d24c76387eb657e0627f091fa07.jpg: 640x640 4 Crowns, 5 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.9ms
+    image 482/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3836370000-jpg_png_jpg.rf.05a602d41f4eed1d11c73a73ddfb71cf.jpg: 640x640 1 impacted tooth, 9.3ms
+    image 483/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3836710000-jpg_png_jpg.rf.d1b2076d4f233348966429d9e895a1bb.jpg: 640x640 2 Crowns, 2 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 484/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3837170000-jpg_png_jpg.rf.36630422d36d332fc717d9805891d28b.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 485/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3837430000-jpg_png_jpg.rf.10e90da96608c5bf88cb8147013583e2.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.3ms
+    image 486/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3838410000-jpg_png_jpg.rf.34c4323559f209e0cb01aabb27f77346.jpg: 640x640 1 Crown, 2 Fillings, 1 Periapical lesion, 1 impacted tooth, 9.2ms
+    image 487/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3838820000-jpg_png_jpg.rf.3d20c761030fde21b82ec96112ac4045.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.3ms
+    image 488/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3839030000-jpg_png_jpg.rf.9dff8a98220873ad1dc387aa24bacc03.jpg: 640x640 2 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 489/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3841080000-jpg_png_jpg.rf.1a71190b4e441f5f9b29c2bc3fc219a8.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 490/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3842370000-jpg_png_jpg.rf.f54ea5cd286cdad889f7e4700b6dab9e.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.5ms
+    image 491/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3843120000-jpg_png_jpg.rf.6a87b67b6345b580b78552c0974e4b57.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 492/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3843260000-jpg_png_jpg.rf.d48d40706d178279c1603e53b839ba8f.jpg: 640x640 1 Filling, 3 impacted tooths, 9.1ms
+    image 493/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3843510000-jpg_png_jpg.rf.3c5f112fc6a5a41ec2e9316f01cf589d.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 494/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3843510000-jpg_png_jpg.rf.6052acb5430fd2068ad121fd53466b40.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 495/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3844230000-jpg_png_jpg.rf.fad689e52ed4f0b31bed98ed7180eac5.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 496/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3845130000-jpg_png_jpg.rf.cebd0effa7fa88b3152529b556172017.jpg: 640x640 2 Crowns, 3 Fillings, 4 impacted tooths, 9.1ms
+    image 497/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3846070000-jpg_png_jpg.rf.e1155dd8bd35385b06ab0e279725270e.jpg: 640x640 2 Crowns, 1 Filling, 1 impacted tooth, 10.1ms
+    image 498/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3847840000-jpg_png_jpg.rf.0466a48d463e934d1bd4cf75b35fd739.jpg: 640x640 1 Crown, 8 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 499/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3847890000-jpg_png_jpg.rf.ab26cc5027654a54509facb513ec5aa7.jpg: 640x640 4 Crowns, 2 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 500/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3849430000-jpg_png_jpg.rf.adcfaf8350e56f5e0745d51d89d8ad21.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.4ms
+    image 501/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3850130000-jpg_png_jpg.rf.79b139f0b0aafb3ce85e23d33da1629f.jpg: 640x640 1 impacted tooth, 9.3ms
+    image 502/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3852420000-jpg_png_jpg.rf.0b2ee609848fd5c5dfc2b4fb4819d63f.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.3ms
+    image 503/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3852420000-jpg_png_jpg.rf.fda98a7ebc140c80bf08cb65c30a86d1.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.3ms
+    image 504/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3852980000-jpg_png_jpg.rf.96370433d6535200ee2cddecc3be5cfe.jpg: 640x640 2 impacted tooths, 9.5ms
+    image 505/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3853140000-jpg_png_jpg.rf.6cd86f0f679dc0ff3335e839c70e47aa.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 506/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3853140000-jpg_png_jpg.rf.ac2db6d7cd76231b205ca8d8e5fd84d5.jpg: 640x640 2 impacted tooths, 9.6ms
+    image 507/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3854240000-jpg_png_jpg.rf.1645ae106e459bbf9e0f8dbba4895e0e.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 508/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3855680000-jpg_png_jpg.rf.79f052c1ebd13a1585222c2d5202d91e.jpg: 640x640 1 Crown, 1 Filling, 1 impacted tooth, 9.4ms
+    image 509/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3855760000-jpg_png_jpg.rf.72ef9d310367b11b1ef2c5da26d57bcd.jpg: 640x640 7 Crowns, 1 impacted tooth, 9.2ms
+    image 510/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3855760000-jpg_png_jpg.rf.fe99ca21fb52b47b124bf82f15722bcb.jpg: 640x640 7 Crowns, 4 Root Canal Treatments, 1 impacted tooth, 9.7ms
+    image 511/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3856440000-jpg_png_jpg.rf.d30c15d2a907c54677ca12ab31a31df0.jpg: 640x640 1 Crown, 7 Fillings, 3 impacted tooths, 9.0ms
+    image 512/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3857770000-jpg_png_jpg.rf.e7bd2e667c272a7d8f85bc2f4f935331.jpg: 640x640 6 Crowns, 1 Filling, 3 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 513/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3857890000-jpg_png_jpg.rf.2ca6051ce8f884d07e5e358a451ba8bb.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.0ms
+    image 514/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3857890000-jpg_png_jpg.rf.b709c761f03554e1bc59c5101c660a9e.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.0ms
+    image 515/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3858950000-jpg_png_jpg.rf.5aabc934385f22611cfa7c7c27a8f44c.jpg: 640x640 1 Periapical lesion, 4 impacted tooths, 9.2ms
+    image 516/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3859200000-jpg_png_jpg.rf.b12639646614c3041c3dc802e1d0514e.jpg: 640x640 2 Crowns, 5 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 517/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3861240000-jpg_png_jpg.rf.37e9b0ceafa72369de47b87ed4d20807.jpg: 640x640 1 Crown, 2 Fillings, 2 impacted tooths, 9.1ms
+    image 518/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3862680000-jpg_png_jpg.rf.8c280100bfcad780d6502da7051239cf.jpg: 640x640 2 Crowns, 4 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.0ms
+    image 519/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3862750000-jpg_png_jpg.rf.7d7e2277e793f28ec36777a8d37fa31e.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 520/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3862750000-jpg_png_jpg.rf.85531d12c00d02debfdda6b8e44f90b7.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 521/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3864160000-jpg_png_jpg.rf.cb59ec5b24be950a6b61dc264e734167.jpg: 640x640 2 Fillings, 4 impacted tooths, 8.9ms
+    image 522/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3864360000-jpg_png_jpg.rf.876377f2c8621422383a754128208857.jpg: 640x640 1 Filling, 3 impacted tooths, 9.0ms
+    image 523/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3864460000-jpg_png_jpg.rf.49f7c4245bc18de2869ab159f45bbb33.jpg: 640x640 4 Fillings, 2 impacted tooths, 8.9ms
+    image 524/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3864860000-jpg_png_jpg.rf.87985d7c94ecce494c7925dccfe716b1.jpg: 640x640 1 Crown, 8 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.1ms
+    image 525/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3865150000-jpg_png_jpg.rf.433070afe75c86c0dba7fd73473b54cb.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 526/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3867620000-jpg_png_jpg.rf.d5c1628a42052f67c5ebe801f9ab9846.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 527/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3867880000-jpg_png_jpg.rf.38800153d5e8def4e68623a15347b436.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.1ms
+    image 528/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3868640000-jpg_png_jpg.rf.98270070cd67e0111e88175b6c0e0fb9.jpg: 640x640 4 Crowns, 2 Fillings, 8 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 529/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3870150000-jpg_png_jpg.rf.07886557503ea20a3cb866ca83a0813e.jpg: 640x640 3 Crowns, 1 Root Canal Treatment, 3 impacted tooths, 9.1ms
+    image 530/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/387070000-jpg_png_jpg.rf.c9781a1dd1ce8619c22721eb6f406d80.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.2ms
+    image 531/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3871160000-jpg_png_jpg.rf.32af98f2203c3ac88a22ab83ee377867.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 532/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3871650000-jpg_png_jpg.rf.68845650af08d4c762ec4a56dc52f849.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.1ms
+    image 533/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3872580000-jpg_png_jpg.rf.f570a1d67581aa8714ced9ff54053d92.jpg: 640x640 9 Fillings, 2 impacted tooths, 9.0ms
+    image 534/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3872820000-jpg_png_jpg.rf.2e97453d7c0db435d68373ef8f239c08.jpg: 640x640 4 Crowns, 2 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 535/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3873550000-jpg_png_jpg.rf.7692452e934113a62c20b6244d50b600.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 536/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3873850000-jpg_png_jpg.rf.260b51646521b179cf9d0b38a88757c9.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 537/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3874030000-jpg_png_jpg.rf.bf9cd20766430db4347123f524ae5d64.jpg: 640x640 1 Filling, 3 impacted tooths, 8.9ms
+    image 538/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3874230000-jpg_png_jpg.rf.8a9ec2556817101270ba79efa196c640.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 539/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3874540000-jpg_png_jpg.rf.f5c3d18c8b966aed7a59825a5065ea8d.jpg: 640x640 5 Fillings, 2 impacted tooths, 8.9ms
+    image 540/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3875100000-jpg_png_jpg.rf.3d9d5c0077151e9f0523db78147b7731.jpg: 640x640 3 Cariess, 2 impacted tooths, 8.9ms
+    image 541/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3876720000-jpg_png_jpg.rf.3382ece8983214cdd01224e38d84b91f.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 542/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3876720000-jpg_png_jpg.rf.718bf82fc9e5ab1f3b14bfeeab0370b5.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 543/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3876730000-jpg_png_jpg.rf.8750cd5005d9a483c71a8e58d45f98d4.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 544/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3876820000-jpg_png_jpg.rf.9154d540d435d0a384f01fbfd4226bc7.jpg: 640x640 4 Crowns, 4 Fillings, 6 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 545/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3876880000-jpg_png_jpg.rf.cfe2d6bf46880d837f9955f1618848a0.jpg: 640x640 1 Filling, 4 impacted tooths, 9.0ms
+    image 546/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3878720000-jpg_png_jpg.rf.faec533dde4d77b8754221fe4b1fa6ed.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 547/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3879150000-jpg_png_jpg.rf.6926ad9b8b68044365bdd269991de392.jpg: 640x640 1 impacted tooth, 8.9ms
+    image 548/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3879640000-jpg_png_jpg.rf.092ee31fc0024cbeca5e36f54ffe8d80.jpg: 640x640 1 Filling, 4 impacted tooths, 9.0ms
+    image 549/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3879890000-jpg_png_jpg.rf.503242a84d75874fdf54e6f7cd19658b.jpg: 640x640 3 impacted tooths, 9.6ms
+    image 550/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3880750000-jpg_png_jpg.rf.08e652dad320efaeb632754e068a4944.jpg: 640x640 1 Crown, 3 impacted tooths, 9.2ms
+    image 551/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3882320000-jpg_png_jpg.rf.1e79d82686201917245f6861405d9c9c.jpg: 640x640 1 Filling, 1 impacted tooth, 9.1ms
+    image 552/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3882400000-jpg_png_jpg.rf.8982297e86ff0e0fd1da4c2cfa641538.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 553/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3883270000-jpg_png_jpg.rf.6317aed87ec17b9441915606fbe91d05.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 554/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3883270000-jpg_png_jpg.rf.bd3fe8bf8c3c80da279d976296532c98.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 8.9ms
+    image 555/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3883310000-jpg_png_jpg.rf.e84b5f614fa17be597c6b817004f2ca6.jpg: 640x640 3 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.2ms
+    image 556/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3885940000-jpg_png_jpg.rf.fe0459fadb8c25302fb07acdeb6945ec.jpg: 640x640 7 Fillings, 2 impacted tooths, 8.8ms
+    image 557/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3886390000-jpg_png_jpg.rf.38578b5eefc7deaef9f17cc6b7aed3b2.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.6ms
+    image 558/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3886430000-jpg_png_jpg.rf.c5fdc10f564dc5eded904c39d14936e4.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.1ms
+    image 559/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3886500000-jpg_png_jpg.rf.3276dda7d2fefac15f1ea2c5718f5d9d.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 560/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3886500000-jpg_png_jpg.rf.33bc25a0e9fbb465309051bcb3363088.jpg: 640x640 1 Caries, 2 impacted tooths, 9.0ms
+    image 561/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3888290000-jpg_png_jpg.rf.140965ba7cfc4b3e59f07d828be6edfc.jpg: 640x640 1 Crown, 1 Filling, 2 impacted tooths, 9.9ms
+    image 562/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3888290000-jpg_png_jpg.rf.57d8b4e48cfbd24633488e785ee4a5d4.jpg: 640x640 1 Crown, 1 Filling, 2 impacted tooths, 8.9ms
+    image 563/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3888410000-jpg_png_jpg.rf.9db5161a6943dc7be3f4530384b443db.jpg: 640x640 6 Fillings, 2 impacted tooths, 8.9ms
+    image 564/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3889540000-jpg_png_jpg.rf.d127d421e5ebfe63a3cdaa9db3c2493f.jpg: 640x640 3 Fillings, 2 impacted tooths, 8.9ms
+    image 565/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3889550000-jpg_png_jpg.rf.0d59149215d8d9ac6b5938bd0dbfff9e.jpg: 640x640 4 Crowns, 6 Fillings, 1 Missing teeth, 3 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 566/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3889750000-jpg_png_jpg.rf.80655403debf6be9f0a6a8976742e47e.jpg: 640x640 2 Crowns, 1 Implant, 2 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 567/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3891790000-jpg_png_jpg.rf.abe02edb817130dacd76a111cc2ae154.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 568/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3892030000-jpg_png_jpg.rf.d0d29bba590c65819f50f5df720a43be.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 569/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/389240000-jpg_png_jpg.rf.db0a46f3184f9257f8e21e669db3c855.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.0ms
+    image 570/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3892580000-jpg_png_jpg.rf.ee62baf4e521c6d042de918274d4b20f.jpg: 640x640 8 Fillings, 2 impacted tooths, 9.0ms
+    image 571/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3892790000-jpg_png_jpg.rf.ca10f814c1c884b195db87307f55a7f0.jpg: 640x640 5 Fillings, 2 impacted tooths, 9.4ms
+    image 572/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3893290000-jpg_png_jpg.rf.b9893acd227acc4d8ced87f96d1ff61c.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 573/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3893960000-jpg_png_jpg.rf.d849b71e9e3e021e13347138bbfdaf7b.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 574/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3895290000-jpg_png_jpg.rf.92f99db62cf3a95853235a06ee20e236.jpg: 640x640 1 Crown, 1 impacted tooth, 9.1ms
+    image 575/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3895460000-jpg_png_jpg.rf.515e6de6e468c6a3ea94c6e53f0d6ae0.jpg: 640x640 1 Caries, 9.0ms
+    image 576/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3895880000-jpg_png_jpg.rf.73fa13a79c167ed2dfdc6a9195193771.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 577/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3896060000-jpg_png_jpg.rf.8c15c031c1deb3435ad8a75aa17996cc.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.2ms
+    image 578/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3896540000-jpg_png_jpg.rf.b95c5334a98ae49ce49aba18d6e10797.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 579/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3897390000-jpg_png_jpg.rf.dd5ecde32b2bf660b030049f5a1c5d5a.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.2ms
+    image 580/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3897490000-jpg_png_jpg.rf.fea81760c19d848cda8163f9890fa73b.jpg: 640x640 3 impacted tooths, 9.6ms
+    image 581/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/38c4e216-Norozi_syavazan_Atefeh_2022-06-12142626_jpg.rf.37db5410bf0a7682daf3b1995c10e6e4.jpg: 640x640 5 Cariess, 9.0ms
+    image 582/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3900700000-jpg_png_jpg.rf.e1e489bc174b5dc2b1ce8e8a06401fa3.jpg: 640x640 5 Fillings, 1 impacted tooth, 9.0ms
+    image 583/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3901320000-jpg_png_jpg.rf.b1adafa90390ac59ddaf5f84db4acd4b.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 584/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3905600000-jpg_png_jpg.rf.b047a01fd3110ca3458250ac82291664.jpg: 640x640 1 Filling, 2 impacted tooths, 9.1ms
+    image 585/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3905800000-jpg_png_jpg.rf.5d2f917b8bbf41e274a78d12450ee536.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.0ms
+    image 586/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3906000000-jpg_png_jpg.rf.4240c69725ab3c32be8df481213ce37c.jpg: 640x640 1 Crown, 5 Fillings, 4 impacted tooths, 9.1ms
+    image 587/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3907600000-jpg_png_jpg.rf.015f5f2011ce9b0f29dc6915250fdad4.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 588/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3907600000-jpg_png_jpg.rf.d922aa59851d991db7974e1b7d79af99.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 589/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3908490000-jpg_png_jpg.rf.2afac031e8f273a4149570d4150449ee.jpg: 640x640 6 Crowns, 6 Fillings, 7 Root Canal Treatments, 3 impacted tooths, 8.8ms
+    image 590/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3908970000-jpg_png_jpg.rf.b81f6b7de637c4a0e85f9a044db05fd8.jpg: 640x640 3 Crowns, 5 Fillings, 1 Implant, 1 impacted tooth, 8.8ms
+    image 591/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3908990000-jpg_png_jpg.rf.4ba3135ee04534988d631155ed1466a4.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 592/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3909430000-jpg_png_jpg.rf.4e06bc9943c68b3c71dd5216ca2fe202.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 593/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3909450000-jpg_png_jpg.rf.22ec9b0a8ed38ecf65bc2604bf418c65.jpg: 640x640 1 Filling, 1 Missing teeth, 1 impacted tooth, 8.9ms
+    image 594/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3910690000-jpg_png_jpg.rf.94b47f1965575bdb9857562af3fb6c6d.jpg: 640x640 2 Crowns, 2 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 595/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3911160000-jpg_png_jpg.rf.a1857b5f17cfe7681ed9af7f9b8ad669.jpg: 640x640 2 Crowns, 12 Fillings, 6 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 596/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3911370000-jpg_png_jpg.rf.9dc1f4aac4cfaad463f92345bd94ebe1.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 597/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3911990000-jpg_png_jpg.rf.80488c3d4085b4c12fcfab56e705960e.jpg: 640x640 2 Fillings, 2 impacted tooths, 8.9ms
+    image 598/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3912400000-jpg_png_jpg.rf.169d471048639a73cf723987c0c6ee3e.jpg: 640x640 1 Crown, 4 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.1ms
+    image 599/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3912480000-jpg_png_jpg.rf.2062e02ecede27bda72d7949c1692f9f.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.1ms
+    image 600/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3913360000-jpg_png_jpg.rf.12d10c6c042f793acbb12fcdfaaa98e0.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 601/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3913820000-jpg_png_jpg.rf.278cdc9e33a1d8cd301aa0e689c3af68.jpg: 640x640 5 Crowns, 1 Missing teeth, 2 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 602/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3914170000-jpg_png_jpg.rf.c4fc7db297f6bf58e0de0e18acbf27fb.jpg: 640x640 4 Crowns, 1 Filling, 1 Implant, 2 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 603/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3914220000-jpg_png_jpg.rf.9598d29cb997cfa5f92b1309c9280373.jpg: 640x640 3 Fillings, 4 impacted tooths, 8.9ms
+    image 604/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3915320000-jpg_png_jpg.rf.798955895fce614453756f576d61aabb.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 605/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3915600000-jpg_png_jpg.rf.cb52fae65be430298a158edd888924aa.jpg: 640x640 2 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.0ms
+    image 606/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3915910000-jpg_png_jpg.rf.441650b2dd5782d08e5d12d2e25ffa60.jpg: 640x640 13 Fillings, 4 impacted tooths, 9.0ms
+    image 607/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3916120000-jpg_png_jpg.rf.72a49a4fd4ddac5316fac224bb9d8ba0.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 608/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3916120000-jpg_png_jpg.rf.d10d3fb34af87d75d7ceb42d56617ef1.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 609/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3917540000-jpg_png_jpg.rf.65f137b0082bed8045bf034868d1a430.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 610/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3917770000-jpg_png_jpg.rf.111d54014b75d28aa7781a4440a2c850.jpg: 640x640 5 Crowns, 1 Filling, 5 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 611/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3917980000-jpg_png_jpg.rf.d8305c7e154ec9bbec35f5b0b339f3ba.jpg: 640x640 1 Crown, 5 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.2ms
+    image 612/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3918480000-jpg_png_jpg.rf.69bced2b84a348d3aa99cf5daba4fff0.jpg: 640x640 1 Missing teeth, 2 impacted tooths, 9.1ms
+    image 613/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3918700000-jpg_png_jpg.rf.87aed63865b113d446ca2e0d99b9e833.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.1ms
+    image 614/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3918990000-jpg_png_jpg.rf.48ad4cece15ada2b7d2483019d1f30a5.jpg: 640x640 11 Fillings, 2 impacted tooths, 9.2ms
+    image 615/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3919290000-jpg_png_jpg.rf.8cfd8daca06da383050d3d0cc7683608.jpg: 640x640 1 Crown, 1 Filling, 3 impacted tooths, 11.6ms
+    image 616/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3920000000-jpg_png_jpg.rf.ae2c577c9d9cf1cd7402cb450c43651e.jpg: 640x640 1 Crown, 2 Fillings, 1 Missing teeth, 1 impacted tooth, 9.1ms
+    image 617/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3920000000-jpg_png_jpg.rf.aff5462fd5f41d470a91a2d85a47010c.jpg: 640x640 1 Crown, 2 Fillings, 1 Missing teeth, 1 impacted tooth, 8.9ms
+    image 618/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3920240000-jpg_png_jpg.rf.d7cb7effcff6eb03a34d731d5985e31f.jpg: 640x640 1 Filling, 1 impacted tooth, 9.0ms
+    image 619/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3920750000-jpg_png_jpg.rf.73b82af6d36275bd4ef5a43ef78d2029.jpg: 640x640 4 Crowns, 2 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 620/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3921960000-jpg_png_jpg.rf.1bff8e542707d34bab87d700467275c1.jpg: 640x640 8 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.8ms
+    image 621/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3922380000-jpg_png_jpg.rf.88d88c8b4902126ad509805e33351034.jpg: 640x640 3 impacted tooths, 8.8ms
+    image 622/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3922820000-jpg_png_jpg.rf.737b62277daa6e39d18d1f7d880c1c0b.jpg: 640x640 4 Crowns, 5 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 623/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3923310000-jpg_png_jpg.rf.d431b1b2629244a38ec4dadabb2e0af8.jpg: 640x640 4 impacted tooths, 8.8ms
+    image 624/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3923550000-jpg_png_jpg.rf.4ad99de8c6bb94dbe220387e88e2cdbd.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 625/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3923680000-jpg_png_jpg.rf.3bf315342d4c9006da6f15f7b30d6c38.jpg: 640x640 4 Crowns, 2 Missing teeths, 1 impacted tooth, 9.0ms
+    image 626/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3924310000-jpg_png_jpg.rf.f85cee716d425c1ad99cabc973dcb1cf.jpg: 640x640 3 Fillings, 2 impacted tooths, 8.9ms
+    image 627/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3924440000-jpg_png_jpg.rf.bfe6e8efa21d01a75b36ff2e67acb033.jpg: 640x640 1 Filling, 3 impacted tooths, 9.0ms
+    image 628/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3924510000-jpg_png_jpg.rf.06c10a7347e5f6a21c7582c9f28e61c6.jpg: 640x640 1 Filling, 4 impacted tooths, 8.9ms
+    image 629/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3924710000-jpg_png_jpg.rf.d37f4afa60eee151902ae27c8be0c5e9.jpg: 640x640 6 Fillings, 3 impacted tooths, 9.1ms
+    image 630/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3925750000-jpg_png_jpg.rf.49eb25a9ae8c5f3a31d19257987e98b2.jpg: 640x640 6 Fillings, 4 impacted tooths, 8.9ms
+    image 631/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3926100000-jpg_png_jpg.rf.3e9462e854bc5fd954e5b6b09e63e51f.jpg: 640x640 8 Fillings, 2 impacted tooths, 9.3ms
+    image 632/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3926420000-jpg_png_jpg.rf.566181fad8f630a791fe68a8966fb9cc.jpg: 640x640 15 Fillings, 3 impacted tooths, 8.8ms
+    image 633/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3927150000-jpg_png_jpg.rf.4e1ddf37c82846e759919713a3a60955.jpg: 640x640 2 Fillings, 1 impacted tooth, 8.9ms
+    image 634/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3927320000-jpg_png_jpg.rf.4bf6e8bf8ecdf80b34ae7c51c377d495.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 635/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3927950000-jpg_png_jpg.rf.cf3964ce06fa9d380e565a3956f0bc2f.jpg: 640x640 1 Crown, 3 impacted tooths, 8.9ms
+    image 636/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3928630000-jpg_png_jpg.rf.d3e468227ed714610fe231e1a02d83ab.jpg: 640x640 1 Crown, 4 Fillings, 1 impacted tooth, 8.9ms
+    image 637/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3929080000-jpg_png_jpg.rf.e8ca9a3db861e9cab601fea95054a0c9.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.4ms
+    image 638/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3929800000-jpg_png_jpg.rf.ae65a203794f3ee5c6347865e1008548.jpg: 640x640 5 Fillings, 1 impacted tooth, 9.0ms
+    image 639/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3930560000-jpg_png_jpg.rf.7af17f0e206530557fee8a4105db6e19.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 640/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3930560000-jpg_png_jpg.rf.91e522d6f40fde8950788c69e3cb4e1e.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 641/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3931330000-jpg_png_jpg.rf.15a99f086d034ede8b9e08939fa91456.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 642/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3932210000-jpg_png_jpg.rf.a247abeaf21b30d5894159d938d82beb.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 1 impacted tooth, 8.8ms
+    image 643/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3932640000-jpg_png_jpg.rf.19787fd318d53478ca98aee40d29ed3c.jpg: 640x640 10 Fillings, 3 impacted tooths, 9.3ms
+    image 644/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3932650000-jpg_png_jpg.rf.24f232a719020efc6df4b1c6dfc9cc1d.jpg: 640x640 1 Crown, 6 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 8.9ms
+    image 645/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3932950000-jpg_png_jpg.rf.0b9f41cb3b5199d0f45e8cbe0e413464.jpg: 640x640 1 Crown, 5 Fillings, 2 impacted tooths, 8.8ms
+    image 646/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3933050000-jpg_png_jpg.rf.95e84f2cc34cbd1efaf4c698c98eda00.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 647/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3933830000-jpg_png_jpg.rf.861865785aec1f31c1e47a391149fde2.jpg: 640x640 8 Fillings, 4 impacted tooths, 8.8ms
+    image 648/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3933970000-jpg_png_jpg.rf.796ebab69dbf9e10fcd7b18f95201717.jpg: 640x640 7 Fillings, 4 impacted tooths, 8.9ms
+    image 649/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3935710000-jpg_png_jpg.rf.2fb0519532755ba37c989fdb185dbd1e.jpg: 640x640 1 Caries, 4 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 650/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3935870000-jpg_png_jpg.rf.e1aa771266e548df5ed054039a8a63df.jpg: 640x640 1 Filling, 2 impacted tooths, 8.8ms
+    image 651/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3937200000-jpg_png_jpg.rf.89e95cfdc0db8bb9f93dcb74354187ae.jpg: 640x640 4 impacted tooths, 9.7ms
+    image 652/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3937330000-jpg_png_jpg.rf.0f688ff79d5bae3511ff5c7d5ce416d1.jpg: 640x640 1 Filling, 3 impacted tooths, 9.2ms
+    image 653/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3938310000-jpg_png_jpg.rf.663c417dd5b8c6bc6c8401af23bddec3.jpg: 640x640 1 Crown, 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 654/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3939720000-jpg_png_jpg.rf.67ae670b4cdcf8d50b99fdf165720adb.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 655/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3939720000-jpg_png_jpg.rf.9cef2a4138488c08e8f46255aa8df79b.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 656/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3940970000-jpg_png_jpg.rf.bd59f1a74565bd871d0371f5ad6a1629.jpg: 640x640 1 Filling, 1 impacted tooth, 8.9ms
+    image 657/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3942180000-jpg_png_jpg.rf.a5716def68541b95b7e4c5324c4370c7.jpg: 640x640 1 Crown, 5 Fillings, 1 Missing teeth, 2 impacted tooths, 8.9ms
+    image 658/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3942850000-jpg_png_jpg.rf.f76a6c6948d6c4e170eaa95712aa4da7.jpg: 640x640 3 Crowns, 1 Filling, 3 Implants, 1 Missing teeth, 1 Root Canal Treatment, 2 impacted tooths, 8.9ms
+    image 659/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3942850000-jpg_png_jpg.rf.fe7fd5f79351fa6d1d3ca398bc68fd5b.jpg: 640x640 2 Crowns, 1 Filling, 3 Implants, 1 Missing teeth, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 660/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3943270000-jpg_png_jpg.rf.6015856cfac0d6dbd27e8641041a0d8b.jpg: 640x640 5 Fillings, 4 Root Canal Treatments, 4 impacted tooths, 8.9ms
+    image 661/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3943670000-jpg_png_jpg.rf.25ac433abd05868d0026a6c99546016f.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 662/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3943860000-jpg_png_jpg.rf.fc4cd98d52eb86970d72056858c86362.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 663/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3944060000-jpg_png_jpg.rf.582cf533c33b86287c402cf3436902c8.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 664/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3944720000-jpg_png_jpg.rf.2aff5dd89012395b5391c63faea00310.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 665/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3944720000-jpg_png_jpg.rf.5527b2aaacb4476a2ef6d3671c5745a0.jpg: 640x640 4 impacted tooths, 9.6ms
+    image 666/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3944720000-jpg_png_jpg.rf.b32f1e2e22363a3387fd0c0393ea6171.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 667/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3945670000-jpg_png_jpg.rf.95e4fea32121176f80f5790e236e2d18.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 668/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3945750000-jpg_png_jpg.rf.c117bf46efdf1ce53913e364ecd129bd.jpg: 640x640 1 Crown, 5 Fillings, 1 impacted tooth, 10.7ms
+    image 669/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3945830000-jpg_png_jpg.rf.1caec6a1e75c0e263b342105a54d5242.jpg: 640x640 1 Filling, 2 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 670/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3946340000-jpg_png_jpg.rf.9d11dad5495d1ed8f623268d026a8479.jpg: 640x640 1 Caries, 12 Crowns, 1 Filling, 2 Implants, 1 Missing teeth, 13 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 671/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3946400000-jpg_png_jpg.rf.7f61331e21ced1a98eca4580ce338707.jpg: 640x640 1 Filling, 1 impacted tooth, 9.0ms
+    image 672/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3946400000-jpg_png_jpg.rf.96267062f92d15f2ace8c39601138d65.jpg: 640x640 1 Filling, 1 impacted tooth, 8.9ms
+    image 673/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3947440000-jpg_png_jpg.rf.4a6e3dabdabda00121fc24ba7911a064.jpg: 640x640 3 Crowns, 1 Filling, 6 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 674/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3947590000-jpg_png_jpg.rf.888d3c9fd314d3f8799fde6251d0f0ad.jpg: 640x640 6 Crowns, 6 Fillings, 2 impacted tooths, 8.9ms
+    image 675/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3948220000-jpg_png_jpg.rf.ce4588d6133f87b594f926b566272b04.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 676/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3949000000-jpg_png_jpg.rf.631c1ebd79429737bbed0187d81d72e2.jpg: 640x640 5 Fillings, 1 impacted tooth, 9.0ms
+    image 677/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3949340000-jpg_png_jpg.rf.6b165d55fd5d51685b185675c30892f2.jpg: 640x640 3 Crowns, 3 Implants, 2 impacted tooths, 9.0ms
+    image 678/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3950380000-jpg_png_jpg.rf.ff85834ac035198b46bf394f57814fa0.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 679/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3950760000-jpg_png_jpg.rf.3eb685ebac869ecdc0bf066febb2d830.jpg: 640x640 8 Fillings, 3 impacted tooths, 9.2ms
+    image 680/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3950760000-jpg_png_jpg.rf.d54d4726f4b74d32f9857f3f359fdf83.jpg: 640x640 8 Fillings, 3 impacted tooths, 9.0ms
+    image 681/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3952380000-jpg_png_jpg.rf.8e24c1c0757a05c8d61f1aa432a88626.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.0ms
+    image 682/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3952850000-jpg_png_jpg.rf.0f0a105492b60750f83c277a7e9f3660.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.0ms
+    image 683/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3952850000-jpg_png_jpg.rf.9e3c9782c20a0e8f675c248d8b959dbe.jpg: 640x640 2 Fillings, 3 impacted tooths, 10.2ms
+    image 684/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3953210000-jpg_png_jpg.rf.c2c3e013c1c070a515e98966e17f76e6.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.1ms
+    image 685/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3953920000-jpg_png_jpg.rf.820d4eb8283e021b670ce3e3fc94e27f.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 686/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3954440000-jpg_png_jpg.rf.8bdc40fc0852056a655032e37243d825.jpg: 640x640 4 Crowns, 3 Implants, 2 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 687/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3954540000-jpg_png_jpg.rf.5369f05fe975ed1497e787495b2f9d4d.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 688/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3954550000-jpg_png_jpg.rf.cc63008b9e3dcbf5dc88f80d36ce639c.jpg: 640x640 1 Periapical lesion, 4 impacted tooths, 9.5ms
+    image 689/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3954790000-jpg_png_jpg.rf.09f2efe56553b4629fc91212687184ae.jpg: 640x640 3 impacted tooths, 9.9ms
+    image 690/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3955400000-jpg_png_jpg.rf.3b7e24102737b1691d1af807a20eb0f5.jpg: 640x640 1 Crown, 1 Filling, 4 impacted tooths, 9.2ms
+    image 691/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3955570000-jpg_png_jpg.rf.1f3fba4bc5d94bc2e614d320efad91c7.jpg: 640x640 3 Crowns, 6 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 692/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3957280000-jpg_png_jpg.rf.0d3ad93714d1d739599ac1d480838587.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.0ms
+    image 693/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3957770000-jpg_png_jpg.rf.6799fa1f2d2c72c4bd4ffb2ea7ae0730.jpg: 640x640 4 Fillings, 1 impacted tooth, 9.0ms
+    image 694/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3957920000-jpg_png_jpg.rf.ce10eeda532be21502e8384dcc3517a6.jpg: 640x640 14 Fillings, 2 impacted tooths, 8.9ms
+    image 695/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3959160000-jpg_png_jpg.rf.c703b216c95cb519ebf4a431f5d30080.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 696/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3960040000-jpg_png_jpg.rf.5537858fa8d763f5b5fc9f5075361ea7.jpg: 640x640 2 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 697/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3960370000-jpg_png_jpg.rf.e6f831fef7e7a6fcb6746d348955d40d.jpg: 640x640 1 Crown, 2 impacted tooths, 8.9ms
+    image 698/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3960500000-jpg_png_jpg.rf.8ae11077fa58fae540647cba8034f120.jpg: 640x640 5 impacted tooths, 8.8ms
+    image 699/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3960500000-jpg_png_jpg.rf.d7d3729db4bf574281d65bb4de222eac.jpg: 640x640 5 impacted tooths, 9.0ms
+    image 700/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3961750000-jpg_png_jpg.rf.5b2429b95e286c9a6900d896fcb18443.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 701/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3962060000-jpg_png_jpg.rf.224bac9ca4ab0236c680d5af8dbf1d4e.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 702/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3962060000-jpg_png_jpg.rf.24d819e1826f7d262e84930aaf9e479c.jpg: 640x640 4 impacted tooths, 10.3ms
+    image 703/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3962570000-jpg_png_jpg.rf.6ba35360d6131eb9b65d45712f836f9e.jpg: 640x640 7 Crowns, 2 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 704/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3963370000-jpg_png_jpg.rf.972e3cd12123d1bf9b1378b934099e40.jpg: 640x640 1 impacted tooth, 9.5ms
+    image 705/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3963580000-jpg_png_jpg.rf.562e45c05dcc57af36d0d8a6c33eaab1.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 3 impacted tooths, 9.2ms
+    image 706/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3965350000-jpg_png_jpg.rf.d22c6f49deee9affeea076ef1cbc3a70.jpg: 640x640 1 Filling, 3 impacted tooths, 9.1ms
+    image 707/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3965690000-jpg_png_jpg.rf.c930d23d441f99ef0209b232d9d8f0f2.jpg: 640x640 4 Crowns, 5 Fillings, 7 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 708/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3967480000-jpg_png_jpg.rf.2f60aeec9b03d3a93a8d6c320c469fa5.jpg: 640x640 4 Crowns, 2 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 709/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3967740000-jpg_png_jpg.rf.05358610ac4672fbb69d59aa02410202.jpg: 640x640 2 Crowns, 1 Filling, 4 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 710/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3968000000-jpg_png_jpg.rf.a8937cc8e8d5ea99ffc54dc296616173.jpg: 640x640 6 Fillings, 1 Missing teeth, 4 impacted tooths, 8.9ms
+    image 711/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3968050000-jpg_png_jpg.rf.9faf03cae7ed9c650be751fea1fdffc2.jpg: 640x640 1 Crown, 1 Implant, 2 impacted tooths, 8.8ms
+    image 712/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3968170000-jpg_png_jpg.rf.da4907799427830e66d9951298c32cce.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.7ms
+    image 713/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3970420000-jpg_png_jpg.rf.89e1bdf7ee10d1095dc62979092e627b.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 714/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3971510000-jpg_png_jpg.rf.159bfe8acc995636a9a019326a016bc0.jpg: 640x640 1 Crown, 5 Fillings, 2 Root Canal Treatments, 9.4ms
+    image 715/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3971540000-jpg_png_jpg.rf.0633b98fb161165f2a6724822e1a6d7c.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 716/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3972250000-jpg_png_jpg.rf.53726951ec77495c03d3b1b0b2868315.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 717/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3972380000-jpg_png_jpg.rf.0147d9ec28a3b1dff15485504bec3506.jpg: 640x640 1 Filling, 3 impacted tooths, 9.6ms
+    image 718/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3972660000-jpg_png_jpg.rf.5e27999ddde7e03f1ca0136a783a4ec7.jpg: 640x640 5 Fillings, 3 impacted tooths, 8.9ms
+    image 719/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3972870000-jpg_png_jpg.rf.1bf9fe979aa93071c277fdbbe1a02491.jpg: 640x640 1 Periapical lesion, 4 impacted tooths, 10.0ms
+    image 720/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3973510000-jpg_png_jpg.rf.1072feab24d5b59ee12d2772969966fc.jpg: 640x640 1 Crown, 2 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.2ms
+    image 721/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3973580000-jpg_png_jpg.rf.fc6b3a89910e33dc031871c652be9fa8.jpg: 640x640 1 Crown, 1 Filling, 3 impacted tooths, 9.1ms
+    image 722/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3973940000-jpg_png_jpg.rf.454e91d34b5fb617827344b136b79f40.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 723/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3974170000-jpg_png_jpg.rf.36c6753b7e40e23eef06a611b35e8089.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 724/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3975200000-jpg_png_jpg.rf.88370ba1e492531ec4cc7460568d526a.jpg: 640x640 1 Crown, 10 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 725/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3975890000-jpg_png_jpg.rf.ae0dd2f23ca5da2d23f5f0bad44e6d4c.jpg: 640x640 9 Fillings, 2 impacted tooths, 8.8ms
+    image 726/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3975890000-jpg_png_jpg.rf.dfb7819ac3f5bd4df9443253d173efbc.jpg: 640x640 10 Fillings, 2 impacted tooths, 9.9ms
+    image 727/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3975950000-jpg_png_jpg.rf.3f9944ac267c46cdaed6f9f1412937b2.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.2ms
+    image 728/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3976120000-jpg_png_jpg.rf.3a4cff64bb70dce8ee7e7882912d0a74.jpg: 640x640 6 Fillings, 2 impacted tooths, 9.3ms
+    image 729/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3976160000-jpg_png_jpg.rf.6eed4e02c5ab7d61124054c7e258857d.jpg: 640x640 2 Crowns, 5 Fillings, 10.3ms
+    image 730/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3976900000-jpg_png_jpg.rf.199d2544457e62329e94054e2ddda107.jpg: 640x640 4 impacted tooths, 9.9ms
+    image 731/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3977200000-jpg_png_jpg.rf.80ae3a9429f3ffdc55010b65c7c1c8a8.jpg: 640x640 2 Crowns, 5 Fillings, 1 Implant, 2 Root Canal Treatments, 1 impacted tooth, 9.9ms
+    image 732/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3977620000-jpg_png_jpg.rf.b46c2807a65aac0095c4277553742909.jpg: 640x640 3 impacted tooths, 10.8ms
+    image 733/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3977670000-jpg_png_jpg.rf.19b11aa4e11d096bd6610223d69cf7d7.jpg: 640x640 1 impacted tooth, 9.1ms
+    image 734/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3977820000-jpg_png_jpg.rf.9e54cb517604284ff2e05c73b9961cfb.jpg: 640x640 2 Crowns, 4 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 735/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3978430000-jpg_png_jpg.rf.4507d01525152bfe89e4d5031dcd5e69.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 736/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3979030000-jpg_png_jpg.rf.996d21b5aee564e07c33a04ebf1f2fe8.jpg: 640x640 3 Fillings, 2 impacted tooths, 8.9ms
+    image 737/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3980310000-jpg_png_jpg.rf.0e38dd33dd6ef0c8ed0679139cf41c7f.jpg: 640x640 1 impacted tooth, 8.9ms
+    image 738/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3981040000-jpg_png_jpg.rf.dfa09357fa91cf6db0897ac693d6fba0.jpg: 640x640 5 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 739/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3981930000-jpg_png_jpg.rf.5c5a95eceb5c5572047e2c53187a8875.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 740/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3982280000-jpg_png_jpg.rf.129abb7029cfd065db4f2b0a46340e79.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.4ms
+    image 741/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3982580000-jpg_png_jpg.rf.c3afd27f7d9b033a85ed97931a830cbe.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.1ms
+    image 742/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3982840000-jpg_png_jpg.rf.5d7bab4dc96d2b1311fddc1ebc304dd9.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 743/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3983010000-jpg_png_jpg.rf.38b7d85a982c2549c10cabed91ba9836.jpg: 640x640 6 Fillings, 2 impacted tooths, 9.1ms
+    image 744/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3983570000-jpg_png_jpg.rf.c64b60280a2e0dadeb68da6a322ffa0b.jpg: 640x640 2 Fillings, 1 Missing teeth, 4 impacted tooths, 10.2ms
+    image 745/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3984500000-jpg_png_jpg.rf.b64db7cb7fb438f3cc9366fb85edbaf4.jpg: 640x640 5 Fillings, 2 impacted tooths, 8.9ms
+    image 746/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3985750000-jpg_png_jpg.rf.0662c6d840e6e80b16993a0932333e9f.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 747/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3986160000-jpg_png_jpg.rf.51e7ca94175eba7da51a166156a7158f.jpg: 640x640 1 Caries, 2 impacted tooths, 9.1ms
+    image 748/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3986270000-jpg_png_jpg.rf.3740aabd99ec776cb74368f4f831e6b8.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 749/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3987980000-jpg_png_jpg.rf.afd3c01c9e123a17641ca1c254e3f26b.jpg: 640x640 1 Crown, 3 Fillings, 2 impacted tooths, 9.1ms
+    image 750/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3988440000-jpg_png_jpg.rf.9814bba0e4785ffa96cec672c8723970.jpg: 640x640 1 Filling, 1 impacted tooth, 9.0ms
+    image 751/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3988640000-jpg_png_jpg.rf.0a0f73420379219b6d56387d6db35397.jpg: 640x640 2 impacted tooths, 9.5ms
+    image 752/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3988810000-jpg_png_jpg.rf.8ffdf7e6dec2f16b80016612140541ff.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 753/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3991010000-jpg_png_jpg.rf.75967a3a661d6f309eddc79fa5a09866.jpg: 640x640 4 impacted tooths, 9.4ms
+    image 754/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3991100000-jpg_png_jpg.rf.d118556e27244847fc4d5308cd61ce80.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.2ms
+    image 755/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3991540000-jpg_png_jpg.rf.7287acac153c7b1380f3f123c7c7dce6.jpg: 640x640 1 Crown, 2 impacted tooths, 9.5ms
+    image 756/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3991870000-jpg_png_jpg.rf.3ae0496e8a70a01179daeb9e02772935.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.6ms
+    image 757/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3991870000-jpg_png_jpg.rf.867c190e20290bd9dab5b47e3ccd05b6.jpg: 640x640 3 Fillings, 2 impacted tooths, 10.0ms
+    image 758/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3992430000-jpg_png_jpg.rf.b8381f36cd533717df9570d0f97ca619.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.5ms
+    image 759/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3992430000-jpg_png_jpg.rf.de96102276d05d1587dd89e2691d4f60.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.1ms
+    image 760/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3992530000-jpg_png_jpg.rf.0cc624b18eca9f0a9a28f248d283fc6d.jpg: 640x640 3 Crowns, 4 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 761/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3993420000-jpg_png_jpg.rf.62560c940929c98c6cdde4c0a490c971.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 762/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3995490000-jpg_png_jpg.rf.1dc7870a29e847e99de51c2477e06c0f.jpg: 640x640 1 Filling, 2 impacted tooths, 10.3ms
+    image 763/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3995860000-jpg_png_jpg.rf.13467abe00e599c6b93638fe02752c1a.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.3ms
+    image 764/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3995870000-jpg_png_jpg.rf.0c29e3daf3ffb6b30e5fd549248166cc.jpg: 640x640 2 Fillings, 3 impacted tooths, 10.7ms
+    image 765/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3995930000-jpg_png_jpg.rf.2c94207b03cb9e4a0b8d068a25a15500.jpg: 640x640 4 Crowns, 3 Fillings, 6 Root Canal Treatments, 3 impacted tooths, 9.2ms
+    image 766/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3995930000-jpg_png_jpg.rf.579f6cc5f6f11228a8b007102a6e8ce6.jpg: 640x640 4 Crowns, 3 Fillings, 6 Root Canal Treatments, 3 impacted tooths, 9.5ms
+    image 767/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3996490000-jpg_png_jpg.rf.f8891aa78a86ae8912600ab7c93b7cc2.jpg: 640x640 2 impacted tooths, 9.8ms
+    image 768/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3996530000-jpg_png_jpg.rf.acd4e7900a54305ffac03a1f9a81defe.jpg: 640x640 5 Fillings, 3 impacted tooths, 12.0ms
+    image 769/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3996610000-jpg_png_jpg.rf.9155846e4599fdbf6ec8da11db0df263.jpg: 640x640 8 Fillings, 4 impacted tooths, 11.8ms
+    image 770/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3997240000-jpg_png_jpg.rf.fe07ef1e11f0c9923bf5e9b439d21145.jpg: 640x640 3 impacted tooths, 10.5ms
+    image 771/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3997710000-jpg_png_jpg.rf.c81a862730f8e0d2948f4c8c3afb746b.jpg: 640x640 2 impacted tooths, 11.3ms
+    image 772/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3997810000-jpg_png_jpg.rf.117a6e6496a2e3ff6183ee91e7b91746.jpg: 640x640 12 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 10.7ms
+    image 773/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3997830000-jpg_png_jpg.rf.948517a8d7d46bdafe12f879ba92b0d1.jpg: 640x640 3 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 14.3ms
+    image 774/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3998320000-jpg_png_jpg.rf.f29d494146b68dc4846963c1d43ed366.jpg: 640x640 1 Crown, 4 Fillings, 2 impacted tooths, 11.6ms
+    image 775/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3998850000-jpg_png_jpg.rf.25b2665b2248b87378dc9108f2103cfb.jpg: 640x640 7 Fillings, 2 impacted tooths, 9.7ms
+    image 776/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3998870000-jpg_png_jpg.rf.70a7120753e8ce6204f24b3c5141e1fe.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.7ms
+    image 777/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3998870000-jpg_png_jpg.rf.c19c2b838b5165a4a4f8a7f2c48d0bdc.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.6ms
+    image 778/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3a7ab44d-ZAKI_REYHANEH_2020-07-25112034_jpg.rf.51f7907425a78bd51af1fd04559db30e.jpg: 640x640 3 Cariess, 9.5ms
+    image 779/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3e071de5-Jalilvand_Yones_2022-06-12140411_jpg.rf.4b2d2cc4568ee664df210eb47d2a353d.jpg: 640x640 4 Cariess, 6 Fillings, 1 Periapical lesion, 9 Root Canal Treatments, 10.5ms
+    image 780/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3f72c699-Avize_Behzad_2022-06-12141052_jpg.rf.be5657b55024f18a7e3f9caf77d8e66e.jpg: 640x640 2 Cariess, 1 Missing teeth, 9.8ms
+    image 781/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3f8f5e7f-falah_nagme_2022-06-12142001_jpg.rf.79f40f3014552ff8143e306a404b99cb.jpg: 640x640 1 Caries, 13 Fillings, 5 Root Canal Treatments, 3 impacted tooths, 11.4ms
+    image 782/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/3f8f5e7f-falah_nagme_2022-06-12142001_jpg.rf.ba6afefb5a3300b62175ac90f81c198a.jpg: 640x640 1 Caries, 13 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 12.5ms
+    image 783/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000290000-jpg_png_jpg.rf.347182dfe5f529ee11903ec4356875ba.jpg: 640x640 2 impacted tooths, 9.7ms
+    image 784/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000430000-jpg_png_jpg.rf.50bd7539a94680b577d09643c445410d.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 785/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000570000-jpg_png_jpg.rf.27e94545af5dcf5505f55871d023c50b.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.8ms
+    image 786/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000860000-jpg_png_jpg.rf.1eff7d9747f226ebc8ee0579046e60d5.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 787/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000860000-jpg_png_jpg.rf.90aceb0ab8fb1ace47bf257f503e8dc1.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 788/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4000860000-jpg_png_jpg.rf.a75950cc4be35845f84ed1a4508d2497.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 789/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4001560000-jpg_png_jpg.rf.818a6fe6f31ac005cf0ce3f9ec3bcbc5.jpg: 640x640 16 Fillings, 2 impacted tooths, 8.9ms
+    image 790/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4002510000-jpg_png_jpg.rf.277ae734d660bb46454a06201271bc1d.jpg: 640x640 1 Crown, 4 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 791/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4002850000-jpg_png_jpg.rf.52610ba6a17aa3f80862c380d63372f7.jpg: 640x640 1 Filling, 2 impacted tooths, 9.1ms
+    image 792/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4003200000-jpg_png_jpg.rf.d15c08a63a1b6955a5d8e498176e2986.jpg: 640x640 2 Crowns, 6 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 8.9ms
+    image 793/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4003440000-jpg_png_jpg.rf.bb58a30552b9aa8e9360c06159cf6724.jpg: 640x640 1 Crown, 1 Filling, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 794/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4004070000-jpg_png_jpg.rf.fc095aadcc6957ae32b2e457c45bedf8.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.2ms
+    image 795/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4004080000-jpg_png_jpg.rf.baee71ffea90c5a8cdd1533eb247469a.jpg: 640x640 2 Crowns, 5 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.0ms
+    image 796/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4004920000-jpg_png_jpg.rf.778b364d200bde22f1e5194fbde53bc6.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.2ms
+    image 797/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4005070000-jpg_png_jpg.rf.19a4951b1419cd1d9278f3b646c30d2e.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.0ms
+    image 798/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4005160000-jpg_png_jpg.rf.15685cc2e8fba89b1ed7722ae0d0169f.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 799/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4005180000-jpg_png_jpg.rf.04e2f2e0b7a0b0ecb9f5a64c4da82765.jpg: 640x640 3 Crowns, 2 Fillings, 1 Missing teeth, 3 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 800/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4005200000-jpg_png_jpg.rf.5145ee7fd4dcfe43ac45ecbae180a3f7.jpg: 640x640 1 Filling, 1 Periapical lesion, 2 impacted tooths, 10.8ms
+    image 801/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4006850000-jpg_png_jpg.rf.9e419a9d46f3026dbbc12e74b912e449.jpg: 640x640 5 Crowns, 6 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 802/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4007900000-jpg_png_jpg.rf.0be4a75282423f2607a17d0bb7dee228.jpg: 640x640 10 Crowns, 4 Fillings, 10 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 803/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4008330000-jpg_png_jpg.rf.2d61404700ab42011fbab8cd18a48c9c.jpg: 640x640 2 Crowns, 2 Fillings, 4 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 804/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4009670000-jpg_png_jpg.rf.a176160722ff1d91545e089987cf98f9.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 805/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4009920000-jpg_png_jpg.rf.68f19d114e264e5f8175cb9b2cbfa0d0.jpg: 640x640 3 Crowns, 10 Fillings, 2 impacted tooths, 9.2ms
+    image 806/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4010700000-jpg_png_jpg.rf.689da04ced0dfb98ef93a1799c5d42d5.jpg: 640x640 3 Fillings, 4 impacted tooths, 10.4ms
+    image 807/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4011700000-jpg_png_jpg.rf.cc3a78363303f92efbea3beb06c80b97.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 808/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4012540000-jpg_png_jpg.rf.01f6497dd6bcf3c0ad52ff6dbeb68d8c.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.0ms
+    image 809/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4012990000-jpg_png_jpg.rf.8a390656da31755ae4c727f5b2221ea6.jpg: 640x640 4 Fillings, 3 impacted tooths, 9.0ms
+    image 810/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4013750000-jpg_png_jpg.rf.067d149254e8037615e1d567f293a66e.jpg: 640x640 3 Fillings, 1 impacted tooth, 8.8ms
+    image 811/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4014660000-jpg_png_jpg.rf.b4f52ed41fa5f427ff51b0177bbac5c4.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 812/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4015780000-jpg_png_jpg.rf.1c7f6d580580abcf1531e7170f64958a.jpg: 640x640 2 impacted tooths, 8.8ms
+    image 813/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4015790000-jpg_png_jpg.rf.84c69dcb401293abeabe9621cc1a09ad.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 814/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4016000000-jpg_png_jpg.rf.4f4fda1988bde05ef7ee7120e2f3f375.jpg: 640x640 2 Fillings, 4 impacted tooths, 8.9ms
+    image 815/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4016040000-jpg_png_jpg.rf.c958566b00c034a5b646a72de44d03e5.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 816/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4016300000-jpg_png_jpg.rf.c94e3adc4c146fe1b0b957a1eb5f50a1.jpg: 640x640 3 Crowns, 9 Fillings, 2 Root Canal Treatments, 9.0ms
+    image 817/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4016760000-jpg_png_jpg.rf.12ac1b8585154f3c73d3072ce6640463.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 818/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4017070000-jpg_png_jpg.rf.720981b7a479320a4a4e9c3f0c33f6b9.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.0ms
+    image 819/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4017450000-jpg_png_jpg.rf.0de277b895479916767388fafc5c2c20.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 820/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4017660000-jpg_png_jpg.rf.c2745101f69559f85d32b87e0d53ab4e.jpg: 640x640 4 Crowns, 9 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 8.8ms
+    image 821/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4021330000-jpg_png_jpg.rf.65a7eb9c8cbecbc473d2dc39ab894085.jpg: 640x640 4 impacted tooths, 8.8ms
+    image 822/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4021500000-jpg_png_jpg.rf.e8ca1d183d0cf495eda9f949e9fc90b5.jpg: 640x640 4 Fillings, 3 impacted tooths, 8.9ms
+    image 823/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4021750000-jpg_png_jpg.rf.0ecd0438c7429e1a5a203cc77ce34117.jpg: 640x640 5 Fillings, 2 impacted tooths, 8.9ms
+    image 824/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4021820000-jpg_png_jpg.rf.145f7bad661d16fafe2ffe60b9ad5b2a.jpg: 640x640 4 impacted tooths, 8.7ms
+    image 825/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4022050000-jpg_png_jpg.rf.fda3ffd07baa953b509cf01a950481e0.jpg: 640x640 4 impacted tooths, 8.7ms
+    image 826/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4022660000-jpg_png_jpg.rf.71e437294f390b3903becbd014d49495.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 3 impacted tooths, 9.4ms
+    image 827/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4022810000-jpg_png_jpg.rf.57aa93166af6d637e100ddc51db1219c.jpg: 640x640 2 Crowns, 6 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 828/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4023150000-jpg_png_jpg.rf.872596db040a963471476c30726102e5.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 829/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4023160000-jpg_png_jpg.rf.93f17406679383c621d0b1c69778495f.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 830/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4023160000-jpg_png_jpg.rf.c309c0900207755711979b11d257b612.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 831/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4023370000-jpg_png_jpg.rf.7a6ad6e24b694eb6d088430da47223e2.jpg: 640x640 4 Crowns, 4 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 8.9ms
+    image 832/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4023580000-jpg_png_jpg.rf.e3778d4bda3505ce80300f70ca7103c5.jpg: 640x640 4 Crowns, 4 Fillings, 7 Root Canal Treatments, 3 impacted tooths, 9.3ms
+    image 833/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4025060000-jpg_png_jpg.rf.21042d1b6cf4fb5654e378cb89fab084.jpg: 640x640 4 Crowns, 4 Fillings, 2 Periapical lesions, 6 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 834/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4025740000-jpg_png_jpg.rf.e0c0b2c26fd94a7e25df1bd2717cb463.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 835/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4025950000-jpg_png_jpg.rf.d33e021e07a1924a1556f6fc04c525d4.jpg: 640x640 1 Crown, 1 Missing teeth, 2 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 836/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4025980000-jpg_png_jpg.rf.8a9d93771895ea426a3e473f1da00efe.jpg: 640x640 2 Crowns, 2 Fillings, 5 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 837/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4026090000-jpg_png_jpg.rf.063a577b90859fbd80a512e0899d6f3e.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.0ms
+    image 838/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4026540000-jpg_png_jpg.rf.d029fd6654e3d60d3406e5f6b2412537.jpg: 640x640 1 Crown, 10 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 839/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4026950000-jpg_png_jpg.rf.3d24d65e5dddc1a96260fe5849ef0f68.jpg: 640x640 1 impacted tooth, 9.0ms
+    image 840/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4027080000-jpg_png_jpg.rf.3bdb674b74c1382e76b0450b822cdb66.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 2 impacted tooths, 8.9ms
+    image 841/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4027190000-jpg_png_jpg.rf.459523bd5ff4ea4672f4fd0268241ffd.jpg: 640x640 2 Crowns, 2 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.2ms
+    image 842/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4028010000-jpg_png_jpg.rf.e5c2452ee20f0965b63d848a9046e6d6.jpg: 640x640 1 Filling, 2 impacted tooths, 9.0ms
+    image 843/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4028290000-jpg_png_jpg.rf.40c2f83dc0e346dd7a3da587ff8b11a6.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 844/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4029490000-jpg_png_jpg.rf.61fcf523d1cb0062bfa7dca6205ed27d.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.1ms
+    image 845/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4029690000-jpg_png_jpg.rf.84ab64834757bb333beb1ee628ad9c60.jpg: 640x640 3 impacted tooths, 9.5ms
+    image 846/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4030430000-jpg_png_jpg.rf.217afef74d55070bee8a83105bff294f.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.4ms
+    image 847/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4031320000-jpg_png_jpg.rf.2fdd66532be077ffef9741bc0e0565d2.jpg: 640x640 1 impacted tooth, 9.3ms
+    image 848/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4032190000-jpg_png_jpg.rf.3c05847b52c0fbcae59f1899624462b7.jpg: 640x640 3 Crowns, 8 Fillings, 6 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 849/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4032310000-jpg_png_jpg.rf.7d5c0098ce919e7c38e0ce0066c68b18.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 850/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4032540000-jpg_png_jpg.rf.1accb88199898ed38235404cd5fc656b.jpg: 640x640 3 impacted tooths, 8.9ms
+    image 851/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4032750000-jpg_png_jpg.rf.b40e716bff95028f0b9fb19edec384ce.jpg: 640x640 1 Crown, 3 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 852/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4033830000-jpg_png_jpg.rf.4a6943f4413de4bc6a4cc59ab74aae72.jpg: 640x640 1 Filling, 3 impacted tooths, 8.9ms
+    image 853/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4034580000-jpg_png_jpg.rf.d37466f84aef12f2b78667dab3138910.jpg: 640x640 10 Fillings, 2 impacted tooths, 9.1ms
+    image 854/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4034720000-jpg_png_jpg.rf.aca05950c4399b0be00fcd836fb0e36a.jpg: 640x640 1 Crown, 1 Filling, 1 Periapical lesion, 1 Root Canal Treatment, 3 impacted tooths, 8.8ms
+    image 855/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4034780000-jpg_png_jpg.rf.e03596bba593a390a210dcc7bc252e88.jpg: 640x640 14 Fillings, 1 impacted tooth, 8.8ms
+    image 856/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4035830000-jpg_png_jpg.rf.7b1f60d2b4479b57305008c89485c700.jpg: 640x640 1 Caries, 18 Fillings, 2 impacted tooths, 8.9ms
+    image 857/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4036640000-jpg_png_jpg.rf.6b0c6cfa67ed7209759e015854c9a91e.jpg: 640x640 5 impacted tooths, 8.9ms
+    image 858/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4038380000-jpg_png_jpg.rf.c28ef55efc5127692da3e6dbebbe3cc6.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 859/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4039830000-jpg_png_jpg.rf.6d9de908aa82868c7b00238d2b2416b7.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 860/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4040810000-jpg_png_jpg.rf.608228dfdd323def4c105b36651a4e69.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 861/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4041490000-jpg_png_jpg.rf.297463b214e2ff1147b1a2230d10c5a7.jpg: 640x640 2 Crowns, 1 Filling, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 862/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4042480000-jpg_png_jpg.rf.edf24033ec964cb689e4cdc90ea6fb24.jpg: 640x640 1 Crown, 9 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.0ms
+    image 863/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4043240000-jpg_png_jpg.rf.38bd8917938c2b23068fc65b523f8326.jpg: 640x640 2 Cariess, 5 Fillings, 1 impacted tooth, 8.9ms
+    image 864/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4043930000-jpg_png_jpg.rf.3d0ca38704ed29a5eb26f4fd1c3b6218.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 865/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4044020000-jpg_png_jpg.rf.e9b1bdf07ac56352c5b279bdadfe9f6c.jpg: 640x640 13 Fillings, 1 impacted tooth, 10.4ms
+    image 866/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4044470000-jpg_png_jpg.rf.245e738d28aec0ddb359a1bd8f65f973.jpg: 640x640 1 Crown, 7 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 8.9ms
+    image 867/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4044820000-jpg_png_jpg.rf.aedb13c5010dcdb58fc3c2a27c109031.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 1 impacted tooth, 8.9ms
+    image 868/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4045720000-jpg_png_jpg.rf.28077c8f69bdd06b87be6f3825c9b54b.jpg: 640x640 2 Crowns, 8 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 869/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4045730000-jpg_png_jpg.rf.1d3e0fe3596537ff40178b0ccbd5b22d.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.0ms
+    image 870/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4046360000-jpg_png_jpg.rf.e97ce050a20d89cf801501d3953470f3.jpg: 640x640 11 Fillings, 2 Implants, 3 impacted tooths, 9.0ms
+    image 871/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4048390000-jpg_png_jpg.rf.4ebe71abd10d2e66095f9770509071d1.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 872/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4048390000-jpg_png_jpg.rf.cf84702438557df237af75abb24d6a6b.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 873/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4048850000-jpg_png_jpg.rf.5787b55de37ad1dd96faded6d5e45791.jpg: 640x640 1 impacted tooth, 11.3ms
+    image 874/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4048950000-jpg_png_jpg.rf.dad9887702ec398111b83dc0c9c70e05.jpg: 640x640 5 Crowns, 5 Fillings, 6 Root Canal Treatments, 3 impacted tooths, 8.9ms
+    image 875/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4049260000-jpg_png_jpg.rf.07e56de736c6c6c8a14e3f24f579f65a.jpg: 640x640 5 Fillings, 4 impacted tooths, 9.3ms
+    image 876/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4050990000-jpg_png_jpg.rf.7458b76d63701b9fe56f2e30a1324592.jpg: 640x640 11 Crowns, 4 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 877/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4051620000-jpg_png_jpg.rf.cea144c2de08c382f19ba71516e00921.jpg: 640x640 2 Crowns, 12 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.2ms
+    image 878/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4052370000-jpg_png_jpg.rf.61bbb357698751a29122077fb0c37c5e.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.1ms
+    image 879/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4052640000-jpg_png_jpg.rf.6a7e286b3113f889552fde6b7dd62ce2.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 4 impacted tooths, 8.9ms
+    image 880/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4053180000-jpg_png_jpg.rf.7cb5264bc93b17755c9c651f0e0f6acf.jpg: 640x640 1 Filling, 3 impacted tooths, 9.7ms
+    image 881/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4053560000-jpg_png_jpg.rf.0af1913c7c9cf3067bbcb6d5d9948a8c.jpg: 640x640 1 Filling, 3 impacted tooths, 9.3ms
+    image 882/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4053760000-jpg_png_jpg.rf.1eb72fd5f881750c57268f3fcea0f35a.jpg: 640x640 1 Crown, 3 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 10.0ms
+    image 883/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4053760000-jpg_png_jpg.rf.73ecbaa66739ea990b758f624939ca4e.jpg: 640x640 1 Crown, 3 Fillings, 3 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 884/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4054160000-jpg_png_jpg.rf.ca6bcb93213fac292c0d21cc3717cc1e.jpg: 640x640 12 Fillings, 3 impacted tooths, 9.2ms
+    image 885/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4054540000-jpg_png_jpg.rf.020df11ffe61e262b76255e91028e2d2.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 886/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4055090000-jpg_png_jpg.rf.8bac00d27d274ee3712a065b04e79052.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.1ms
+    image 887/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4055100000-jpg_png_jpg.rf.0fc5638bc8258039f7f38b06751b0940.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 888/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4055140000-jpg_png_jpg.rf.523cc228595c6eb7747cfc617396e43c.jpg: 640x640 1 Crown, 3 Fillings, 3 impacted tooths, 9.0ms
+    image 889/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4055670000-jpg_png_jpg.rf.00884eb33dec09ab55112b536f1e53aa.jpg: 640x640 2 Crowns, 2 impacted tooths, 9.0ms
+    image 890/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4057980000-jpg_png_jpg.rf.c5d666e71ad5d373c2fbd6127344c822.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 891/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4058510000-jpg_png_jpg.rf.bfc0fb834c114517fae01992c611f74f.jpg: 640x640 7 Fillings, 3 impacted tooths, 9.1ms
+    image 892/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4059210000-jpg_png_jpg.rf.3273cb5675e75cbc08943f1f1f4c29eb.jpg: 640x640 1 Crown, 2 Fillings, 2 Root Canal Treatments, 4 impacted tooths, 9.0ms
+    image 893/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4059790000-jpg_png_jpg.rf.655ba9c73437442c5c5bc6a6fcc6fbd2.jpg: 640x640 1 Caries, 4 Crowns, 3 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 894/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4060720000-jpg_png_jpg.rf.5e883a5242ab9012015769a9a235e2ae.jpg: 640x640 1 Filling, 4 impacted tooths, 9.1ms
+    image 895/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4060980000-jpg_png_jpg.rf.dfb9bb9cfb18cd39402300df640611de.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.1ms
+    image 896/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4062050000-jpg_png_jpg.rf.7305ef13bed929d25d070c9d2f7c9444.jpg: 640x640 7 Fillings, 2 impacted tooths, 9.1ms
+    image 897/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4062410000-jpg_png_jpg.rf.b90688e581973d8bc271aaaeca208201.jpg: 640x640 2 impacted tooths, 9.5ms
+    image 898/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4064340000-jpg_png_jpg.rf.a1902d352f96ff80795692f4a9e1c52e.jpg: 640x640 1 Filling, 1 impacted tooth, 9.0ms
+    image 899/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4064810000-jpg_png_jpg.rf.cc445f19da6e1bddc5f4706da9960321.jpg: 640x640 3 Crowns, 4 Fillings, 6 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 900/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4064890000-jpg_png_jpg.rf.7827c35123eafe5f96aa68f663b60a52.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 1 impacted tooth, 9.0ms
+    image 901/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4065060000-jpg_png_jpg.rf.8fd3d5caef9f573b7dc33743f166630a.jpg: 640x640 2 Fillings, 3 impacted tooths, 8.9ms
+    image 902/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4065060000-jpg_png_jpg.rf.f3a4b3e8868a46f76cea71ec93b95953.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.0ms
+    image 903/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4065400000-jpg_png_jpg.rf.bcbfecb37e8fbc074da4fb89dea0feb2.jpg: 640x640 3 Crowns, 5 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.0ms
+    image 904/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4066720000-jpg_png_jpg.rf.ed0d87b77104e0ed73576ea12d710bf5.jpg: 640x640 1 Crown, 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 8.9ms
+    image 905/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4066870000-jpg_png_jpg.rf.f7d19c202b6eeccf15a01b28b79a9146.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 906/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4069250000-jpg_png_jpg.rf.27cef59ecd0e0ab69332e83bbadaf388.jpg: 640x640 1 Crown, 1 Implant, 2 impacted tooths, 9.0ms
+    image 907/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4069260000-jpg_png_jpg.rf.43ec32b1751013a3d70cd0c2dacb689f.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 908/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4072150000-jpg_png_jpg.rf.c9951f6bfafe109819f10ca8c4735c77.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.1ms
+    image 909/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4074960000-jpg_png_jpg.rf.f4638176fe6b454897b4bf93e27501af.jpg: 640x640 1 Caries, 1 Filling, 3 impacted tooths, 9.1ms
+    image 910/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4075260000-jpg_png_jpg.rf.92e46f31f0adf11567cf4a0a9a9fec00.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 911/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4075810000-jpg_png_jpg.rf.fba8239572bbfd669fda38cf21474d2c.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 912/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4076550000-jpg_png_jpg.rf.4bd5bed02295ee6c74dc336e6a28c6a0.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 913/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4076950000-jpg_png_jpg.rf.d32ed15c7113dfd9add7cefbaf8d01af.jpg: 640x640 1 Crown, 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 914/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4077290000-jpg_png_jpg.rf.0dd1a40e21a32193b938394d81662f71.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.8ms
+    image 915/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4077470000-jpg_png_jpg.rf.0d2241af27fbc368fc3846dee2f2154b.jpg: 640x640 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 916/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4078490000-jpg_png_jpg.rf.8634cebb5d50225ec716925c35125625.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 917/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4078690000-jpg_png_jpg.rf.3b1e2d37e1a5e9137875598b945d5c4c.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 918/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4079730000-jpg_png_jpg.rf.51e281686d5fcf3de23a4b54446ea5c7.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 919/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4082160000-jpg_png_jpg.rf.3710909976e026001a34397c012d4c18.jpg: 640x640 2 impacted tooths, 9.4ms
+    image 920/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4083060000-jpg_png_jpg.rf.af03c9aa04619c35cfe4f4b05f74151e.jpg: 640x640 1 Crown, 9 Fillings, 2 impacted tooths, 9.7ms
+    image 921/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4083500000-jpg_png_jpg.rf.1566f1da3edbae40380ec1eca6e0910a.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.3ms
+    image 922/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4083500000-jpg_png_jpg.rf.2bc6b1f60100e39d005942f14c2afca3.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.3ms
+    image 923/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4083780000-jpg_png_jpg.rf.7572a00547d884eeffbb13ebff0cc645.jpg: 640x640 14 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 10.7ms
+    image 924/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4084040000-jpg_png_jpg.rf.ed3287f09844af41914095ae69ca544e.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 925/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4084630000-jpg_png_jpg.rf.fc2be7cf2db2b15d827c6f27f55a1cfd.jpg: 640x640 4 impacted tooths, 9.4ms
+    image 926/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4084750000-jpg_png_jpg.rf.e94aab9c5dd66feff753522f31d43bd4.jpg: 640x640 1 Crown, 2 Fillings, 2 impacted tooths, 10.2ms
+    image 927/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085110000-jpg_png_jpg.rf.552845983af4455ee47b02bd295da514.jpg: 640x640 3 Crowns, 6 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 10.6ms
+    image 928/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085130000-jpg_png_jpg.rf.aa79468379422e199ab861e192caf712.jpg: 640x640 2 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 10.1ms
+    image 929/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085170000-jpg_png_jpg.rf.073fb03f684ab97975d0e16d2d3a5b24.jpg: 640x640 1 Filling, 1 impacted tooth, 9.6ms
+    image 930/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085400000-jpg_png_jpg.rf.dcf803c375f29fd9568c9ef6d03d8ed7.jpg: 640x640 1 Filling, 3 impacted tooths, 9.1ms
+    image 931/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085790000-jpg_png_jpg.rf.02745b09bb8bd0c499958362521a399c.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.2ms
+    image 932/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4085790000-jpg_png_jpg.rf.4f700dbdf4d70cfc2cc51e143ecc92e5.jpg: 640x640 1 Crown, 3 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 933/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4086480000-jpg_png_jpg.rf.b14d9b6465b2fb1251ddda89fabb56d6.jpg: 640x640 1 impacted tooth, 9.0ms
+    image 934/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4087110000-jpg_png_jpg.rf.50685729b387f7ad8327ded60b02978a.jpg: 640x640 15 Fillings, 3 impacted tooths, 9.1ms
+    image 935/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4087160000-jpg_png_jpg.rf.3f599ab3922fce17b5213054df2eed1f.jpg: 640x640 1 Crown, 2 Fillings, 2 impacted tooths, 8.9ms
+    image 936/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4087460000-jpg_png_jpg.rf.0ca469767bb19b151fb01e9586a61173.jpg: 640x640 3 Crowns, 4 Root Canal Treatments, 3 impacted tooths, 8.9ms
+    image 937/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4087470000-jpg_png_jpg.rf.abfc7c6bd65278227a25564115417a0f.jpg: 640x640 1 impacted tooth, 8.9ms
+    image 938/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4087860000-jpg_png_jpg.rf.a3238c15511e5b963c8a4754dcf05a6a.jpg: 640x640 1 Crown, 5 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 8.8ms
+    image 939/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4088130000-jpg_png_jpg.rf.1897a5e4f55d1c48b9806721ad8bbfb4.jpg: 640x640 7 Crowns, 1 Implant, 1 Missing teeth, 2 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 940/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4088650000-jpg_png_jpg.rf.c83e69d92dd1ef0545f0f6ff0caf1c7e.jpg: 640x640 1 Crown, 3 impacted tooths, 9.2ms
+    image 941/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4088750000-jpg_png_jpg.rf.0bf51f181c85b744f7e4c213480993da.jpg: 640x640 2 impacted tooths, 9.1ms
+    image 942/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4088750000-jpg_png_jpg.rf.929b5dd5c4a072dca5209fe1c4ebef5e.jpg: 640x640 2 impacted tooths, 8.8ms
+    image 943/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4089280000-jpg_png_jpg.rf.930fb63c1d9de297e8aecfd10e0d4a52.jpg: 640x640 3 Fillings, 2 impacted tooths, 9.0ms
+    image 944/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4089550000-jpg_png_jpg.rf.0ea760e1f4fed8307f90151e674e935e.jpg: 640x640 1 Crown, 6 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 8.9ms
+    image 945/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4089630000-jpg_png_jpg.rf.8e65aaf298b4a6f9efcc11dd22edc5db.jpg: 640x640 1 Crown, 2 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 946/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4090750000-jpg_png_jpg.rf.3acd4db1014afcd940c967cf74f0260d.jpg: 640x640 5 Fillings, 3 impacted tooths, 9.2ms
+    image 947/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4090780000-jpg_png_jpg.rf.270e32d6bfb664587dd43b8199c254a7.jpg: 640x640 3 impacted tooths, 9.1ms
+    image 948/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4090800000-jpg_png_jpg.rf.b5be2d9d50fb914d0650f36fc4cd5d46.jpg: 640x640 2 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 949/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4092360000-jpg_png_jpg.rf.a0e52dc2e3f3e4910f74b38b26b10c4e.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.1ms
+    image 950/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4094140000-jpg_png_jpg.rf.0f3635268d8fc0cd6d9130887c329d5b.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 951/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4094160000-jpg_png_jpg.rf.1efd2968b6d76f5585f2be6c4e989f71.jpg: 640x640 4 impacted tooths, 9.0ms
+    image 952/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4094760000-jpg_png_jpg.rf.8529f33da3f8369d3f93725d9675403b.jpg: 640x640 1 Caries, 3 Crowns, 11 Fillings, 5 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 953/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4094940000-jpg_png_jpg.rf.b07f91197a094e0eb9f93e0e98721c95.jpg: 640x640 1 Caries, 4 impacted tooths, 9.1ms
+    image 954/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4095140000-jpg_png_jpg.rf.4eb3fbf603d6756fe4ab369f705219f7.jpg: 640x640 3 impacted tooths, 9.4ms
+    image 955/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4095700000-jpg_png_jpg.rf.a1feb927a54f8477fad664530f90a948.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.4ms
+    image 956/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4096310000-jpg_png_jpg.rf.b46de2866be157ebc4f2d6e01ab875dc.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.4ms
+    image 957/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/409640000-jpg_png_jpg.rf.67257d98001aadac727f578fabd0e4c6.jpg: 640x640 1 Filling, 2 impacted tooths, 9.4ms
+    image 958/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4096710000-jpg_png_jpg.rf.09bc1281a160dec16577e0cbde738fdc.jpg: 640x640 1 Crown, 4 Fillings, 1 Implant, 4 impacted tooths, 9.2ms
+    image 959/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4096820000-jpg_png_jpg.rf.0f48e1019fd62e5453f796570e6b8423.jpg: 640x640 6 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.3ms
+    image 960/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4096830000-jpg_png_jpg.rf.4839b3647042c61cfa0361951bb11115.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 961/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4097770000-jpg_png_jpg.rf.f9e16041f9dc12358bdd9bd16a00db66.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.1ms
+    image 962/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4098120000-jpg_png_jpg.rf.07b26f043e03e933300eb3993a1692cf.jpg: 640x640 1 Crown, 1 Implant, 2 impacted tooths, 9.8ms
+    image 963/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4098600000-jpg_png_jpg.rf.003ad2031f911a86addaaf560ad91bf9.jpg: 640x640 2 Crowns, 7 Fillings, 1 Periapical lesion, 1 Root Canal Treatment, 2 impacted tooths, 9.3ms
+    image 964/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4099190000-jpg_png_jpg.rf.63b7b38e19b5d07a9dabd04c80a7055b.jpg: 640x640 2 Crowns, 4 Fillings, 3 impacted tooths, 9.2ms
+    image 965/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/40c7270e-Ghasemi_Fatemeh_2020-09-08174634_jpg.rf.d08cde3846567e633ca031edfcf0c7f6.jpg: 640x640 1 Caries, 1 Crown, 11 Fillings, 3 Missing teeths, 5 Root Canal Treatments, 9.1ms
+    image 966/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/40c7270e-Ghasemi_Fatemeh_2020-09-08174634_jpg.rf.f455f2b855033089dab52fb716dc1694.jpg: 640x640 1 Caries, 1 Crown, 11 Fillings, 3 Missing teeths, 5 Root Canal Treatments, 9.3ms
+    image 967/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4100120000-jpg_png_jpg.rf.0139780cdc6b4ed017771b334bf9810e.jpg: 640x640 11 Fillings, 2 impacted tooths, 9.1ms
+    image 968/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4102090000-jpg_png_jpg.rf.14ed3508f31d8bd8feef710f18ccfec6.jpg: 640x640 7 Crowns, 3 Fillings, 8 Implants, 4 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 969/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4102090000-jpg_png_jpg.rf.46c092721c640c2a2cca2ae497517219.jpg: 640x640 7 Crowns, 4 Fillings, 8 Implants, 3 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 970/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4102620000-jpg_png_jpg.rf.da2c0b576db2c97895f9996752b3df4f.jpg: 640x640 4 Fillings, 2 impacted tooths, 9.4ms
+    image 971/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4104830000-jpg_png_jpg.rf.d87370d775b06cd9a0e6b4e6f3c740fd.jpg: 640x640 2 Crowns, 1 Missing teeth, 1 Root Canal Treatment, 1 impacted tooth, 9.5ms
+    image 972/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4105370000-jpg_png_jpg.rf.b614b6b2ad203936f4be4987b58d5b67.jpg: 640x640 2 Crowns, 7 Fillings, 3 Root Canal Treatments, 3 impacted tooths, 9.8ms
+    image 973/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4106060000-jpg_png_jpg.rf.9b90aafb2a7decb284c4e576a0ee0e96.jpg: 640x640 1 Filling, 4 impacted tooths, 9.6ms
+    image 974/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4106150000-jpg_png_jpg.rf.71b6bdf1a886b69043aa0d25cec52936.jpg: 640x640 1 Filling, 4 impacted tooths, 9.7ms
+    image 975/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4106150000-jpg_png_jpg.rf.84ce333080acca0614fce1e72ac4e640.jpg: 640x640 1 Filling, 4 impacted tooths, 9.6ms
+    image 976/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4107420000-jpg_png_jpg.rf.07a7e56f0d7976be74afc28fdf64bdbc.jpg: 640x640 1 Filling, 3 impacted tooths, 9.1ms
+    image 977/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4107530000-jpg_png_jpg.rf.7fd65fe2328018c3f431b2011a2870da.jpg: 640x640 2 Crowns, 2 Root Canal Treatments, 3 impacted tooths, 9.5ms
+    image 978/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4107590000-jpg_png_jpg.rf.fe784252b852ebc8e801aa5ed29666a0.jpg: 640x640 9 Fillings, 3 impacted tooths, 9.7ms
+    image 979/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4108020000-jpg_png_jpg.rf.582deb0ea687b0b37888fa672c0f7470.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 980/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4108330000-jpg_png_jpg.rf.647f1147a8dbc0b8096c09b66c4e9aef.jpg: 640x640 3 Crowns, 1 Filling, 1 Missing teeth, 4 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 981/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/410850000-jpg_png_jpg.rf.2a9209cd473f4cd24dfea23cfb8701b3.jpg: 640x640 4 impacted tooths, 9.5ms
+    image 982/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4108900000-jpg_png_jpg.rf.0d044f4885468f7c980ab6080204e062.jpg: 640x640 1 Crown, 1 Filling, 1 Missing teeth, 1 Root Canal Treatment, 2 impacted tooths, 9.5ms
+    image 983/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4109290000-jpg_png_jpg.rf.470dd04c73969c6f46da6b546f224222.jpg: 640x640 1 impacted tooth, 9.8ms
+    image 984/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4109330000-jpg_png_jpg.rf.7920f0237466653051746698b072e7c2.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.3ms
+    image 985/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4109540000-jpg_png_jpg.rf.43d9093e498ffcb303218321c7410d71.jpg: 640x640 1 Caries, 2 impacted tooths, 9.3ms
+    image 986/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4109540000-jpg_png_jpg.rf.6622bc1c892b5e49c4083cd866b85093.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 987/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4109670000-jpg_png_jpg.rf.037b30fddcd8d122612905abd825a96f.jpg: 640x640 1 Missing teeth, 3 impacted tooths, 9.6ms
+    image 988/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/410d77b1-DASHTBANI_BATOL_2020-07-05103248_jpg.rf.08d7ad0afbff9e69b9a3cf0fb5c520c8.jpg: 640x640 1 Crown, 7 Fillings, 5 Root Canal Treatments, 9.4ms
+    image 989/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4110520000-jpg_png_jpg.rf.ec26ec9deb7c5801ae2d6b948e3cc2e4.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 990/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4110570000-jpg_png_jpg.rf.e5d46d742a7656b7d4591fc0be499e0c.jpg: 640x640 4 impacted tooths, 9.2ms
+    image 991/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4111090000-jpg_png_jpg.rf.d73c95f1bea6bab9d12451c4726b4267.jpg: 640x640 1 Crown, 1 Filling, 1 impacted tooth, 9.2ms
+    image 992/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4111500000-jpg_png_jpg.rf.9d49825f8e5bb1cec8123b38d4dc7402.jpg: 640x640 1 Crown, 3 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.0ms
+    image 993/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4111750000-jpg_png_jpg.rf.f56637955d5d4c058cf16c10406df2ba.jpg: 640x640 2 impacted tooths, 10.0ms
+    image 994/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4112770000-jpg_png_jpg.rf.4b5cfaa92772220d2072062bcf3fbf29.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 995/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4113290000-jpg_png_jpg.rf.26965133d1a13a9c2210146ce2a354ea.jpg: 640x640 6 Fillings, 2 impacted tooths, 9.1ms
+    image 996/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4113390000-jpg_png_jpg.rf.c09c4b8698e70ef239f313f3ed8c744a.jpg: 640x640 2 Crowns, 1 Filling, 2 Root Canal Treatments, 4 impacted tooths, 9.3ms
+    image 997/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4114470000-jpg_png_jpg.rf.d4227c75f9fc274c128d1e007e5e0e71.jpg: 640x640 2 Crowns, 13 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.4ms
+    image 998/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4114940000-jpg_png_jpg.rf.b0aba1ccbb2de1b680228e7c857930d0.jpg: 640x640 2 impacted tooths, 9.7ms
+    image 999/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4115930000-jpg_png_jpg.rf.5ff30a2313380b1df258b303aff25ea2.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 1000/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4116660000-jpg_png_jpg.rf.c269ef2bc3021899a4b013021d955660.jpg: 640x640 1 Filling, 4 impacted tooths, 9.7ms
+    image 1001/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4116780000-jpg_png_jpg.rf.29f09b13e200bf3a5979c243cc5f9a02.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 1002/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4118210000-jpg_png_jpg.rf.36c72c674d8ece546ad0263820a9885e.jpg: 640x640 4 impacted tooths, 9.7ms
+    image 1003/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4118210000-jpg_png_jpg.rf.c3a9763ab863b84000747b40b9e4e597.jpg: 640x640 4 impacted tooths, 9.6ms
+    image 1004/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4119230000-jpg_png_jpg.rf.f8471af3f2fd8fca3cd2ab2f50ed39d4.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 1005/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4119530000-jpg_png_jpg.rf.870381be7467bd0d1682d4867f53f4ef.jpg: 640x640 1 Crown, 1 Implant, 1 Root Canal Treatment, 1 impacted tooth, 9.9ms
+    image 1006/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4119530000-jpg_png_jpg.rf.d14141fb19b72b17059a9d937b5576cc.jpg: 640x640 1 Crown, 1 Implant, 1 Root Canal Treatment, 1 impacted tooth, 9.9ms
+    image 1007/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4120230000-jpg_png_jpg.rf.6c1fbe904ab9458cafcfa24bbb7ce8f8.jpg: 640x640 1 Caries, 1 Filling, 2 impacted tooths, 9.8ms
+    image 1008/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4122810000-jpg_png_jpg.rf.5eb8f232f3a2bafdab4ef6214c191684.jpg: 640x640 2 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.7ms
+    image 1009/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4123660000-jpg_png_jpg.rf.6f0b14a3f7cc78ff17d30456c6d9e6ab.jpg: 640x640 3 Fillings, 1 impacted tooth, 9.6ms
+    image 1010/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4123770000-jpg_png_jpg.rf.47bddfea8d935233276ff34e4788ba86.jpg: 640x640 3 Fillings, 2 impacted tooths, 10.0ms
+    image 1011/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4123800000-jpg_png_jpg.rf.6333eee8a90d61f6c71c629679a37f8d.jpg: 640x640 4 Fillings, 2 impacted tooths, 11.8ms
+    image 1012/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4124250000-jpg_png_jpg.rf.51f263fd508619243ee03123f822458c.jpg: 640x640 3 impacted tooths, 9.8ms
+    image 1013/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4124880000-jpg_png_jpg.rf.7bbcb216d7f9d674e547bfee2d36c05c.jpg: 640x640 4 Fillings, 4 impacted tooths, 9.5ms
+    image 1014/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4125080000-jpg_png_jpg.rf.1d0ac92fdd4c90860a1d0faf2d7a6051.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.9ms
+    image 1015/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4127070000-jpg_png_jpg.rf.8a31f7b7dbabdde2fd52a17366527523.jpg: 640x640 3 impacted tooths, 9.3ms
+    image 1016/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4128800000-jpg_png_jpg.rf.727b289e807beb156337282aa994f34f.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.1ms
+    image 1017/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4129330000-jpg_png_jpg.rf.6c7aae79236a24446d05a31d2259489d.jpg: 640x640 1 Missing teeth, 2 impacted tooths, 9.6ms
+    image 1018/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4130180000-jpg_png_jpg.rf.c741e37e0499ca4efa222855d43d251f.jpg: 640x640 1 Caries, 4 impacted tooths, 9.4ms
+    image 1019/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4130420000-jpg_png_jpg.rf.fc957924e2c87d7188cacc13081f39d8.jpg: 640x640 4 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.5ms
+    image 1020/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4132500000-jpg_png_jpg.rf.883e826883de65327f1fd2948f97bd0d.jpg: 640x640 2 impacted tooths, 9.9ms
+    image 1021/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4132500000-jpg_png_jpg.rf.9ff37929d465e61e6cfc5e2a3ed712bf.jpg: 640x640 2 impacted tooths, 9.5ms
+    image 1022/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4132690000-jpg_png_jpg.rf.5b529acbb4cf57e1d3f1a7f25ef325c3.jpg: 640x640 1 Crown, 4 Fillings, 1 Root Canal Treatment, 3 impacted tooths, 9.4ms
+    image 1023/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4133650000-jpg_png_jpg.rf.2469a20bbea483c554dd96b8936a6f73.jpg: 640x640 1 Caries, 2 Fillings, 2 impacted tooths, 9.3ms
+    image 1024/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4133650000-jpg_png_jpg.rf.4b98c524f8a9aa7006b4dbd427bcc609.jpg: 640x640 1 Caries, 2 Fillings, 2 impacted tooths, 9.3ms
+    image 1025/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4133850000-jpg_png_jpg.rf.d79aa47cf1e0cf4ac0ad8cb6f39e89c9.jpg: 640x640 1 Filling, 2 impacted tooths, 9.1ms
+    image 1026/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4134640000-jpg_png_jpg.rf.b56bb892fb0e93885befc934a46ae3c5.jpg: 640x640 4 Crowns, 5 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.4ms
+    image 1027/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4135930000-jpg_png_jpg.rf.0e5a8417ab49878390eaef6a04911116.jpg: 640x640 3 Crowns, 4 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 1028/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4136220000-jpg_png_jpg.rf.6ea5655c657f31506de234212f774837.jpg: 640x640 2 Crowns, 6 Fillings, 1 impacted tooth, 9.1ms
+    image 1029/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4136320000-jpg_png_jpg.rf.87e00b1376f36ca4e1724d67cf31753a.jpg: 640x640 2 Crowns, 6 Fillings, 2 impacted tooths, 9.1ms
+    image 1030/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4137090000-jpg_png_jpg.rf.dd0959e81d030c61a084c5d0fa060af2.jpg: 640x640 1 Crown, 6 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.7ms
+    image 1031/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4140860000-jpg_png_jpg.rf.d42914f9e09654d56f2e28eedad1ad3a.jpg: 640x640 4 Crowns, 10 Fillings, 6 Root Canal Treatments, 3 impacted tooths, 9.2ms
+    image 1032/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4141560000-jpg_png_jpg.rf.e5c61f0b0065ba843a89bf92457a6222.jpg: 640x640 1 Caries, 1 Crown, 2 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.4ms
+    image 1033/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4143410000-jpg_png_jpg.rf.6051fa97707a96fc44c6b6bb129f5406.jpg: 640x640 6 Fillings, 1 impacted tooth, 9.5ms
+    image 1034/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4143690000-jpg_png_jpg.rf.fc5a7c8b89b23fe2952b89dbfc2c2b46.jpg: 640x640 3 Fillings, 1 Missing teeth, 1 Root Canal Treatment, 1 impacted tooth, 9.5ms
+    image 1035/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4143730000-jpg_png_jpg.rf.ea08cfa3181da72937ac4987e00f13b2.jpg: 640x640 8 Fillings, 1 impacted tooth, 9.6ms
+    image 1036/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4143830000-jpg_png_jpg.rf.194c30e8538cdbc79925db6c8c84cb16.jpg: 640x640 2 impacted tooths, 9.6ms
+    image 1037/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4143910000-jpg_png_jpg.rf.97b3deb7fc1255b645e6f51635879c70.jpg: 640x640 1 Filling, 3 impacted tooths, 9.7ms
+    image 1038/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4144510000-jpg_png_jpg.rf.251d99a31f6c05a178c885a50f72cea2.jpg: 640x640 6 Fillings, 4 impacted tooths, 9.8ms
+    image 1039/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4145140000-jpg_png_jpg.rf.9da23498539a927d9fd7fa8aec50cead.jpg: 640x640 1 Filling, 4 impacted tooths, 9.4ms
+    image 1040/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4145690000-jpg_png_jpg.rf.c7c6d8cdbee13d71834439a5ed565e28.jpg: 640x640 2 impacted tooths, 9.5ms
+    image 1041/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4145760000-jpg_png_jpg.rf.d276ece5fa58f6555730c4e3c7ae185a.jpg: 640x640 1 impacted tooth, 9.4ms
+    image 1042/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4146000000-jpg_png_jpg.rf.6b2839732f3b98f9c235c5974ad74215.jpg: 640x640 3 impacted tooths, 9.8ms
+    image 1043/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4146420000-jpg_png_jpg.rf.3db005015386eb1140d73479de98f24a.jpg: 640x640 1 Crown, 4 impacted tooths, 9.5ms
+    image 1044/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4146590000-jpg_png_jpg.rf.4ff447153571f2d49f51f17793366c5d.jpg: 640x640 2 Crowns, 5 Fillings, 4 impacted tooths, 9.4ms
+    image 1045/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4146810000-jpg_png_jpg.rf.f35eb54af85d1c5daad70897caf822fb.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 1046/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4147740000-jpg_png_jpg.rf.b169ee508e4b796fc3b5b5ccf1a46d59.jpg: 640x640 1 Crown, 8 Fillings, 1 Root Canal Treatment, 1 impacted tooth, 9.1ms
+    image 1047/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4147780000-jpg_png_jpg.rf.7c8fa11e4cd9c6ba38b4afd804b38871.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 1048/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4147930000-jpg_png_jpg.rf.44164d904472726c517bb03ff2b5f92d.jpg: 640x640 2 Fillings, 3 impacted tooths, 9.1ms
+    image 1049/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4148070000-jpg_png_jpg.rf.737b1476c4b1948e3a8914b58dda409f.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.1ms
+    image 1050/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4148310000-jpg_png_jpg.rf.2f99c7ab172ac07d5488f35977a29451.jpg: 640x640 1 Filling, 1 Root Canal Treatment, 2 impacted tooths, 8.9ms
+    image 1051/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4148310000-jpg_png_jpg.rf.d2b4f0a6c920832b95b4383425fd1d08.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 1052/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4150000000-jpg_png_jpg.rf.2a40b7f15f2e2e7294565a3a670758a7.jpg: 640x640 1 Crown, 2 Root Canal Treatments, 2 impacted tooths, 11.2ms
+    image 1053/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4150570000-jpg_png_jpg.rf.fb3d832dd098a2de00c489841f492b39.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 1054/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4152180000-jpg_png_jpg.rf.3fb0ed7ea396b08c14b7012e1a7f6ddb.jpg: 640x640 3 impacted tooths, 9.2ms
+    image 1055/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4152650000-jpg_png_jpg.rf.75321ed8f50e34dbfd3286f22587e2b8.jpg: 640x640 5 Crowns, 9 Fillings, 7 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 1056/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4153410000-jpg_png_jpg.rf.02c1ae473162d199915b69811a5ad280.jpg: 640x640 2 impacted tooths, 8.9ms
+    image 1057/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4153410000-jpg_png_jpg.rf.f85b2d417c73adca5b330c9bd474021d.jpg: 640x640 1 Filling, 2 impacted tooths, 10.5ms
+    image 1058/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4154150000-jpg_png_jpg.rf.2de7eaed8e4970d88ebf813066201108.jpg: 640x640 1 Filling, 2 impacted tooths, 9.1ms
+    image 1059/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4154590000-jpg_png_jpg.rf.71a3d772114df009d4456d68e4bf84ef.jpg: 640x640 3 Crowns, 2 Fillings, 2 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 1060/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4155260000-jpg_png_jpg.rf.d8dac75928eed2084a23468685e3f406.jpg: 640x640 2 Crowns, 3 Fillings, 3 impacted tooths, 9.1ms
+    image 1061/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4155900000-jpg_png_jpg.rf.44be575199ec49dd0a5f776800eba417.jpg: 640x640 2 Fillings, 1 Implant, 1 impacted tooth, 9.0ms
+    image 1062/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4155980000-jpg_png_jpg.rf.ff23e7220074af44d3e91a1344fa8e08.jpg: 640x640 1 Filling, 2 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 1063/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4156130000-jpg_png_jpg.rf.ceaea92a95e0dc60b6b98980d0464999.jpg: 640x640 1 Crown, 7 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 1064/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4156130000-jpg_png_jpg.rf.d37461776af0e2939b78383e0118ca03.jpg: 640x640 1 Crown, 8 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.3ms
+    image 1065/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4156550000-jpg_png_jpg.rf.96d5eb3f49fbe3892bf249e8aca7aaf9.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 1066/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4156560000-jpg_png_jpg.rf.b1d95d3245fbf08b932a6b0025ffde77.jpg: 640x640 6 Crowns, 6 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.0ms
+    image 1067/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4156910000-jpg_png_jpg.rf.03a8ee1f5cd2e511cd7dacefe859d75d.jpg: 640x640 1 Filling, 2 impacted tooths, 9.1ms
+    image 1068/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4157590000_jpg.rf.259ab11f972c2102fb2341cc1742595c.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.2ms
+    image 1069/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4157600000_jpg.rf.c79f4d76fda6edfa98a4e67517e67f8d.jpg: 640x640 2 Crowns, 3 Fillings, 1 Implant, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 1070/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4159250000_jpg.rf.b6e22848e43eb2e742b7e2a3f2a964f3.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.0ms
+    image 1071/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4159290000_jpg.rf.136889b9b6392ca43c9a55e3f6a30b99.jpg: 640x640 8 Fillings, 4 impacted tooths, 8.9ms
+    image 1072/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4161540000_jpg.rf.ca865a36abefd11631445b4e702714a2.jpg: 640x640 1 Crown, 5 Fillings, 4 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 1073/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4162210000_jpg.rf.b7a5c95d117ccabc31c0acccd993f81a.jpg: 640x640 3 impacted tooths, 10.4ms
+    image 1074/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4163230000_jpg.rf.572999d4682c8170464fa847b59d1fbc.jpg: 640x640 1 Filling, 2 impacted tooths, 9.6ms
+    image 1075/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4163270000_jpg.rf.d8eb0a6faa272759fdd816cfa81387b9.jpg: 640x640 1 Crown, 4 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.1ms
+    image 1076/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4164930000_jpg.rf.6125f58d4278fdf9fd14e3458f974569.jpg: 640x640 3 Fillings, 5 impacted tooths, 9.1ms
+    image 1077/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4165200000_jpg.rf.368abb28378fa3fbfdc7e78ce2be3c68.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 3 impacted tooths, 9.0ms
+    image 1078/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4165330000_jpg.rf.709667b46fec5b758945584ed59ff93d.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 1079/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4165420000_jpg.rf.cd5d0951194061e2a8ad78b37d88bdf8.jpg: 640x640 4 Crowns, 6 Root Canal Treatments, 4 impacted tooths, 9.1ms
+    image 1080/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4166000000_jpg.rf.1428552c7bed34df2907a2f87b099043.jpg: 640x640 1 impacted tooth, 9.0ms
+    image 1081/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4166050000_jpg.rf.fe8587df2b9a06539b5f23cd9bfd7ddb.jpg: 640x640 1 Filling, 3 impacted tooths, 10.0ms
+    image 1082/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4167250000_jpg.rf.fa8d50bf4252a7372ec0b399818c3a47.jpg: 640x640 3 Fillings, 3 impacted tooths, 9.0ms
+    image 1083/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/416740000-jpg_png_jpg.rf.4b13a0a809f0dc4aa22097081f5be7fb.jpg: 640x640 10 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 1084/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4168110000_jpg.rf.83027ff7c4fe44e75324411bda9c2f1d.jpg: 640x640 2 Fillings, 2 impacted tooths, 8.9ms
+    image 1085/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4168110000_jpg.rf.c5596bd6a2199141b63312c9414cc19c.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.2ms
+    image 1086/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4169060000_jpg.rf.bf538f158d79082ce36aaba982bc2038.jpg: 640x640 9 Fillings, 4 impacted tooths, 9.2ms
+    image 1087/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4169350000_jpg.rf.e4cc48061ad6e472d4703e394392bfe2.jpg: 640x640 4 Crowns, 1 Filling, 3 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 1088/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4169840000_jpg.rf.751c12ed89bcf2ffb129f5f7641d2a9e.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 1089/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4169850000_jpg.rf.45470634ae78273654ead3724b66c87b.jpg: 640x640 2 Fillings, 4 impacted tooths, 10.1ms
+    image 1090/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173100000_jpg.rf.bb0a4fb12a6f5f6510225777efe8c9b6.jpg: 640x640 1 Filling, 4 impacted tooths, 9.2ms
+    image 1091/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173190000_jpg.rf.56da8e9327498d599f751c795021c0b4.jpg: 640x640 2 Crowns, 1 Root Canal Treatment, 2 impacted tooths, 9.3ms
+    image 1092/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173230000_jpg.rf.2bf7ee99585075ae1eb75364696f8b86.jpg: 640x640 1 impacted tooth, 9.2ms
+    image 1093/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173230000_jpg.rf.988f21b7567824cc816bc03d84ed3463.jpg: 640x640 1 impacted tooth, 9.6ms
+    image 1094/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173290000_jpg.rf.f680c2aac2fbca607ec24d90af80a8a2.jpg: 640x640 1 Crown, 2 Fillings, 1 Root Canal Treatment, 4 impacted tooths, 9.5ms
+    image 1095/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173480000_jpg.rf.c4d0f4672de77e3087cd77aab9ec148f.jpg: 640x640 1 Crown, 4 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 8.8ms
+    image 1096/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4173670000_jpg.rf.af91e2e8672e8620cb6211007e43c80a.jpg: 640x640 4 impacted tooths, 10.1ms
+    image 1097/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4175560000_jpg.rf.a9fa502e11a61195331fc37715244add.jpg: 640x640 6 Crowns, 3 Fillings, 6 Root Canal Treatments, 1 impacted tooth, 9.6ms
+    image 1098/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4179260000_jpg.rf.d29470cff9fa03aae5ec10b11780496e.jpg: 640x640 1 Crown, 13 Fillings, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 1099/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4180370000_jpg.rf.e8c313ba3660e98c79c94d668a1207fe.jpg: 640x640 4 Fillings, 4 impacted tooths, 8.9ms
+    image 1100/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4180560000_jpg.rf.a6e80dd3fbfe16c0ddac8742c3e8a828.jpg: 640x640 4 Fillings, 2 impacted tooths, 8.9ms
+    image 1101/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4180790000_jpg.rf.530b7b4dcc98ec90601474065fcda1e9.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 1102/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4181410000_jpg.rf.bb23f737378ebddbb11738708125914f.jpg: 640x640 1 Crown, 1 Root Canal Treatment, 4 impacted tooths, 9.0ms
+    image 1103/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4181830000_jpg.rf.6852aaa720f57cd262c3ba56ec9ba364.jpg: 640x640 2 impacted tooths, 9.6ms
+    image 1104/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4181830000_jpg.rf.f2a5e3a29cccd684e8620b22ad08643d.jpg: 640x640 2 impacted tooths, 9.3ms
+    image 1105/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4182350000_jpg.rf.d2861fad0c0b6b72b84e6e04562a52c0.jpg: 640x640 7 Fillings, 2 impacted tooths, 8.9ms
+    image 1106/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/43a3d624-Safary_Ebrahim_2022-06-12140900_jpg.rf.6181a294c8fdc5e9c7407f1cf066e8bc.jpg: 640x640 11 Fillings, 1 Missing teeth, 8.8ms
+    image 1107/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/444440000-jpg_png_jpg.rf.0d7d30948ea6a0d867f577cc94647ce8.jpg: 640x640 1 impacted tooth, 9.1ms
+    image 1108/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/449270000-jpg_png_jpg.rf.50ea0344a0a11eb500a418089089c418.jpg: 640x640 3 Fillings, 4 impacted tooths, 9.0ms
+    image 1109/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/454880000-jpg_png_jpg.rf.3b86b34891d41a3870d0521f6a74c260.jpg: 640x640 4 Fillings, 1 impacted tooth, 9.0ms
+    image 1110/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/45aabe56-Rezaee_Alireza_2022-06-12142256_jpg.rf.7bb90e3bf66321b041539425959f259a.jpg: 640x640 2 Crowns, 2 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 9.0ms
+    image 1111/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/461f0e29-Jalali_Mojtaba_44yo_31052021_144441_jpg.rf.0e833069e2d4379f67541629650d9a95.jpg: 640x640 1 Filling, 2 impacted tooths, 9.2ms
+    image 1112/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/471980000-jpg_png_jpg.rf.5dac3cf8de417eafbaffbd592d761242.jpg: 640x640 2 impacted tooths, 9.2ms
+    image 1113/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/474570000-jpg_png_jpg.rf.3b106a74ff8c44e3452b8d07eb6c2ff8.jpg: 640x640 1 Filling, 2 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 1114/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/483690000-jpg_png_jpg.rf.7066c072aa4c1d438ccc454ebd7a69fc.jpg: 640x640 2 Fillings, 4 impacted tooths, 9.0ms
+    image 1115/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4afa105e-SAHARI_PARSA_2020-06-01180600_jpg.rf.39db6652eb6a711b9b9f1b2d639d37de.jpg: 640x640 7 Cariess, 9.0ms
+    image 1116/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4d487220-ZAREII_MOJTABA_2020-07-12125051_jpg.rf.fcb2f7544c481c05596e314bf6c90f1e.jpg: 640x640 7 Fillings, 1 Missing teeth, 4 Root Canal Treatments, 9.2ms
+    image 1117/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4f0fbb1a-AMINI_NORI_ZAHIE_2020-08-24114944_jpg.rf.9eb5a407ca496991a247b69362850d8a.jpg: 640x640 1 Crown, 4 impacted tooths, 9.0ms
+    image 1118/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/4ff121c7-GHASEMI_MOHAMADHASAN_2020-07-21111636_jpg.rf.65dba8e3b34a06d2c309e266fdfb1f50.jpg: 640x640 6 Crowns, 5 Fillings, 1 Mandibular Canal, 2 Missing teeths, 2 Root Canal Treatments, 9.1ms
+    image 1119/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/506970000-jpg_png_jpg.rf.602d402ac74cb158145870e01910c00c.jpg: 640x640 9 Fillings, 3 impacted tooths, 8.9ms
+    image 1120/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/514540000-jpg_png_jpg.rf.e1de9df432f6f86eb2b51a1a6ae7ca2c.jpg: 640x640 1 Filling, 3 impacted tooths, 8.8ms
+    image 1121/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/51dbf488-KAKOLI_FATEMEH_2020-05-18192148_jpg.rf.1fb174dee3e9a6c793e7f5c12c513849.jpg: 640x640 (no detections), 8.8ms
+    image 1122/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/529630000-jpg_png_jpg.rf.851f2222651ad50f9c1e7d3f83f282c4.jpg: 640x640 10 Fillings, 2 impacted tooths, 8.9ms
+    image 1123/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/529630000-jpg_png_jpg.rf.935c1c88c40f325cf9a0a3e01b5e5329.jpg: 640x640 11 Fillings, 2 impacted tooths, 9.0ms
+    image 1124/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/551330000-jpg_png_jpg.rf.470ef2178e2912a151dd5c3aa896de3b.jpg: 640x640 2 Crowns, 2 Fillings, 2 impacted tooths, 9.0ms
+    image 1125/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/557e6075-Rezaee_Mostafa_2022-06-12140251_jpg.rf.d250b9a4e5b90f27aad607ebc5f8e31e.jpg: 640x640 4 Cariess, 3 Fillings, 2 Root Canal Treatments, 8.8ms
+    image 1126/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/55e731f5-Basirnejad_Mohammad_hossein_59y_31052021_173800_jpg.rf.5bcf49b55983ee7960380eea78a41e60.jpg: 640x640 3 Crowns, 4 Fillings, 2 Missing teeths, 5 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 1127/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/565020000-jpg_png_jpg.rf.c9be297ee8f10d5be59a122a31f4c64f.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.2ms
+    image 1128/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/569080000-jpg_png_jpg.rf.7a501c140ad96e5e2fa7564d526e322b.jpg: 640x640 4 impacted tooths, 9.3ms
+    image 1129/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/585090000-jpg_png_jpg.rf.f7bd05cb5783e7a945807a08c24094f0.jpg: 640x640 1 Filling, 2 impacted tooths, 9.1ms
+    image 1130/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/58ef2561-Ghasemi_Ali_2022-05-14201609_jpg.rf.ea1bea647c019720ae48a52aa6d601df.jpg: 640x640 4 Cariess, 2 Missing teeths, 9.1ms
+    image 1131/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/591140000-jpg_png_jpg.rf.3943557c8d454827fe2abb98eaca919a.jpg: 640x640 2 impacted tooths, 9.0ms
+    image 1132/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/596970000-jpg_png_jpg.rf.c3385ed3fec3e6d3bc37a45bf4a608ec.jpg: 640x640 1 Filling, 2 impacted tooths, 8.9ms
+    image 1133/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5999d45d-JAMAAT_ASHRAF_2020-08-11124553_jpg.rf.96d4c9bb2688569cb64e0c894c338e8b.jpg: 640x640 2 Crowns, 12 Fillings, 7 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 1134/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5b9f3557-Khodayvandi_Foroud_2022-05-14104605_jpg.rf.d223899b7b0d4925b8f7e9ffc86fb614.jpg: 640x640 1 Caries, 1 Filling, 3 Missing teeths, 1 Periapical lesion, 1 Root Canal Treatment, 8.9ms
+    image 1135/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5be6087c-Asghari_Sajjad_2022-06-12142142_jpg.rf.3839a70cd1afe9bd7c4a3216fc10d24b.jpg: 640x640 5 Fillings, 2 Missing teeths, 1 Periapical lesion, 9 Root Canal Treatments, 9.0ms
+    image 1136/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5c85f7b0-Foroghi_Zahra_45yo_01062021_191937_jpg.rf.a316966c3f91d122c60d0fab601fdc2d.jpg: 640x640 1 Crown, 17 Fillings, 1 Missing teeth, 3 Root Canal Treatments, 8.7ms
+    image 1137/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5d70d498-Golshenas_Hassan_35yo_31052021_184131_jpg.rf.0e8a072a8aae5410e97f60a3cdc3fb0b.jpg: 640x640 1 Caries, 9 Crowns, 2 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 1 impacted tooth, 9.0ms
+    image 1138/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5dc6c07e-NEJAT_MOHAMMAD_2020-06-10182747_jpg.rf.ad35217c403b125a1ab88b32c1dc9f0b.jpg: 640x640 5 Fillings, 4 Missing teeths, 8.9ms
+    image 1139/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5e90e658-Faridnia_Mohmmadtaha_2022-06-12141755_jpg.rf.07d3c22b05c1bd950e73154177664a28.jpg: 640x640 1 impacted tooth, 8.9ms
+    image 1140/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5f81def8-Niazi_Mohammad_hasan_2022-06-12141459_jpg.rf.149801e1f4c10d6f95335f54758f57fe.jpg: 640x640 3 Cariess, 1 Missing teeth, 8.7ms
+    image 1141/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/5f81def8-Niazi_Mohammad_hasan_2022-06-12141459_jpg.rf.2719a4e8c192e0084573aa019b9bb781.jpg: 640x640 6 Cariess, 1 Missing teeth, 8.7ms
+    image 1142/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/606030000-jpg_png_jpg.rf.7477e89e6aaed7e04a4e66029fdba706.jpg: 640x640 1 impacted tooth, 9.2ms
+    image 1143/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/606030000-jpg_png_jpg.rf.97abf8e4e4a528e451a72c6cc3eab272.jpg: 640x640 1 impacted tooth, 8.7ms
+    image 1144/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/619b45c4-Hatami_Hamedeh_2022-05-14130727_jpg.rf.949f54a5f5962fb8fc9d5c10c1a97391.jpg: 640x640 1 Caries, 3 Fillings, 2 Missing teeths, 8 Root Canal Treatments, 8.9ms
+    image 1145/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/645f5268-SHAHABI_MARZIIEH_2020-08-11110530_jpg.rf.c72c4c593ab74fffe066fef2a5d27f30.jpg: 640x640 5 Crowns, 16 Fillings, 9 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 1146/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/657890000-jpg_png_jpg.rf.de1797031d3788503d528c0a8b49a295.jpg: 640x640 1 Filling, 4 impacted tooths, 8.8ms
+    image 1147/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/66c704cb-Eildar_Mohammaad_2022-06-12141219_jpg.rf.f3afe77885a5f7cea14c696317317d8e.jpg: 640x640 2 Cariess, 1 Filling, 2 Root Canal Treatments, 9.0ms
+    image 1148/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/680650000-jpg_png_jpg.rf.d5cd1a037fe1c31506be01fe4ef65800.jpg: 640x640 4 impacted tooths, 8.9ms
+    image 1149/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/68fbecf7-JOKAR_PARVIN_2020-08-16192334_jpg.rf.57bf371986aa23d72fe5511183b3a9eb.jpg: 640x640 3 Missing teeths, 9.0ms
+    image 1150/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/695440000-jpg_png_jpg.rf.73604fa3346b7846ff9682da7cb502a2.jpg: 640x640 9 Fillings, 3 impacted tooths, 9.0ms
+    image 1151/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/695440000-jpg_png_jpg.rf.f9fbf43e0cf5e39de5424b0c410cd3ff.jpg: 640x640 9 Fillings, 3 impacted tooths, 9.2ms
+    image 1152/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/696830000-jpg_png_jpg.rf.247ae6064a3b7f07f8b6b3e8b7a84d86.jpg: 640x640 3 Crowns, 1 Root Canal Treatment, 2 impacted tooths, 9.1ms
+    image 1153/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/696830000-jpg_png_jpg.rf.4367823d87d2705cb76112dfe56d3da0.jpg: 640x640 3 Crowns, 1 Root Canal Treatment, 2 impacted tooths, 9.0ms
+    image 1154/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/6a7d8a38-Ghazvini_andarod_Mahsa_32y_01062021_092125_jpg.rf.99b440766cca8d7e9949bfeeebebbc4b.jpg: 640x640 3 Crowns, 14 Fillings, 2 Implants, 1 Missing teeth, 7 Root Canal Treatments, 9.1ms
+    image 1155/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/6fcaf7f8-HOOSHANGI_HOSEIN_2020-07-28194851_jpg.rf.330264423e73094835bfb0032fe5f09a.jpg: 640x640 1 Caries, 1 Crown, 8 Fillings, 3 Missing teeths, 1 Periapical lesion, 6 Root Canal Treatments, 9.3ms
+    image 1156/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/6fcaf7f8-HOOSHANGI_HOSEIN_2020-07-28194851_jpg.rf.4b691b0132f8d0d6b0ed6d9a150e1168.jpg: 640x640 1 Caries, 1 Crown, 8 Fillings, 2 Missing teeths, 1 Periapical lesion, 6 Root Canal Treatments, 9.0ms
+    image 1157/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/720990000-jpg_png_jpg.rf.8ad78f62d79159ceaaecc6db5a110d3b.jpg: 640x640 6 Crowns, 5 Fillings, 5 Root Canal Treatments, 1 impacted tooth, 8.9ms
+    image 1158/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/728710000-jpg_png_jpg.rf.276e03b5bbedfd1d7652e8e6a1b92690.jpg: 640x640 3 Crowns, 3 Fillings, 1 impacted tooth, 9.0ms
+    image 1159/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/738810000-jpg_png_jpg.rf.2a24c577865ea1ff44d2dd1081fcb2ac.jpg: 640x640 3 Crowns, 3 Fillings, 2 impacted tooths, 9.0ms
+    image 1160/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/738810000-jpg_png_jpg.rf.c69f52e074fe566283fb710270228e8c.jpg: 640x640 3 Crowns, 3 Fillings, 2 impacted tooths, 9.1ms
+    image 1161/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/74cef83a-SAFARY_KOBRA_2020-08-04121727_jpg.rf.9bfa9f86a66ad43f923e981ac1e11bef.jpg: 640x640 2 Crowns, 14 Fillings, 5 Root Canal Treatments, 9.2ms
+    image 1162/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/766200000-jpg_png_jpg.rf.54e3ad13a47df9cde6f9e8947745d85d.jpg: 640x640 4 Crowns, 1 Implant, 2 Root Canal Treatments, 3 impacted tooths, 9.1ms
+    image 1163/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/76a627bd-GOMESHLI_AMIRREZA_2020-08-16114426_jpg.rf.e23fec9f6dd8dee2b9a044f518b7ee77.jpg: 640x640 6 Cariess, 1 Filling, 9.5ms
+    image 1164/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/76d97056-KAKOLI_FATEMEH_2020-05-18192132_jpg.rf.1830960d68291b829851c6b54cf6d768.jpg: 640x640 1 Caries, 1 Crown, 8 Fillings, 1 Periapical lesion, 7 Root Canal Treatments, 9.2ms
+    image 1165/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/7790000-jpg_png_jpg.rf.040e1b62909190170302f19100ee3de3.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 1166/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/78b4adec-Gheme_Atefe_32yo_31052021_134714_jpg.rf.e106fa37a5d00090493243d727110c51.jpg: 640x640 3 Fillings, 1 Missing teeth, 3 Root Canal Treatments, 9.0ms
+    image 1167/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/7b790b79-MORADLI_QOLAMALI_2020-06-16120854_jpg.rf.c77f30af7059c635db6c308ba5e79cdc.jpg: 640x640 2 Cariess, 5 Crowns, 6 Fillings, 4 Root Canal Treatments, 9.0ms
+    image 1168/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/801070000-jpg_png_jpg.rf.dfa707def3827531c8e1a747110a8870.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.3ms
+    image 1169/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/82fb4119-Feyzi_Fateme_55yo_01062021_154551_jpg.rf.d9ed585a53d8221f2ba96f42a1c5ad26.jpg: 640x640 3 Crowns, 14 Fillings, 5 Root Canal Treatments, 9.4ms
+    image 1170/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/82fb4119-Feyzi_Fateme_55yo_01062021_154551_jpg.rf.fb218e63cb7cdf8b846ffdf2309daf5e.jpg: 640x640 3 Crowns, 13 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 9.1ms
+    image 1171/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/847260000-jpg_png_jpg.rf.269b4705b6b19808f1d2b255082af6d0.jpg: 640x640 1 Periapical lesion, 2 impacted tooths, 9.2ms
+    image 1172/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/84ac63a0-Alimoradi_Setareh_2022-06-12142305_jpg.rf.bc3e79496a9f6252e9a6625eddab0473.jpg: 640x640 4 Cariess, 9.0ms
+    image 1173/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/84e51705-NIROMAND_ROGHAYEH_2020-06-14113133_jpg.rf.fd18bbb0675ba96821424a602c4680ee.jpg: 640x640 1 Caries, 11 Fillings, 1 Periapical lesion, 7 Root Canal Treatments, 9.0ms
+    image 1174/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/884710000-jpg_png_jpg.rf.908b6a8d32f08ec03e93ee660908c01a.jpg: 640x640 1 Filling, 1 impacted tooth, 9.3ms
+    image 1175/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/8f659123-Arshikamel_Saeid_2022-06-12141848_jpg.rf.9b7752673a12acc3149f452929891d6a.jpg: 640x640 1 Filling, 9.1ms
+    image 1176/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/9007adf1-Hemati_Fatemeh_2022-06-12142847_jpg.rf.5c4575fae3020d2c31c60a8b8fa9285a.jpg: 640x640 1 Caries, 8 Crowns, 3 Fillings, 2 Missing teeths, 3 Root Canal Treatments, 9.4ms
+    image 1177/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/901500000-jpg_png_jpg.rf.093c847bb98c36309dc784ce6dd38823.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.1ms
+    image 1178/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/904370000-jpg_png_jpg.rf.2ed27b9bb46caf900b26770ecfe48d5f.jpg: 640x640 3 impacted tooths, 9.0ms
+    image 1179/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/911450000-jpg_png_jpg.rf.3aaa5bd7e9c8b6cfbe1e03105e0eb5b3.jpg: 640x640 4 Crowns, 1 Implant, 2 Root Canal Treatments, 3 impacted tooths, 9.2ms
+    image 1180/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/91320865-AHMADI_EDRIS_2020-07-18180728_jpg.rf.beb11d12d62ab288237fd83ee15f283b.jpg: 640x640 1 Caries, 1 Crown, 7 Fillings, 3 Root Canal Treatments, 2 impacted tooths, 10.1ms
+    image 1181/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/9152ba23-Janati_Ali_asghar_28yo_03012021_094614_jpg.rf.88ded5fef8c5e6c03f7b127915cb27da.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 9.2ms
+    image 1182/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/918810000-jpg_png_jpg.rf.6f4a19ebf9439172fdd58914ce7effeb.jpg: 640x640 1 Crown, 1 impacted tooth, 9.1ms
+    image 1183/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/95575d7a-Khazaee_Abbas_2022-06-12142012_jpg.rf.2b26faf6ea3eeb9ce709834870967dc0.jpg: 640x640 7 Crowns, 4 Fillings, 1 Missing teeth, 1 Root Canal Treatment, 9.2ms
+    image 1184/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/960210000-jpg_png_jpg.rf.2fea5bb08eba7b8471a5aa535276d1ca.jpg: 640x640 1 Crown, 2 Fillings, 4 impacted tooths, 9.0ms
+    image 1185/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/964810000-jpg_png_jpg.rf.90e0f72aa499de8c63d647a3940b9345.jpg: 640x640 2 Fillings, 2 impacted tooths, 9.0ms
+    image 1186/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/96738126-Faraj_Fatemeh_2022-06-12142338_jpg.rf.d5a90f0711f99a9a4e45c13594e49d72.jpg: 640x640 1 Crown, 1 Filling, 9.0ms
+    image 1187/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/97cd2c67-HALVAII_ZAHRA_2020-08-04102531_jpg.rf.64aaed4d8eb9c97db4022cf1df4177fb.jpg: 640x640 6 Crowns, 2 Fillings, 1 Missing teeth, 1 Root Canal Treatment, 9.1ms
+    image 1188/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/97cd2c67-HALVAII_ZAHRA_2020-08-04102531_jpg.rf.ab1548a874edc02057d82e2c244e01af.jpg: 640x640 6 Crowns, 2 Fillings, 1 Missing teeth, 1 Root Canal Treatment, 9.4ms
+    image 1189/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/985850000-jpg_png_jpg.rf.04706dd7efa5881d6930bd1bbf7efda7.jpg: 640x640 1 Filling, 4 impacted tooths, 9.3ms
+    image 1190/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/986190000-jpg_png_jpg.rf.ccfed9c21f9997f110483dc2b76d4904.jpg: 640x640 2 Fillings, 2 Missing teeths, 2 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 1191/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/987389b6-Hatami_Maryam_2022-06-12141013_jpg.rf.c5814d90726d7cdc9776cc12185b095a.jpg: 640x640 2 Cariess, 5 Fillings, 2 Missing teeths, 3 Root Canal Treatments, 9.3ms
+    image 1192/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/9a0ce887-Beyranvand_Mohammadmahdi_2022-06-12141541_jpg.rf.15aebe04ad229ac35382c8be89a125d9.jpg: 640x640 3 Cariess, 9.2ms
+    image 1193/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a0e9cf32-ESKANDARI_ABOLFAZL_2020-07-15181937_jpg.rf.2795cdf13d675e61e741a167310c6c29.jpg: 640x640 1 Caries, 2 Missing teeths, 9.0ms
+    image 1194/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a0e9cf32-ESKANDARI_ABOLFAZL_2020-07-15181937_jpg.rf.6815ac28f39d3aeeeed2f3984b1a9951.jpg: 640x640 1 Caries, 3 Missing teeths, 8.8ms
+    image 1195/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a1b5bbda-Parhizkar_Marziyeh_2022-06-12142931_jpg.rf.77927c13ce3aadfbc430650cf1eb8c68.jpg: 640x640 4 Cariess, 4 Fillings, 1 Missing teeth, 1 Periapical lesion, 3 Root Canal Treatments, 1 impacted tooth, 9.2ms
+    image 1196/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a26c9066-Rezaee_Leila_2022-05-14194153_jpg.rf.c3a6e73fe2e4b1b813d1b548d489c2df.jpg: 640x640 1 Caries, 6 Fillings, 1 Missing teeth, 1 Root Canal Treatment, 2 impacted tooths, 8.8ms
+    image 1197/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a284e7f9-KAKOLI_FATEMEH_2020-05-18192132_jpg.rf.1e519fe5ea02e615aac3bff5cb009bc0.jpg: 640x640 1 Crown, 7 Fillings, 6 Root Canal Treatments, 9.1ms
+    image 1198/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a5617492-Godarzi_Ferdos_2022-06-12142243_jpg.rf.558b68391186fec9e76e5d5085506792.jpg: 640x640 2 Cariess, 5 Crowns, 4 Fillings, 2 Missing teeths, 13 Root Canal Treatments, 1 impacted tooth, 9.3ms
+    image 1199/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a76f409a-Kamrani_Zahra_46y_01062021_114236_jpg.rf.7e97a164682e77587a60e4f9f89c212f.jpg: 640x640 10 Crowns, 6 Fillings, 2 Implants, 1 Missing teeth, 6 Root Canal Treatments, 9.2ms
+    image 1200/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/a814aa00-Gharibian_Arpa_29y_01062021_190839_jpg.rf.3158e8faa90a6b4c1cdd664991d363f6.jpg: 640x640 1 Caries, 1 Crown, 3 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 1201/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/aa528b04-Jadid_tavaf_Aliye_58y_02062021_101731_jpg.rf.1d542c801a33d6fd614517773e13e616.jpg: 640x640 12 Crowns, 3 Implants, 1 Missing teeth, 5 Root Canal Treatments, 9.5ms
+    image 1202/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/ae1079a6-Khalajamirhoseini_Hediyeh_2022-06-12140652_jpg.rf.aad734a1719eb803370637c9d92b59e0.jpg: 640x640 2 Fillings, 1 impacted tooth, 9.5ms
+    image 1203/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b1593d4d-Kheyri_Hamid_reza_32yo_01062021_145239_jpg.rf.0cabf9bc33923451b3db7987a8944e6f.jpg: 640x640 5 Fillings, 1 Missing teeth, 1 Periapical lesion, 3 Root Canal Treatments, 9.2ms
+    image 1204/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b1593d4d-Kheyri_Hamid_reza_32yo_01062021_145239_jpg.rf.95966aa66d3be020a0e15af777f8804c.jpg: 640x640 1 Caries, 5 Fillings, 1 Missing teeth, 1 Periapical lesion, 3 Root Canal Treatments, 9.3ms
+    image 1205/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b2a5c463-Azimi_Fatemeh_2022-06-12142800_jpg.rf.736c207ed26fbb04a20907ed9df8fe12.jpg: 640x640 1 Caries, 1 Filling, 2 Missing teeths, 9.2ms
+    image 1206/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b2a5c463-Azimi_Fatemeh_2022-06-12142800_jpg.rf.cee4e4c8f1e59cd0af0c6e4a3bb569cc.jpg: 640x640 1 Caries, 1 Filling, 2 Missing teeths, 9.4ms
+    image 1207/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b2a5c463-Azimi_Fatemeh_2022-06-12142800_jpg.rf.d7d8ae0cf9f52215f9161ea6b721921a.jpg: 640x640 1 Caries, 1 Filling, 2 Missing teeths, 9.2ms
+    image 1208/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b471100b-SALIMI_ATEFEH_2020-07-21100703_jpg.rf.4b92bf92c101fa94a2df1dfcf010d669.jpg: 640x640 4 Cariess, 1 Filling, 1 Root Canal Treatment, 8.9ms
+    image 1209/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b477df0d-Karegar_Rahman_38y_01062021_141537_jpg.rf.4941576df42ee0d83a4b479d25a92651.jpg: 640x640 1 Caries, 4 Missing teeths, 1 impacted tooth, 9.3ms
+    image 1210/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b477df0d-Karegar_Rahman_38y_01062021_141537_jpg.rf.6aa3dad193db5c30ba6e1629a038504a.jpg: 640x640 1 Caries, 4 Missing teeths, 1 impacted tooth, 9.3ms
+    image 1211/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b54db56a-Haji_esfandiyari_Fereshteh_2022-05-14201132_jpg.rf.2ad1d3cbd3d717ca885d09910dfb1490.jpg: 640x640 1 Caries, 1 Crown, 8 Fillings, 2 Missing teeths, 6 Root Canal Treatments, 9.1ms
+    image 1212/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b66fbd9e-KARIMI_MILAD_2020-07-26191709_jpg.rf.28b4b54e68ef7dec92c23b2c92e05add.jpg: 640x640 3 Cariess, 1 Missing teeth, 2 impacted tooths, 9.0ms
+    image 1213/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b7246eca-RAMAZANI_REZA_2020-02-22120547_jpg.rf.0d0ecbd8ea6318d72ae5aa556e06bf0a.jpg: 640x640 1 Caries, 2 Crowns, 12 Fillings, 8 Root Canal Treatments, 9.3ms
+    image 1214/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b99b3517-Fath_abadi_boz_cheloee_Fateme_46yo_31052021_155111_jpg.rf.5b3c458e6b0e09459619b3109ddfece0.jpg: 640x640 5 Crowns, 5 Fillings, 7 Root Canal Treatments, 9.1ms
+    image 1215/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b99b3517-Fath_abadi_boz_cheloee_Fateme_46yo_31052021_155111_jpg.rf.b2fe876fcd349d62147d9468c02b03b5.jpg: 640x640 5 Crowns, 6 Fillings, 7 Root Canal Treatments, 9.4ms
+    image 1216/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b9f5d067-Arshikamel_Saeid_2022-06-12141857_jpg.rf.f4202f361881284c06243f86a2bee3af.jpg: 640x640 2 Fillings, 2 Missing teeths, 9.5ms
+    image 1217/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/b9f5d067-Arshikamel_Saeid_2022-06-12141857_jpg.rf.fc41a11b3fa95d449e560c79c9514ab2.jpg: 640x640 2 Fillings, 2 Missing teeths, 9.3ms
+    image 1218/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/bc2dd43c-Fallahi_Golamreza_2022-06-12141808_jpg.rf.d225d3e9018d440241c1626b7a2775f5.jpg: 640x640 4 Fillings, 1 Missing teeth, 5 Root Canal Treatments, 9.8ms
+    image 1219/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/bc55b198-Vasegh_Sepideh_2022-06-12142738_jpg.rf.c3674239336131769151a5da49a00f6d.jpg: 640x640 3 Crowns, 17 Fillings, 8 Root Canal Treatments, 1 impacted tooth, 9.4ms
+    image 1220/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/bd60ee19-BABAII_FATEMEH_2020-07-29112645_jpg.rf.c835b71c1170fb10fab6e7fe42351f17.jpg: 640x640 7 Crowns, 3 Fillings, 2 Missing teeths, 5 Root Canal Treatments, 9.4ms
+    image 1221/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/c159ab67-Hoseinian_rad_Helia_6yo_02062021_115503_jpg.rf.4ad3e9fb5349d3be1927dc7d3432ee4b.jpg: 640x640 1 Caries, 9.2ms
+    image 1222/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/c38626fe-Jahedi_dlivand_Azam_42yo_02062021_130546_jpg.rf.b977b68fb89276b70bfcfd6ec68a79f2.jpg: 640x640 2 Crowns, 6 Fillings, 1 Missing teeth, 1 Root Canal Treatment, 8.9ms
+    image 1223/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/c3ae3680-Lotfi_Amin_2022-05-14175852_jpg.rf.ab3c46b44bbebe8c01c85645d097d969.jpg: 640x640 2 Cariess, 2 Fillings, 2 Periapical lesions, 1 impacted tooth, 9.1ms
+    image 1224/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/c9b78aa3-LOTFI_PARIA_2020-05-18184452_jpg.rf.42576813d7ed867c9cbef75fd9b3f5b8.jpg: 640x640 4 Crowns, 8 Fillings, 3 Missing teeths, 3 Root Canal Treatments, 9.3ms
+    image 1225/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AAYUSHI-_2023-10-26183314_1_png.rf.4e922604a759e7c19a767fb5d9391aaf.jpg: 640x640 1 Mandibular Canal, 3 impacted tooths, 9.4ms
+    image 1226/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ABHIJOT-SINGH_2023-10-21142308_1_png.rf.1a1c49066bf6f51972623319ef533a5c.jpg: 640x640 1 Filling, 1 impacted tooth, 9.0ms
+    image 1227/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AGYA-KAUR_2023-10-20191848_1_png.rf.2f0bcdbf204e316c4e86e17e3fa714f6.jpg: 640x640 5 Implants, 2 Missing teeths, 2 Root Canal Treatments, 8.9ms
+    image 1228/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMANDEEP-KAUR_2023-10-20190033_1_png.rf.dc6d2b59d56b003137323ba614e100f8.jpg: 640x640 1 Mandibular Canal, 2 Missing teeths, 8.9ms
+    image 1229/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMANDEEP-KAUR_2023-10-21140436_1_png.rf.45a51a91ea6533aaf62a822a0b0cdba3.jpg: 640x640 3 Crowns, 4 Missing teeths, 1 Root Canal Treatment, 8.8ms
+    image 1230/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMANDEEP-KAUR_2023-10-21152645_1_png.rf.4f6c9797fde0204771c3fb9563e848f0.jpg: 640x640 1 Filling, 2 Mandibular Canals, 1 Root Canal Treatment, 8.8ms
+    image 1231/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMARJEET-KAUR_2023-10-20190704_1_png.rf.a9de6e8a7b1035272565e98650ba1428.jpg: 640x640 1 Mandibular Canal, 1 Missing teeth, 9.1ms
+    image 1232/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMARPREET-KALAIR_2023-10-21124049_1_png.rf.cff4435e8b1dd8a98cd32e7cb3b86e81.jpg: 640x640 8 Crowns, 6 Implants, 2 Mandibular Canals, 2 Missing teeths, 9.1ms
+    image 1233/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_AMRITPAL-KAUR_2023-10-21115717_1_png.rf.bf8cbff021be1569201abea89305b053.jpg: 640x640 1 Caries, 1 Mandibular Canal, 2 impacted tooths, 9.0ms
+    image 1234/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ANIL-MITTAL_2023-10-20144943_1_png.rf.75482d6047e49449fdda25f685ef66ed.jpg: 640x640 19 Crowns, 1 Filling, 2 Mandibular Canals, 3 Missing teeths, 1 Root Canal Treatment, 1 impacted tooth, 9.0ms
+    image 1235/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ANITA-BANSAL_2023-10-20191615_1_png.rf.891a1aa3a29d520b01ec9751d4a3f833.jpg: 640x640 2 Crowns, 1 Mandibular Canal, 2 Missing teeths, 1 Root Canal Treatment, 9.0ms
+    image 1236/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ANJU-BUTTAR_2023-10-20191020_1_png.rf.182858a77047a943ccc3ffaf3e0f6ac9.jpg: 640x640 3 Crowns, 2 Mandibular Canals, 1 Missing teeth, 8.9ms
+    image 1237/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ANKITA-RANI_2023-10-20191304_1_png.rf.8345d846dcea7d98026ad21811b5a12e.jpg: 640x640 2 Cariess, 2 Mandibular Canals, 8.8ms
+    image 1238/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ARJAN-SINGH_2023-10-21114049_1_png.rf.fb41bddc836df174a279a41cfcde8c8e.jpg: 640x640 1 Caries, 1 Mandibular Canal, 8.9ms
+    image 1239/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ARMINDER-SINGH_2023-10-21151030_1_png.rf.16098151a708e7e70f3dce140144c62e.jpg: 640x640 1 Mandibular Canal, 8.9ms
+    image 1240/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ARVIND-SINGH_2023-10-21135329_1_png.rf.3f9387c63e0330bc01af801a4dfec13c.jpg: 640x640 2 Mandibular Canals, 1 Missing teeth, 9.0ms
+    image 1241/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ASMITA-_2023-10-26182940_1_png.rf.275a5791f432d8f4dae05299d02346cc.jpg: 640x640 7 Crowns, 8.9ms
+    image 1242/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BALJINDER-KAUR_2023-10-20161909_1_png.rf.f987f66f2c00d64d84223e9925f7d0e8.jpg: 640x640 9 Crowns, 2 Mandibular Canals, 2 Missing teeths, 7 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 1243/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BALWANT-SINGH_2023-10-20145931_1_png.rf.97e2015330cbf1a363f0bc04610d7a52.jpg: 640x640 2 Cariess, 2 Mandibular Canals, 2 Missing teeths, 1 Periapical lesion, 9.0ms
+    image 1244/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BHAVTAARAN-KAUR_2023-10-20162536_1_png.rf.a630c950cbf81fff3fd2692f50a9e80a.jpg: 640x640 2 Mandibular Canals, 3 impacted tooths, 8.8ms
+    image 1245/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BHOLA-KHAN_2023-10-20161201_1_png.rf.a2e3c6fc6a6ec035809c1d102ac08e41.jpg: 640x640 1 Caries, 2 Mandibular Canals, 8.9ms
+    image 1246/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BHUPINDER-SINGH_2023-10-20151610_1_png.rf.15061371e6ef0e414da7f09988fcf40b.jpg: 640x640 1 Caries, 1 Mandibular Canal, 4 Missing teeths, 9.0ms
+    image 1247/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_BHUPINDER-SINGH_2023-10-20151610_1_png.rf.f7d30875368c9750d39efded3b7cef4e.jpg: 640x640 1 Caries, 1 Mandibular Canal, 4 Missing teeths, 8.9ms
+    image 1248/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Baljit-Singh_2023-10-26182420_1_png.rf.de97fc48696bc2b661bf650a6a6f5f9f.jpg: 640x640 2 Fillings, 2 Mandibular Canals, 2 Root Canal Treatments, 9.0ms
+    image 1249/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_CHANDER-BHUSHAN_2023-10-20154033_1_png.rf.e45170a85b72db432da68f1075daf6b6.jpg: 640x640 9 Crowns, 2 Fillings, 2 Implants, 2 Mandibular Canals, 1 Missing teeth, 3 Root Canal Treatments, 8.8ms
+    image 1250/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_CHARNJIT-KAUR_2023-10-21113227_1_png.rf.4bebd0d4d0dc9c8c10c79307a9b43187.jpg: 640x640 1 Caries, 3 Missing teeths, 9.4ms
+    image 1251/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_CHINDERPAL-KAUR_2023-10-21160848_1_png.rf.fb2aebe0bf7ef1b9e3f4cc28dbd0e611.jpg: 640x640 6 Crowns, 2 Mandibular Canals, 4 Root Canal Treatments, 9.6ms
+    image 1252/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_DALISHA-MONGA_2023-10-20164736_1_png.rf.4865a4612685ef2fed8fd3b4cf89f0e2.jpg: 640x640 1 Missing teeth, 11.3ms
+    image 1253/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_DALWINDER-SINGH_2023-10-21132612_1_png.rf.b0a5696f15d7d50a3aa04a1485059b08.jpg: 640x640 (no detections), 11.5ms
+    image 1254/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_DHARAM-SINGH_2023-10-20153546_1_png.rf.72a57e8263089fa41087deffe243b925.jpg: 640x640 2 Crowns, 1 Mandibular Canal, 1 Missing teeth, 2 Root Canal Treatments, 2 impacted tooths, 9.4ms
+    image 1255/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_DINESH-LOKHANDE_2023-10-26182717_1_png.rf.3f5429fa4939e1ff1e5743fcb41e9f7c.jpg: 640x640 3 Crowns, 2 Mandibular Canals, 9.2ms
+    image 1256/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Davinder-Singh_2023-10-26185246_1_png.rf.2771c08802c90746a8c051c79f58d669.jpg: 640x640 1 Caries, 1 Mandibular Canal, 2 Missing teeths, 9.1ms
+    image 1257/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_GAGANDEEP-KAUR_2023-10-20162347_1_png.rf.29c892f2d38135440be713162e3a3dfd.jpg: 640x640 2 Mandibular Canals, 9.1ms
+    image 1258/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_GURNAM-SINGH_2023-10-21115229_1_png.rf.9c7877698ad81e40fb1078a566b38f7a.jpg: 640x640 2 Mandibular Canals, 2 Missing teeths, 9.2ms
+    image 1259/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_GURPINDER-KAUR_2023-10-20163202_1_png.rf.51f11a9cbe81a2fdad6c1cb9eeeb037b.jpg: 640x640 1 Caries, 2 Mandibular Canals, 1 Missing teeth, 1 impacted tooth, 9.2ms
+    image 1260/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_GURPREET-KAUR-_2023-10-21142921_1_png.rf.edd50e1cff52b85089a3bce42d583c12.jpg: 640x640 2 Mandibular Canals, 3 impacted tooths, 9.6ms
+    image 1261/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Gurleen-Kaur_2023-10-26182145_1_png.rf.62c9c65916ddaf48ced4b08037b486c7.jpg: 640x640 1 Mandibular Canal, 3 impacted tooths, 9.3ms
+    image 1262/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Gurmail-Kaur_2023-10-26181734_1_png.rf.799ff092ed6d1a2fc450d8b0d3b74d8c.jpg: 640x640 3 Missing teeths, 9.2ms
+    image 1263/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_HARDEV-SINGH_2023-10-21135132_1_png.rf.c076069f97ac96d5724033a0f5848bcb.jpg: 640x640 2 Cariess, 1 Filling, 2 Mandibular Canals, 1 Missing teeth, 9.0ms
+    image 1264/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_HARJINDER-SINGH_2023-10-20161418_1_png.rf.0e07ea11a3288b8e68146067da033ba2.jpg: 640x640 1 Crown, 3 Missing teeths, 1 Root Canal Treatment, 9.1ms
+    image 1265/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_HARPAL-SINGH_2023-10-20160532_1_png.rf.58d5f06923c607621415271f0b96fd2d.jpg: 640x640 2 Missing teeths, 1 Periapical lesion, 9.2ms
+    image 1266/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_HARSIMRAN-SINGH_2023-10-20162516_1_png.rf.edb93209257dcfe69d978d685b45a496.jpg: 640x640 1 Mandibular Canal, 5 impacted tooths, 9.1ms
+    image 1267/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Harwinder-Singh_2023-10-26181841_1_png.rf.8f25a8dafe4e5618d2d87a449a560659.jpg: 640x640 1 Mandibular Canal, 9.1ms
+    image 1268/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JAGROOP-SINGH_2023-10-21142648_1_png.rf.f294b7920ce084f4500323bb3a326eb8.jpg: 640x640 1 Missing teeth, 8.9ms
+    image 1269/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JAGWINDER-SINGH_2023-10-21161007_1_png.rf.f6c82ab78f60dfcaa9acac2ba27b3842.jpg: 640x640 1 Missing teeth, 1 Root Canal Treatment, 2 impacted tooths, 9.3ms
+    image 1270/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JANISH-NIKHANJ_2023-10-20161445_1_png.rf.d11a8406c5ae72ae89e74ac0fc96d380.jpg: 640x640 2 Mandibular Canals, 4 impacted tooths, 9.2ms
+    image 1271/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JASMEEN-KAUR_2023-10-20145534_1_png.rf.47e389154aba8f5ad2e3663f4aa6d2d8.jpg: 640x640 1 Caries, 4 impacted tooths, 9.1ms
+    image 1272/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JASNEET-SINGH_2023-10-21143000_1_png.rf.d83844ca3f623d29164ff19f9ccb940d.jpg: 640x640 3 Crowns, 3 Fillings, 4 Missing teeths, 5 Root Canal Treatments, 9.2ms
+    image 1273/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JASWINDER-KAUR_2023-10-20161029_1_png.rf.ac52057568cad4510ed0bc74495500ca.jpg: 640x640 1 Crown, 2 Fillings, 2 Mandibular Canals, 3 Missing teeths, 7 Root Canal Treatments, 9.2ms
+    image 1274/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JASWINDER-KAUR_2023-10-21151433_1_png.rf.b4381391bcf933e339e9ec121231a8de.jpg: 640x640 1 Caries, 1 Filling, 4 Missing teeths, 3 Root Canal Treatments, 9.2ms
+    image 1275/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_JATINDER-NARULA_2023-10-20162902_1_png.rf.2b92849dc8c0239423c82cb371294dcc.jpg: 640x640 3 Missing teeths, 9.4ms
+    image 1276/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Jatan-jot-Kaur_2023-10-26182308_1_png.rf.663991f1bcca6ec128a5a280b1e80f3f.jpg: 640x640 2 Mandibular Canals, 1 Missing teeth, 9.3ms
+    image 1277/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_KAVITA-GOYAL_2023-10-21152605_1_png.rf.b3f9c8dbff11bafcbf02b21526459135.jpg: 640x640 1 Caries, 9.1ms
+    image 1278/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_KRISHAN-KUMAR_2023-10-20160352_1_png.rf.f222b04f1444f3bbac2a1b35ceff91eb.jpg: 640x640 1 Caries, 1 Crown, 5 Missing teeths, 1 Periapical lesion, 1 Root Canal Treatment, 9.1ms
+    image 1279/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_KULDEEP-KAUR_2023-10-20153121_1_png.rf.49201980bdbe74659a9d7494f8cbcd79.jpg: 640x640 (no detections), 9.1ms
+    image 1280/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Kuldeep-Kaur_2023-10-26182125_1_png.rf.0471d3c3756516f33eaa83e9bffc73cc.jpg: 640x640 1 Caries, 6 Crowns, 2 Fillings, 2 Mandibular Canals, 3 Missing teeths, 2 Root Canal Treatments, 8.9ms
+    image 1281/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Kuldeep-Singh_2023-10-26184048_1_png.rf.2b99642764ef4e90883f01d50a8056b8.jpg: 640x640 9 Crowns, 1 Mandibular Canal, 3 Missing teeths, 9.2ms
+    image 1282/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Kuljeet-Kaur_2023-10-21115654_1_png.rf.63773512420a221a7b77b0ec3452c98e.jpg: 640x640 4 Crowns, 2 Implants, 2 Missing teeths, 4 Root Canal Treatments, 9.2ms
+    image 1283/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MALKEET-KAUR_2023-10-20151411_1_png.rf.e111536c919266dc2db71efdf63e11c8.jpg: 640x640 2 Cariess, 6 Crowns, 5 Missing teeths, 3 Root Canal Treatments, 9.0ms
+    image 1284/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MAMTA-RANI_2023-10-20191749_1_png.rf.363322892977072a417880e71146cd93.jpg: 640x640 1 Caries, 3 Crowns, 1 Filling, 4 Missing teeths, 2 Root Canal Treatments, 9.1ms
+    image 1285/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MANDEEP-SINGH_2023-10-20145639_1_png.rf.3af05028eab04136d57b208a858a3a0f.jpg: 640x640 2 Fillings, 2 Mandibular Canals, 1 impacted tooth, 9.2ms
+    image 1286/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MANJU-BHANDU_2023-10-26155054_1_png.rf.747c6fb71cce99df23bfda7c591e0511.jpg: 640x640 2 Mandibular Canals, 9.1ms
+    image 1287/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MEENU-SAUN_2023-10-21152626_1_png.rf.964b7f992ce9cd780dcd762dba15d295.jpg: 640x640 3 Cariess, 2 Fillings, 5 Missing teeths, 1 Root Canal Treatment, 9.0ms
+    image 1288/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MOHINDER-PAL_2023-10-20163439_1_png.rf.72fd76ece51da62a5a4c0075d7b975a2.jpg: 640x640 1 Caries, 1 Missing teeth, 9.2ms
+    image 1289/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_MUNSHI-RAM_2023-10-20191153_1_png.rf.01bc79a46a422ed59902bafce1e1b6d8.jpg: 640x640 1 Caries, 2 Mandibular Canals, 2 Missing teeths, 9.0ms
+    image 1290/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Mangat-Singh_2023-10-26155846_1_png.rf.c6b8c518447ed7b722a189451ea5d6dc.jpg: 640x640 14 Crowns, 1 Missing teeth, 8.9ms
+    image 1291/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Myara-_2023-10-26182103_1_png.rf.51c04519cf58e85a8893601e4abd5e3d.jpg: 640x640 (no detections), 8.9ms
+    image 1292/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_NACHHATTAR-SINGH_2023-10-20191643_1_png.rf.c07b2dba72460fc11af766e7b303039c.jpg: 640x640 2 Cariess, 8.8ms
+    image 1293/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_NARESH-KUMAR_2023-10-20165636_1_png.rf.1ef625f795046761a6db64db88e7f436.jpg: 640x640 2 Mandibular Canals, 1 Root Canal Treatment, 2 impacted tooths, 8.9ms
+    image 1294/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_NARINDER-SINGH_2023-10-20161939_1_png.rf.0723fa2945ac076f74a493331d225b1a.jpg: 640x640 4 Cariess, 1 Crown, 1 Filling, 1 Missing teeth, 5 Root Canal Treatments, 8.9ms
+    image 1295/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_NEERAJ-_2023-10-21135717_1_png.rf.fa559209e2ad623aa6faec0dbd4a425e.jpg: 640x640 1 Caries, 2 Crowns, 1 Mandibular Canal, 9.1ms
+    image 1296/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Narinder-mohan_2023-10-26155801_1_png.rf.4f43336581f4419714fa67adafe7f32d.jpg: 640x640 8 Crowns, 1 Root Canal Treatment, 9.1ms
+    image 1297/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_P-S-MANN_2023-10-20145003_1_png.rf.077ab38dc849f1869638f76986f3fa27.jpg: 640x640 2 Cariess, 1 Missing teeth, 9.1ms
+    image 1298/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PARMINDER-KAUR_2023-10-20145303_1_png.rf.267d6535704090d35fd7cc76837618bc.jpg: 640x640 1 Crown, 2 Missing teeths, 4 Root Canal Treatments, 9.0ms
+    image 1299/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PARMJEET-KAUR_2023-10-21142426_1_png.rf.28792f2e7f6efe6581b19569f64a21ce.jpg: 640x640 1 Caries, 6 Missing teeths, 9.0ms
+    image 1300/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PARMJEET-KAUR_2023-10-21150909_1_png.rf.afc68ea354d0f9cecd6c378e93a29e22.jpg: 640x640 1 Mandibular Canal, 2 Missing teeths, 2 impacted tooths, 9.0ms
+    image 1301/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PAVAN-KUMAR_2023-10-20164616_1_png.rf.2a581b8b00451781f761b801bf4f6623.jpg: 640x640 1 Filling, 1 Mandibular Canal, 3 Missing teeths, 9.3ms
+    image 1302/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_POOJA-_2023-10-21134550_1_png.rf.e74a8989e4110815d9a389844c04b281.jpg: 640x640 1 Caries, 1 Crown, 1 Mandibular Canal, 1 Missing teeth, 2 Root Canal Treatments, 2 impacted tooths, 9.1ms
+    image 1303/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PRINCE-GOYAL_2023-10-20161359_1_png.rf.a4dfc31734797e52c6f1d97395fab1cc.jpg: 640x640 1 Mandibular Canal, 10.0ms
+    image 1304/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PRITAM-SINGH_2023-10-21124852_1_png.rf.8463cfed8873369d475a98e9491b6889.jpg: 640x640 5 Crowns, 4 Missing teeths, 7 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 1305/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PURSHOTAM-DAS_2023-10-20150734_1_png.rf.3e2340ad0fc3bda85f567c9474e1ae4a.jpg: 640x640 2 Mandibular Canals, 1 Missing teeth, 1 Root Canal Treatment, 9.3ms
+    image 1306/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_PURSHOTAM-DAS_2023-10-20150734_1_png.rf.8cedd68770bbfe9ca15c8a6671080507.jpg: 640x640 2 Mandibular Canals, 1 Missing teeth, 1 Root Canal Treatment, 9.0ms
+    image 1307/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Parmjeet-Kaur_2023-10-26184553_1_png.rf.72468dd074558cedea18bfc950df2976.jpg: 640x640 2 Mandibular Canals, 1 Missing teeth, 1 Periapical lesion, 9.3ms
+    image 1308/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAJ-KUMAR_2023-10-20150610_1_png.rf.f229ee08fccd4e170861e6d8a555b70a.jpg: 640x640 2 Cariess, 4 Missing teeths, 1 Periapical lesion, 8.8ms
+    image 1309/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAJ-KUMAR_2023-10-21123035_1_png.rf.938b37a99f509dfd423d2a90544c75e2.jpg: 640x640 2 Mandibular Canals, 9.2ms
+    image 1310/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAJEEV-DAS_2023-10-21113347_1_png.rf.9023a4687513b83a0ce9a062090605af.jpg: 640x640 1 Mandibular Canal, 1 Missing teeth, 11.0ms
+    image 1311/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAJENDER-KALRA_2023-10-20191516_1_png.rf.149fcc2bf31213e2fbee455ac374f747.jpg: 640x640 2 Missing teeths, 3 Root Canal Treatments, 9.2ms
+    image 1312/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAJVEER-SINGH_2023-10-21142823_1_png.rf.33e21c96137227df9594d97bb8a99d32.jpg: 640x640 4 impacted tooths, 9.1ms
+    image 1313/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAM-SINGH_2023-10-21113847_1_png.rf.c1d3cd9bbe78b6bf1e8a4ac881992b2c.jpg: 640x640 1 Filling, 3 Missing teeths, 9.0ms
+    image 1314/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_RAMANDEEP-KAUR_2023-10-20151946_1_png.rf.d349a57c5a1fa917ac5b5d99b529a945.jpg: 640x640 1 Mandibular Canal, 2 impacted tooths, 8.9ms
+    image 1315/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Resham-Singh_2023-10-21160819_1_png.rf.4dc84c6dfa54ea4c17aac1190fa1dc34.jpg: 640x640 9 Crowns, 6 Implants, 3 Missing teeths, 2 Root Canal Treatments, 8.8ms
+    image 1316/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SANTOSH-SINGLA_2023-10-26164008_1_png.rf.915f6c962748fb38bc4edbc81ab533c9.jpg: 640x640 15 Crowns, 12 Implants, 5 Root Canal Treatments, 8.9ms
+    image 1317/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SARABJEET-KAUR_2023-10-26163908_1_png.rf.9830368c050533988e3311aca0d4843c.jpg: 640x640 1 Filling, 2 Mandibular Canals, 2 Missing teeths, 8.9ms
+    image 1318/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SHARANDEEP-SINGH_2023-10-26161152_1_png.rf.b2de28e346f1fb5e48339094defc4ae2.jpg: 640x640 2 Mandibular Canals, 8.9ms
+    image 1319/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SHER-SINGH_2023-10-20154325_1_png.rf.218ee16e029b5e62146fe9a36a342470.jpg: 640x640 1 Missing teeth, 1 Periapical lesion, 8.8ms
+    image 1320/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SHINDER-KAUR_2023-10-21132413_1_png.rf.a55b9b742d8105d8d440333c6b5ac75d.jpg: 640x640 1 Missing teeth, 8.8ms
+    image 1321/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SHINDERPAL-KAUR_2023-10-26160745_1_png.rf.c144950f109ce6ad2b20530843c6f626.jpg: 640x640 2 Mandibular Canals, 8.9ms
+    image 1322/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SUKHJIT-KAUR_2023-10-20145701_1_png.rf.9cc7498e3c2bbe06b916842208972950.jpg: 640x640 1 Mandibular Canal, 2 Missing teeths, 9.1ms
+    image 1323/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SUKHVEER-KAUR_2023-10-20165013_1_png.rf.b2348ae229b2206c227d1db7f4200c9e.jpg: 640x640 1 Caries, 2 Mandibular Canals, 1 Root Canal Treatment, 8.9ms
+    image 1324/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SURJEET-SINGH_2023-10-21115406_1_png.rf.b7f136fb55b222a64c993181eec5626d.jpg: 640x640 1 Caries, 2 Fillings, 2 Mandibular Canals, 1 impacted tooth, 9.2ms
+    image 1325/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_SUSHMA-RANI_2023-10-20145431_1_png.rf.f6501963015619f7c74d637227a0a4eb.jpg: 640x640 2 Crowns, 6 Implants, 3 Missing teeths, 8 Root Canal Treatments, 8.8ms
+    image 1326/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Sukhwinder-Kour_2023-10-26155301_1_png.rf.6eed9e54564df6288b4e47850884c73e.jpg: 640x640 4 Cariess, 2 Fillings, 2 Mandibular Canals, 1 Missing teeth, 9.4ms
+    image 1327/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_Suspal-Singh_2023-10-26183817_1_png.rf.3bc23f10963137c5a6901742a44e7b6c.jpg: 640x640 2 Mandibular Canals, 4 Missing teeths, 1 impacted tooth, 8.9ms
+    image 1328/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_TARSEM-KAUR_2023-10-20161226_1_png.rf.ae160ac42674c7b561de3e3e320acefd.jpg: 640x640 1 Filling, 1 Mandibular Canal, 1 Missing teeth, 8.9ms
+    image 1329/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_TULSI-BAI_2023-10-20122254_1_png.rf.ad9fc105dbbec946331e092f68d24199.jpg: 640x640 2 Cariess, 1 Filling, 1 Missing teeth, 10.2ms
+    image 1330/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_UPINDERJEET-KAUR_2023-10-21132726_1_png.rf.56742269c63da1f5c7b4b730f4bfdc77.jpg: 640x640 1 Caries, 8.9ms
+    image 1331/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_UPINDERJEET-KAUR_2023-10-21132726_1_png.rf.8190ae734d13ea024b141387023ab7d4.jpg: 640x640 1 Caries, 1 Periapical lesion, 8.7ms
+    image 1332/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_VARPREET-SINGH_2023-10-20152112_1_png.rf.ce31567c6b79481758440b78b90c9f37.jpg: 640x640 8 Fillings, 1 Missing teeth, 2 impacted tooths, 8.9ms
+    image 1333/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_aman-goyal_2023-10-26182616_1_png.rf.be22e5e8109905d3bc5b3861bef4da2c.jpg: 640x640 2 Mandibular Canals, 9.0ms
+    image 1334/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_aman-kaur_2023-10-26185139_1_png.rf.84c76c2c094fcd0090ab553901d81852.jpg: 640x640 1 Caries, 2 Mandibular Canals, 1 Missing teeth, 9.0ms
+    image 1335/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_ashu-_2023-10-21161110_1_png.rf.8522aa4617b3c241fc04e47e76e76a02.jpg: 640x640 3 Crowns, 4 Fillings, 2 Implants, 1 Missing teeth, 1 Root Canal Treatment, 8.8ms
+    image 1336/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_dr-vijay-kumar-_2023-10-26182023_1_png.rf.8024a3fe868723d3b5f73872147a8bd7.jpg: 640x640 4 Crowns, 3 Implants, 2 Mandibular Canals, 1 Missing teeth, 2 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 1337/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_hargun-_2023-10-21111055_1_png.rf.b85911091a349f3ea042fff0ef817c81.jpg: 640x640 1 Caries, 9.1ms
+    image 1338/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_jaskaran-singh_2023-10-21151313_1_png.rf.231d862c0908792696b04a109f2bcd6c.jpg: 640x640 1 Filling, 2 Root Canal Treatments, 8.8ms
+    image 1339/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_kulveer-singh_2023-10-26183352_1_png.rf.080ff4fdbae55a593d4e06ecb41f7d70.jpg: 640x640 2 Mandibular Canals, 9.0ms
+    image 1340/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_lakhveer-singh_2023-10-21124952_1_png.rf.ff2fbeeceb1ccbd76e9431e88a3d7720.jpg: 640x640 2 Cariess, 3 Missing teeths, 1 Periapical lesion, 8.7ms
+    image 1341/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_poonam-mittal_2023-10-21152850_1_png.rf.e1810e0d76789647aeb72936134905d0.jpg: 640x640 2 Mandibular Canals, 9.0ms
+    image 1342/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_saroj-rani_2023-10-26163624_1_png.rf.4033d79cdda31378eaf529392a911cd1.jpg: 640x640 1 Mandibular Canal, 8.8ms
+    image 1343/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/cropped_saroj-rani_2023-10-26163624_1_png.rf.a35b8375271dcbfbeabc20e2831ff1bb.jpg: 640x640 1 Mandibular Canal, 8.8ms
+    image 1344/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d016e413-SHAYAN_TAYEBEH_2020-06-09113936_jpg.rf.76a433bd58fdba677a60b2ab22bcd212.jpg: 640x640 15 Crowns, 3 Fillings, 2 Implants, 1 Missing teeth, 16 Root Canal Treatments, 11.0ms
+    image 1345/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d1abf3f1-Karimi_pour_Hosein_47y_22052021_183902_jpg.rf.aba13c54b674e974119a17c1b68683d9.jpg: 640x640 11 Crowns, 5 Fillings, 2 Missing teeths, 8 Root Canal Treatments, 9.4ms
+    image 1346/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d3d37038-Arjmand_Fatemeh_2022-06-12141203_jpg.rf.0eaed33ae29b282f34e60ac15609f2f1.jpg: 640x640 2 Cariess, 6 Fillings, 1 Periapical lesion, 3 Root Canal Treatments, 8.9ms
+    image 1347/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d4159f80-Mohagheghi_Nahid_2022-05-14185709_jpg.rf.8797a1995b3507fd1dce3603fcc448dc.jpg: 640x640 3 Cariess, 6 Fillings, 1 Missing teeth, 6 Root Canal Treatments, 8.9ms
+    image 1348/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d4159f80-Mohagheghi_Nahid_2022-05-14185709_jpg.rf.f3f64425b2e334b9e42f7ef40b280cc7.jpg: 640x640 2 Cariess, 6 Fillings, 1 Missing teeth, 6 Root Canal Treatments, 8.9ms
+    image 1349/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d474ffc9-SALEHI_KOBRA_2020-07-12184001_jpg.rf.11a1ea143a30484085b7c51b8a9739bc.jpg: 640x640 9 Crowns, 7 Fillings, 3 Missing teeths, 5 Root Canal Treatments, 9.4ms
+    image 1350/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d6568516-Hesar_shoorkabi_Tohid_32yo_09112020_171100_jpg.rf.7d6a7a93586051d4077b84640d69d70e.jpg: 640x640 5 Crowns, 8 Fillings, 1 Periapical lesion, 8 Root Canal Treatments, 8.9ms
+    image 1351/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d6d682f6-Davoodi_Mahshid_45yo_08052021_181230_jpg.rf.1c224ab794d401f3c3190ef91d637e80.jpg: 640x640 6 Crowns, 9 Fillings, 7 Root Canal Treatments, 9.1ms
+    image 1352/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d6f01c76-GOODARZI_MARZIYEH_2020-06-28182529_jpg.rf.420c3354ee34bd0aca530161f4ebe25d.jpg: 640x640 2 Cariess, 8 Fillings, 2 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 1353/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d797cd7c-TELAVAT_MARYAM_2020-07-12111212_jpg.rf.c9c7e5ecb5d13cce6a5c37aa4e5516f8.jpg: 640x640 1 Caries, 12 Fillings, 1 Missing teeth, 2 Root Canal Treatments, 9.1ms
+    image 1354/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/d83d22ac-JAVADI_MASOOMEH_2020-06-07192729_jpg.rf.94aa049dc7b970ec8ebab13905599fcb.jpg: 640x640 4 Cariess, 2 Crowns, 8 Fillings, 1 Mandibular Canal, 1 Periapical lesion, 3 Root Canal Treatments, 9.1ms
+    image 1355/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/db4ae6ed-MEHRI_MASUME_2020-07-05195723_jpg.rf.7eee2639b2246a7f3e12b7d8cad5a421.jpg: 640x640 7 Fillings, 1 Missing teeth, 1 Periapical lesion, 4 Root Canal Treatments, 9.1ms
+    image 1356/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/df33db5f-MASOOMI_AMINEH_2020-06-28182210_jpg.rf.5a6ac1ce390f52ee367994079bec8644.jpg: 640x640 1 Caries, 5 Fillings, 1 Missing teeth, 4 Root Canal Treatments, 2 impacted tooths, 9.0ms
+    image 1357/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e0d035aa-Panahi_Mahnaz_2022-06-12142606_jpg.rf.2991220180da83ae38c13c563a555088.jpg: 640x640 1 Caries, 1 Crown, 8 Fillings, 1 Missing teeth, 3 Periapical lesions, 6 Root Canal Treatments, 1 impacted tooth, 9.1ms
+    image 1358/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e17f7d04-NADERI_AMIR_2020-06-10190539_jpg.rf.f30b29b6704c360e74089693264561f6.jpg: 640x640 2 Cariess, 3 Fillings, 1 Missing teeth, 9.3ms
+    image 1359/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e1e15226-Chegini_Mahdi_2022-06-12142812_jpg.rf.463522933c4fbfabfe3ac498677af324.jpg: 640x640 1 Caries, 4 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 9.7ms
+    image 1360/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e6067300-Shahmohamadi_Roghayeh_2022-05-14195349_jpg.rf.0bb1cbe6ddadf3bf0c643278893e47b6.jpg: 640x640 1 Caries, 3 Fillings, 1 Missing teeth, 3 Root Canal Treatments, 9.1ms
+    image 1361/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e67f9ae3-RAHNAMA_NARGES_2020-08-18105255_jpg.rf.2d1b268ffd71ce6b00f20d325c9ea1fb.jpg: 640x640 3 Cariess, 8 Fillings, 2 impacted tooths, 9.1ms
+    image 1362/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e7267c04-Faraj_Fatemeh_2022-06-12142338_jpg.rf.dff8af92a22c88f15cdc404fe6b8ceb9.jpg: 640x640 4 Cariess, 1 Filling, 9.1ms
+    image 1363/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e74f6976-SAFARI_MARZIEH_2020-07-06175225_jpg.rf.ccb137d7c85c7a0a9f3322916d768877.jpg: 640x640 1 Caries, 5 Fillings, 1 Root Canal Treatment, 9.0ms
+    image 1364/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e81fa83a-AHMADI_HOSEYN_2020-08-01121113_jpg.rf.df62639113497b0e1dece33ba66e4796.jpg: 640x640 1 Caries, 7 Crowns, 3 Missing teeths, 1 Periapical lesion, 1 Root Canal Treatment, 9.0ms
+    image 1365/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e8706b42-Shafaghi_Mehrdad_2022-06-12142121_jpg.rf.8a71402118eeb1fc7cc11e4946ae8c39.jpg: 640x640 4 Fillings, 2 Root Canal Treatments, 8.8ms
+    image 1366/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e8793cf7-ROSTAMI_ZAHRA_2020-08-02104344_jpg.rf.dcd825a8af6c46d4a9e8d899e5722169.jpg: 640x640 1 Caries, 5 Fillings, 3 Root Canal Treatments, 1 impacted tooth, 8.8ms
+    image 1367/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/e8d96237-Sharifi_Sara_2022-06-12141134_jpg.rf.3fd1da804646d524546384ba2ca1a79b.jpg: 640x640 3 Fillings, 1 impacted tooth, 8.8ms
+    image 1368/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/eb534e53-Ghasemi_Leyla_43yo_01062021_192938_jpg.rf.39c4ffc10e47f06a3d1daebf3e10e9c5.jpg: 640x640 6 Crowns, 7 Fillings, 4 Implants, 8 Root Canal Treatments, 8.7ms
+    image 1369/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/eeb607e4-Roshanaee_Sedigheh_2022-06-12141303_jpg.rf.0b17b30563bf798e3ca2f6f24673b9f1.jpg: 640x640 5 Fillings, 2 Missing teeths, 6 Root Canal Treatments, 9.0ms
+    image 1370/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f0b9230a-KHALAJ_MOHADESE_2020-05-05180930_jpg.rf.7c13a9488e47ec749e6bdd2e1d808119.jpg: 640x640 3 Fillings, 2 Root Canal Treatments, 3 impacted tooths, 8.8ms
+    image 1371/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f36813c6-Delparvar_Nasim_2022-05-14183633_jpg.rf.13de8ff10f4733431b952ed70a6c462a.jpg: 640x640 3 Fillings, 6 Missing teeths, 1 Root Canal Treatment, 8.7ms
+    image 1372/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f4257bd2-Cheraghali_Fatemeh_2020-09-01120434_jpg.rf.3648d252f34bc034b03f92522e59c911.jpg: 640x640 19 Fillings, 1 Missing teeth, 3 Root Canal Treatments, 2 impacted tooths, 8.8ms
+    image 1373/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f5ea4ee5-Farazi_Mansoreh_2020-09-12125632_jpg.rf.091fe78e6496682ae58e24ba28fa66c6.jpg: 640x640 2 Cariess, 4 Crowns, 11 Fillings, 2 Implants, 6 Root Canal Treatments, 8.8ms
+    image 1374/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f98ce873-RAFIE_RADIN_2020-08-04182713_jpg.rf.ce7ae7272532c81e9d054afd2d81403c.jpg: 640x640 2 Cariess, 8.9ms
+    image 1375/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/f9e524ae-Hoseynzadeh_Sakineh_2022-06-12142132_jpg.rf.98ca6606ab81e6ba2fd495f5b37b6f31.jpg: 640x640 2 Cariess, 4 Missing teeths, 9.0ms
+    image 1376/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/fa85e939-MAJIDI_ALIREZA_2020-07-05122036_jpg.rf.eb80a1a3076f396f4dea06e1519c23e3.jpg: 640x640 2 Cariess, 1 Filling, 2 Root Canal Treatments, 9.4ms
+    image 1377/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/fa89d7dd-FATHOLAHI_FATEME_2020-08-16112532_jpg.rf.d8a964456a07f83e09c8e6d3224a3762.jpg: 640x640 5 Crowns, 9 Fillings, 2 Missing teeths, 9 Root Canal Treatments, 9.6ms
+    image 1378/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/fad43613-Rezaee_Mostafa_2022-06-12142824_jpg.rf.5ddc8f578d19a8108073053f1eb2cc54.jpg: 640x640 5 Cariess, 3 Fillings, 1 Periapical lesion, 2 Root Canal Treatments, 9.3ms
+    image 1379/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/fd92dea6-MOGHAMI_REZA_2020-08-18100307_jpg.rf.2ca90ad9c1fbfca8bf264fd2ce13835b.jpg: 640x640 4 Cariess, 5 Crowns, 2 Periapical lesions, 9 Root Canal Treatments, 9.4ms
+    image 1380/1380 /content/Dental-X-Ray-Panoramic-Dataset-1/test/images/ffa16c16-Hoseyni_Habibe_48yo_31052021_130138_jpg.rf.06e45ebb3110e1228c4f6f41cfb8e819.jpg: 640x640 1 Caries, 5 Fillings, 4 Missing teeths, 9.0ms
+    Speed: 2.0ms preprocess, 9.2ms inference, 1.2ms postprocess per image at shape (1, 3, 640, 640)
+    Results saved to /content/Dental_Test_Temiz/nms_duzeltilmis
+    İşlem tamamlandı. Daha temiz kutucuklar burada: /content/Dental_Test_Temiz/nms_duzeltilmis
+    
+
+
+```python
+import shutil
+from google.colab import files
+
+shutil.make_archive('dental_temiz_tahminler', 'zip', '/content/Dental_Test_Temiz/nms_duzeltilmis')
+
+files.download('dental_temiz_tahminler.zip')
+
+print("Yeni tahminler paketlendi ve indirme işlemi başlatıldı!")
+```
+
+
+    <IPython.core.display.Javascript object>
+
+
+
+    <IPython.core.display.Javascript object>
+
+
+    Yeni tahminler paketlendi ve indirme işlemi başlatıldı!
+    
+
+
+```python
+import shutil
+import os
+from google.colab import files
+
+folder_name = 'Dental_Model_Analiz_Grafikleri'
+if not os.path.exists(folder_name):
+    os.makedirs(folder_name)
+
+grafik_yolları = [
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/BoxF1_curve.png',
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/BoxPR_curve.png',
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/BoxP_curve.png',
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/BoxR_curve.png',
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/confusion_matrix.png',
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/confusion_matrix_normalized.png',
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/results.png'
+]
+
+print("Dosyalar paketleniyor...")
+for path in grafik_yolları:
+    if os.path.exists(path):
+        shutil.copy(path, folder_name)
+    else:
+        print(f"Uyarı: {os.path.basename(path)} bulunamadı.")
+
+zip_path = 'dental_analiz_grafikleri.zip'
+shutil.make_archive('dental_analiz_grafikleri', 'zip', folder_name)
+
+files.download(zip_path)
+print("İndirme işlemi başlatıldı. 'dental_analiz_grafikleri.zip' dosyasını kontrol edin.")
+```
+
+    Dosyalar paketleniyor...
+    
+
+
+    <IPython.core.display.Javascript object>
+
+
+
+    <IPython.core.display.Javascript object>
+
+
+    İndirme işlemi başlatıldı. 'dental_analiz_grafikleri.zip' dosyasını kontrol edin.
+    
+
+
+```python
+import shutil
+import os
+from google.colab import files
+
+final_folder = 'Dental_Model_Final_Sonuclari'
+if not os.path.exists(final_folder):
+    os.makedirs(final_folder)
+
+paths_to_copy = [
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/weights/best.pt',
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/BoxF1_curve.png',
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/BoxPR_curve.png',
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/confusion_matrix.png',
+    '/content/Dental_Roboflow_Filtreli/v2_deneme/results.png'
+]
+
+for path in paths_to_copy:
+    if os.path.exists(path):
+        shutil.copy(path, final_folder)
+    else:
+        print(f"Uyarı: {os.path.basename(path)} bulunamadı.")
+
+test_results_path = '/content/Dental_Test_Temiz/nms_duzeltilmis'
+if os.path.exists(test_results_path):
+    shutil.copytree(test_results_path, os.path.join(final_folder, 'test_tahminleri'), dirs_exist_ok=True)
+
+shutil.make_archive('Dental_Proje_Paketi', 'zip', final_folder)
+
+files.download('Dental_Proje_Paketi.zip')
+
+print("✅ Bütün sonuç verileri 'Dental_Proje_Paketi.zip' olarak hazırlandı ve indirme başlatıldı.")
+```
+
+
+    <IPython.core.display.Javascript object>
+
+
+
+    <IPython.core.display.Javascript object>
+
+
+    ✅ Bütün sonuç verileri 'Dental_Proje_Paketi.zip' olarak hazırlandı ve indirme başlatıldı.
+    
+
+
+```python
+import shutil
+import os
+from google.colab import files
+
+archive_folder = 'Dental_AI_Full_Project'
+if not os.path.exists(archive_folder):
+    os.makedirs(archive_folder)
+
+items_to_archive = {
+    'Egitim_Ciktilari': '/content/Dental_Roboflow_Filtreli/v2_deneme',
+
+    'Dataset_Config': '/content/Dental-X-Ray-Panoramic-Dataset-1/data.yaml',
+
+    'Temiz_Test_Tahminleri': '/content/Dental_Test_Temiz/nms_duzeltilmis',
+
+    'Ek_Analizler': '/content/Dental_Grafikler/sonuc_analizi'
+}
+
+print("Proje verileri toplanıyor, lütfen bekleyin...")
+
+for key, path in items_to_archive.items():
+    if os.path.exists(path):
+        dest = os.path.join(archive_folder, key)
+        if os.path.isdir(path):
+            shutil.copytree(path, dest, dirs_exist_ok=True)
+        else:
+            shutil.copy(path, dest)
+        print(f"✅ {key} başarıyla eklendi.")
+    else:
+        print(f"⚠️ {key} bulunamadı, atlanıyor.")
+
+shutil.make_archive('Dental_AI_Proje_Arsivi', 'zip', archive_folder)
+
+files.download('Dental_AI_Proje_Arsivi.zip')
+
+print("\n🚀 İŞLEM TAMAMLANDI! 'Dental_AI_Proje_Arsivi.zip' dosyası bilgisayarına iniyor.")
+```
+
+    Proje verileri toplanıyor, lütfen bekleyin...
+    ✅ Egitim_Ciktilari başarıyla eklendi.
+    ✅ Dataset_Config başarıyla eklendi.
+    ✅ Temiz_Test_Tahminleri başarıyla eklendi.
+    ✅ Ek_Analizler başarıyla eklendi.
+    
+
+
+    <IPython.core.display.Javascript object>
+
+
+
+    <IPython.core.display.Javascript object>
+
+
+    
+    🚀 İŞLEM TAMAMLANDI! 'Dental_AI_Proje_Arsivi.zip' dosyası bilgisayarına iniyor.
+    
+>>>>>>> 6cc2b0726e678ac31758992b43bf17b933d965c1

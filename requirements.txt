@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 streamlit>=1.30.0
 ultralytics>=8.0.0
 Pillow>=9.0.0
 numpy>=1.20.0
 opencv-python>=4.6.0
 fpdf2>=2.7.0
+=======
+streamlit>=1.30.0
+ultralytics>=8.0.0
+Pillow>=9.0.0
+numpy>=1.20.0
+opencv-python>=4.6.0
+fpdf2>=2.7.0
+>>>>>>> 6cc2b0726e678ac31758992b43bf17b933d965c1
 plotly>=5.0.0
