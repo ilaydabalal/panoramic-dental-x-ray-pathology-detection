@@ -9,7 +9,7 @@ import os
 !pip install roboflow
 
 from roboflow import Roboflow
-rf = Roboflow(api_key="oNJTj1KmqLrb8ZqL7vPl")
+rf = Roboflow(api_key="")
 project = rf.workspace("ilayda-x231x").project("dental-x-ray-panoramic-dataset-bbwmt")
 version = project.version(1)
 dataset = version.download("yolov8")
